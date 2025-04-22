@@ -231,8 +231,16 @@
         .section-subtitle {
             font-size: 1.2rem;
             color: var(--muted);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .taskflow-instruction {
+            font-size: 1.2rem;
+            color: var(--muted);
             margin-bottom: 40px;
             text-align: center;
+            padding: 0 20px;
         }
 
         .carousel {
@@ -768,6 +776,9 @@
             .calendar-day {
                 font-size: 0.9rem;
             }
+            .taskflow-instruction {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -1072,7 +1083,6 @@
                             <button class="action-btn" onclick="closeModal('day-7')">Close</button>
                         </div>
                     </div>
-                    <!-- Add more days up to 30 as needed, simplified for brevity -->
                 </div>
             </div>
         </div>
@@ -1083,6 +1093,7 @@
         <div class="wrapper">
             <h2 class="section-title">Custom Task Flow</h2>
             <p class="section-subtitle">Manage your projects with a draggable task flow system</p>
+            <p class="taskflow-instruction">Drag and drop tasks between stages to manage your workflow seamlessly.</p>
             <div class="taskflow-preview">
                 <div class="taskflow-board">
                     <div class="taskflow-stage" ondragover="allowDrop(event)" ondrop="drop(event)">
@@ -1195,7 +1206,7 @@
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Privacy</a></li>
                         <li><a href="#">Terms</a></li>
-                    </円
+                    </ul>
                 </div>
             </div>
             <div class="footer-note">
