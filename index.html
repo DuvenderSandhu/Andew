@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -229,6 +228,515 @@
             }
         }
 
+        /* WhatsApp Chat Section */
+        .chat-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0;
+            position: relative;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .chat-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .phone-mockup {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            background-color: #333;
+            border-radius: 35px;
+            padding: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: phoneFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes phoneFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 28px;
+            background-color: #ECE5DD;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chat-header {
+            background: #075E54;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #128C7E;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .chat-name h4 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .chat-name p {
+            margin: 0;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .chat-messages {
+            height: calc(100% - 65px);
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            max-width: 70%;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .message-received {
+            background-color: white;
+            align-self: flex-start;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-sent {
+            background-color: #DCF8C6;
+            align-self: flex-end;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-time {
+            font-size: 11px;
+            color: #999;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            width: 45px;
+            height: 20px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 0 10px;
+            margin-bottom: 15px;
+            align-self: flex-start;
+            opacity: 0;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #999;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typingDot 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typingDot {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Dashboard Section */
+        .dashboard-section {
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-headline {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dashboard-headline h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #128C7E;
+        }
+
+        .dashboard-headline p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .dashboard-mockup {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .dashboard-mockup.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dashboard-header {
+            background: #128C7E;
+            padding: 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dashboard-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .dashboard-controls span {
+            margin-left: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .dashboard-content {
+            padding: 30px;
+        }
+
+        .kanban-board {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+
+        .kanban-column {
+            min-width: 280px;
+            background: #f1f3f5;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .kanban-column h3 {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .kanban-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .kanban-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .kanban-card h4 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .kanban-card p {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .kanban-card .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .kanban-card .tag {
+            background: #E9ECEF;
+            color: #495057;
+            padding: 3px 8px;
+            border-radius: 30px;
+            font-size: 11px;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        .features-headline {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .features-headline h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #128C7E;
+        }
+
+        .features-headline p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .feature-card.visible {
+            animation: featureCardAppear 0.6s forwards;
+        }
+
+        @keyframes featureCardAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 28px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-headline {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-headline h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #128C7E;
+        }
+
+        .pricing-headline p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+        }
+
+        .pricing-card.visible {
+            animation: pricingCardAppear 0.8s forwards;
+        }
+
+        .pricing-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .pricing-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes pricingCardAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #25D366;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .pricing-plan {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #25D366;
+            margin-bottom: 15px;
+        }
+
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pricing-currency {
+            font-size: 1.5rem;
+            margin-right: 5px;
+            align-self: flex-start;
+            margin-top: 8px;
+        }
+
+        .pricing-duration {
+            font-size: 1rem;
+            color: #666;
+            margin-left: 5px;
+            align-self: flex-end;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #666;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
         /* Footer */
         footer {
             background: #128C7E;
@@ -266,75 +774,240 @@
         .footer-column ul li a:hover {
             color: white;
         }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-card {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">
-                    <span class="logo-icon">📱</span>
-                    WhatsApp Assistant
-                </a>
-                <nav>
-                    <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <header id="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <span class="logo-icon">💬</span> WhatsApp Assistant
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#" class="btn">Get Started</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-bg">
             <div class="bubble"></div>
             <div class="bubble"></div>
             <div class="bubble"></div>
             <div class="bubble"></div>
         </div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Your Smart WhatsApp Assistant</h1>
-                <p>Automate your WhatsApp conversations with AI-powered responses, schedule messages, and manage multiple chats effortlessly.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn">Get Started</a>
-                    <a href="#" class="btn btn-secondary">Learn More</a>
+        <div class="container hero-content">
+            <h1>Your Smart WhatsApp Assistant</h1>
+            <p>Automate responses, organize tasks, and manage all your WhatsApp conversations with our intelligent assistant. Save time and never miss important messages.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn">Get Started Free</a>
+                <a href="#" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="chat-section" id="chat">
+        <div class="container chat-content">
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="chat-header">
+                        <div class="chat-avatar">A</div>
+                        <div class="chat-name">
+                            <h4>WhatsApp Assistant</h4>
+                            <p>Online</p>
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message message-sent" style="animation-delay: 0.5s">
+                            <div class="message-content">Hey! Can you remind me about the meeting tomorrow?</div>
+                            <div class="message-time">10:42 AM</div>
+                        </div>
+                        <div class="typing-indicator" id="typing-indicator">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                        <div class="message message-received" style="animation-delay: 2s">
+                            <div class="message-content">Hi there! I've set a reminder for your meeting tomorrow at 2:00 PM with the marketing team.</div>
+                            <div class="message-time">10:43 AM</div>
+                        </div>
+                        <div class="message message-sent" style="animation-delay: 3s">
+                            <div class="message-content">Also, can you categorize all messages from John about the project?</div>
+                            <div class="message-time">10:44 AM</div>
+                        </div>
+                        <div class="typing-indicator" id="typing-indicator-2">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                        <div class="message message-received" style="animation-delay: 5s">
+                            <div class="message-content">Done! I've tagged and organized all messages from John related to the project in your dashboard. You have 8 unread messages from him.</div>
+                            <div class="message-time">10:45 AM</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <section class="dashboard-section" id="dashboard">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">API</a></li>
-                        <li><a href="#">Status</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                    </ul>
-                </div>
+            <div class="dashboard-headline">
+                <h2>Manage Your Conversations</h2>
+                <p>Organize, automate, and get insights from all your WhatsApp conversations with our powerful dashboard.</p>
             </div>
-        </div>
-    </footer>
-</body>
-</html>
+            <div class="dashboard-mockup" id="dashboard-mockup">
+                <div class="dashboard-header">
+                    <div class="dashboard-title">WhatsApp Assistant Dashboard</div>
+                    <div class="dashboard-controls">
+                        <span>⚙️</span>
+                        <span>🔔</span>
+                        <span>👤</span>
+                    </div>
+                </div>
+                <div class="dashboard-content">
+                    <div class="kanban-board">
+                        <div class="kanban-column">
+                            <h3>Unread Messages (5)</h3>
+                            <div class="kanban-card" id="card1">
+                                <h4>From: John Smith</h4>
+                                <p>Project update: Completed the first milestone...</p>
+                                <div class="meta">
+                                    <span class="tag">Project</span>
+                                    <span>2 min ago</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card" id="card2">
+                                <h4>From: Sarah Johnson</h4>
+                                <p>Can we reschedule tomorrow's call to 3PM?</p>
+                                <div class="meta">
+                                    <span class="tag">Meeting</span>
+                                    <span>12 min ago</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card" id="card3">
+                                <h4>From: Marketing Group</h4>
+                                <p>New campaign materials are ready for review...</p>
+                                <div class="meta">
+                                    <span class="tag">Marketing</span>
+                                    <span>56 min ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kanban-column">
+                            <h3>Tasks (8)</h3>
+                            <div class="kanban-card" id="card4">
+                                <h4>Send project proposal</h4>
+                                <p>Prepare and send proposal to BigClient Inc.</p>
+                                <div class="meta">
+                                    <span class="tag">High Priority</span>
+                                    <span>Due Today</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card" id="card5">
+                                <h4>Reply to John's questions</h4>
+                                <p>Answer questions about timeline and budget</p>
+                                <div class="meta">
+                                    <span class="tag">Medium</span>
+                                    <span>Due Tomorrow</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card" id="card6">
+                                <h4>Schedule team meeting</h4>
+                                <p>Organize weekly update with development team</p>
+                                <div class="meta">
+                                    <span class="tag">Recurring</span>
+                                    <span>Due in 3 days</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kanban-column">
+                            <h3>Analytics</h3>
+                            <div class="kanban-card" id="card7">
+                                <h4>Message Volume</h4>
+                                <p>You received 128 messages today (+23% from yesterday)</p>
+                                <div class="meta">
+                                    <span class="tag">Stats</span>
+                                    <span>Updated Now</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card" id="card8">
+                                <h4>Response Time</h4>
+                                <p>Your average response time: 12 minutes</p>
+                                <div class="meta">
+                                    <span class="tag">Performance</span>
+                                    <span>Updated Now</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card" id="card9">
+                                <h4>Auto-replies</h4>
+                                <p>36 messages were auto-replied today (28% of total)</p>
+                                <div class="meta">
+                                    <span
