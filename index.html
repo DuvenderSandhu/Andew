@@ -413,14 +413,14 @@
         .dashboard-headline h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: #128C7E;
+            color: #000000;
         }
 
         .dashboard-headline p {
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto;
-            color: #666;
+            color: #000000;
         }
 
         .dashboard-mockup {
@@ -501,11 +501,11 @@
                 background: #f0f2f5;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             }
-            
+
             .kanban-card h4 {
                 color: #128C7E;
             }
-            
+
             .kanban-card p {
                 color: #333;
             }
@@ -1037,4 +1037,196 @@
                                 <h4>Auto-replies</h4>
                                 <p>36 messages were auto-replied today (28% of total)</p>
                                 <div class="meta">
-                                    <span
+                                    <span class="tag">Automation</span>
+                                    <span>Updated Now</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="features-headline">
+                <h2>Key Features</h2>
+                <p>Discover the powerful features designed to streamline your WhatsApp communication and boost productivity.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card visible">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Automated Responses</h3>
+                    <p>Set up instant replies for common inquiries and never miss a message.</p>
+                </div>
+                <div class="feature-card visible">
+                    <div class="feature-icon">🗂️</div>
+                    <h3>Organized Conversations</h3>
+                    <p>Categorize and filter your chats effortlessly for efficient management.</p>
+                </div>
+                <div class="feature-card visible">
+                    <div class="feature-icon">📈</div>
+                    <h3>Detailed Analytics</h3>
+                    <p>Monitor your message volume, response times, and auto-reply usage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="pricing-headline">
+                <h2>Pricing Plans</h2>
+                <p>Choose the plan that best fits your needs and start managing your WhatsApp like a pro.</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card visible">
+                    <div class="pricing-plan">Basic</div>
+                    <div class="pricing-amount">
+                        <span class="pricing-currency">$</span>9<span class="pricing-duration">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Automated Responses</li>
+                        <li>Conversation Organization</li>
+                        <li>Basic Analytics</li>
+                    </ul>
+                    <a href="#" class="btn">Choose Plan</a>
+                </div>
+                <div class="pricing-card visible featured">
+                    <div class="pricing-plan">Premium</div>
+                    <div class="pricing-amount">
+                        <span class="pricing-currency">$</span>29<span class="pricing-duration">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Automated Responses</li>
+                        <li>Conversation Organization</li>
+                        <li>Advanced Analytics</li>
+                        <li>Customizable Settings</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <a href="#" class="btn">Choose Plan</a>
+                </div>
+                <div class="pricing-card visible">
+                    <div class="pricing-plan">Enterprise</div>
+                    <div class="pricing-amount">
+                        <span class="pricing-currency">$</span>99<span class="pricing-duration">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Automated Responses</li>
+                        <li>Conversation Organization</li>
+                        <li>Advanced Analytics</li>
+                        <li>Customizable Settings</li>
+                        <li>Priority Support</li>
+                        <li>Team Collaboration Features</li>
+                    </ul>
+                    <a href="#" class="btn">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Social</h3>
+                <div class="social-icons">
+                    <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+                    <div class="social-icon"><i class="fab fa-twitter"></i></div>
+                    <div class="social-icon"><i class="fab fa-linkedin-in"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 WhatsApp Assistant. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Dashboard Mockup Visibility
+        const dashboardMockup = document.getElementById('dashboard-mockup');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > window.innerHeight / 2) {
+                dashboardMockup.classList.add('visible');
+            }
+        });
+
+        // Kanban Cards Visibility
+        const kanbanCards = document.querySelectorAll('.kanban-card');
+        kanbanCards.forEach(card => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        card.classList.add('visible');
+                    }
+                });
+            });
+            observer.observe(card);
+        });
+
+        // Feature Cards Visibility
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        card.classList.add('visible');
+                    }
+                });
+            });
+            observer.observe(card);
+        });
+
+        // Pricing Cards Visibility
+        const pricingCards = document.querySelectorAll('.pricing-card');
+        pricingCards.forEach(card => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        card.classList.add('visible');
+                    }
+                });
+            });
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
