@@ -3,1263 +3,378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConnectFlow | Master Your Messaging</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>VW Breakers UK - Quality Volkswagen Parts & Spares</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --accent: #ff6f61;
-            --accent-dark: #e65b50;
-            --background: #f4f7fc;
-            --text: #2d3436;
-            --muted: #636e72;
-            --card: #ffffff;
-            --shadow: rgba(0, 0, 0, 0.1);
-            --highlight: #ffd700;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--background);
-            overflow-x: hidden;
-        }
-
-        .wrapper {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 25px;
-        }
-
-        .action-btn {
-            padding: 12px 28px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-        }
-
-        .action-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 111, 97, 0.4);
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 4px 15px var(--shadow);
-            z-index: 1000;
-            padding: 20px 0;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .brand i {
-            margin-right: 10px;
-            color: var(--accent-dark);
-            font-size: 1.5rem;
-        }
-
-        .nav-list {
-            display: flex;
-            list-style: none;
-            gap: 35px;
-        }
-
-        .nav-list li a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-list li a:hover {
-            color: var(--accent);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--text);
-        }
-
-        .intro {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 0;
-            background: linear-gradient(135deg, #f4f7fc 0%, #dfe9f5 100%);
-            position: relative;
-        }
-
-        .intro-text {
-            max-width: 650px;
-            text-align: center;
-        }
-
-        .intro-text h1 {
-            font-size: 3.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--text);
-        }
-
-        .intro-text p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            color: var(--muted);
-        }
-
-        .intro-actions {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .device-mockup {
-            position: absolute;
-            right: 5%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 320px;
-            height: 640px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-radius: 40px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-            overflow: hidden;
-        }
-
-        .device-screen {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 15px;
-            background: #e9ecef;
-            border-radius: 30px;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .chat-header {
-            background: var(--accent);
-            color: white;
-            padding: 12px;
-            border-radius: 8px 8px 0 0;
-            font-weight: 600;
-        }
-
-        .chat-messages {
-            flex: 1;
-            background: url('https://via.placeholder.com/200/ddd/fff?text=Chat+Bg') repeat;
-            padding: 10px;
-            overflow-y: auto;
-        }
-
-        .message-bubble {
-            max-width: 65%;
-            padding: 12px 16px;
-            border-radius: 15px;
-            margin: 10px;
-            box-shadow: 0 4px 10px var(--shadow);
-        }
-
-        .message-bubble.inbound {
-            background: var(--card);
-            margin-right: auto;
-        }
-
-        .message-bubble.outbound {
-            background: #ffebee;
-            margin-left: auto;
-        }
-
-        .message-time {
-            font-size: 0.7rem;
-            color: var(--muted);
-            text-align: right;
-            margin-top: 5px;
-        }
-
-        .feature-showcase {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #dfe9f5 0%, #f4f7fc 100%);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--text);
-            text-align: center;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--muted);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .taskflow-instruction {
-            font-size: 1.2rem;
-            color: var(--muted);
-            margin-bottom: 40px;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .carousel {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .carousel-inner {
-            display: flex;
-            width: 300%;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item {
-            width: 33.33%;
-            padding: 20px;
-        }
-
-        .feature-card {
-            background: var(--card);
-            border-radius: 15px;
-            box-shadow: 0 12px 35px var(--shadow);
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .feature-image {
-            flex: 1;
-        }
-
-        .feature-content {
-            flex: 1;
-        }
-
-        .feature-content h3 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .feature-content p {
-            color: var(--muted);
-            font-size: 1.1rem;
-        }
-
-        input[name="carousel-radio"] {
-            display: none;
-        }
-
-        .carousel-controls {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .carousel-controls label {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background: #ddd;
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .carousel-controls label:hover {
-            background: var(--accent);
-        }
-
-        #slide1:checked ~ .carousel-inner {
-            transform: translateX(0);
-        }
-
-        #slide2:checked ~ .carousel-inner {
-            transform: translateX(-33.33%);
-        }
-
-        #slide3:checked ~ .carousel-inner {
-            transform: translateX(-66.66%);
-        }
-
-        #slide1:checked ~ .carousel-controls label[for="slide1"],
-        #slide2:checked ~ .carousel-controls label[for="slide2"],
-        #slide3:checked ~ .carousel-controls label[for="slide3"] {
-            background: var(--accent);
-        }
-
-        .calendar-preview {
-            background: var(--card);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 10px 20px var(--shadow);
-        }
-
-        .calendar-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-align: center;
-            color: var(--text);
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 8px;
-            text-align: center;
-        }
-
-        .calendar-header {
-            font-weight: 600;
-            padding: 10px;
-            background: var(--accent);
-            color: white;
-            border-radius: 8px;
-        }
-
-        .calendar-day {
-            padding: 12px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-            position: relative;
-        }
-
-        .calendar-day:hover {
-            background: #ffebee;
-            transform: scale(1.05);
-        }
-
-        .calendar-day.event::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6px;
-            height: 6px;
-            background: var(--highlight);
-            border-radius: 50%;
-        }
-
-        .calendar-day span {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        .calendar-toggle {
-            display: none;
-        }
-
-        .calendar-toggle:checked + .calendar-day + .modal {
-            display: flex;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: var(--card);
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
-            position: relative;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .modal-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-
-        .modal-content p {
-            margin-bottom: 10px;
-            color: var(--muted);
-        }
-
-        #event-form label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-
-        #event-form input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .taskflow-preview {
-            background: var(--card);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 10px 20px var(--shadow);
-        }
-
-        .taskflow-board {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            padding: 10px 0;
-        }
-
-        .taskflow-stage {
-            min-width: 250px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .taskflow-stage-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text);
-        }
-
-        .taskflow-item {
-            background: var(--card);
-            border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 8px var(--shadow);
-            cursor: move;
-            transition: transform 0.3s ease;
-        }
-
-        .taskflow-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .taskflow-item.dragging {
-            opacity: 0.5;
-            transform: scale(0.95);
-        }
-
-        .capabilities {
-            background: var(--card);
-            padding: 80px 0;
-        }
-
-        .capabilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .capability-card {
-            text-align: center;
-            padding: 30px;
-            background: var(--background);
-            border-radius: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .capability-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .capability-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-
-        .capability-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .plans {
-            background: #f9fbfd;
-            padding: 80px 0;
-        }
-
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .plan-card {
-            background: var(--card);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px var(--shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .plan-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .plan-card.popular::before {
-            content: "Top Choice";
-            position: absolute;
-            top: 15px;
-            right: -40px;
-            background: var(--accent);
-            color: white;
-            padding: 5px 40px;
-            transform: rotate(45deg);
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
-
-        .plan-title {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .plan-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-
-        .plan-price span {
-            font-size: 1rem;
-            color: var(--muted);
-        }
-
-        .plan-features {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .plan-features li {
-            padding: 8px 0;
-            color: var(--muted);
-        }
-
-        .call-to-action {
-            background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-        }
-
-        .call-to-action h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .call-to-action p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        footer {
-            background: #2d3436;
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #dfe6e9;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-icons a {
-            width: 35px;
-            height: 35px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            background: var(--accent);
-        }
-
-        .footer-note {
-            text-align: center;
-            padding-top: 20px;
-            color: #dfe6e9;
-        }
-
-        @media (max-width: 1024px) {
-            .device-mockup {
-                right: 2%;
-                width: 280px;
-                height: 560px;
-            }
-            .intro-text h1 {
-                font-size: 3.2rem;
-            }
-            .feature-card {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .intro {
-                padding: 100px 0 600px;
-                flex-direction: column;
-            }
-            .device-mockup {
-                position: absolute;
-                left: 50%;
-                top: auto;
-                bottom: 40px;
-                transform: translateX(-50%);
-                width: 180px;
-                height: 360px;
-            }
-            .intro-actions {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .nav-list {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 10px 20px var(--shadow);
-            }
-            .nav-list.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .capabilities-grid, .plans-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-layout {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .social-icons {
-                justify-content: center;
-            }
-            .calendar-grid {
-                gap: 5px;
-            }
-            .calendar-day {
-                padding: 8px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .intro-text h1 {
-                font-size: 2.5rem;
-            }
-            .intro-text p {
-                font-size: 1.1rem;
-            }
-            .device-mockup {
-                width: 150px;
-                height: 300px;
-            }
-            .plan-card.popular::before {
-                top: 10px;
-                right: -30px;
-                padding: 3px 30px;
-            }
-            .calendar-day {
-                font-size: 0.9rem;
-            }
-            .taskflow-instruction {
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="header" id="top">
-        <div class="wrapper header-content">
-            <a href="#top" class="brand">
-                <i class="fas fa-comments"></i>
-                ConnectFlow
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://vwbreakers.co.uk/wp-content/uploads/2021/02/vwbreakers-logo.png" alt="VW Breakers UK Logo">
             </a>
-            <nav>
-                <ul class="nav-list" id="main-nav">
-                    <li><a href="#capabilities">Abilities</a></li>
-                    <li><a href="#calendar">Calendar</a></li>
-                    <li><a href="#taskflow">Task Flow</a></li>
-                    <li><a href="#plans">Plans</a></li>
-                    <li><a href="#start" class="action-btn">Begin Now</a></li>
+            
+            <button class="nav-toggle" id="navToggle">☰</button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Parts</a></li>
+                    <li><a href="#">Models</a></li>
+                    <li><a href="#">Breaking Now</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <button class="menu-toggle" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
+            
+            <div class="header-actions">
+                <div class="model-search">
+                    <select>
+                        <option value="">Select Model</option>
+                        <option value="golf">Golf</option>
+                        <option value="polo">Polo</option>
+                        <option value="passat">Passat</option>
+                    </select>
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for parts...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="contact-info-top">
+                    <span>Call us: <a href="tel:01455275077">01455 275077</a></span>
+                    <span>Mon-Fri 9am-5:30pm</span>
+                </div>
+            </div>
         </div>
     </header>
-
-    <!-- Intro Section -->
-    <section class="intro" id="home">
-        <div class="wrapper">
-            <div class="intro-text">
-                <h1>Elevate Your Messaging Experience</h1>
-                <p>Take control of your conversations with a smart tool that organizes, schedules, and optimizes your communication effortlessly.</p>
-                <div class="intro-actions">
-                    <a href="#capabilities" class="action-btn">Explore Features</a>
-                    <a href="#start" class="action-btn">Start Free</a>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Volkswagen Parts Specialists</h1>
+            <p>Quality used & new VW parts at competitive prices. Fast nationwide delivery available on all items.</p>
+            <a href="products.html" class="btn">Shop Parts</a>
+            <a href="#" class="btn btn-outline">Contact Us</a>
+        </div>
+    </section>
+    
+    <!-- Vehicle Lookup Form -->
+    <div class="container">
+        <div class="vehicle-lookup">
+            <h2 class="lookup-title">Find Parts For Your Vehicle</h2>
+            
+            <div class="lookup-tabs">
+                <div class="lookup-tab active" data-tab="reg">By Registration</div>
+                <div class="lookup-tab" data-tab="manual">Manual Search</div>
+            </div>
+            
+            <form class="lookup-form active" id="reg-form">
+                <div class="form-group">
+                    <label for="reg-number">Enter Your Registration Number</label>
+                    <input type="text" id="reg-number" placeholder="e.g. AB12 CDE" required>
+                </div>
+                <button type="submit" class="lookup-submit">Find Parts</button>
+            </form>
+            
+            <form class="lookup-form" id="manual-form">
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <select id="model" required>
+                        <option value="">Select Model</option>
+                        <option value="golf">Golf</option>
+                        <option value="polo">Polo</option>
+                        <option value="passat">Passat</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <select id="year" required>
+                        <option value="">Select Year</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="engine">Engine</label>
+                    <select id="engine" required>
+                        <option value="">Select Engine</option>
+                    </select>
+                </div>
+                <button type="submit" class="lookup-submit">Find Parts</button>
+            </form>
+            
+            <div class="lookup-results" id="results">
+                <h3 class="results-title">Available Parts For Your Vehicle</h3>
+                <div class="results-grid">
+                    <!-- Results populated by JavaScript -->
                 </div>
             </div>
         </div>
-        <div class="device-mockup">
-            <div class="device-screen">
-                <div class="chat-header">ConnectFlow Chat</div>
-                <div class="chat-messages">
-                    <div class="message-bubble inbound">Hey! I need info on your service.<div class="message-time">9:00 AM</div></div>
-                    <div class="message-bubble outbound">Hi! We offer messaging optimization. What do you need help with?<div class="message-time">9:03 AM</div></div>
-                    <div class="message-bubble inbound">Can you schedule a call for tomorrow?<div class="message-time">9:05 AM</div></div>
-                    <div class="message-bubble outbound">Sure, how about 10:00 AM? I'll set it up.<div class="message-time">9:07 AM</div></div>
+    </div>
+    
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1566936737687-8f392a237b8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="VW Breakers" class="service-image">
+                    <div class="service-content">
+                        <h3 class="service-title">VW Breaking Service</h3>
+                        <p class="service-text">We break a wide range of Volkswagen vehicles, salvaging quality parts for resale.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Parts Delivery" class="service-image">
+                    <div class="service-content">
+                        <h3 class="service-title">Fast Nationwide Delivery</h3>
+                        <p class="service-text">Next day delivery available on most items across the UK.</p>
+                        <a href="#" class="btn">Delivery Info</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1581093196276-1a1b4a73628a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Technical Support" class="service-image">
+                    <div class="service-content">
+                        <h3 class="service-title">Expert Technical Support</h3>
+                        <p class="service-text">Our team can help identify the exact parts you need.</p>
+                        <a href="#" class="btn">Contact Support</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Feature Showcase -->
-    <section class="feature-showcase" id="parallax">
-        <div class="wrapper">
-            <h2 class="section-title">Explore ConnectFlow</h2>
-            <p class="section-subtitle">Discover our powerful tools in action</p>
-            <div class="carousel">
-                <input type="radio" name="carousel-radio" id="slide1" checked>
-                <input type="radio" name="carousel-radio" id="slide2">
-                <input type="radio" name="carousel-radio" id="slide3">
-                <div class="carousel-inner">
-                    <div class="carousel-item">
-                        <div class="feature-card">
-                            <div class="feature-image">
-                                <div class="device-mockup" style="position: static; width: 250px; height: 500px;">
-                                    <div class="device-screen">
-                                        <div class="chat-header">ConnectFlow Chat</div>
-                                        <div class="chat-messages">
-                                            <div class="message-bubble inbound">Need help with setup?<div class="message-time">10:00 AM</div></div>
-                                            <div class="message-bubble outbound">Let's get you started! Follow these steps...<div class="message-time">10:02 AM</div></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Smart Messaging</h3>
-                                <p>Engage with AI-powered replies and seamless chat organization.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="feature-card">
-                            <div class="feature-image">
-                                <div class="calendar-preview">
-                                    <div class="calendar-title">April 2025</div>
-                                    <div class="calendar-grid">
-                                        <div class="calendar-header">Sun</div>
-                                        <div class="calendar-header">Mon</div>
-                                        <div class="calendar-header">Tue</div>
-                                        <div class="calendar-header">Wed</div>
-                                        <div class="calendar-header">Thu</div>
-                                        <div class="calendar-header">Fri</div>
-                                        <div class="calendar-header">Sat</div>
-                                        <div class="calendar-day event">1<span>10:00 AM</span></div>
-                                        <div class="calendar-day">2</div>
-                                        <div class="calendar-day">3</div>
-                                        <div class="calendar-day">4</div>
-                                        <div class="calendar-day">5</div>
-                                        <div class="calendar-day">6</div>
-                                        <div class="calendar-day">7</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Dynamic Calendar</h3>
-                                <p>Plan and manage your schedule with an interactive calendar.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="feature-card">
-                            <div class="feature-image">
-                                <div class="taskflow-preview">
-                                    <div class="taskflow-board">
-                                        <div class="taskflow-stage">
-                                            <div class="taskflow-stage-title">New</div>
-                                            <div class="taskflow-item">Customer Query</div>
-                                        </div>
-                                        <div class="taskflow-stage">
-                                            <div class="taskflow-stage-title">Active</div>
-                                            <div class="taskflow-item">Support Ticket</div>
-                                        </div>
-                                        <div class="taskflow-stage">
-                                            <div class="taskflow-stage-title">Done</div>
-                                            <div class="taskflow-item">Order Confirmed</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Custom Task Flow</h3>
-                                <p>Organize projects with a flexible drag-and-drop system.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <label for="slide1"></label>
-                    <label for="slide2"></label>
-                    <label for="slide3"></label>
-                </div>
+    
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular VW Parts</h2>
+                <a href="products.html" class="view-all">View All Parts →</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Capabilities Section -->
-    <section class="capabilities" id="capabilities">
-        <div class="wrapper">
-            <h2 class="section-title">Core Abilities</h2>
-            <p class="section-subtitle">Unlock a suite of tools to enhance your messaging strategy</p>
-            <div class="capabilities-grid">
-                <div class="capability-card">
-                    <div class="capability-icon"><i class="fas fa-robot"></i></div>
-                    <h3 class="capability-title">Smart Replies</h3>
-                    <p>Automate responses with AI-driven precision.</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <a href="product-detail.html">
+                        <img src="https://images.unsplash.com/photo-1554828520-a6f22284d619?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Engine" class="product-image">
+                    </a>
+                    <div class="product-info">
+                        <div class="product-category">Engine Parts</div>
+                        <h3 class="product-title">
+                            <a href="product-detail.html">2.0 TDI Engine - BKD</a>
+                        </h3>
+                        <div class="product-price">£895.00</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Enquiry</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="capability-card">
-                    <div class="capability-icon"><i class="fas fa-clock"></i></div>
-                    <h3 class="capability-title">TimeSync</h3>
-                    <p>Sync your schedule and set up meetings in chats.</p>
+                
+                <div class="product-card">
+                    <a href="product-detail.html">
+                        <img src="https://images.unsplash.com/photo-1606229365482-5b1c0c2f64a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Gearbox" class="product-image">
+                    </a>
+                    <div class="product-info">
+                        <div class="product-category">Transmission</div>
+                        <h3 class="product-title">
+                            <a href="product-detail.html">6-Speed Manual Gearbox - KXU</a>
+                        </h3>
+                        <div class="product-price">£385.00</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Enquiry</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="capability-card">
-                    <div class="capability-icon"><i class="fas fa-stream"></i></div>
-                    <h3 class="capability-title">Flow Manager</h3>
-                    <p>Track and organize tasks with a customizable workflow.</p>
+                
+                <div class="product-card">
+                    <span class="product-badge">Sale</span>
+                    <a href="product-detail.html">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Alloy Wheels" class="product-image">
+                    </a>
+                    <div class="product-info">
+                        <div class="product-category">Wheels</div>
+                        <h3 class="product-title">
+                            <a href="product-detail.html">18" Alloy Wheels - Golf GTI</a>
+                        </h3>
+                        <div class="product-price">£395.00</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Enquiry</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="capability-card">
-                    <div class="capability-icon"><i class="fas fa-chart-pie"></i></div>
-                    <h3 class="capability-title">Insight Hub</h3>
-                    <p>Gain actionable insights with real-time analytics.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Calendar Section -->
-    <section class="capabilities" id="calendar">
-        <div class="wrapper">
-            <h2 class="section-title">Dynamic Calendar</h2>
-            <p class="section-subtitle">Plan and visualize your schedule with an interactive calendar</p>
-            <div class="calendar-preview">
-                <div class="calendar-title">April 2025</div>
-                <div class="calendar-grid">
-                    <div class="calendar-header">Sun</div>
-                    <div class="calendar-header">Mon</div>
-                    <div class="calendar-header">Tue</div>
-                    <div class="calendar-header">Wed</div>
-                    <div class="calendar-header">Thu</div>
-                    <div class="calendar-header">Fri</div>
-                    <div class="calendar-header">Sat</div>
-                    <input type="checkbox" id="day-1" class="calendar-toggle">
-                    <label for="day-1" class="calendar-day event">1<span>Team Meeting</span></label>
-                    <div class="modal" id="modal-1">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal('day-1')">×</span>
-                            <h3>Event on April 1</h3>
-                            <p><strong>Time:</strong> 10:00 AM</p>
-                            <p><strong>Title:</strong> Team Meeting</p>
-                            <p><strong>Description:</strong> Weekly sync with the team.</p>
-                            <button class="action-btn" onclick="closeModal('day-1')">Close</button>
-                        </div>
-                    </div>
-                    <input type="checkbox" id="day-2" class="calendar-toggle">
-                    <label for="day-2" class="calendar-day event">2<span>Client Call</span></label>
-                    <div class="modal" id="modal-2">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal('day-2')">×</span>
-                            <h3>Event on April 2</h3>
-                            <p><strong>Time:</strong> 2:00 PM</p>
-                            <p><strong>Title:</strong> Client Call</p>
-                            <p><strong>Description:</strong> Discuss project updates.</p>
-                            <button class="action-btn" onclick="closeModal('day-2')">Close</button>
-                        </div>
-                    </div>
-                    <input type="checkbox" id="day-3" class="calendar-toggle">
-                    <label for="day-3" class="calendar-day">3</label>
-                    <div class="modal" id="modal-3">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal('day-3')">×</span>
-                            <h3>Add Event on April 3</h3>
-                            <form id="event-form-3">
-                                <label for="event-title-3">Event Title:</label>
-                                <input type="text" id="event-title-3" required>
-                                <label for="event-time-3">Time:</label>
-                                <input type="time" id="event-time-3" required>
-                                <label for="event-desc-3">Description:</label>
-                                <input type="text" id="event-desc-3">
-                                <button type="submit" class="action-btn">Save Event</button>
-                            </form>
-                            <button class="action-btn" onclick="closeModal('day-3')">Close</button>
-                        </div>
-                    </div>
-                    <input type="checkbox" id="day-4" class="calendar-toggle">
-                    <label for="day-4" class="calendar-day">4</label>
-                    <div class="modal" id="modal-4">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal('day-4')">×</span>
-                            <h3>Add Event on April 4</h3>
-                            <form id="event-form-4">
-                                <label for="event-title-4">Event Title:</label>
-                                <input type="text" id="event-title-4" required>
-                                <label for="event-time-4">Time:</label>
-                                <input type="time" id="event-time-4" required>
-                                <label for="event-desc-4">Description:</label>
-                                <input type="text" id="event-desc-4">
-                                <button type="submit" class="action-btn">Save Event</button>
-                            </form>
-                            <button class="action-btn" onclick="closeModal('day-4')">Close</button>
-                        </div>
-                    </div>
-                    <input type="checkbox" id="day-5" class="calendar-toggle">
-                    <label for="day-5" class="calendar-day">5</label>
-                    <div class="modal" id="modal-5">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal('day-5')">×</span>
-                            <h3>Add Event on April 5</h3>
-                            <form id="event-form-5">
-                                <label for="event-title-5">Event Title:</label>
-                                <input type="text" id="event-title-5" required>
-                                <label for="event-time-5">Time:</label>
-                                <input type="time" id="event-time-5" required>
-                                <label for="event-desc-5">Description:</label>
-                                <input type="text" id="event-desc-5">
-                                <button type="submit" class="action-btn">Save Event</button>
-                            </form>
-                            <button class="action-btn" onclick="closeModal('day-5')">Close</button>
-                        </div>
-                    </div>
-                    <input type="checkbox" id="day-6" class="calendar-toggle">
-                    <label for="day-6" class="calendar-day">6</label>
-                    <div class="modal" id="modal-6">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal('day-6')">×</span>
-                            <h3>Add Event on April 6</h3>
-                            <form id="event-form-6">
-                                <label for="event-title-6">Event Title:</label>
-                                <input type="text" id="event-title-6" required>
-                                <label for="event-time-6">Time:</label>
-                                <input type="time" id="event-time-6" required>
-                                <label for="event-desc-6">Description:</label>
-                                <input type="text" id="event-desc-6">
-                                <button type="submit" class="action-btn">Save Event</button>
-                            </form>
-                            <button class="action-btn" onclick="closeModal('day-6')">Close</button>
-                        </div>
-                    </div>
-                    <input type="checkbox" id="day-7" class="calendar-toggle">
-                    <label for="day-7" class="calendar-day">7</label>
-                    <div class="modal" id="modal-7">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal('day-7')">×</span>
-                            <h3>Add Event on April 7</h3>
-                            <form id="event-form-7">
-                                <label for="event-title-7">Event Title:</label>
-                                <input type="text" id="event-title-7" required>
-                                <label for="event-time-7">Time:</label>
-                                <input type="time" id="event-time-7" required>
-                                <label for="event-desc-7">Description:</label>
-                                <input type="text" id="event-desc-7">
-                                <button type="submit" class="action-btn">Save Event</button>
-                            </form>
-                            <button class="action-btn" onclick="closeModal('day-7')">Close</button>
+                
+                <div class="product-card">
+                    <a href="product-detail.html">
+                        <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Headlights" class="product-image">
+                    </a>
+                    <div class="product-info">
+                        <div class="product-category">Lighting</div>
+                        <h3 class="product-title">
+                            <a href="product-detail.html">Xenon Headlights - Passat B7</a>
+                        </h3>
+                        <div class="product-price">£175.00</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Enquiry</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Task Flow Section -->
-    <section class="capabilities" id="taskflow">
-        <div class="wrapper">
-            <h2 class="section-title">Custom Task Flow</h2>
-            <p class="section-subtitle">Manage your projects with a draggable task flow system</p>
-            <p class="taskflow-instruction">Drag and drop tasks between stages to manage your workflow seamlessly.</p>
-            <div class="taskflow-preview">
-                <div class="taskflow-board">
-                    <div class="taskflow-stage" ondragover="allowDrop(event)" ondrop="drop(event)">
-                        <div class="taskflow-stage-title">New</div>
-                        <div class="taskflow-item" draggable="true" ondragstart="drag(event)">Customer Query</div>
-                        <div class="taskflow-item" draggable="true" ondragstart="drag(event)">Feature Request</div>
-                    </div>
-                    <div class="taskflow-stage" ondragover="allowDrop(event)" ondrop="drop(event)">
-                        <div class="taskflow-stage-title">Active</div>
-                        <div class="taskflow-item" draggable="true" ondragstart="drag(event)">Support Ticket</div>
-                    </div>
-                    <div class="taskflow-stage" ondragover="allowDrop(event)" ondrop="drop(event)">
-                        <div class="taskflow-stage-title">Done</div>
-                        <div class="taskflow-item" draggable="true" ondragstart="drag(event)">Order Confirmed</div>
-                    </div>
+    
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose VW Breakers UK</h2>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-car"></i></div>
+                    <h3 class="info-title">VW Specialists</h3>
+                    <p class="info-text">20+ years experience focusing solely on Volkswagen vehicles.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3 class="info-title">Quality Guaranteed</h3>
+                    <p class="info-text">All parts come with a 30-90 day warranty.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-pound-sign"></i></div>
+                    <h3 class="info-title">Competitive Pricing</h3>
+                    <p class="info-text">Save up to 70% compared to main dealer prices.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-truck"></i></div>
+                    <h3 class="info-title">Fast Delivery</h3>
+                    <p class="info-text">Next day delivery available on most items.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Plans Section -->
-    <section class="plans" id="plans">
-        <div class="wrapper">
-            <h2 class="section-title">Flexible Plans</h2>
-            <p class="section-subtitle">Find the perfect package to suit your communication needs</p>
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <h3 class="plan-title">Basic</h3>
-                    <div class="plan-price">$25<span>/month</span></div>
-                    <ul class="plan-features">
-                        <li>1 Channel</li>
-                        <li>300 Messages/Month</li>
-                        <li>Basic Automation</li>
-                        <li>Task Flow Access</li>
-                    </ul>
-                    <a href="#start" class="action-btn">Join Now</a>
+    
+    <!-- Car Models Section -->
+    <section class="car-models">
+        <div class="container">
+            <div class="section-title">
+                <h2>VW Models We Cover</h2>
+            </div>
+            
+            <div class="models-grid">
+                <div class="model-card">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/golf.png" alt="VW Golf" class="model-image">
+                    <div class="model-name">Golf</div>
                 </div>
-                <div class="plan-card popular" style="position: relative;">
-                    <h3 class="plan-title">Pro</h3>
-                    <div class="plan-price">$69<span>/month</span></div>
-                    <ul class="plan-features">
-                        <li>5 Channels</li>
-                        <li>1,500 Messages/Month</li>
-                        <li>Advanced Automation</li>
-                        <li>Calendar & Insights</li>
-                        <li>Priority Support</li>
-                    </ul>
-                    <a href="#start" class="action-btn">Join Now</a>
+                
+                <div class="model-card">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/polo.png" alt="VW Polo" class="model-image">
+                    <div class="model-name">Polo</div>
                 </div>
-                <div class="plan-card">
-                    <h3 class="plan-title">Ultimate</h3>
-                    <div class="plan-price">$149<span>/month</span></div>
-                    <ul class="plan-features">
-                        <li>15 Channels</li>
-                        <li>Unlimited Messages</li>
-                        <li>Custom Automation</li>
-                        <li>Full Access</li>
-                        <li>Dedicated Support</li>
-                    </ul>
-                    <a href="#start" class="action-btn">Join Now</a>
+                
+                <div class="model-card">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/passat.png" alt="VW Passat" class="model-image">
+                    <div class="model-name">Passat</div>
+                </div>
+                
+                <div class="model-card">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/touran.png" alt="VW Touran" class="model-image">
+                    <div class="model-name">Touran</div>
+                </div>
+                
+                <div class="model-card">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/tiguan.png" alt="VW Tiguan" class="model-image">
+                    <div class="model-name">Tiguan</div>
+                </div>
+                
+                <div class="model-card">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/transporter.png" alt="VW T5" class="model-image">
+                    <div class="model-name">Transporter</div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Call to Action -->
-    <section class="call-to-action" id="start">
-        <div class="wrapper">
-            <h2>Ready to Optimize Your Communication?</h2>
-            <p>Join ConnectFlow today and transform how you connect with your audience.</p>
-            <a href="#" class="action-btn">Get Started</a>
-        </div>
-    </section>
-
+    
     <!-- Footer -->
     <footer>
-        <div class="wrapper">
-            <div class="footer-layout">
-                <div class="footer-section">
-                    <h4>ConnectFlow</h4>
-                    <p>Empowering seamless communication with innovative tools.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <img src="https://vwbreakers.co.uk/wp-content/uploads/2021/02/vwbreakers-logo.png" alt="VW Breakers UK" class="footer-logo">
+                    <p class="footer-text">Specialists in quality used Volkswagen parts since 2001. We offer competitive prices and fast delivery across the UK.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Abilities</h4>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#capabilities">Smart Replies</a></li>
-                        <li><a href="#capabilities">TimeSync</a></li>
-                        <li><a href="#capabilities">Flow Manager</a></li>
-                        <li><a href="#capabilities">Insight Hub</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Guides</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Parts Catalog</a></li>
+                        <li><a href="#">Breaking Now</a></li>
+                        <li><a href="#">About Us</a></li>
                         <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Customer Service</h3>
                     <ul class="footer-links">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Warranty</a></li>
+                        <li><a href="#">Payment Methods</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
                     </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <p class="contact-text">123 Garage Road, Leicester, LE1 1AA</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <p class="contact-text"><a href="tel:01455275077">01455 275077</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <p class="contact-text"><a href="mailto:info@vwbreakers.co.uk">info@vwbreakers.co.uk</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-form">
+                        <h4>Newsletter</h4>
+                        <p>Subscribe for updates and special offers</p>
+                        <input type="email" class="newsletter-input" placeholder="Your email address">
+                        <button class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
                 </div>
             </div>
-            <div class="footer-note">
-                <p>© 2025 ConnectFlow. All rights reserved.</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 VW Breakers UK. All Rights Reserved. VAT No: 123 4567 89</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("main-nav").classList.toggle("active");
-        }
-
-        function closeModal(dayId) {
-            document.getElementById(dayId).checked = false;
-        }
-
-        // Calendar form submission (demo)
-        document.querySelectorAll('[id^="event-form-"]').forEach(form => {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Event saved! (Demo only)');
-                closeModal(form.id.replace('event-form-', 'day-'));
-            });
-        });
-
-        // Kanban drag-and-drop
-        let draggedItem = null;
-
-        function drag(event) {
-            draggedItem = event.target;
-            event.target.classList.add('dragging');
-            event.dataTransfer.setData('text/plain', event.target.textContent);
-        }
-
-        function allowDrop(event) {
-            event.preventDefault();
-        }
-
-        function drop(event) {
-            event.preventDefault();
-            if (draggedItem && event.target.closest('.taskflow-stage')) {
-                const stage = event.target.closest('.taskflow-stage');
-                const newItem = document.createElement('div');
-                newItem.className = 'taskflow-item';
-                newItem.draggable = true;
-                newItem.textContent = draggedItem.textContent;
-                newItem.addEventListener('dragstart', drag);
-                stage.appendChild(newItem);
-                draggedItem.remove();
-                draggedItem = null;
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
-</html>
+                    </html>
