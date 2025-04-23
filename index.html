@@ -4,48 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VW Breakers UK - Quality Volkswagen Parts & Spares</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body style="margin: 0; font-family: 'Arial', sans-serif; background: #f5f5f5; color: #333;">
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="https://vwbreakers.co.uk/wp-content/uploads/2021/02/vwbreakers-logo.png" alt="VW Breakers UK Logo">
+    <header style="background: #003087; padding: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 100;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; flex-wrap: wrap;">
+            <a href="index.html" style="display: block;">
+                <img src="https://vwbreakers.co.uk/wp-content/uploads/2021/02/vwbreakers-logo.png" alt="VW Breakers UK Logo" style="height: 50px;">
             </a>
-            
-            <button class="nav-toggle" id="navToggle">☰</button>
-            
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Parts</a></li>
-                    <li><a href="#">Models</a></li>
-                    <li><a href="#">Breaking Now</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+            <button class="nav-toggle" id="navToggle" style="background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; display: none;">☰</button>
+            <nav id="mainNav" style="display: block;">
+                <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <li><a href="index.html" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">Home</a></li>
+                    <li><a href="products.html" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">Parts</a></li>
+                    <li><a href="#" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">Models</a></li>
+                    <li><a href="#" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">Breaking Now</a></li>
+                    <li><a href="#" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">About Us</a></li>
+                    <li><a href="#" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">Contact</a></li>
                 </ul>
             </nav>
-            
-            <div class="header-actions">
-                <div class="model-search">
-                    <select>
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <div style="position: relative; display: flex; align-items: center;">
+                    <select style="padding: 8px; border: 1px solid #ccc; border-radius: 4px 0 0 4px; font-size: 14px;">
                         <option value="">Select Model</option>
                         <option value="golf">Golf</option>
                         <option value="polo">Polo</option>
                         <option value="passat">Passat</option>
                     </select>
-                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <button type="submit" style="padding: 8px; background: #ff6200; border: none; border-radius: 0 4px 4px 0; color: #fff; cursor: pointer;"><i class="fas fa-search"></i></button>
                 </div>
-                
-                <div class="search-bar">
-                    <input type="text" placeholder="Search for parts...">
-                    <button type="submit"><i class="fas fa-search"></i></button>
+                <div style="position: relative; display: flex; align-items: center;">
+                    <input type="text" placeholder="Search for parts..." style="padding: 8px; border: 1px solid #ccc; border-radius: 4px 0 0 4px; font-size: 14px; width: 180px;">
+                    <button type="submit" style="padding: 8px; background: #ff6200; border: none; border-radius: 0 4px 4px 0; color: #fff; cursor: pointer;"><i class="fas fa-search"></i></button>
                 </div>
-                
-                <div class="contact-info-top">
-                    <span>Call us: <a href="tel:01455275077">01455 275077</a></span>
+                <div style="color: #fff; font-size: 14px; text-align: right;">
+                    <span>Call us: <a href="tel:01455275077" style="color: #ff6200; text-decoration: none;">01455 275077</a></span><br>
                     <span>Mon-Fri 9am-5:30pm</span>
                 </div>
             </div>
@@ -53,99 +47,92 @@
     </header>
     
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Volkswagen Parts Specialists</h1>
-            <p>Quality used & new VW parts at competitive prices. Fast nationwide delivery available on all items.</p>
-            <a href="products.html" class="btn">Shop Parts</a>
-            <a href="#" class="btn btn-outline">Contact Us</a>
+    <section style="background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/cover; padding: 80px 20px; text-align: center; color: #fff;">
+        <div style="max-width: 700px; margin: 0 auto; background: rgba(0,0,0,0.6); padding: 30px; border-radius: 8px;">
+            <h1 style="font-size: 32px; margin: 0 0 15px;">Volkswagen Parts Specialists</h1>
+            <p style="font-size: 18px; margin: 0 0 25px;">Quality used & new VW parts at competitive prices. Fast nationwide delivery available on all items.</p>
+            <a href="products.html" style="background: #ff6200; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-right: 10px; transition: background 0.3s;">Shop Parts</a>
+            <a href="#" style="background: none; border: 2px solid #fff; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 5px; transition: background 0.3s;">Contact Us</a>
         </div>
     </section>
     
     <!-- Vehicle Lookup Form -->
-    <div class="container">
-        <div class="vehicle-lookup">
-            <h2 class="lookup-title">Find Parts For Your Vehicle</h2>
-            
-            <div class="lookup-tabs">
-                <div class="lookup-tab active" data-tab="reg">By Registration</div>
-                <div class="lookup-tab" data-tab="manual">Manual Search</div>
+    <div style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 24px; margin: 0 0 20px; text-align: center; color: #003087;">Find Parts For Your Vehicle</h2>
+            <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+                <div class="lookup-tab active" data-tab="reg" style="padding: 10px 20px; background: #003087; color: #fff; border-radius: 5px; cursor: pointer; transition: background 0.3s;">By Registration</div>
+                <div class="lookup-tab" data-tab="manual" style="padding: 10px 20px; background: #e0e0e0; color: #333; border-radius: 5px; cursor: pointer; transition: background 0.3s;">Manual Search</div>
             </div>
-            
-            <form class="lookup-form active" id="reg-form">
-                <div class="form-group">
-                    <label for="reg-number">Enter Your Registration Number</label>
-                    <input type="text" id="reg-number" placeholder="e.g. AB12 CDE" required>
+            <form class="lookup-form active" id="reg-form" style="display: block; text-align: center;">
+                <div style="margin-bottom: 20px;">
+                    <label for="reg-number" style="display: block; font-size: 16px; margin-bottom: 8px; color: #333;">Enter Your Registration Number</label>
+                    <input type="text" id="reg-number" placeholder="e.g. AB12 CDE" required style="padding: 10px; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
                 </div>
-                <button type="submit" class="lookup-submit">Find Parts</button>
+                <button type="submit" style="background: #ff6200; color: #fff; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background 0.3s;">Find Parts</button>
             </form>
-            
-            <form class="lookup-form" id="manual-form">
-                <div class="form-group">
-                    <label for="model">Model</label>
-                    <select id="model" required>
-                        <option value="">Select Model</option>
-                        <option value="golf">Golf</option>
-                        <option value="polo">Polo</option>
-                        <option value="passat">Passat</option>
-                    </select>
+            <form class="lookup-form" id="manual-form" style="display: none;">
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <label for="model" style="display: block; font-size: 16px; margin-bottom: 8px; color: #333;">Model</label>
+                        <select id="model" required style="padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+                            <option value="">Select Model</option>
+                            <option value="golf">Golf</option>
+                            <option value="polo">Polo</option>
+                            <option value="passat">Passat</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <label for="year" style="display: block; font-size: 16px; margin-bottom: 8px; color: #333;">Year</label>
+                        <select id="year" required style="padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+                            <option value="">Select Year</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <label for="engine" style="display: block; font-size: 16px; margin-bottom: 8px; color: #333;">Engine</label>
+                        <select id="engine" required style="padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+                            <option value="">Select Engine</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="year">Year</label>
-                    <select id="year" required>
-                        <option value="">Select Year</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="engine">Engine</label>
-                    <select id="engine" required>
-                        <option value="">Select Engine</option>
-                    </select>
-                </div>
-                <button type="submit" class="lookup-submit">Find Parts</button>
+                <button type="submit" style="background: #ff6200; color: #fff; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; display: block; margin: 20px auto; transition: background 0.3s;">Find Parts</button>
             </form>
-            
-            <div class="lookup-results" id="results">
-                <h3 class="results-title">Available Parts For Your Vehicle</h3>
-                <div class="results-grid">
-                    <!-- Results populated by JavaScript -->
-                </div>
+            <div id="results" style="margin-top: 20px;">
+                <h3 style="font-size: 20px; margin: 0 0 15px; text-align: center; color: #003087;">Available Parts For Your Vehicle</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;"></div>
             </div>
         </div>
     </div>
     
     <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
+    <section style="padding: 60px 20px; background: #fff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 28px; margin: 0; color: #003087;">Our Services</h2>
             </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1566936737687-8f392a237b8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="VW Breakers" class="service-image">
-                    <div class="service-content">
-                        <h3 class="service-title">VW Breaking Service</h3>
-                        <p class="service-text">We break a wide range of Volkswagen vehicles, salvaging quality parts for resale.</p>
-                        <a href="#" class="btn">Learn More</a>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1566936737687-8f392a237b8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="VW Breakers" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px; text-align: center;">
+                        <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">VW Breaking Service</h3>
+                        <p style="font-size: 16px; margin: 0 0 20px; color: #666;">We break a wide range of Volkswagen vehicles, salvaging quality parts for resale.</p>
+                        <a href="#" style="background: #003087; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background 0.3s;">Learn More</a>
                     </div>
                 </div>
-                
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Parts Delivery" class="service-image">
-                    <div class="service-content">
-                        <h3 class="service-title">Fast Nationwide Delivery</h3>
-                        <p class="service-text">Next day delivery available on most items across the UK.</p>
-                        <a href="#" class="btn">Delivery Info</a>
+                <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Parts Delivery" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px; text-align: center;">
+                        <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">Fast Nationwide Delivery</h3>
+                        <p style="font-size: 16px; margin: 0 0 20px; color: #666;">Next day delivery available on most items across the UK.</p>
+                        <a href="#" style="background: #003087; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background 0.3s;">Delivery Info</a>
                     </div>
                 </div>
-                
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1581093196276-1a1b4a73628a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Technical Support" class="service-image">
-                    <div class="service-content">
-                        <h3 class="service-title">Expert Technical Support</h3>
-                        <p class="service-text">Our team can help identify the exact parts you need.</p>
-                        <a href="#" class="btn">Contact Support</a>
+                <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden}"></div>
+                    <img src="https://images.unsplash.com/photo-1581093196276-1a1b4a73628a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Technical Support" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px; text-align: center;">
+                        <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">Expert Technical Support</h3>
+                        <p style="font-size: 16px; margin: 0 0 20px; color: #666;">Our team can help identify the exact parts you need.</p>
+                        <a href="#" style="background: #003087; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background 0.3s;">Contact Support</a>
                     </div>
                 </div>
             </div>
@@ -153,75 +140,63 @@
     </section>
     
     <!-- Featured Products -->
-    <section class="featured-products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Popular VW Parts</h2>
-                <a href="products.html" class="view-all">View All Parts →</a>
+    <section style="padding: 60px 20px; background: #f5f5f5;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h2 style="font-size: 28px; margin: 0; color: #003087;">Popular VW Parts</h2>
+                <a href="products.html" style="color: #ff6200; text-decoration: none; font-size: 16px; transition: color 0.3s;">View All Parts →</a>
             </div>
-            
-            <div class="products-grid">
-                <div class="product-card">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative;">
                     <a href="product-detail.html">
-                        <img src="https://images.unsplash.com/photo-1554828520-a6f22284d619?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Engine" class="product-image">
+                        <img src="https://images.unsplash.com/photo-1554828520-a6f22284d619?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Engine" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
-                    <div class="product-info">
-                        <div class="product-category">Engine Parts</div>
-                        <h3 class="product-title">
-                            <a href="product-detail.html">2.0 TDI Engine - BKD</a>
-                        </h3>
-                        <div class="product-price">£895.00</div>
-                        <div class="product-actions">
-                            <button class="add-to-cart">Add to Enquiry</button>
+                    <div style="padding: 15px;">
+                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Engine Parts</div>
+                        <h3 style="font-size: 18px; margin: 0 0 10px;"><a href="product-detail.html" style="color: #333; text-decoration: none;">2.0 TDI Engine - BKD</a></h3>
+                        <div style="font-size: 16px; color: #ff6200; margin-bottom: 15px;">£895.00</div>
+                        <div style="text-align: center;">
+                            <button style="background: #ff6200; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 14px; transition: background 0.3s;">Add to Enquiry</button>
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
+                <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative;">
                     <a href="product-detail.html">
-                        <img src="https://images.unsplash.com/photo-1606229365482-5b1c0c2f64a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Gearbox" class="product-image">
+                        <img src="https://images.unsplash.com/photo-1606229365482-5b1c0c2f64a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Gearbox" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
-                    <div class="product-info">
-                        <div class="product-category">Transmission</div>
-                        <h3 class="product-title">
-                            <a href="product-detail.html">6-Speed Manual Gearbox - KXU</a>
-                        </h3>
-                        <div class="product-price">£385.00</div>
-                        <div class="product-actions">
-                            <button class="add-to-cart">Add to Enquiry</button>
+                    <div style="padding: 15px;">
+                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Transmission</div>
+                        <h3 style="font-size: 18px; margin: 0 0 10px;"><a href="product-detail.html" style="color: #333; text-decoration: none;">6-Speed Manual Gearbox - KXU</a></h3>
+                        <div style="font-size: 16px; color: #ff6200; margin-bottom: 15px;">£385.00</div>
+                        <div style="text-align: center;">
+                            <button style="background: #ff6200; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 14px; transition: background 0.3s;">Add to Enquiry</button>
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
-                    <span class="product-badge">Sale</span>
+                <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative;">
+                    <span style="position: absolute; top: 10px; left: 10px; background: #ff6200; color: #fff; padding: 5px 10px; border-radius: 3px; font-size: 12px;">Sale</span>
                     <a href="product-detail.html">
-                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Alloy Wheels" class="product-image">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Alloy Wheels" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
-                    <div class="product-info">
-                        <div class="product-category">Wheels</div>
-                        <h3 class="product-title">
-                            <a href="product-detail.html">18" Alloy Wheels - Golf GTI</a>
-                        </h3>
-                        <div class="product-price">£395.00</div>
-                        <div class="product-actions">
-                            <button class="add-to-cart">Add to Enquiry</button>
+                    <div style="padding: 15px;">
+                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Wheels</div>
+                        <h3 style="font-size: 18px; margin: 0 0 10px;"><a href="product-detail.html" style="color: #333; text-decoration: none;">18" Alloy Wheels - Golf GTI</a></h3>
+                        <div style="font-size: 16px; color: #ff6200; margin-bottom: 15px;">£395.00</div>
+                        <div style="text-align: center;">
+                            <button style="background: #ff6200; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 14px; transition: background 0.3s;">Add to Enquiry</button>
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
+                <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative;">
                     <a href="product-detail.html">
-                        <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Headlights" class="product-image">
+                        <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Headlights" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
-                    <div class="product-info">
-                        <div class="product-category">Lighting</div>
-                        <h3 class="product-title">
-                            <a href="product-detail.html">Xenon Headlights - Passat B7</a>
-                        </h3>
-                        <div class="product-price">£175.00</div>
-                        <div class="product-actions">
-                            <button class="add-to-cart">Add to Enquiry</button>
+                    <div style="padding: 15px;">
+                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Lighting</div>
+                        <h3 style="font-size: 18px; margin: 0 0 10px;"><a href="product-detail.html" style="color: #333; text-decoration: none;">Xenon Headlights - Passat B7</a></h3>
+                        <div style="font-size: 16px; color: #ff6200; margin-bottom: 15px;">£175.00</div>
+                        <div style="text-align: center;">
+                            <button style="background: #ff6200; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 14px; transition: background 0.3s;">Add to Enquiry</button>
                         </div>
                     </div>
                 </div>
@@ -230,151 +205,185 @@
     </section>
     
     <!-- Info Section -->
-    <section class="info-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose VW Breakers UK</h2>
+    <section style="padding: 60px 20px; background: #fff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 28px; margin: 0; color: #003087;">Why Choose VW Breakers UK</h2>
             </div>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon"><i class="fas fa-car"></i></div>
-                    <h3 class="info-title">VW Specialists</h3>
-                    <p class="info-text">20+ years experience focusing solely on Volkswagen vehicles.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 40px; color: #ff6200; margin-bottom: 15px;"><i class="fas fa-car"></i></div>
+                    <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">VW Specialists</h3>
+                    <p style="font-size: 16px; color: #666;">20+ years experience focusing solely on Volkswagen vehicles.</p>
                 </div>
-                
-                <div class="info-card">
-                    <div class="info-icon"><i class="fas fa-check-circle"></i></div>
-                    <h3 class="info-title">Quality Guaranteed</h3>
-                    <p class="info-text">All parts come with a 30-90 day warranty.</p>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 40px; color: #ff6200; margin-bottom: 15px;"><i class="fas fa-check-circle"></i></div>
+                    <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">Quality Guaranteed</h3>
+                    <p style="font-size: 16px; color: #666;">All parts come with a 30-90 day warranty.</p>
                 </div>
-                
-                <div class="info-card">
-                    <div class="info-icon"><i class="fas fa-pound-sign"></i></div>
-                    <h3 class="info-title">Competitive Pricing</h3>
-                    <p class="info-text">Save up to 70% compared to main dealer prices.</p>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 40px; color: #ff6200; margin-bottom: 15px;"><i class="fas fa-pound-sign"></i></div>
+                    <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">Competitive Pricing</h3>
+                    <p style="font-size: 16px; color: #666;">Save up to 70% compared to main dealer prices.</p>
                 </div>
-                
-                <div class="info-card">
-                    <div class="info-icon"><i class="fas fa-truck"></i></div>
-                    <h3 class="info-title">Fast Delivery</h3>
-                    <p class="info-text">Next day delivery available on most items.</p>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 40px; color: #ff6200; margin-bottom: 15px;"><i class="fas fa-truck"></i></div>
+                    <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">Fast Delivery</h3>
+                    <p style="font-size: 16px; color: #666;">Next day delivery available on most items.</p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Car Models Section -->
-    <section class="car-models">
-        <div class="container">
-            <div class="section-title">
-                <h2>VW Models We Cover</h2>
+    <section style="padding: 60px 20px; background: #f5f5f5;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 28px; margin: 0; color: #003087;">VW Models We Cover</h2>
             </div>
-            
-            <div class="models-grid">
-                <div class="model-card">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/golf.png" alt="VW Golf" class="model-image">
-                    <div class="model-name">Golf</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
+                <div style="text-align: center;">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/golf.png" alt="VW Golf" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
+                    <div style="font-size: 16px; color: #333;">Golf</div>
                 </div>
-                
-                <div class="model-card">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/polo.png" alt="VW Polo" class="model-image">
-                    <div class="model-name">Polo</div>
+                <div style="text-align: center;">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/polo.png" alt="VW Polo" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
+                    <div style="font-size: 16px; color: #333;">Polo</div>
                 </div>
-                
-                <div class="model-card">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/passat.png" alt="VW Passat" class="model-image">
-                    <div class="model-name">Passat</div>
+                <div style="text-align: center;">
+                    <img src="https://www.vw.com/contentровер" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
+                    <div style="font-size: 16px; color: #333;">Passat</div>
                 </div>
-                
-                <div class="model-card">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/touran.png" alt="VW Touran" class="model-image">
-                    <div class="model-name">Touran</div>
+                <div style="text-align: center;">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/touran.png" alt="VW Touran" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
+                    <div style="font-size: 16px; color: #333;">Touran</div>
                 </div>
-                
-                <div class="model-card">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/tiguan.png" alt="VW Tiguan" class="model-image">
-                    <div class="model-name">Tiguan</div>
+                <div style="text-align: center;">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/tiguan.png" alt="VW Tiguan" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
+                    <div style="font-size: 16px; color: #333;">Tiguan</div>
                 </div>
-                
-                <div class="model-card">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/transporter.png" alt="VW T5" class="model-image">
-                    <div class="model-name">Transporter</div>
+                <div style="text-align: center;">
+                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/transporter.png" alt="VW T5" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
+                    <div style="font-size: 16px; color: #333;">Transporter</div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <img src="https://vwbreakers.co.uk/wp-content/uploads/2021/02/vwbreakers-logo.png" alt="VW Breakers UK" class="footer-logo">
-                    <p class="footer-text">Specialists in quality used Volkswagen parts since 2001. We offer competitive prices and fast delivery across the UK.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+    <footer style="background: #003087; color: #fff; padding: 60px 20px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div>
+                    <img src="https://vwbreakers.co.uk/wp-content/uploads/2021/02/vwbreakers-logo.png" alt="VW Breakers UK" style="height: 50px; margin-bottom: 20px;">
+                    <p style="font-size: 14px; margin: 0 0 20px;">Specialists in quality used Volkswagen parts since 2001. We offer competitive prices and fast delivery across the UK.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #fff; font-size: 20px; transition: color 0.3s;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: #fff; font-size: 20px; transition: color 0.3s;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #fff; font-size: 20px; transition: color 0.3s;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #fff; font-size: 20px; transition: color 0.3s;"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-col">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Parts Catalog</a></li>
-                        <li><a href="#">Breaking Now</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">FAQ</a></li>
+                <div>
+                    <h3 style="font-size: 18px; margin: 0 0 15px;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="index.html" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Home</a></li>
+                        <li><a href="products.html" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Parts Catalog</a></li>
+                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Breaking Now</a></li>
+                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">About Us</a></li>
+                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Contact</a></li>
+                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">FAQ</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-col">
-                    <h3 class="footer-title">Customer Service</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Returns & Warranty</a></li>
-                        <li><a href="#">Payment Methods</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                <div>
+                    <h3 style="font-size: 18px; margin: 0 0 15px;">Customer Service</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Shipping Policy</a></li>
+                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Returns & Warranty</a></li>
+                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Payment Methods</a></li>
+                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Privacy Policy</a></li>
+                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Terms & Conditions</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-col">
-                    <h3 class="footer-title">Contact Us</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <p class="contact-text">123 Garage Road, Leicester, LE1 1AA</p>
+                <div>
+                    <h3 style="font-size: 18px; margin: 0 0 15px;">Contact Us</h3>
+                    <div style="font-size: 14px; line-height: 2;">
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <div style="margin-right: 10px;"><i class="fas fa-map-marker-alt"></i></div>
+                            <p style="margin: 0;">123 Garage Road, Leicester, LE1 1AA</p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                            <p class="contact-text"><a href="tel:01455275077">01455 275077</a></p>
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <div style="margin-right: 10px;"><i class="fas fa-phone"></i></div>
+                            <p style="margin: 0;"><a href="tel:01455275077" style="color: #ff6200; text-decoration: none;">01455 275077</a></p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                            <p class="contact-text"><a href="mailto:info@vwbreakers.co.uk">info@vwbreakers.co.uk</a></p>
+                        <div style="display: flex; align-items: center;">
+                            <div style="margin-right: 10px;"><i class="fas fa-envelope"></i></div>
+                            <p style="margin: 0;"><a href="mailto:info@vwbreakers.co.uk" style="color: #ff6200; text-decoration: none;">info@vwbreakers.co.uk</a></p>
                         </div>
                     </div>
-                    
-                    <div class="newsletter-form">
-                        <h4>Newsletter</h4>
-                        <p>Subscribe for updates and special offers</p>
-                        <input type="email" class="newsletter-input" placeholder="Your email address">
-                        <button class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    <div style="margin-top: 20px;">
+                        <h4 style="font-size: 16px; margin: 0 0 10px;">Newsletter</h4>
+                        <p style="font-size: 14px; margin: 0 0 10px;">Subscribe for updates and special offers</p>
+                        <div style="display: flex;">
+                            <input type="email" placeholder="Your email address" style="padding: 10px; border: none; border-radius: 5px 0 0 5px; font-size: 14px; flex: 1;">
+                            <button style="padding: 10px; background: #ff6200; border: none; border-radius: 0 5px 5px 0; color: #fff; cursor: pointer;"><i class="fas fa ιστοria-plane"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 VW Breakers UK. All Rights Reserved. VAT No: 123 4567 89</p>
+            <div style="text-align: center; margin-top: 40px; font-size: 14px;">
+                <p style="margin: 0;">© 2023 VW Breakers UK. All Rights Reserved. VAT No: 123 4567 89</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile navigation toggle
+        document.getElementById('navToggle').addEventListener('click', () => {
+            const nav = document.getElementById('mainNav');
+            nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'block' : 'none';
+        });
+
+        // Tab switching for vehicle lookup
+        document.querySelectorAll('.lookup-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.lookup-tab').forEach(t => {
+                    t.classList.remove('active');
+                    t.style.background = '#e0e0e0';
+                    t.style.color = '#333';
+                });
+                tab.classList.add('active');
+                tab.style.background = '#003087';
+                tab.style.color = '#fff';
+
+                document.querySelectorAll('.lookup-form').forEach(form => {
+                    form.classList.remove('active');
+                    form.style.display = 'none';
+                });
+                document.getElementById(`${tab.dataset.tab}-form`).classList.add('active');
+                document.getElementById(`${tab.dataset.tab}-form`).style.display = 'block';
+            });
+        });
+
+        // Hover effects
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseover', () => {
+                if (el.style.background) {
+                    el.style.background = '#e65c00';
+                }
+                if (el.style.color && el.style.color !== '#fff') {
+                    el.style.color = '#ff6200';
+                }
+            });
+            el.addEventListener('mouseout', () => {
+                if (el.style.background) {
+                    el.style.background = el.style.background.includes('003087') ? '#003087' : '#ff6200';
+                }
+                if (el.style.color && el.style.color !== '#fff') {
+                    el.style.color = el.style.color.includes('003087') ? '#003087' : '#333';
+                }
+            });
+        });
+    </script>
 </body>
-                    </html>
+</html>
