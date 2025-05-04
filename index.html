@@ -12,17 +12,19 @@
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
             background: #f9f3ea;
             color: #1a1a1a;
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
+            min-height: 100vh;
+            overscroll-behavior: none;
         }
 
         header {
             background: linear-gradient(135deg, #1a3c34, #2b6b5a);
             color: #f5e7c2;
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
             position: relative;
             z-index: 1;
@@ -45,7 +47,7 @@
 
         nav {
             background: rgba(255,255,255,0.97);
-            padding: 1.5rem 2rem;
+            padding: 1.5rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -75,7 +77,7 @@
 
         .hamburger {
             display: none;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #1a3c34;
             cursor: pointer;
         }
@@ -90,6 +92,7 @@
             color: #f5e7c2;
             background: url('https://images.pexels.com/photos/6621467/pexels-photo-6621467.jpeg') no-repeat center/cover fixed;
             z-index: 0;
+            max-width: 100%;
         }
 
         .hero::before {
@@ -106,7 +109,7 @@
             position: relative;
             z-index: 1;
             max-width: 800px;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
         .hero h2 {
@@ -151,7 +154,7 @@
         }
 
         .offer {
-            padding: 4rem 2rem;
+            padding: 4rem 1.5rem;
             background: linear-gradient(135deg, #fff5cc, #f5e7c2);
             text-align: center;
             max-width: 1000px;
@@ -159,6 +162,7 @@
             border-radius: 20px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
+            max-width: 100%;
         }
 
         .offer:hover {
@@ -200,11 +204,12 @@
         }
 
         .why-choose-us {
-            padding: 5rem 2rem;
+            padding: 5rem 1.5rem;
             background: #fff;
             text-align: center;
             max-width: 1200px;
             margin: 0 auto;
+            max-width: 100%;
         }
 
         .why-choose-us h2 {
@@ -246,11 +251,12 @@
         }
 
         .about {
-            padding: 5rem 2rem;
+            padding: 5rem 1.5rem;
             background: #fff;
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
+            max-width: 100%;
         }
 
         .about h2 {
@@ -271,9 +277,10 @@
         }
 
         .testimonials {
-            padding: 5rem 2rem;
+            padding: 5rem 1.5rem;
             background: #f9f3ea;
             text-align: center;
+            max-width: 100%;
         }
 
         .testimonials h2 {
@@ -326,8 +333,9 @@
         }
 
         .products {
-            padding: 5rem 2rem;
+            padding: 5rem 1.5rem;
             background: #fff;
+            max-width: 100%;
         }
 
         .products h2 {
@@ -466,9 +474,10 @@
         }
 
         .blog-teaser {
-            padding: 4rem 2rem;
+            padding: 4rem 1.5rem;
             background: #f9f3ea;
             text-align: center;
+            max-width: 100%;
         }
 
         .blog-teaser h2 {
@@ -512,9 +521,10 @@
         }
 
         .instagram-feed {
-            padding: 4rem 2rem;
+            padding: 4rem 1.5rem;
             background: #fff;
             text-align: center;
+            max-width: 100%;
         }
 
         .instagram-feed h2 {
@@ -531,6 +541,21 @@
             max-width: 1200px;
             margin: 0 auto;
             padding-bottom: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: #2b6b5a #f9f3ea;
+        }
+
+        .insta-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .insta-grid::-webkit-scrollbar-thumb {
+            background: #2b6b5a;
+            border-radius: 4px;
+        }
+
+        .insta-grid::-webkit-scrollbar-track {
+            background: #f9f3ea;
         }
 
         .insta-post {
@@ -548,10 +573,11 @@
         }
 
         .newsletter {
-            padding: 5rem 2rem;
+            padding: 5rem 1.5rem;
             background: linear-gradient(135deg, #1a3c34, #2b6b5a);
             color: #f5e7c2;
             text-align: center;
+            max-width: 100%;
         }
 
         .newsletter h2 {
@@ -691,8 +717,9 @@
 
         .contact {
             background: #f9f3ea;
-            padding: 5rem 2rem;
+            padding: 5rem 1.5rem;
             text-align: center;
+            max-width: 100%;
         }
 
         .contact h2 {
@@ -749,6 +776,7 @@
             text-align: center;
             padding: 2rem;
             font-size: 0.9rem;
+            max-width: 100%;
         }
 
         footer p {
@@ -763,11 +791,11 @@
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
 
             .hero h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .hero p {
@@ -790,6 +818,7 @@
                 box-shadow: 0 4px 15px rgba(0,0,0,0.1);
                 transform: translateY(-100%);
                 transition: transform 0.3s ease;
+                z-index: 1001;
             }
 
             .nav-links.active {
@@ -807,7 +836,7 @@
             }
 
             .offer {
-                padding: 3rem 1.5rem;
+                padding: 3rem 1rem;
                 margin: 1.5rem;
             }
 
@@ -827,6 +856,28 @@
 
             .newsletter-popup {
                 max-width: 85%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .offer h2 {
+                font-size: 1.8rem;
+            }
+
+            .offer p {
+                font-size: 1rem;
+            }
+
+            .why-choose-us h2, .about h2, .testimonials h2, .products h2, .blog-teaser h2, .instagram-feed h2, .contact h2, .newsletter h2 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -1101,6 +1152,13 @@
                 document.getElementById('newsletter-popup').classList.add('active');
             }, 5000);
 
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
             document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1111,15 +1169,11 @@
                         if (targetElement) {
                             targetElement.scrollIntoView({ behavior: 'smooth' });
                             if (window.innerWidth <= 768) {
-                                document.querySelector('.nav-links').classList.remove('active');
+                                navLinks.classList.remove('active');
                             }
                         }
                     }
                 });
-            });
-
-            document.querySelector('.hamburger').addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.toggle('active');
             });
         });
     </script>
