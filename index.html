@@ -3,385 +3,1123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VW Breakers UK - Quality Volkswagen Parts & Spares</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>ArtisanAura Soaps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9f3ea;
+            color: #1a1a1a;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a3c34, #2b6b5a);
+            color: #f5e7c2;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: rgba(255,255,255,0.97);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a3c34;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2b6b5a;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            color: #1a3c34;
+            cursor: pointer;
+        }
+
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #f5e7c2;
+            background: url('https://images.pexels.com/photos/6621467/pexels-photo-6621467.jpeg') no-repeat center/cover fixed;
+            z-index: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(26,60,52,0.8), rgba(43,107,90,0.8));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 12px rgba(0,0,0,0.5);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cta-button {
+            background: #f5e7c2;
+            color: #1a3c34;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background: #2b6b5a;
+            color: #f5e7c2;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .offer {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #fff5cc, #f5e7c2);
+            text-align: center;
+            max-width: 1000px;
+            margin: 2rem auto;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .offer:hover {
+            transform: scale(1.02);
+        }
+
+        .offer h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #1a3c34;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+
+        .offer p {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .offer .cta-button {
+            background: #1a3c34;
+            color: #f5e7c2;
+            padding: 1.2rem 4rem;
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .offer .cta-button:hover {
+            background: #2b6b5a;
+            color: #f5e7c2;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .why-choose-us {
+            padding: 5rem 2rem;
+            background: #fff;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-choose-us h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1a3c34;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #f9f3ea;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1a3c34;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .about {
+            padding: 5rem 2rem;
+            background: #fff;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1a3c34;
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4a4a4a;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #f9f3ea;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1a3c34;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 0.8rem;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #4a4a4a;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: #1a3c34;
+            font-size: 1rem;
+        }
+
+        .products {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .products h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1a3c34;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #f9f3ea;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #1a3c34;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            color: #4a4a4a;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .order-button {
+            background: #1a3c34;
+            color: #f5e7c2;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+
+        .order-button:hover {
+            background: #2b6b5a;
+        }
+
+        .order-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .order-modal.active {
+            display: block;
+        }
+
+        .order-modal h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1a3c34;
+            margin-bottom: 1rem;
+        }
+
+        .order-modal select, .order-modal input {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .order-modal button {
+            background: #1a3c34;
+            color: #f5e7c2;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .order-modal button:hover {
+            background: #2b6b5a;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #4a4a4a;
+        }
+
+        .blog-teaser {
+            padding: 4rem 2rem;
+            background: #f9f3ea;
+            text-align: center;
+        }
+
+        .blog-teaser h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1a3c34;
+            margin-bottom: 2rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .blog-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #1a3c34;
+            padding: 1rem;
+        }
+
+        .instagram-feed {
+            padding: 4rem 2rem;
+            background: #fff;
+            text-align: center;
+        }
+
+        .instagram-feed h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1a3c34;
+            margin-bottom: 2rem;
+        }
+
+        .insta-grid {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 1rem;
+        }
+
+        .insta-post {
+            flex: 0 0 220px;
+            background: #f9f3ea;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .insta-post img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .newsletter {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #1a3c34, #2b6b5a);
+            color: #f5e7c2;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            padding: 0.9rem;
+            border: none;
+            border-radius: 8px;
+            flex: 1;
+            font-size: 1rem;
+            background: #fff;
+            color: #1a1a1a;
+            transition: border 0.3s ease;
+        }
+
+        .newsletter-form input:valid {
+            border: 2px solid #2b6b5a;
+        }
+
+        .newsletter-form input:invalid:focus {
+            border: 2px solid #e63946;
+        }
+
+        .newsletter-form button {
+            background: #f5e7c2;
+            color: #1a3c34;
+            border: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #fff;
+        }
+
+        .newsletter-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-align: center;
+            max-width: 350px;
+            width: 90%;
+        }
+
+        .newsletter-popup.active {
+            display: block;
+        }
+
+        .newsletter-popup h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #1a3c34;
+            margin-bottom: 0.8rem;
+        }
+
+        .newsletter-popup p {
+            font-size: 0.9rem;
+            color: #4a4a4a;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-popup form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .newsletter-popup input {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            flex: 1;
+            font-size: 0.95rem;
+            transition: border 0.3s ease;
+        }
+
+        .newsletter-popup input:valid {
+            border: 2px solid #2b6b5a;
+        }
+
+        .newsletter-popup input:invalid:focus {
+            border: 2px solid #e63946;
+        }
+
+        .newsletter-popup button {
+            background: #1a3c34;
+            color: #f5e7c2;
+            border: none;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-popup button:hover {
+            background: #2b6b5a;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #4a4a4a;
+        }
+
+        .contact {
+            background: #f9f3ea;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #1a3c34;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            max-width: 500px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info a {
+            color: #1a3c34;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            font-size: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        }
+
+        footer {
+            background: #1a3c34;
+            color: #f5e7c2;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #f5e7c2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                padding: 1.5rem;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-links.active {
+                display: flex;
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                margin: 0.5rem 0;
+            }
+
+            .product-card img {
+                height: 200px;
+            }
+
+            .offer {
+                padding: 3rem 1.5rem;
+                margin: 1.5rem;
+            }
+
+            .offer h2 {
+                font-size: 2.2rem;
+            }
+
+            .offer .cta-button {
+                padding: 1rem 3rem;
+            }
+
+            .whatsapp-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+            }
+
+            .newsletter-popup {
+                max-width: 85%;
+            }
+        }
+    </style>
 </head>
-<body style="margin: 0; font-family: 'Arial', sans-serif; background: #f5f5f5; color: #333;">
-    <!-- Header -->
-    <header style="background: #003087; padding: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 100;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; flex-wrap: wrap;">
-            <a href="index.html" style="display: block;">
-                <img src="https://vwbreakers.co.uk/wp-content/uploads/2021/02/vwbreakers-logo.png" alt="VW Breakers UK Logo" style="height: 50px;">
-            </a>
-            <button class="nav-toggle" id="navToggle" style="background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; display: none;">☰</button>
-            <nav id="mainNav" style="display: block;">
-                <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 15px; flex-wrap: wrap;">
-                    <li><a href="index.html" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">Home</a></li>
-                    <li><a href="products.html" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">Parts</a></li>
-                    <li><a href="#" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">Models</a></li>
-                    <li><a href="#" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">Breaking Now</a></li>
-                    <li><a href="#" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">About Us</a></li>
-                    <li><a href="#" style="color: #fff; text-decoration: none; font-size: 16px; padding: 10px; transition: background 0.3s;">Contact</a></li>
-                </ul>
-            </nav>
-            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                <div style="position: relative; display: flex; align-items: center;">
-                    <select style="padding: 8px; border: 1px solid #ccc; border-radius: 4px 0 0 4px; font-size: 14px;">
-                        <option value="">Select Model</option>
-                        <option value="golf">Golf</option>
-                        <option value="polo">Polo</option>
-                        <option value="passat">Passat</option>
-                    </select>
-                    <button type="submit" style="padding: 8px; background: #ff6200; border: none; border-radius: 0 4px 4px 0; color: #fff; cursor: pointer;"><i class="fas fa-search"></i></button>
-                </div>
-                <div style="position: relative; display: flex; align-items: center;">
-                    <input type="text" placeholder="Search for parts..." style="padding: 8px; border: 1px solid #ccc; border-radius: 4px 0 0 4px; font-size: 14px; width: 180px;">
-                    <button type="submit" style="padding: 8px; background: #ff6200; border: none; border-radius: 0 4px 4px 0; color: #fff; cursor: pointer;"><i class="fas fa-search"></i></button>
-                </div>
-                <div style="color: #fff; font-size: 14px; text-align: right;">
-                    <span>Call us: <a href="tel:01455275077" style="color: #ff6200; text-decoration: none;">01455 275077</a></span><br>
-                    <span>Mon-Fri 9am-5:30pm</span>
-                </div>
-            </div>
-        </div>
+<body>
+    <header>
+        <h1>ArtisanAura Soaps</h1>
+        <p>Handcrafted Bliss for Your Skin</p>
     </header>
-    
-    <!-- Hero Section -->
-    <section style="background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/cover; padding: 80px 20px; text-align: center; color: #fff;">
-        <div style="max-width: 700px; margin: 0 auto; background: rgba(0,0,0,0.6); padding: 30px; border-radius: 8px;">
-            <h1 style="font-size: 32px; margin: 0 0 15px;">Volkswagen Parts Specialists</h1>
-            <p style="font-size: 18px; margin: 0 0 25px;">Quality used & new VW parts at competitive prices. Fast nationwide delivery available on all items.</p>
-            <a href="products.html" style="background: #ff6200; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-right: 10px; transition: background 0.3s;">Shop Parts</a>
-            <a href="#" style="background: none; border: 2px solid #fff; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 5px; transition: background 0.3s;">Contact Us</a>
+
+    <nav>
+        <div class="hamburger">☰</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#offer">Offer</a>
+            <a href="#about">About</a>
+            <a href="#products">Shop</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Craft Your Glow Naturally</h2>
+            <p>Experience the luxury of ArtisanAura’s handcrafted soaps, made with organic ingredients to pamper your skin.</p>
+            <a href="#products" class="cta-button">Shop Now</a>
         </div>
     </section>
-    
-    <!-- Vehicle Lookup Form -->
-    <div style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
-        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-            <h2 style="font-size: 24px; margin: 0 0 20px; text-align: center; color: #003087;">Find Parts For Your Vehicle</h2>
-            <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
-                <div class="lookup-tab active" data-tab="reg" style="padding: 10px 20px; background: #003087; color: #fff; border-radius: 5px; cursor: pointer; transition: background 0.3s;">By Registration</div>
-                <div class="lookup-tab" data-tab="manual" style="padding: 10px 20px; background: #e0e0e0; color: #333; border-radius: 5px; cursor: pointer; transition: background 0.3s;">Manual Search</div>
+
+    <section class="offer" id="offer">
+        <h2>Exclusive Launch Offer!</h2>
+        <p>Get 25% off your first order with code <strong>AURA25</strong> and receive a free mini soap! Don’t miss this indulgent deal.</p>
+        <a href="#products" class="cta-button">Shop Now & Save</a>
+    </section>
+
+    <section class="why-choose-us">
+        <h2>Why Choose ArtisanAura?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Organic Ingredients</h3>
+                <p>Crafted with natural oils and herbs for a gentle, nourishing cleanse.</p>
             </div>
-            <form class="lookup-form active" id="reg-form" style="display: block; text-align: center;">
-                <div style="margin-bottom: 20px;">
-                    <label for="reg-number" style="display: block; font-size: 16px; margin-bottom: 8px; color: #333;">Enter Your Registration Number</label>
-                    <input type="text" id="reg-number" placeholder="e.g. AB12 CDE" required style="padding: 10px; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
-                </div>
-                <button type="submit" style="background: #ff6200; color: #fff; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background 0.3s;">Find Parts</button>
-            </form>
-            <form class="lookup-form" id="manual-form" style="display: none;">
-                <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-                    <div style="flex: 1; min-width: 200px;">
-                        <label for="model" style="display: block; font-size: 16px; margin-bottom: 8px; color: #333;">Model</label>
-                        <select id="model" required style="padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
-                            <option value="">Select Model</option>
-                            <option value="golf">Golf</option>
-                            <option value="polo">Polo</option>
-                            <option value="passat">Passat</option>
-                        </select>
-                    </div>
-                    <div style="flex: 1; min-width: 200px;">
-                        <label for="year" style="display: block; font-size: 16px; margin-bottom: 8px; color: #333;">Year</label>
-                        <select id="year" required style="padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
-                            <option value="">Select Year</option>
-                        </select>
-                    </div>
-                    <div style="flex: 1; min-width: 200px;">
-                        <label for="engine" style="display: block; font-size: 16px; margin-bottom: 8px; color: #333;">Engine</label>
-                        <select id="engine" required style="padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
-                            <option value="">Select Engine</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" style="background: #ff6200; color: #fff; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; display: block; margin: 20px auto; transition: background 0.3s;">Find Parts</button>
-            </form>
-            <div id="results" style="margin-top: 20px;">
-                <h3 style="font-size: 20px; margin: 0 0 15px; text-align: center; color: #003087;">Available Parts For Your Vehicle</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;"></div>
+            <div class="feature-card">
+                <h3>Eco-Friendly</h3>
+                <p>Sustainable packaging and ethical sourcing to protect our planet.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Handmade Quality</h3>
+                <p>Small-batch production ensures every bar is made with care.</p>
             </div>
         </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>Our Artisanal Journey</h2>
+        <p>ArtisanAura Soaps is where nature meets craftsmanship. Each bar is handcrafted with organic oils and herbs, blending tradition with eco-conscious care. Our small-batch process ensures every soap is a luxurious treat for your skin.</p>
+        <p>We’re passionate about sustainability and community, using eco-friendly packaging and supporting local farmers. Discover the ArtisanAura difference today.</p>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2>Customer Love</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Customer 1">
+                <p>“Rose Petal Glow is my daily indulgence! So soft and fragrant.”</p>
+                <h4>Emma S.</h4>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg" alt="Customer 2">
+                <p>“The Citrus Burst soap is so refreshing! Love the natural vibe.”</p>
+                <h4>Liam T.</h4>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg" alt="Customer 3">
+                <p>“Oatmeal Comfort is perfect for my sensitive skin. Amazing quality!”</p>
+                <h4>Olivia M.</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Our Handcrafted Soaps</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/6621467/pexels-photo-6621467.jpeg" alt="Rose Petal Glow Soap">
+                <div class="product-info">
+                    <h3>Rose Petal Glow Soap</h3>
+                    <p>$14.99 - Organic rose petals and geranium oil for a floral, radiant cleanse.</p>
+                    <a class="order-button" onclick="showOrderModal(1)">Order Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/6621470/pexels-photo-6621470.jpeg" alt="Citrus Burst Soap">
+                <div class="product-info">
+                    <h3>Citrus Burst Soap</h3>
+                    <p>$12.99 - Zesty organic lemon and grapefruit oils for an energizing shower.</p>
+                    <a class="order-button" onclick="showOrderModal(2)">Order Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/6621471/pexels-photo-6621471.jpeg" alt="Oatmeal Comfort Soap">
+                <div class="product-info">
+                    <h3>Oatmeal Comfort Soap</h3>
+                    <p>$13.99 - Organic oats and honey for gentle exfoliation and hydration.</p>
+                    <a class="order-button" onclick="showOrderModal(3)">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="order-modal" id="order-modal-1">
+        <span class="close-modal" onclick="closeOrderModal(1)">×</span>
+        <h3>Rose Petal Glow Soap</h3>
+        <select id="scent-1" required>
+            <option value="Rose">Rose</option>
+            <option value="Rose-Lavender">Rose-Lavender</option>
+        </select>
+        <input type="number" id="quantity-1" min="1" value="1" placeholder="Quantity" required>
+        <button onclick="placeOrder(1, 'Rose Petal Glow Soap', 14.99)">Place Order</button>
     </div>
-    
-    <!-- Services Section -->
-    <section style="padding: 60px 20px; background: #fff;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-size: 28px; margin: 0; color: #003087;">Our Services</h2>
+    <div class="order-modal" id="order-modal-2">
+        <span class="close-modal" onclick="closeOrderModal(2)">×</span>
+        <h3>Citrus Burst Soap</h3>
+        <select id="scent-2" required>
+            <option value="Lemon">Lemon</option>
+            <option value="Grapefruit">Grapefruit</option>
+        </select>
+        <input type="number" id="quantity-2" min="1" value="1" placeholder="Quantity" required>
+        <button onclick="placeOrder(2, 'Citrus Burst Soap', 12.99)">Place Order</button>
+    </div>
+    <div class="order-modal" id="order-modal-3">
+        <span class="close-modal" onclick="closeOrderModal(3)">×</span>
+        <h3>Oatmeal Comfort Soap</h3>
+        <select id="scent-3" required>
+            <option value="Honey">Honey</option>
+            <option value="Honey-Vanilla">Honey-Vanilla</option>
+        </select>
+        <input type="number" id="quantity-3" min="1" value="1" placeholder="Quantity" required>
+        <button onclick="placeOrder(3, 'Oatmeal Comfort Soap', 13.99)">Place Order</button>
+    </div>
+
+    <section class="blog-teaser">
+        <h2>Soap Stories</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/6621467/pexels-photo-6621467.jpeg" alt="Soap Making">
+                <h3>Art of Soap Crafting</h3>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1566936737687-8f392a237b8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="VW Breakers" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: center;">
-                        <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">VW Breaking Service</h3>
-                        <p style="font-size: 16px; margin: 0 0 20px; color: #666;">We break a wide range of Volkswagen vehicles, salvaging quality parts for resale.</p>
-                        <a href="#" style="background: #003087; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background 0.3s;">Learn More</a>
-                    </div>
-                </div>
-                <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Parts Delivery" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: center;">
-                        <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">Fast Nationwide Delivery</h3>
-                        <p style="font-size: 16px; margin: 0 0 20px; color: #666;">Next day delivery available on most items across the UK.</p>
-                        <a href="#" style="background: #003087; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background 0.3s;">Delivery Info</a>
-                    </div>
-                </div>
-                <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden}"></div>
-                    <img src="https://images.unsplash.com/photo-1581093196276-1a1b4a73628a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Technical Support" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: center;">
-                        <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">Expert Technical Support</h3>
-                        <p style="font-size: 16px; margin: 0 0 20px; color: #666;">Our team can help identify the exact parts you need.</p>
-                        <a href="#" style="background: #003087; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background 0.3s;">Contact Support</a>
-                    </div>
-                </div>
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/6621470/pexels-photo-6621470.jpeg" alt="Ingredients">
+                <h3>Natural Ingredients</h3>
             </div>
-        </div>
-    </section>
-    
-    <!-- Featured Products -->
-    <section style="padding: 60px 20px; background: #f5f5f5;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-                <h2 style="font-size: 28px; margin: 0; color: #003087;">Popular VW Parts</h2>
-                <a href="products.html" style="color: #ff6200; text-decoration: none; font-size: 16px; transition: color 0.3s;">View All Parts →</a>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative;">
-                    <a href="product-detail.html">
-                        <img src="https://images.unsplash.com/photo-1554828520-a6f22284d619?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Engine" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
-                    <div style="padding: 15px;">
-                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Engine Parts</div>
-                        <h3 style="font-size: 18px; margin: 0 0 10px;"><a href="product-detail.html" style="color: #333; text-decoration: none;">2.0 TDI Engine - BKD</a></h3>
-                        <div style="font-size: 16px; color: #ff6200; margin-bottom: 15px;">£895.00</div>
-                        <div style="text-align: center;">
-                            <button style="background: #ff6200; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 14px; transition: background 0.3s;">Add to Enquiry</button>
-                        </div>
-                    </div>
-                </div>
-                <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative;">
-                    <a href="product-detail.html">
-                        <img src="https://images.unsplash.com/photo-1606229365482-5b1c0c2f64a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Gearbox" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
-                    <div style="padding: 15px;">
-                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Transmission</div>
-                        <h3 style="font-size: 18px; margin: 0 0 10px;"><a href="product-detail.html" style="color: #333; text-decoration: none;">6-Speed Manual Gearbox - KXU</a></h3>
-                        <div style="font-size: 16px; color: #ff6200; margin-bottom: 15px;">£385.00</div>
-                        <div style="text-align: center;">
-                            <button style="background: #ff6200; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 14px; transition: background 0.3s;">Add to Enquiry</button>
-                        </div>
-                    </div>
-                </div>
-                <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative;">
-                    <span style="position: absolute; top: 10px; left: 10px; background: #ff6200; color: #fff; padding: 5px 10px; border-radius: 3px; font-size: 12px;">Sale</span>
-                    <a href="product-detail.html">
-                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Alloy Wheels" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
-                    <div style="padding: 15px;">
-                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Wheels</div>
-                        <h3 style="font-size: 18px; margin: 0 0 10px;"><a href="product-detail.html" style="color: #333; text-decoration: none;">18" Alloy Wheels - Golf GTI</a></h3>
-                        <div style="font-size: 16px; color: #ff6200; margin-bottom: 15px;">£395.00</div>
-                        <div style="text-align: center;">
-                            <button style="background: #ff6200; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 14px; transition: background 0.3s;">Add to Enquiry</button>
-                        </div>
-                    </div>
-                </div>
-                <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative;">
-                    <a href="product-detail.html">
-                        <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VW Headlights" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
-                    <div style="padding: 15px;">
-                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Lighting</div>
-                        <h3 style="font-size: 18px; margin: 0 0 10px;"><a href="product-detail.html" style="color: #333; text-decoration: none;">Xenon Headlights - Passat B7</a></h3>
-                        <div style="font-size: 16px; color: #ff6200; margin-bottom: 15px;">£175.00</div>
-                        <div style="text-align: center;">
-                            <button style="background: #ff6200; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 14px; transition: background 0.3s;">Add to Enquiry</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/6621471/pexels-photo-6621471.jpeg" alt="Sustainability">
+                <h3>Eco-Friendly Soaps</h3>
             </div>
         </div>
     </section>
-    
-    <!-- Info Section -->
-    <section style="padding: 60px 20px; background: #fff;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-size: 28px; margin: 0; color: #003087;">Why Choose VW Breakers UK</h2>
+
+    <section class="instagram-feed">
+        <h2>Follow @artisanaurasoaps</h2>
+        <div class="insta-grid">
+            <div class="insta-post">
+                <img src="https://images.pexels.com/photos/6621467/pexels-photo-6621467.jpeg" alt="Insta Post 1">
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 40px; color: #ff6200; margin-bottom: 15px;"><i class="fas fa-car"></i></div>
-                    <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">VW Specialists</h3>
-                    <p style="font-size: 16px; color: #666;">20+ years experience focusing solely on Volkswagen vehicles.</p>
-                </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 40px; color: #ff6200; margin-bottom: 15px;"><i class="fas fa-check-circle"></i></div>
-                    <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">Quality Guaranteed</h3>
-                    <p style="font-size: 16px; color: #666;">All parts come with a 30-90 day warranty.</p>
-                </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 40px; color: #ff6200; margin-bottom: 15px;"><i class="fas fa-pound-sign"></i></div>
-                    <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">Competitive Pricing</h3>
-                    <p style="font-size: 16px; color: #666;">Save up to 70% compared to main dealer prices.</p>
-                </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 40px; color: #ff6200; margin-bottom: 15px;"><i class="fas fa-truck"></i></div>
-                    <h3 style="font-size: 20px; margin: 0 0 10px; color: #333;">Fast Delivery</h3>
-                    <p style="font-size: 16px; color: #666;">Next day delivery available on most items.</p>
-                </div>
+            <div class="insta-post">
+                <img src="https://images.pexels.com/photos/6621470/pexels-photo-6621470.jpeg" alt="Insta Post 2">
+            </div>
+            <div class="insta-post">
+                <img src="https://images.pexels.com/photos/6621471/pexels-photo-6621471.jpeg" alt="Insta Post 3">
             </div>
         </div>
     </section>
-    
-    <!-- Car Models Section -->
-    <section style="padding: 60px 20px; background: #f5f5f5;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-size: 28px; margin: 0; color: #003087;">VW Models We Cover</h2>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
-                <div style="text-align: center;">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/golf.png" alt="VW Golf" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
-                    <div style="font-size: 16px; color: #333;">Golf</div>
-                </div>
-                <div style="text-align: center;">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/polo.png" alt="VW Polo" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
-                    <div style="font-size: 16px; color: #333;">Polo</div>
-                </div>
-                <div style="text-align: center;">
-                    <img src="https://www.vw.com/contentровер" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
-                    <div style="font-size: 16px; color: #333;">Passat</div>
-                </div>
-                <div style="text-align: center;">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/touran.png" alt="VW Touran" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
-                    <div style="font-size: 16px; color: #333;">Touran</div>
-                </div>
-                <div style="text-align: center;">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/tiguan.png" alt="VW Tiguan" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
-                    <div style="font-size: 16px; color: #333;">Tiguan</div>
-                </div>
-                <div style="text-align: center;">
-                    <img src="https://www.vw.com/content/dam/vwcom/brand-logos/transporter.png" alt="VW T5" style="width: 100%; max-height: 100px; object-fit: contain; margin-bottom: 10px;">
-                    <div style="font-size: 16px; color: #333;">Transporter</div>
-                </div>
-            </div>
+
+    <section class="newsletter">
+        <h2>Join Our Community</h2>
+        <p>Subscribe for exclusive offers and new scent reveals!</p>
+        <div class="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="Your email" required>
+            <button onclick="subscribeNewsletter()">Subscribe</button>
         </div>
     </section>
-    
-    <!-- Footer -->
-    <footer style="background: #003087; color: #fff; padding: 60px 20px;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                <div>
-                    <img src="https://vwbreakers.co.uk/wp-content/uploads/2021/02/vwbreakers-logo.png" alt="VW Breakers UK" style="height: 50px; margin-bottom: 20px;">
-                    <p style="font-size: 14px; margin: 0 0 20px;">Specialists in quality used Volkswagen parts since 2001. We offer competitive prices and fast delivery across the UK.</p>
-                    <div style="display: flex; gap: 15px;">
-                        <a href="#" style="color: #fff; font-size: 20px; transition: color 0.3s;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="color: #fff; font-size: 20px; transition: color 0.3s;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: #fff; font-size: 20px; transition: color 0.3s;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="color: #fff; font-size: 20px; transition: color 0.3s;"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 style="font-size: 18px; margin: 0 0 15px;">Quick Links</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li><a href="index.html" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Home</a></li>
-                        <li><a href="products.html" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Parts Catalog</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Breaking Now</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">About Us</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Contact</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 style="font-size: 18px; margin: 0 0 15px;">Customer Service</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Shipping Policy</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Returns & Warranty</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Payment Methods</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Privacy Policy</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none; font-size: 14px; line-height: 2; transition: color 0.3s;">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 style="font-size: 18px; margin: 0 0 15px;">Contact Us</h3>
-                    <div style="font-size: 14px; line-height: 2;">
-                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <div style="margin-right: 10px;"><i class="fas fa-map-marker-alt"></i></div>
-                            <p style="margin: 0;">123 Garage Road, Leicester, LE1 1AA</p>
-                        </div>
-                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <div style="margin-right: 10px;"><i class="fas fa-phone"></i></div>
-                            <p style="margin: 0;"><a href="tel:01455275077" style="color: #ff6200; text-decoration: none;">01455 275077</a></p>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <div style="margin-right: 10px;"><i class="fas fa-envelope"></i></div>
-                            <p style="margin: 0;"><a href="mailto:info@vwbreakers.co.uk" style="color: #ff6200; text-decoration: none;">info@vwbreakers.co.uk</a></p>
-                        </div>
-                    </div>
-                    <div style="margin-top: 20px;">
-                        <h4 style="font-size: 16px; margin: 0 0 10px;">Newsletter</h4>
-                        <p style="font-size: 14px; margin: 0 0 10px;">Subscribe for updates and special offers</p>
-                        <div style="display: flex;">
-                            <input type="email" placeholder="Your email address" style="padding: 10px; border: none; border-radius: 5px 0 0 5px; font-size: 14px; flex: 1;">
-                            <button style="padding: 10px; background: #ff6200; border: none; border-radius: 0 5px 5px 0; color: #fff; cursor: pointer;"><i class="fas fa ιστοria-plane"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px; font-size: 14px;">
-                <p style="margin: 0;">© 2023 VW Breakers UK. All Rights Reserved. VAT No: 123 4567 89</p>
-            </div>
+
+    <div class="newsletter-popup" id="newsletter-popup">
+        <span class="close-popup" onclick="closePopup()">×</span>
+        <h3>Welcome Offer!</h3>
+        <p>Sign up and get 10% off your first order!</p>
+        <form id="popup-form">
+            <input type="email" id="popup-email" placeholder="Your email" required>
+            <button type="button" onclick="subscribePopup()">Claim Discount</button>
+        </form>
+    </div>
+
+    <section class="contact" id="contact">
+        <h2>Connect With Us</h2>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:hello@artisanaurasoaps.com">hello@artisanaurasoaps.com</a></p>
+            <p>Phone: +1 (555) 789-1234</p>
+            <p>Location: 789 Artisan Way, Craftsville, USA</p>
+            <p>Instagram: <a href="https://instagram.com/artisanaurasoaps" target="_blank">@artisanaurasoaps</a></p>
         </div>
+    </section>
+
+    <a href="https://wa.me/15557891234?text=Hello! I have a query about your ArtisanAura Soaps." class="whatsapp-button" target="_blank">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="14" fill="#fff" fill-opacity="0.2"/>
+            <path d="M16 2.667c-7.364 0-13.333 5.97-13.333 13.333 0 2.327.598 4.606 1.733 6.627l-1.84 6.72 6.88-1.804c1.896 1.036 4.026 1.582 6.18 1.582 7.364 0 13.333-5.97 13.333-13.333 0-3.563-1.394-6.923-3.913-9.442-2.519-2.519-5.879-3.913-9.442-3.913zm0 24c-1.896 0-3.735-.541-5.351-1.558l-.383-.224-3.98 1.044 1.062-3.88-.25-.396c-1.122-1.779-1.727-3.851-1.727-6.026 0-6.302 5.12-11.422 11.422-11.422 3.052 0 5.918 1.19 8.071 3.344 2.153 2.153 3.344 5.019 3.344 8.071 0 6.302-5.12 11.422-11.422 11.422zm6.107-6.626c-.27-.136-1.598-.789-1.846-.879-.248-.09-.428-.135-.61.136-.18.27-.698.879-.856 1.058-.157.181-.316.203-.586.068-.27-.136-1.141-.42-2.173-1.341-.803-.717-1.346-1.602-1.503-1.873-.157-.27-.016-.417.118-.552.122-.121.27-.316.406-.474.135-.158.18-.272.27-.452.09-.181.045-.338-.023-.474-.068-.136-.61-.589-.834-.895-.224-.303-.447-.315-.61-.316-.157 0-.498 0-.761.122-.27.136-1.598.789-1.598 1.922 0 1.134.903 2.226 1.028 2.406.126.181 1.783 2.73 4.325 3.828.811.362 1.442.544 1.938.635.586.09 1.123.045 1.541-.09.406-.136 1.253-.587 1.434-1.149.18-.563.09-1.044-.023-1.178-.113-.136-.428-.203-.698-.337z" fill="#fff"/>
+        </svg>
+    </a>
+
+    <footer>
+        <p>ArtisanAura Soaps © 2025. Handcrafted with Love.</p>
+        <p><a href="#home">Back to Top</a></p>
     </footer>
 
     <script>
-        // Mobile navigation toggle
-        document.getElementById('navToggle').addEventListener('click', () => {
-            const nav = document.getElementById('mainNav');
-            nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'block' : 'none';
-        });
+        function placeOrder(productId, productName, price) {
+            const scent = document.getElementById(`scent-${productId}`).value;
+            const quantity = document.getElementById(`quantity-${productId}`).value;
 
-        // Tab switching for vehicle lookup
-        document.querySelectorAll('.lookup-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.lookup-tab').forEach(t => {
-                    t.classList.remove('active');
-                    t.style.background = '#e0e0e0';
-                    t.style.color = '#333';
+            if (!scent || !quantity || quantity < 1) {
+                alert('Please select a scent and enter a valid quantity.');
+                return;
+            }
+
+            const total = (price * quantity).toFixed(2);
+            const message = `Order: ${productName}\nScent: ${scent}\nQuantity: ${quantity}\nTotal: $${total}`;
+            
+            const whatsappUrl = `https://wa.me/15557891234?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            alert(`Order placed!\n${message}`);
+            closeOrderModal(productId);
+        }
+
+        function showOrderModal(productId) {
+            document.getElementById(`order-modal-${productId}`).classList.add('active');
+        }
+
+        function closeOrderModal(productId) {
+            document.getElementById(`order-modal-${productId}`).classList.remove('active');
+        }
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
+                alert(`Thank you, ${email}! You're now part of our community.`);
+                document.getElementById('newsletter-email').value = '';
+            } else {
+                alert('Please enter a valid email.');
+            }
+        }
+
+        function subscribePopup() {
+            const email = document.getElementById('popup-email').value;
+            if (email) {
+                alert(`Thanks, ${email}! Use code WELCOME10 for 10% off.`);
+                document.getElementById('popup-email').value = '';
+                document.getElementById('newsletter-popup').classList.remove('active');
+            } else {
+                alert('Please enter a valid email.');
+            }
+        }
+
+        function closePopup() {
+            document.getElementById('newsletter-popup').classList.remove('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('newsletter-popup').classList.add('active');
+            }, 5000);
+
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                            if (window.innerWidth <= 768) {
+                                document.querySelector('.nav-links').classList.remove('active');
+                            }
+                        }
+                    }
                 });
-                tab.classList.add('active');
-                tab.style.background = '#003087';
-                tab.style.color = '#fff';
-
-                document.querySelectorAll('.lookup-form').forEach(form => {
-                    form.classList.remove('active');
-                    form.style.display = 'none';
-                });
-                document.getElementById(`${tab.dataset.tab}-form`).classList.add('active');
-                document.getElementById(`${tab.dataset.tab}-form`).style.display = 'block';
             });
-        });
 
-        // Hover effects
-        document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseover', () => {
-                if (el.style.background) {
-                    el.style.background = '#e65c00';
-                }
-                if (el.style.color && el.style.color !== '#fff') {
-                    el.style.color = '#ff6200';
-                }
-            });
-            el.addEventListener('mouseout', () => {
-                if (el.style.background) {
-                    el.style.background = el.style.background.includes('003087') ? '#003087' : '#ff6200';
-                }
-                if (el.style.color && el.style.color !== '#fff') {
-                    el.style.color = el.style.color.includes('003087') ? '#003087' : '#333';
-                }
+            document.querySelector('.hamburger').addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.toggle('active');
             });
         });
     </script>
