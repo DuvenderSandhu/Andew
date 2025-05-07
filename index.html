@@ -28,10 +28,15 @@
             min-height: 100vh;
         }
 
+        body.no-scroll {
+            overflow: hidden;
+            height: 100vh;
+        }
+
         header {
             background: linear-gradient(135deg, #1a3c34, #2b6b5a);
             color: #f5e7c2;
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
             position: relative;
             z-index: 1;
@@ -39,7 +44,7 @@
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 2.8rem;
             letter-spacing: 1px;
             margin-bottom: 0.5rem;
         }
@@ -65,7 +70,7 @@
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .nav-links a {
@@ -73,7 +78,7 @@
             color: #1a3c34;
             font-family: 'Playfair Display', serif;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
         }
 
@@ -90,13 +95,13 @@
 
         .hero {
             position: relative;
-            height: 70vh;
+            height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: #f5e7c2;
-            background: url('https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center/cover fixed;
+            background: url('https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=800') no-repeat center/cover fixed;
             z-index: 0;
         }
 
@@ -113,19 +118,19 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 700px;
+            max-width: 600px;
             padding: 1rem;
         }
 
         .hero h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 1.5rem;
             line-height: 1.5;
         }
@@ -133,12 +138,12 @@
         .cta-button {
             background: #f5e7c2;
             color: #1a3c34;
-            padding: 0.8rem 2rem;
+            padding: 0.7rem 1.8rem;
             border-radius: 25px;
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             display: inline-block;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
@@ -151,60 +156,60 @@
         }
 
         .offer {
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             background: #fff5cc;
             text-align: center;
-            max-width: 900px;
-            margin: 2rem auto;
-            border-radius: 15px;
+            max-width: 800px;
+            margin: 1.5rem auto;
+            border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .offer h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
+            font-size: 2rem;
             color: #1a3c34;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .offer p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #1a1a1a;
             margin-bottom: 1rem;
             line-height: 1.6;
         }
 
         .countdown {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #e63946;
             margin: 1rem 0;
             font-weight: 600;
         }
 
         .why-choose-us {
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             background: #fff;
             text-align: center;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .why-choose-us h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
+            font-size: 2rem;
             color: #1a3c34;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
         }
 
         .feature-card {
             background: #f9f3ea;
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
@@ -216,67 +221,67 @@
 
         .feature-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #1a3c34;
             margin-bottom: 0.5rem;
         }
 
         .feature-card p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #4a4a4a;
             line-height: 1.5;
         }
 
         .about {
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             background: #fff;
             text-align: center;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .about h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
+            font-size: 2rem;
             color: #1a3c34;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .about p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             line-height: 1.6;
             color: #4a4a4a;
-            margin-bottom: 1rem;
-            max-width: 700px;
+            margin-bottom: 0.8rem;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .testimonials {
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             background: #f9f3ea;
             text-align: center;
         }
 
         .testimonials h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
+            font-size: 2rem;
             color: #1a3c34;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .testimonial-card {
             background: #fff;
             border-radius: 10px;
-            padding: 1.5rem;
+            padding: 1rem;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
@@ -286,8 +291,8 @@
         }
 
         .testimonial-card img {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             margin-bottom: 0.5rem;
             object-fit: cover;
@@ -298,35 +303,39 @@
             color: #4a4a4a;
             margin-bottom: 0.5rem;
             line-height: 1.5;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .testimonial-card h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             color: #1a3c34;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .products {
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             background: #fff;
+            text-align: center;
         }
 
         .products h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
+            font-size: 2rem;
             color: #1a3c34;
-            text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+            max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .product-grid.hidden {
+            display: none;
         }
 
         .product-card {
@@ -343,7 +352,7 @@
 
         .product-card img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
 
@@ -353,25 +362,25 @@
 
         .product-info h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #1a3c34;
             margin-bottom: 0.5rem;
         }
 
         .product-info p {
             color: #4a4a4a;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
         }
 
         .order-button {
             background: #1a3c34;
             color: #f5e7c2;
-            padding: 0.7rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: inline-block;
             transition: background 0.3s ease;
             cursor: pointer;
@@ -381,6 +390,27 @@
             background: #2b6b5a;
         }
 
+        .load-more {
+            display: block;
+            margin: 1.5rem auto;
+            background: #f5e7c2;
+            color: #1a3c34;
+            padding: 0.7rem 1.8rem;
+            border-radius: 25px;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .load-more:hover {
+            background: #2b6b5a;
+            color: #f5e7c2;
+        }
+
         .order-modal {
             display: none;
             position: fixed;
@@ -388,11 +418,11 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: #fff;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            z-index: 1000;
-            max-width: 350px;
+            z-index: 2000;
+            max-width: 320px;
             width: 90%;
         }
 
@@ -402,17 +432,17 @@
 
         .order-modal h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #1a3c34;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .order-modal select, .order-modal input {
-            padding: 0.7rem;
+            padding: 0.6rem;
             border: 1px solid #ddd;
             border-radius: 8px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
             width: 100%;
         }
 
@@ -420,10 +450,11 @@
             background: #1a3c34;
             color: #f5e7c2;
             border: none;
-            padding: 0.7rem;
+            padding: 0.6rem;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.85rem;
             width: 100%;
             transition: background 0.3s ease;
         }
@@ -434,31 +465,31 @@
 
         .close-modal {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1rem;
+            top: 8px;
+            right: 8px;
+            font-size: 0.9rem;
             cursor: pointer;
             color: #4a4a4a;
         }
 
         .instagram-feed {
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             background: #fff;
             text-align: center;
         }
 
         .instagram-feed h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
+            font-size: 2rem;
             color: #1a3c34;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .insta-grid {
             display: flex;
             overflow-x: auto;
             gap: 1rem;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             padding-bottom: 1rem;
             scrollbar-width: thin;
@@ -479,7 +510,7 @@
         }
 
         .insta-post {
-            flex: 0 0 200px;
+            flex: 0 0 180px;
             background: #f9f3ea;
             border-radius: 10px;
             overflow: hidden;
@@ -489,13 +520,13 @@
 
         .insta-post img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
 
         .insta-post a {
             position: absolute;
-            bottom: 10px;
+            bottom: 8px;
             left: 50%;
             transform: translateX(-50%);
             background: #1a3c34;
@@ -503,7 +534,7 @@
             padding: 0.5rem 1rem;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             transition: background 0.3s ease;
         }
@@ -513,7 +544,7 @@
         }
 
         .newsletter {
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             background: linear-gradient(135deg, #1a3c34, #2b6b5a);
             color: #f5e7c2;
             text-align: center;
@@ -521,13 +552,13 @@
 
         .newsletter h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
         }
 
         .newsletter p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
@@ -537,27 +568,27 @@
             display: flex;
             justify-content: center;
             gap: 0.5rem;
-            max-width: 400px;
+            max-width: 360px;
             margin: 0 auto;
         }
 
         .newsletter-form input {
-            padding: 0.8rem;
+            padding: 0.7rem;
             border: none;
             border-radius: 8px;
             flex: 1;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .newsletter-form button {
             background: #f5e7c2;
             color: #1a3c34;
             border: none;
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.2rem;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: background 0.3s ease;
         }
 
@@ -572,12 +603,12 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: #fff;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            z-index: 1000;
+            z-index: 2000;
             text-align: center;
-            max-width: 350px;
+            max-width: 320px;
             width: 90%;
         }
 
@@ -587,15 +618,15 @@
 
         .newsletter-popup h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #1a3c34;
             margin-bottom: 0.5rem;
         }
 
         .newsletter-popup p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #4a4a4a;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             line-height: 1.5;
         }
 
@@ -605,21 +636,21 @@
         }
 
         .newsletter-popup input {
-            padding: 0.7rem;
+            padding: 0.6rem;
             border: 1px solid #ddd;
             border-radius: 8px;
             flex: 1;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .newsletter-popup button {
             background: #1a3c34;
             color: #f5e7c2;
             border: none;
-            padding: 0.7rem 1rem;
+            padding: 0.6rem 1rem;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
         }
 
@@ -627,32 +658,43 @@
             background: #2b6b5a;
         }
 
+        .newsletter-popup .error {
+            color: #e63946;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .newsletter-popup .error.active {
+            display: block;
+        }
+
         .close-popup {
             position: absolute;
             top: 8px;
             right: 8px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             color: #4a4a4a;
         }
 
         .contact {
             background: #f9f3ea;
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             text-align: center;
         }
 
         .contact h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
+            font-size: 2rem;
             color: #1a3c34;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .contact-info {
             max-width: 500px;
             margin: 0 auto;
-            font-size: 1rem;
+            font-size: 0.9rem;
             line-height: 1.6;
         }
 
@@ -666,14 +708,32 @@
             font-weight: 600;
         }
 
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: #1a3c34;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #2b6b5a;
+        }
+
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background: #25D366;
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -692,8 +752,8 @@
             background: #1a3c34;
             color: #f5e7c2;
             text-align: center;
-            padding: 1.5rem;
-            font-size: 0.85rem;
+            padding: 1.2rem;
+            font-size: 0.8rem;
         }
 
         footer p {
@@ -706,9 +766,22 @@
             font-weight: 600;
         }
 
+        footer .social-icons {
+            margin: 0.5rem 0;
+        }
+
+        footer .social-icons a {
+            color: #f5e7c2;
+            font-size: 1.2rem;
+        }
+
+        footer .social-icons a:hover {
+            color: #fff;
+        }
+
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .hero {
@@ -716,11 +789,11 @@
             }
 
             .hero h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             .hamburger {
@@ -744,48 +817,8 @@
             }
 
             .nav-links a {
-                font-size: 1.1rem;
-                margin: 0.5rem 0;
-            }
-
-            .offer h2, .why-choose-us h2, .about h2, .testimonials h2, .products h2, .instagram-feed h2, .contact h2, .newsletter h2 {
-                font-size: 2rem;
-            }
-
-            .product-card img {
-                height: 180px;
-            }
-
-            .insta-post {
-                flex: 0 0 180px;
-            }
-
-            .insta-post img {
-                height: 180px;
-            }
-
-            .whatsapp-button {
-                width: 45px;
-                height: 45px;
-            }
-
-            .whatsapp-button svg {
-                width: 24px;
-                height: 24px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-
-            .hero p {
-                font-size: 0.9rem;
+                font-size: 1rem;
+                margin: 0.4rem 0;
             }
 
             .offer h2, .why-choose-us h2, .about h2, .testimonials h2, .products h2, .instagram-feed h2, .contact h2, .newsletter h2 {
@@ -804,16 +837,204 @@
                 height: 160px;
             }
 
+            .whatsapp-button {
+                width: 40px;
+                height: 40px;
+            }
+
+            .whatsapp-button svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            header p {
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                height: 45vh;
+            }
+
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+
+            .hero p {
+                font-size: 0.8rem;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.85rem;
+            }
+
+            .offer h2, .why-choose-us h2, .about h2, .testimonials h2, .products h2, .instagram-feed h2, .contact h2, .newsletter h2 {
+                font-size: 1.6rem;
+            }
+
+            .offer p {
+                font-size: 0.85rem;
+            }
+
+            .countdown {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card h3 {
+                font-size: 1rem;
+            }
+
+            .feature-card p {
+                font-size: 0.8rem;
+            }
+
+            .about p {
+                font-size: 0.85rem;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card p {
+                font-size: 0.8rem;
+            }
+
+            .testimonial-card h4 {
+                font-size: 0.85rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card img {
+                height: 140px;
+            }
+
+            .product-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .product-info p {
+                font-size: 0.8rem;
+            }
+
+            .order-button {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .load-more {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.85rem;
+            }
+
+            .order-modal {
+                max-width: 280px;
+            }
+
+            .order-modal h3 {
+                font-size: 1.1rem;
+            }
+
+            .order-modal select, .order-modal input, .order-modal button {
+                font-size: 0.8rem;
+            }
+
+            .insta-post {
+                flex: 0 0 140px;
+            }
+
+            .insta-post img {
+                height: 140px;
+            }
+
+            .insta-post a {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .newsletter-form {
+                max-width: 300px;
+            }
+
+            .newsletter-form input, .newsletter-form button {
+                font-size: 0.8rem;
+            }
+
             .newsletter-popup {
+                max-width: 280px;
                 padding: 1rem;
             }
 
             .newsletter-popup h3 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
             .newsletter-popup p {
+                font-size: 0.8rem;
+            }
+
+            .newsletter-popup input, .newsletter-popup button {
+                font-size: 0.8rem;
+            }
+
+            .newsletter-popup .error {
+                font-size: 0.75rem;
+            }
+
+            .contact-info {
                 font-size: 0.85rem;
+            }
+
+            .social-icons a {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 0.75rem;
+            }
+
+            .cta-button {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.8rem;
+            }
+
+            .offer h2, .why-choose-us h2, .about h2, .testimonials h2, .products h2, .instagram-feed h2, .contact h2, .newsletter h2 {
+                font-size: 1.4rem;
+            }
+
+            .product-card img {
+                height: 120px;
+            }
+
+            .insta-post {
+                flex: 0 0 120px;
+            }
+
+            .insta-post img {
+                height: 120px;
             }
         }
     </style>
@@ -872,24 +1093,24 @@
     <section class="about" id="about">
         <h2>Our Crafted Legacy</h2>
         <p>ArtisanAura Jewellery blends tradition with modern elegance. Each piece is handcrafted with ethically sourced gemstones and metals, ensuring sustainability and artistry. Our small-batch process creates unique masterpieces.</p>
-        <p>We support ethical sourcing and local artisans, using eco-friendly packaging. Perfect for Instagram-savvy shoppers seeking unique, sustainable jewellery.</p>
+        <p>Perfect for Instagram, our jewellery shines in photos and Reels. Follow us on social media for inspiration and exclusive offers!</p>
     </section>
 
     <section class="testimonials" id="testimonials">
         <h2>Customer Sparkle</h2>
         <div class="testimonial-grid">
             <div class="testimonial-card">
-                <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Customer 1">
+                <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Customer 1" onerror="this.src='https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=400';">
                 <p>“The Moonstone Necklace is stunning! Perfect for my Instagram posts.”</p>
                 <h4>Emma S.</h4>
             </div>
             <div class="testimonial-card">
-                <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Customer 2">
+                <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Customer 2" onerror="this.src='https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=400';">
                 <p>“Love the Amethyst Earrings! They’re vibrant and photo-ready.”</p>
                 <h4>Liam T.</h4>
             </div>
             <div class="testimonial-card">
-                <img src="https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Customer 3">
+                <img src="https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Customer 3" onerror="this.src='https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=400';">
                 <p>“The Sapphire Ring is my favorite! Gorgeous for Reels.”</p>
                 <h4>Olivia M.</h4>
             </div>
@@ -898,9 +1119,9 @@
 
     <section class="products" id="products">
         <h2>Our Handcrafted Jewellery</h2>
-        <div class="product-grid">
+        <div class="product-grid" id="product-grid">
             <div class="product-card">
-                <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Moonstone Necklace">
+                <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Moonstone Necklace" onerror="this.src='https://images.pexels.com/photos/278082/pexels-photo-278082.jpeg?auto=compress&cs=tinysrgb&w=600';">
                 <div class="product-info">
                     <h3>Moonstone Necklace</h3>
                     <p>$89.99 - Ethically sourced moonstone set in recycled silver for a mystical glow.</p>
@@ -908,7 +1129,7 @@
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://images.pexels.com/photos/266621/pexels-photo-266621.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Amethyst Earrings">
+                <img src="https://images.pexels.com/photos/266621/pexels-photo-266621.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Amethyst Earrings" onerror="this.src='https://images.pexels.com/photos/278082/pexels-photo-278082.jpeg?auto=compress&cs=tinysrgb&w=600';">
                 <div class="product-info">
                     <h3>Amethyst Earrings</h3>
                     <p>$59.99 - Vibrant amethyst gems in sterling silver for timeless elegance.</p>
@@ -916,14 +1137,31 @@
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://images.pexels.com/photos/278082/pexels-photo-278082.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sapphire Ring">
+                <img src="https://images.pexels.com/photos/278082/pexels-photo-278082.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sapphire Ring" onerror="this.src='https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=600';">
                 <div class="product-info">
                     <h3>Sapphire Ring</h3>
                     <p>$129.99 - Deep blue sapphire in a handcrafted gold setting for bold sophistication.</p>
                     <a class="order-button" onclick="showOrderModal(3); gtag('event', 'click_order_sapphire', { 'event_category': 'product_interaction' })">Order Now</a>
                 </div>
             </div>
+            <div class="product-card hidden">
+                <img src="https://images.pexels.com/photos/144429/pexels-photo-144429.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Emerald Bracelet" onerror="this.src='https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=600';">
+                <div class="product-info">
+                    <h3>Emerald Bracelet</h3>
+                    <p>$149.99 - Lush emerald stones in a delicate gold chain for elegance.</p>
+                    <a class="order-button" onclick="showOrderModal(4); gtag('event', 'click_order_emerald', { 'event_category': 'product_interaction' })">Order Now</a>
+                </div>
+            </div>
+            <div class="product-card hidden">
+                <img src="https://images.pexels.com/photos/326670/pexels-photo-326670.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ruby Pendant" onerror="this.src='https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=600';">
+                <div class="product-info">
+                    <h3>Ruby Pendant</h3>
+                    <p>$99.99 - Fiery ruby gemstone set in recycled silver for bold charm.</p>
+                    <a class="order-button" onclick="showOrderModal(5); gtag('event', 'click_order_ruby', { 'event_category': 'product_interaction' })">Order Now</a>
+                </div>
+            </div>
         </div>
+        <button class="load-more" id="load-more" onclick="loadMoreProducts()">Load More</button>
     </section>
 
     <div class="order-modal" id="order-modal-1">
@@ -960,21 +1198,51 @@
         <input type="number" id="quantity-3" min="1" value="1" placeholder="Quantity" required>
         <button onclick="placeOrder(3, 'Sapphire Ring', 129.99)">Place Order</button>
     </div>
+    <div class="order-modal" id="order-modal-4">
+        <span class="close-modal" onclick="closeOrderModal(4)">×</span>
+        <h3>Emerald Bracelet</h3>
+        <select id="material-4" required>
+            <option value="" disabled selected>Select Material</option>
+            <option value="Gold">Gold</option>
+            <option value="Silver">Silver</option>
+        </select>
+        <input type="number" id="quantity-4" min="1" value="1" placeholder="Quantity" required>
+        <button onclick="placeOrder(4, 'Emerald Bracelet', 149.99)">Place Order</button>
+    </div>
+    <div class="order-modal" id="order-modal-5">
+        <span class="close-modal" onclick="closeOrderModal(5)">×</span>
+        <h3>Ruby Pendant</h3>
+        <select id="material-5" required>
+            <option value="" disabled selected>Select Material</option>
+            <option value="Silver">Silver</option>
+            <option value="Rose Gold">Rose Gold</option>
+        </select>
+        <input type="number" id="quantity-5" min="1" value="1" placeholder="Quantity" required>
+        <button onclick="placeOrder(5, 'Ruby Pendant', 99.99)">Place Order</button>
+    </div>
 
     <section class="instagram-feed">
         <h2>Shop Our Instagram Looks</h2>
         <div class="insta-grid">
             <div class="insta-post">
-                <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Moonstone Necklace">
+                <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Moonstone Necklace" onerror="this.src='https://images.pexels.com/photos/278082/pexels-photo-278082.jpeg?auto=compress&cs=tinysrgb&w=600';">
                 <a href="#products" onclick="showOrderModal(1); gtag('event', 'click_insta_moonstone', { 'event_category': 'social_interaction' })">Shop Now</a>
             </div>
             <div class="insta-post">
-                <img src="https://images.pexels.com/photos/266621/pexels-photo-266621.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Amethyst Earrings">
+                <img src="https://images.pexels.com/photos/266621/pexels-photo-266621.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Amethyst Earrings" onerror="this.src='https://images.pexels.com/photos/278082/pexels-photo-278082.jpeg?auto=compress&cs=tinysrgb&w=600';">
                 <a href="#products" onclick="showOrderModal(2); gtag('event', 'click_insta_amethyst', { 'event_category': 'social_interaction' })">Shop Now</a>
             </div>
             <div class="insta-post">
-                <img src="https://images.pexels.com/photos/278082/pexels-photo-278082.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sapphire Ring">
+                <img src="https://images.pexels.com/photos/278082/pexels-photo-278082.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sapphire Ring" onerror="this.src='https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=600';">
                 <a href="#products" onclick="showOrderModal(3); gtag('event', 'click_insta_sapphire', { 'event_category': 'social_interaction' })">Shop Now</a>
+            </div>
+            <div class="insta-post">
+                <img src="https://images.pexels.com/photos/144429/pexels-photo-144429.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Emerald Bracelet" onerror="this.src='https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=600';">
+                <a href="#products" onclick="showOrderModal(4); gtag('event', 'click_insta_emerald', { 'event_category': 'social_interaction' })">Shop Now</a>
+            </div>
+            <div class="insta-post">
+                <img src="https://images.pexels.com/photos/326670/pexels-photo-326670.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ruby Pendant" onerror="this.src='https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=600';">
+                <a href="#products" onclick="showOrderModal(5); gtag('event', 'click_insta_ruby', { 'event_category': 'social_interaction' })">Shop Now</a>
             </div>
         </div>
     </section>
@@ -995,6 +1263,7 @@
         <form id="popup-form" aria-labelledby="popup-title">
             <input type="email" id="popup-email" placeholder="Your email" required>
             <button type="button" onclick="subscribePopup()">Claim Discount</button>
+            <div class="error" id="popup-error">Please enter a valid email.</div>
         </form>
     </div>
 
@@ -1004,12 +1273,28 @@
             <p>Email: <a href="mailto:hello@artisanaurajewellery.com">hello@artisanaurajewellery.com</a></p>
             <p>Phone: +91 8894879696</p>
             <p>Location: 789 Artisan Avenue, Jaipur, India</p>
-            <p>Instagram: <a href="https://instagram.com/artisanaurajewellery" target="_blank">@artisanaurajewellery</a></p>
+            <div class="social-icons">
+                <a href="https://instagram.com/artisanaurajewellery" target="_blank" onclick="gtag('event', 'click_social_instagram', { 'event_category': 'social' })" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.919-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.332.014 7.052.072 3.668.227 1.981 1.97 1.826 5.354c-.058 1.281-.072 1.689-.072 4.948s.014 3.668.072 4.948c.155 3.384 1.898 5.071 5.282 5.226 1.28.058 1.689.072 4.948.072s3.668-.014 4.948-.072c3.384-.155 5.071-1.842 5.226-5.226.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.155-3.384-1.842-5.071-5.226-5.226C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+                    </svg>
+                </a>
+                <a href="https://youtube.com/@artisanaurajewellery" target="_blank" onclick="gtag('event', 'click_social_youtube', { 'event_category': 'social' })" aria-label="YouTube">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.016 3.016 0 00.502 6.186 31.247 31.247 0 000 12a31.247 31.247 0 00.502 5.814 3.016 3.016 0 002.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.016 3.016 0 002.122-2.136A31.247 31.247 0 0024 12a31.247 31.247 0 00-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/artisanaurajewellery" target="_blank" onclick="gtag('event', 'click_social_twitter', { 'event_category': 'social' })" aria-label="Twitter">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
     <a href="https://wa.me/918894879696?text=Hello! I have a query about ArtisanAura Jewellery." class="whatsapp-button" target="_blank" id="whatsapp-button">
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="16" cy="16" r="14" fill="#fff" fill-opacity="0.2"/>
             <path d="M16 2.667c-7.364 0-13.333 5.97-13.333 13.333 0 2.327.598 4.606 1.733 6.627l-1.84 6.72 6.88-1.804c1.896 1.036 4.026 1.582 6.18 1.582 7.364 0 13.333-5.97 13.333-13.333 0-3.563-1.394-6.923-3.913-9.442-2.519-2.519-5.879-3.913-9.442-3.913zm0 24c-1.896 0-3.735-.541-5.351-1.558l-.383-.224-3.98 1.044 1.062-3.88-.25-.396c-1.122-1.779-1.727-3.851-1.727-6.026 0-6.302 5.12-11.422 11.422-11.422 3.052 0 5.918 1.19 8.071 3.344 2.153 2.153 3.344 5.019 3.344 8.071 0 6.302-5.12 11.422-11.422 11.422zm6.107-6.626c-.27-.136-1.598-.789-1.846-.879-.248-.09-.428-.135-.61.136-.18.27-.698.879-.856 1.058-.157.181-.316.203-.586.068-.27-.136-1.141-.42-2.173-1.341-.803-.717-1.346-1.602-1.503-1.873-.157-.27-.016-.417.118-.552.122-.121.27-.316.406-.474.135-.158.18-.272.27-.452.09-.181.045-.338-.023-.474-.068-.136-.61-.589-.834-.895-.224-.303-.447-.315-.61-.316-.157 0-.498 0-.761.122-.27.136-1.598.789-1.598 1.922 0 1.134.903 2.226 1.028 2.406.126.181 1.783 2.73 4.325 3.828.811.362 1.442.544 1.938.635.586.09 1.123.045 1.541-.09.406-.136 1.253-.587 1.434-1.149.18-.563.09-1.044-.023-1.178-.113-.136-.428-.203-.698-.337z" fill="#fff"/>
         </svg>
@@ -1017,6 +1302,23 @@
 
     <footer>
         <p>ArtisanAura Jewellery © 2025. Crafted with Passion.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com/artisanaurajewellery" target="_blank" onclick="gtag('event', 'click_social_instagram_footer', { 'event_category': 'social' })" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.919-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.332.014 7.052.072 3.668.227 1.981 1.97 1.826 5.354c-.058 1.281-.072 1.689-.072 4.948s.014 3.668.072 4.948c.155 3.384 1.898 5.071 5.282 5.226 1.28.058 1.689.072 4.948.072s3.668-.014 4.948-.072c3.384-.155 5.071-1.842 5.226-5.226.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.155-3.384-1.842-5.071-5.226-5.226C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+                </svg>
+            </a>
+            <a href="https://youtube.com/@artisanaurajewellery" target="_blank" onclick="gtag('event', 'click_social_youtube_footer', { 'event_category': 'social' })" aria-label="YouTube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.016 3.016 0 00.502 6.186 31.247 31.247 0 000 12a31.247 31.247 0 00.502 5.814 3.016 3.016 0 002.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.016 3.016 0 002.122-2.136A31.247 31.247 0 0024 12a31.247 31.247 0 00-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+            </a>
+            <a href="https://twitter.com/artisanaurajewellery" target="_blank" onclick="gtag('event', 'click_social_twitter_footer', { 'event_category': 'social' })" aria-label="Twitter">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+        </div>
         <p><a href="#home">Back to Top</a></p>
     </footer>
 
@@ -1069,6 +1371,7 @@
             const modal = document.getElementById(`order-modal-${productId}`);
             if (modal) {
                 modal.classList.add('active');
+                document.body.classList.add('no-scroll');
             }
         }
 
@@ -1076,6 +1379,7 @@
             const modal = document.getElementById(`order-modal-${productId}`);
             if (modal) {
                 modal.classList.remove('active');
+                document.body.classList.remove('no-scroll');
             }
         }
 
@@ -1093,26 +1397,40 @@
         function subscribePopup() {
             const popup = document.getElementById('newsletter-popup');
             const emailInput = document.getElementById('popup-email');
-            if (!emailInput || !popup) {
+            const errorElement = document.getElementById('popup-error');
+
+            if (!popup || !emailInput || !errorElement) {
                 alert('Error: Unable to process subscription. Please try again.');
                 return;
             }
 
-            const email = emailInput.value;
-            if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            const email = emailInput.value.trim();
+            if (!email) {
+                errorElement.classList.add('active');
+                return;
+            }
+
+            if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errorElement.classList.remove('active');
                 alert(`Thanks, ${email}! Use code WELCOME10 for 10% off.`);
                 gtag('event', 'subscribe_popup', { 'event_category': 'engagement' });
                 emailInput.value = '';
                 popup.classList.remove('active');
+                document.body.classList.remove('no-scroll');
             } else {
-                alert('Please enter a valid email.');
+                errorElement.classList.add('active');
             }
         }
 
         function closePopup() {
             const popup = document.getElementById('newsletter-popup');
+            const errorElement = document.getElementById('popup-error');
             if (popup) {
                 popup.classList.remove('active');
+                if (errorElement) {
+                    errorElement.classList.remove('active');
+                }
+                document.body.classList.remove('no-scroll');
             }
         }
 
@@ -1141,11 +1459,25 @@
             setInterval(updateCountdown, 1000);
         }
 
+        function loadMoreProducts() {
+            const productGrid = document.getElementById('product-grid');
+            const hiddenProducts = productGrid.querySelectorAll('.product-card.hidden');
+            const loadMoreButton = document.getElementById('load-more');
+
+            hiddenProducts.forEach(product => {
+                product.classList.remove('hidden');
+            });
+
+            loadMoreButton.style.display = 'none';
+            gtag('event', 'load_more_products', { 'event_category': 'engagement' });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 const popup = document.getElementById('newsletter-popup');
                 if (popup) {
                     popup.classList.add('active');
+                    document.body.classList.add('no-scroll');
                 }
             }, 5000);
 
@@ -1160,11 +1492,15 @@
                 });
             }
 
-            // Smooth scrolling with error handling
-            document.querySelectorAll('nav a').forEach(anchor => {
+            // Smooth scrolling with robust error handling
+            document.querySelectorAll('nav a, .cta-button, footer a').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
-                    if (href && href.startsWith('#')) {
+                    if (!href) {
+                        console.warn('Anchor missing href attribute.');
+                        return;
+                    }
+                    if (href.startsWith('#')) {
                         e.preventDefault();
                         const targetId = href.substring(1);
                         const targetElement = document.getElementById(targetId);
@@ -1186,6 +1522,27 @@
                     gtag('event', 'click_whatsapp', { 'event_category': 'engagement' });
                 });
             }
+
+            // Check if load more button is needed
+            const productGrid = document.getElementById('product-grid');
+            const hiddenProducts = productGrid.querySelectorAll('.product-card.hidden');
+            const loadMoreButton = document.getElementById('load-more');
+            if (hiddenProducts.length === 0) {
+                loadMoreButton.style.display = 'none';
+            }
+
+            // Scroll detection for modals
+            let lastScrollTime = 0;
+            window.addEventListener('scroll', () => {
+                const now = Date.now();
+                if (now - lastScrollTime < 1000) return; // Throttle alerts to once per second
+                lastScrollTime = now;
+
+                const activeModal = document.querySelector('.order-modal.active') || document.querySelector('.newsletter-popup.active');
+                if (activeModal) {
+                    alert('Please close the open modal to continue scrolling.');
+                }
+            });
         });
     </script>
 </body>
