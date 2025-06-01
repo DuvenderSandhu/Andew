@@ -3,66 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RhythmFlow Dance Academy: Premier dance training with expert instructors and flexible classes.">
-    <meta name="keywords" content="dance academy, hip-hop, ballet, salsa, dance classes">
+    <meta name="description" content="RhythmFlow Dance Academy: Premier dance training with expert instructors and vibrant classes.">
+        <meta name="keywords" content="dance academy, hip-hop, ballet, salsa, dance classes, dance studio">
     <meta property="og:title" content="RhythmFlow Dance Academy">
-    <meta property="og:description" content="Join our dance community with top instructors and diverse classes.">
-    <meta property="og:image" content="https://placehold.co/500x200/1c1c2e/ffd700?text=RhythmFlow">
+    <meta property="og:description" content="Join our passionate dance community with top instructors and diverse classes.">
+    <meta property="og:image" content="https://placehold.co/1200x600/1c1c2e/ffd700?text=RhythmFlow+Dance">
     <meta property="og:url" content="https://rhythmflow.com">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="manifest" href="data:application/json,{'name':'RhythmFlow Dance Academy','short_name':'RhythmFlow','start_url':'/','display':'standalone','background_color':'#0a0a1a','theme_color':'#ffd700','icons':[{'src':'https://placehold.co/192x192/1c1c2e/ffd700?text=RF','sizes':'192x192','type':'image/png'}]}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" href="stylesheet">
     <title>RhythmFlow Dance Academy</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
-        body{background:linear-gradient(135deg,#0a0a1a,#1c1c2e);color:#fff;}
-        header{position:fixed;width:100%;top:0;background:rgba(0,0,0,0.9);padding:15px 20px;display:flex;justify-content:space-between;align-items:center;z-index:1000;}
-        header.scrolled{background:rgba(0,0,0,0.95);box-shadow:0 2px 5px rgba(255,215,0,0.2);}
-        .logo{font-size:1.5rem;color:#ffd700;font-weight:600;}
-        nav ul{list-style:none;display:flex;gap:15px;}
-        nav ul li a{color:#fff;text-decoration:none;font-size:0.9rem;}
-        nav ul li a:hover,nav ul li a.active{color:#ffd700;}
-        .hamburger{display:none;cursor:pointer;font-size:1.2rem;color:#fff;}
-        .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:url('https://placehold.co/1920x1080/1c1c2e/ffd700?text=Hero+Banner') center/cover;opacity:0.8;}
-        .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:-1;}
-        .hero-content h1{font-size:3rem;color:#fff;margin-bottom:15px;}
-        .hero-content p{font-size:1.2rem;color:#f0f0f0;margin-bottom:20px;}
-        .btn{background:linear-gradient(45deg,#ffd700,#ff4d4d);color:#fff;padding:10px 30px;border-radius:20px;text-decoration:none;font-size:1rem;}
-        .btn:hover{background:linear-gradient(45deg,#ff4d4d,#ffd700);transform:translateY(-2px);transition:0.3s;}
-        .stats-bar{display:flex;justify-content:center;gap:20px;padding:10px;background:rgba(255,255,255,0.1);margin:15px auto;max-width:800px;border-radius:8px;}
-        .stat-item .stat-number{font-size:1.5rem;color:#ffd700;}
-        .stat-item .stat-label{font-size:0.9rem;color:#e0e0e0;}
-        .about,.classes,.instructors,.contact{padding:60px 20px;text-align:center;}
-        h2{font-size:2rem;color:#ffd700;margin-bottom:20px;}
-        .about img,.class-card img,.instructor-card img{width:100%;max-width:500px;border-radius:8px;margin:10px 0;height:200px;object-fit:cover;}
-        .class-grid,.instructor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;max-width:1000px;margin:0 auto;}
-        .class-card,.instructor-card{background:rgba(255,255,255,0.1);border-radius:8px;padding:15px;}
-        .class-card h3,.instructor-card h3{font-size:1.2rem;color:#ffd700;margin:10px 0;}
-        .class-card p,.instructor-card p{font-size:0.9rem;color:#e0e0e0;}
-        .contact form{max-width:500px;margin:0 auto;display:grid;gap:10px;}
-        .contact input,.contact textarea{background:rgba(255,255,255,0.1);border:1px solid #ffd700;padding:8px;border-radius:5px;color:#fff;font-size:0.9rem;}
-        .contact textarea{resize:vertical;min-height:80px;}
-        .contact button{background:linear-gradient(45deg,#ffd700,#ff4d4d);border:none;padding:8px;border-radius:5px;color:#fff;cursor:pointer;}
-        .contact button:hover{transform:translateY(-2px);transition:0.3s;}
-        .contact-info{margin-top:15px;font-size:0.9rem;}
-        .contact-info a{color:#ffd700;text-decoration:none;}
-        .contact-info a:hover{color:#ff4d4d;}
-        .footer{background:#0a0a1a;padding:20px;text-align:center;}
-        .footer p,.footer a{color:#e0e0e0;font-size:0.9rem;}
-        .footer a{color:#ffd700;}
-        .footer a:hover{color:#ff4d4d;}
-        .booking-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:2000;justify-content:center;align-items:center;}
-        .booking-modal-content{background:#1c1c2e;border-radius:8px;padding:15px;max-width:500px;width:90%;text-align:center;}
-        .booking-modal-content select,.booking-modal-content input{background:rgba(255,255,255,0.1);border:1px solid #ffd700;padding:8px;border-radius:5px;color:#fff;width:100%;margin-bottom:10px;}
-        .booking-modal-close{position:absolute;top:10px;right:10px;color:#fff;font-size:1.2rem;cursor:pointer;}
-        @media (max-width:768px){
-            .hero-content h1{font-size:2rem;}
-            .hero-content p{font-size:1rem;}
-            nav ul{display:none;flex-direction:column;position:absolute;top:50px;left:0;width:100%;background:rgba(0,0,0,0.9);padding:15px;}
-            nav ul.active{display:flex;}
-            .hamburger{display:block;}
-            .stats-bar{flex-direction:column;gap:10px;}
-            .btn{padding:8px 20px;font-size:0.9rem;}
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background: linear-gradient(135deg, #0a0d1b, #1c1f2e); color: #fff; }
+        header { position: fixed; width: 100%; top: 0; background: rgba(10, 10, 27, 0.85); padding: 1rem;3rem 2rem 1rem; display: flex; justify-content: center; align-items: space-between; z-index: 1000; transition: all;background-color 0.3s; }
+        header.scrolled { background: rgba(10, 10, 27, 0.95); box-shadow: 0 0.125rem;2px 0.3125rem;5px rgba(255, 215, 0, 0.2); }
+        .logo { font-size: 1.75rem;2.8rem; color: #ffd700; font-weight: 700; font-family: 'Playfair Display', serif; }
+        nav ul { list-style: none; display: flex; gap: 1.5rem;2.4rem; }
+        nav ul li a { color: #fff; text-decoration: none; font-size: 1rem;1.6rem; transition: color 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: #ffd700; }
+        .hamburger { display: none; cursor: pointer; font-size: 1.5rem;2.4rem; color: #fff; }
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('https://placehold.co/1920x1080/1c1c2e/ffd700?text=Dance+Video') center/cover; position: relative; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: -1; }
+        .hero-content h1 { font-size: 4rem;6.4rem; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 1rem;1.6rem; text-shadow: 0 0.125rem;2px 0.25rem;4px rgba(0, 0, 0, 0.5); }
+        .hero-content p { font-size: 1.5rem;2.4rem; color: #f0f0f0; margin-bottom: 1.5rem;2.4rem; }
+        .btn { background: linear-gradient(45deg, #ffd700, #ff4d4d); color: #fff; padding: 0.75rem;1.2rem 2rem;3.2rem; border-radius: 1.5rem;2.4rem; text-decoration: none; font-size: 1.1rem;1.76rem; transition: all 0.3s; display: inline-block; }
+        .btn:hover { background: linear-gradient(45deg, #ff4d4d, #ffd700); transform: translateY(-0.125rem;-2px); box-shadow: 0 0.25rem;4px 0.5rem;8px rgba(255, 77, 77, 0.3); }
+        .stats-bar { display: flex; justify-content: center; gap: 2rem;3.2rem; padding: 1rem;1.6rem; background: rgba(255, 255, 255, 0.1); margin: 1rem;1.6rem auto; max-width: 50rem;800px; border-radius: 0.5rem;8px; }
+        .stat-item .stat-number { font-size: 2rem;3.2rem; color: #ffd700; font-weight: 600; }
+        .stat-item .stat-label { font-size: 0.9rem;1.44rem; color: #e0e0e0; }
+        .about, .classes, .instructors, .testimonials, .contact { padding: 4rem;6.4rem 1.25rem;2rem; text-align: center; }
+        h2 { font-size: 2.5rem;4rem; color: #ffd700; font-family: 'Playfair Display', serif; margin-bottom: 1.5rem;2.4rem; }
+        .about img, .class-card img, .instructor-card img, .testimonial-card img { width: 100%; max-width: 31.25rem;500px; border-radius: 0.5rem;8px; margin: 0.625rem;1rem 0; height: 12.5rem;200px; object-fit: cover; transition: transform 0.3s; }
+        .about img:hover, .class-card img:hover, .instructor-card img:hover { transform: scale(1.05); }
+        .class-grid, .instructor-grid, .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15.625rem;250px, 1fr)); gap: 1.5rem;2.4rem; max-width: 62.5rem;1000px; margin: 0 auto; }
+        .class-card, .instructor-card, .testimonial-card { background: rgba(255, 255, 255, 0.05); border-radius: 0.5rem;8px; padding: 1rem;1.6rem; transition: transform 0.3s, box-shadow 0.3s; }
+        .class-card:hover, .instructor-card:hover, .testimonial-card:hover { transform: translateY(-0.3125rem;-5px); box-shadow: 0 0.5rem;8px 1rem;16px rgba(255, 215, 0, 0.2); }
+        .class-card h3, .instructor-card h3, .testimonial-card h3 { font-size: 1.3rem;2.08rem; color: #ffd700; margin: 0.625rem;1rem 0; font-family: 'Playfair Display', serif; }
+        .class-card p, .instructor-card p, .testimonial-card p { font-size: 0.9rem;1.44rem; color: #e0e0e0; }
+        .testimonial-card img { width: 5rem;80px; height: 5rem;80px; border-radius: 50%; margin: 0 auto; }
+        .contact form { max-width: 31.25rem;500px; margin: 0 auto; display: grid; gap: 0.625rem;1rem; }
+        .contact input, .contact textarea { background: rgba(255, 255, 255, 0.1); border: 0.0625rem;1px solid #ffd700; padding: 0.5rem;8px; border-radius: 0.3125rem;5px; color: #fff; font-size: 0.9rem;1.44rem; transition: border-color 0.3s; }
+        .contact input:focus, .contact textarea:focus { border-color: #ff4d4d; outline: none; }
+        .contact textarea { resize: vertical; min-height: 6rem;96px; }
+        .contact button { background: linear-gradient(45deg, #ffd700, #ff4d4d); border: none; padding: 0.5rem;8px; border-radius: 0.3125rem;5px; color: #fff; cursor: pointer; font-size: 1rem;1.6rem; }
+        .contact button:hover { transform: translateY(-0.125rem;-2px); box-shadow: 0 0.25rem;4px 0.5rem;8px rgba(255, 77, 77, 0.3); }
+        .contact-info { margin-top: 1rem;1.6rem; font-size: 0.9rem;1.44rem; }
+        .contact-info a { color: #ffd700; text-decoration: none; }
+        .contact-info a:hover { color: #ff4d4d; }
+        .footer { background: #0a0d1b; padding: 1.5rem;2.4rem; text-align: center; }
+        .footer p, .footer a { color: #e0e0e0; font-size: 0.9rem;1.44rem; }
+        .footer a { color: #ffd700; }
+        .footer a:hover { color: #ff4d4d; }
+        .booking-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 2000; justify-content: center; align-items: center; }
+        .booking-modal-content { background: #1c1f2e; border-radius: 0.5rem;8px; padding: 1.5rem;2.4rem; max-width: 31.25rem;500px; width: 90%; text-align: center; position: relative; }
+        .booking-modal-content select, .booking-modal-content input { background: rgba(255, 255, 255, 0.1); border: 0.0625rem;1px solid #ffd700; padding: 0.5rem;8px; border-radius: 0.3125rem;5px; color: #fff; width: 100%; margin-bottom: 0.625rem;1rem; font-size: 0.9rem;1.44rem; }
+        .booking-modal-close { position: absolute; top: 0.625rem;1rem; right: 0.625rem;1rem; color: #fff; font-size: 1.5rem;2.4rem; cursor: pointer; }
+        .fade-in { opacity: 0; transform: translateY(1.25rem;20px); transition: opacity 0.5s, transform 0.5s; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 48rem;768px) {
+            .hero-content h1 { font-size: 2.5rem;4rem; }
+            .hero-content p { font-size: 1rem;1.6rem; }
+            nav ul { display: none; flex-direction: column; position: absolute; top: 3.125rem;50px; left: 0; width: 100%; background: rgba(10, 10, 27, 0.9); padding: 1rem;1.6rem; }
+            nav ul.active { display: flex; }
+            .hamburger { display: block; }
+            .stats-bar { flex-direction: column; gap: 0.625rem;1rem; }
+            .btn { padding: 0.5rem;8px 1.25rem;2rem; font-size: 0.9rem;1.44rem; }
+            .class-grid, .instructor-grid, .testimonial-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -75,6 +81,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#classes">Classes</a></li>
                 <li><a href="#instructors">Instructors</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -83,12 +90,12 @@
 
     <section id="home" class="hero" role="main">
         <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="hero-content">
-            <h1>Dance with Passion</h1>
-            <p>Join RhythmFlow Dance Academy for world-class training in diverse styles.</p>
-            <a href="#booking-modal" class="btn" onclick="openBookingModal()">Book a Class</a>
+        <div class="hero-content fade-in">
+            <h1>Move with Passion</h1>
+            <p>Discover world-class dance training at RhythmFlow Dance Academy.</p>
+            <a href="#booking-modal" class="btn" onclick="openBookingModal()">Book a Class Now</a>
         </div>
-        <div class="stats-bar">
+        <div class="stats-bar fade-in">
             <div class="stat-item">
                 <span class="stat-number" data-target="5000">0</span>
                 <span class="stat-label">Students</span>
@@ -104,15 +111,15 @@
         </div>
     </section>
 
-    <section id="about" class="about">
+    <section id="about" class="about fade-in">
         <h2>About Us</h2>
-        <p>RhythmFlow Dance Academy offers expert-led classes in multiple dance forms, serving thousands of students with passion and excellence.</p>
+        <p>RhythmFlow Dance Academy is your home for passionate dance training, offering expert-led classes in diverse styles for all skill levels.</p>
         <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=About+Us" 
              onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
              alt="About RhythmFlow" loading="lazy">
     </section>
 
-    <section id="classes" class="classes">
+    <section id="classes" class="classes fade-in">
         <h2>Our Classes</h2>
         <div class="class-grid">
             <div class="class-card">
@@ -120,29 +127,29 @@
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Hip-Hop" loading="lazy">
                 <h3>Hip-Hop</h3>
-                <p>Energetic urban dance styles.</p>
-                <a href="#booking-modal" class="btn" onclick="openBookingModal('Hip-Hop')">Book</a>
+                <p>Energetic urban dance styles to ignite your rhythm.</p>
+                <a href="#booking-modal" class="btn" onclick="openBookingModal('Hip-Hop')">Book Now</a>
             </div>
             <div class="class-card">
                 <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Classical+Ballet" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Classical Ballet" loading="lazy">
                 <h3>Classical Ballet</h3>
-                <p>Graceful and precise techniques.</p>
-                <a href="#booking-modal" class="btn" onclick="openBookingModal('Classical+Ballet')">Book</a>
+                <p>Graceful techniques for poise and precision.</p>
+                <a href="#booking-modal" class="btn" onclick="openBookingModal('Classical+Ballet')">Book Now</a>
             </div>
             <div class="class-card">
                 <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Salsa" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Salsa" loading="lazy">
                 <h3>Salsa</h3>
-                <p>Vibrant Latin rhythms.</p>
-                <a href="#booking-modal" class="btn" onclick="openBookingModal('Salsa')">Book</a>
+                <p>Vibrant Latin rhythms to spice up your moves.</p>
+                <a href="#booking-modal" class="btn" onclick="openBookingModal('Salsa')">Book Now</a>
             </div>
         </div>
     </section>
 
-    <section id="instructors" class="instructors">
+    <section id="instructors" class="instructors fade-in">
         <h2>Our Instructors</h2>
         <div class="instructor-grid">
             <div class="instructor-card">
@@ -150,41 +157,63 @@
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Emma Johnson" loading="lazy">
                 <h3>Emma Johnson</h3>
-                <p>Hip-Hop Specialist</p>
+                <p>Hip-Hop Specialist with 10+ years of experience.</p>
             </div>
             <div class="instructor-card">
                 <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Maria+Lopez" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Maria Lopez" loading="lazy">
                 <h3>Maria Lopez</h3>
-                <p>Ballet Expert</p>
+                <p>Ballet Expert trained in classical techniques.</p>
             </div>
             <div class="instructor-card">
                 <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Carlos+Smith" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Carlos Smith" loading="lazy">
                 <h3>Carlos Smith</h3>
-                <p>Salsa Instructor</p>
+                <p>Salsa Instructor with a passion for Latin dance.</p>
             </div>
             <div class="instructor-card">
                 <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Sofia+Lee" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Sofia Lee" loading="lazy">
                 <h3>Sofia Lee</h3>
-                <p>Contemporary Dance</p>
+                <p>Contemporary Dance innovator and choreographer.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="testimonials" class="testimonials fade-in">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <img src="https://placehold.co/80x80/1c1c2e/ffd700?text=Student" 
+                     onerror="this.src='https://placehold.co/80x80/1c1c2e/ffd700?text=Fallback'" 
+                     alt="Student" loading="lazy">
+                <h3>Jane Doe</h3>
+                <p>"RhythmFlow transformed my dance skills and confidence!"</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://placehold.co/80x80/1c1c2e/ffd700?text=Student" 
+                     onerror="this.src='https://placehold.co/80x80/1c1c2e/ffd700?text=Fallback'" 
+                     alt="Student" loading="lazy">
+                <h3>Mike Smith</h3>
+                <p>"The instructors are amazing, and classes are so fun!"</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact fade-in">
         <h2>Contact Us</h2>
-        <form id="contact-form" aria-label="Contact form">
+        <form id="contact-form" aria-label="Contact form" target="hidden-iframe" method="POST" action="https://script.google.com/macros/s/AKfycbw5GJ5cfugUSa5JmiDyapkb4KGeG51OPzl3uakPzoyRkg7xCKqEBLvrm5iKcqwqeUMRhg/exec">
+            <input type="hidden" name="type" value="Contact">
             <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
             <input type="email" name="email" placeholder="Your Email" required aria-label="Email">
             <input type="tel" name="phone" placeholder="Your Phone" required aria-label="Phone">
-            <textarea name="message" placeholder="Your Message" required aria-label="Message"></textarea>
-            <button type="submit">Send</button>
+            <textarea name="details" placeholder="Your Message" required aria-label="Message"></textarea>
+            <button type="submit">Send Message</button>
         </form>
+        <iframe name="hidden-iframe" style="display:none;"></iframe>
         <div class="contact-info">
             <p>Phone: <a href="tel:+11234567890">+1-123-456-7890</a></p>
             <p>Email: <a href="mailto:info@rhythmflow.com">info@rhythmflow.com</a></p>
@@ -196,7 +225,7 @@
     </section>
 
     <footer class="footer" role="contentinfo">
-        <p>© 2024 RhythmFlow Dance Academy</p>
+        <p>© 2025 RhythmFlow Dance Academy</p>
         <p>Phone: <a href="tel:+11234567890">+1-123-456-7890</a> | Email: <a href="mailto:info@rhythmflow.com">info@rhythmflow.com</a></p>
     </footer>
 
@@ -204,8 +233,9 @@
         <div class="booking-modal-content">
             <span class="booking-modal-close" onclick="closeBookingModal()" aria-label="Close">×</span>
             <h2>Book a Class</h2>
-            <form id="booking-form" aria-label="Booking form">
-                <select id="class-select" name="class" required aria-label="Select class">
+            <form id="booking-form" aria-label="Booking form" target="hidden-iframe" method="POST" action="https://script.google.com/macros/s/AKfycbw5GJ5cfugUSa5JmiDyapkb4KGeG51OPzl3uakPzoyRkg7xCKqEBLvrm5iKcqwqeUMRhg/exec">
+                <input type="hidden" name="type" value="Booking">
+                <select id="class-select" name="details" required aria-label="Select class">
                     <option value="" disabled selected>Choose a Class</option>
                     <option value="Hip-Hop">Hip-Hop</option>
                     <option value="Classical Ballet">Classical Ballet</option>
@@ -220,8 +250,7 @@
     </div>
 
     <script>
-        const GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycbw5GJ5cfugUSa5JmiDyapkb4KGeG51OPzl3uakPzoyRkg7xCKqEBLvrm5iKcqwqeUMRhg/exec'; // Replace with Google Apps Script URL
-
+        const GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycbw5GJ5cfugUSa5JmiDyapkb4KGeG51OPzl3uakPzoyRkg7xCKqEBLvrm5iKcqwqeUMRhg/exec'
         // Header Scroll
         window.addEventListener('scroll', () => {
             document.querySelector('header').classList.toggle('scrolled', window.scrollY > 0);
@@ -236,52 +265,19 @@
         });
 
         // Form Submission
-        async function submitToGoogleSheet(formId, data) {
-            try {
-                if (!GOOGLE_API_URL.includes('https://script.google.com')) {
-                    alert('Please configure Google Apps Script URL');
-                    return;
-                }
-                const response = await fetch(GOOGLE_API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                const result = await response.json();
-                if (result.status === 'success') {
-                    alert('Submission successful!');
-                    document.getElementById(formId).reset();
-                    if (formId === 'booking-form') closeBookingModal();
-                } else {
-                    alert('Submission failed. Please try again.');
-                }
-            } catch (error) {
-                console.error('Form error:', error);
-                alert('Error submitting form.');
-            }
+        function handleFormSubmit(formId) {
+            const form = document.getElementById(formId);
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                form.submit();
+                alert('Submission successful!');
+                form.reset();
+                if (formId === 'booking-form') closeBookingModal();
+            });
         }
 
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            submitToGoogleSheet('contact-form', {
-                type: 'Contact',
-                name: e.target.name.value.trim(),
-                email: e.target.email.value.trim(),
-                phone: e.target.phone.value.trim(),
-                details: e.target.message.value.trim()
-            });
-        });
-
-        document.getElementById('booking-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            submitToGoogleSheet('booking-form', {
-                type: 'Booking',
-                name: e.target.name.value.trim(),
-                email: e.target.email.value.trim(),
-                phone: e.target.phone.value.trim(),
-                details: e.target.class.value
-            });
-        });
+        handleFormSubmit('contact-form');
+        handleFormSubmit('booking-form');
 
         // Booking Modal
         function openBookingModal(className) {
@@ -324,18 +320,23 @@
         }, { threshold: 0.5 });
         observer.observe(document.querySelector('.stats-bar'));
 
-        // Image Load
+        // Fade-In Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => fadeObserver.observe(el));
+
+        // Image Load Logging
         document.querySelectorAll('img').forEach(img => {
             img.addEventListener('load', () => console.log(`Loaded: ${img.src}`));
             img.addEventListener('error', () => console.error(`Failed: ${img.src}`));
         });
-
-        // PWA
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(() => console.log('Service Worker registered'))
-                .catch(error => console.error('Service Worker error:', error));
-        }
     </script>
 </body>
 </html>
