@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RhythmFlow Dance Academy: Premier dance training with expert instructors and vibrant classes.">
+    <meta name="description" content="RhythmFlow Dance Academy: Expert-led dance training with vibrant classes.">
     <meta name="keywords" content="dance academy, hip-hop, ballet, salsa, dance classes, dance studio">
     <meta property="og:title" content="RhythmFlow Dance Academy">
-    <meta property="og:description" content="Join our passionate dance community with top instructors and diverse classes.">
+    <meta property="og:description" content="Join our passionate dance community with top instructors.">
     <meta property="og:image" content="https://placehold.co/1200x600/1c1c2e/ffd700?text=RhythmFlow+Dance">
     <meta property="og:url" content="https://rhythmflow.com">
     <meta name="twitter:card" content="summary_large_image">
@@ -60,6 +60,7 @@
         .booking-modal-close { position: absolute; top: 0.625rem; right: 0.625rem; color: #fff; font-size: 1.5rem; cursor: pointer; }
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        iframe.hidden { display: none; }
         @media (max-width: 48rem) {
             .hero-content h1 { font-size: 2.5rem; }
             .hero-content p { font-size: 1rem; }
@@ -205,7 +206,7 @@
 
     <section id="contact" class="contact fade-in">
         <h2>Contact Us</h2>
-        <form id="contact-form" aria-label="Contact form" method="POST" action="https://script.google.com/macros/s/AKfycbw5GJ5cfugUSa5JmiDyapkb4KGeG51OPzl3uakPzoyRkg7xCKqEBLvrm5iKcqwqeUMRhg/exec">
+        <form id="contact-form" aria-label="Contact form" method="POST" action="https://script.google.com/macros/s/AKfycbw5E68pO3CMTtUFk9Y3EqwDuI1fg4aVqNSKjj2ixYU36QXoFBkUxulI_IhmEMY1fND45Q/exec" target="form-response">
             <input type="hidden" name="type" value="Contact">
             <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
             <input type="email" name="email" placeholder="Your Email" required aria-label="Email">
@@ -213,6 +214,7 @@
             <textarea name="details" placeholder="Your Message" required aria-label="Message"></textarea>
             <button type="submit">Send Message</button>
         </form>
+        <iframe name="form-response" class="hidden"></iframe>
         <div class="contact-info">
             <p>Phone: <a href="tel:+11234567890">+1-123-456-7890</a></p>
             <p>Email: <a href="mailto:info@rhythmflow.com">info@rhythmflow.com</a></p>
@@ -232,7 +234,7 @@
         <div class="booking-modal-content">
             <span class="booking-modal-close" onclick="closeBookingModal()" aria-label="Close">×</span>
             <h2>Book a Class</h2>
-            <form id="booking-form" aria-label="Booking form" method="POST" action="https://script.google.com/macros/s/AKfycbw5GJ5cfugUSa5JmiDyapkb4KGeG51OPzl3uakPzoyRkg7xCKqEBLvrm5iKcqwqeUMRhg/exec">
+            <form id="booking-form" aria-label="Booking form" method="POST" action="https://script.google.com/macros/s/AKfycbw5E68pO3CMTtUFk9Y3EqwDuI1fg4aVqNSKjj2ixYU36QXoFBkUxulI_IhmEMY1fND45Q/exec" target="form-response">
                 <input type="hidden" name="type" value="Booking">
                 <select id="class-select" name="details" required aria-label="Select class">
                     <option value="" disabled selected>Choose a Class</option>
@@ -249,7 +251,7 @@
     </div>
 
     <script>
-        const GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycbw5GJ5cfugUSa5JmiDyapkb4KGeG51OPzl3uakPzoyRkg7xCKqEBLvrm5iKcqwqeUMRhg/exec';
+        const GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycbw5E68pO3CMTtUFk9Y3EqwDuI1fg4aVqNSKjj2ixYU36QXoFBkUxulI_IhmEMY1fND45Q/exec';
 
         // Header Scroll
         window.addEventListener('scroll', () => {
@@ -267,29 +269,25 @@
         // Form Submission
         function handleFormSubmit(formId) {
             const form = document.getElementById(formId);
+            const iframe = document.getElementsByName('form-response')[0];
+            iframe.onload = () => {
+                try {
+                    const response = iframe.contentDocument.body.textContent;
+                    const result = JSON.parse(response);
+                    if (result.status === 'success') {
+                        alert('Submission successful!');
+                        form.reset();
+                        if (formId === 'booking-form') closeBookingModal();
+                    } else {
+                        alert('Submission failed: ' + (result.message || 'Unknown error'));
+                    }
+                } catch (error) {
+                    alert('Error processing response. Please try again.');
+                }
+            };
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const formData = new FormData(form);
-                const data = Object.fromEntries(formData);
-                // Create a hidden form to submit JSON
-                const hiddenForm = document.createElement('form');
-                hiddenForm.method = 'POST';
-                hiddenForm.action = GOOGLE_API_URL;
-                hiddenForm.style.display = 'none';
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = 'data';
-                input.value = JSON.stringify(data);
-                hiddenForm.appendChild(input);
-                document.body.appendChild(hiddenForm);
-                hiddenForm.submit();
-                // Cleanup
-                setTimeout(() => {
-                    hiddenForm.remove();
-                    alert('Submission successful!');
-                    form.reset();
-                    if (formId === 'booking-form') closeBookingModal();
-                }, 1000);
+                form.submit();
             });
         }
 
