@@ -1,1385 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="UTF-8 description" content="Little Miss Arty offers handcrafted pottery and immersive clay workshops. Create unique art or order custom designs.">
-        <meta name="keywords" content="pottery, handmade, clay, workshops, handcrafted, custom pottery, artisanal, clay-making videos, Little Miss Arty">
-        <meta name="author" content="Little Miss Arty">
-        <title>Little Miss Arty - Handcrafted Pottery & Workshops</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Playfair Display', serif;
-                scroll-behavior: smooth;
-            }
-
-            body {
-                background-color: #f5e9df;
-                color: #2f2a26;
-                overflow-x: hidden;
-            }
-
-            /* Header and Hero Section */
-            header {
-                height: 80vh;
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                color: #fff;
-                background: url('https://images.unsplash.com/photo-1582142306909-195724d33ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80') center/cover no-repeat fixed;
-                overflow: hidden;
-            }
-
-            header::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(135deg, rgba(184, 104, 79, 0.7), rgba(88, 104, 93, 0.6));
-                z-index: 1;
-            }
-
-            header > * {
-                position: relative;
-                z-index: 2;
-                padding: 0 1rem;
-            }
-
-            .logo {
-                position: absolute;
-                top: 1.5rem;
-                left: 1.5rem;
-                width: 80px;
-                height: 80px;
-                border-radius: 12px;
-                z-index: 3;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-                object-fit: contain;
-                background: #fff;
-                padding: 8px;
-            }
-
-            header h1 {
-                font-size: 4rem;
-                font-weight: 900;
-                letter-spacing: -1.5px;
-                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-                animation: fadeInUp 1s ease-out;
-                margin-bottom: 1.5rem;
-            }
-
-            header p {
-                font-size: 1.4rem;
-                font-family: 'Lora', serif;
-                max-width: 600px;
-                animation: fadeInUp 1.2s ease-out;
-                margin-bottom: 2rem;
-            }
-
-            .cta-button {
-                background: linear-gradient(45deg, #b8684f, #58745d);
-                color: #fff;
-                padding: 0.9rem 2.2rem;
-                border-radius: 50px;
-                text-decoration: none;
-                font-size: 1.1rem;
-                font-weight: 700;
-                font-family: 'Lora', serif;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-                transition: all 0.3s ease;
-                display: inline-block;
-                z-index: 2;
-                animation: fadeInUp 1.4s ease-out;
-                border: none;
-                cursor: pointer;
-            }
-
-            .cta-button:hover {
-                background: linear-gradient(45deg, #58745d, #b8684f);
-                transform: translateY(-3px);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-            }
-
-            /* Workshop Banner */
-            .workshop-banner {
-                background: linear-gradient(90deg, #b8684f, #58745d);
-                color: #fff;
-                text-align: center;
-                padding: 1.8rem;
-                margin: 1rem auto;
-                max-width: 100%;
-                border-radius: 12px;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-                animation: slideInUp 1s ease-out;
-                position: relative;
-                z-index: 2;
-            }
-
-            .workshop-banner h3 {
-                font-size: 1.8rem;
-                font-weight: 700;
-                margin-bottom: 0.6rem;
-            }
-
-            .workshop-banner p {
-                font-family: 'Lora', serif;
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
-
-            .workshop-banner .cta-button {
-                background: #f5e9df;
-                color: #2f2a26;
-                padding: 0.6rem 1.8rem;
-                font-size: 0.95rem;
-            }
-
-            .workshop-banner .cta-button:hover {
-                background: #fff;
-            }
-
-            /* Personalized Pottery Button */
-            .personalized-button {
-                position: fixed;
-                bottom: 90px;
-                right: 30px;
-                background: linear-gradient(45deg, #b8684f, #58745d);
-                color: #fff;
-                padding: 0.8rem 1.5rem;
-                border-radius: 50px;
-                font-size: 0.95rem;
-                font-weight: 700;
-                font-family: 'Lora', serif;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-                z-index: 1000;
-                transition: transform 0.3s ease;
-                border: none;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            .personalized-button svg {
-                width: 20px;
-                height: 20px;
-                fill: #fff;
-            }
-
-            .personalized-button:hover {
-                transform: scale(1.1);
-            }
-
-            /* WhatsApp Button */
-            .whatsapp-button {
-                position: fixed;
-                bottom: 20px;
-                right: 30px;
-                background: #25D366;
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-                z-index: 1000;
-                transition: transform 0.3s ease;
-                border: none;
-                cursor: pointer;
-            }
-
-            .whatsapp-button:hover {
-                transform: scale(1.15);
-            }
-
-            .whatsapp-button img {
-                width: 32px;
-                height: 32px;
-            }
-
-            /* Navigation */
-            nav {
-                background: rgba(245, 233, 223, 0.95);
-                backdrop-filter: blur(10px);
-                position: sticky;
-                top: 0;
-                z-index: 900;
-                padding: 1rem 0;
-                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 1rem;
-            }
-
-            .hamburger {
-                display: none;
-                cursor: pointer;
-                background: none;
-                border: none;
-                z-index: 910;
-            }
-
-            .hamburger svg {
-                width: 30px;
-                height: 30px;
-                fill: #b8684f;
-            }
-
-            nav ul {
-                display: flex;
-                justify-content: center;
-                list-style: none;
-                flex-wrap: wrap;
-                transition: max-height 0.3s ease, opacity 0.3s ease;
-            }
-
-            nav ul li {
-                margin: 0.4rem 1.8rem;
-            }
-
-            nav ul li a {
-                text-decoration: none;
-                color: #2f2a26;
-                font-size: 1rem;
-                font-weight: 600;
-                font-family: 'Lora', serif;
-                text-transform: uppercase;
-                letter-spacing: 0.8px;
-                position: relative;
-                transition: color 0.3s ease;
-            }
-
-            nav ul li a::after {
-                content: '';
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background: #b8684f;
-                transition: width 0.3s ease;
-            }
-
-            nav ul li a:hover {
-                color: #b8684f;
-            }
-
-            nav ul li a:hover::after {
-                width: 100%;
-            }
-
-            /* Sections */
-            section {
-                padding: 4rem 1rem;
-                max-width: 1200px;
-                margin: 0 auto;
-                background: #fff;
-                border-radius: 12px;
-                margin-bottom: 2rem;
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            }
-
-            h2 {
-                font-size: 2.5rem;
-                font-weight: 700;
-                color: #2f2a26;
-                text-align: center;
-                margin-bottom: 1.5rem;
-                position: relative;
-            }
-
-            h2::after {
-                content: '';
-                width: 80px;
-                height: 3px;
-                background: linear-gradient(90deg, #b8684f, #58745d);
-                position: absolute;
-                bottom: -8px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            /* Gallery */
-            .gallery {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 1.2rem;
-                padding: 0.8rem;
-            }
-
-            .gallery-item {
-                position: relative;
-                overflow: hidden;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                transition: transform 0.3s ease;
-            }
-
-            .gallery-item img {
-                width: 100%;
-                height: 300px;
-                object-fit: cover;
-                display: block;
-                transition: transform 0.5s ease;
-            }
-
-            .gallery-item:hover {
-                transform: translateY(-5px);
-            }
-
-            .gallery-item:hover img {
-                transform: scale(1.08);
-            }
-
-            .gallery-item .overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(184, 104, 79, 0.5));
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-end;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-                padding: 1.2rem;
-            }
-
-            .gallery-item:hover .overlay {
-                opacity: 1;
-            }
-
-            .gallery-item .overlay span {
-                color: #fff;
-                font-size: 1rem;
-                font-weight: 600;
-                font-family: 'Lora', serif;
-                text-transform: uppercase;
-                margin-bottom: 0.6rem;
-                text-align: center;
-            }
-
-            .gallery-item .overlay button {
-                background: #b8684f;
-                color: #fff;
-                border: none;
-                padding: 0.6rem 1.8rem;
-                border-radius: 25px;
-                font-size: 0.95rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: background 0.3s ease;
-                z-index: 2;
-            }
-
-            .gallery-item .overlay button:hover {
-                background: #58745d;
-            }
-
-            /* Process Section */
-            .process-steps {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-                gap: 1.5rem;
-                margin-bottom: 2rem;
-                padding: 0 1rem;
-            }
-
-            .step {
-                background: #f5e9df;
-                padding: 2rem;
-                border-radius: 12px;
-                text-align: center;
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                position: relative;
-                border: 1px solid #e8d5c9;
-            }
-
-            .step:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            }
-
-            .step svg {
-                width: 80px;
-                height: 80px;
-                margin-bottom: 1rem;
-                fill: #b8684f;
-                transition: transform 0.3s ease;
-            }
-
-            .step:hover svg {
-                transform: scale(1.1);
-            }
-
-            .step h3 {
-                font-size: 1.6rem;
-                color: #2f2a26;
-                margin-bottom: 0.8rem;
-                font-weight: 700;
-            }
-
-            .step p {
-                font-size: 1rem;
-                color: #555;
-                font-family: 'Lora', serif;
-                line-height: 1.5;
-            }
-
-            .order-guide {
-                max-width: 750px;
-                margin: 2rem auto;
-                text-align: center;
-                font-family: 'Lora', serif;
-                font-size: 1.1rem;
-                color: #2f2a26;
-                padding: 1rem;
-                background: #f9f3ed;
-                border-radius: 10px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .order-guide strong {
-                color: #b8684f;
-            }
-
-            /* Workshops Section */
-            .workshops-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 1.5rem;
-                margin-top: 2rem;
-            }
-
-            .workshop-card {
-                position: relative;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                background: #f5e9df;
-            }
-
-            .workshop-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-            }
-
-            .workshop-card img {
-                width: 100%;
-                height: 220px;
-                object-fit: cover;
-                display: block;
-                border-bottom: 3px solid #b8684f;
-            }
-
-            .workshop-content {
-                padding: 1.5rem;
-                text-align: center;
-            }
-
-            .workshop-content h4 {
-                font-size: 1.5rem;
-                color: #2f2a26;
-                margin-bottom: 0.8rem;
-                font-family: 'Playfair Display', serif;
-            }
-
-            .workshop-content p {
-                font-size: 1rem;
-                color: #555;
-                font-family: 'Lora', serif;
-                margin-bottom: 1rem;
-                line-height: 1.5;
-            }
-
-            .workshop-content .cta-button {
-                background: #b8684f;
-                color: #fff;
-                padding: 0.7rem 1.8rem;
-                font-size: 1rem;
-            }
-
-            .workshop-content .cta-button:hover {
-                background: #58745d;
-            }
-
-            .workshops-info {
-                text-align: center;
-                margin-bottom: 2rem;
-                font-family: 'Lora', serif;
-                font-size: 1.1rem;
-                color: #2f2a26;
-            }
-
-            .workshops-info p {
-                margin-bottom: 0.8rem;
-            }
-
-            .workshops-info strong {
-                color: #b8684f;
-            }
-
-            /* Testimonials Section */
-            .testimonials-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 1.5rem;
-                padding: 0 1rem;
-                margin-top: 2rem;
-            }
-
-            .testimonial-card {
-                background: #f5e9df;
-                padding: 1.5rem;
-                border-radius: 12px;
-                text-align: center;
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-                transition: transform 0.3s ease;
-            }
-
-            .testimonial-card:hover {
-                transform: translateY(-5px);
-            }
-
-            .testimonial-card p {
-                font-size: 1rem;
-                font-style: italic;
-                color: #2f2a26;
-                font-family: 'Lora', serif;
-                margin-bottom: 1rem;
-                line-height: 1.5;
-            }
-
-            .testimonial-card span {
-                font-size: 1rem;
-                font-weight: 700;
-                color: #b8684f;
-                font-family: 'Lora', serif;
-            }
-
-            /* FAQ */
-            .faq {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 0 1rem;
-            }
-
-            .faq details {
-                margin-bottom: 1.2rem;
-                background: #f5e9df;
-                padding: 1.2rem;
-                border-radius: 12px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
-
-            .faq summary {
-                font-weight: 600;
-                font-size: 1.1rem;
-                color: #2f2a26;
-                cursor: pointer;
-                font-family: 'Lora', serif;
-            }
-
-            .faq summary::after {
-                content: '+';
-                color: #b8684f;
-                float: right;
-            }
-
-            .faq details[open] summary::after {
-                content: '−';
-            }
-
-            .faq p {
-                padding: 1rem 0;
-                color: #555;
-                font-family: 'Lora', serif;
-                font-size: 1rem;
-            }
-
-            /* Contact Section */
-            #contact {
-                background: linear-gradient(135deg, #f5e9df, #e8d5c9);
-                padding: 3rem 1rem;
-                text-align: center;
-                position: relative;
-                overflow: hidden;
-            }
-
-            #contact::before {
-                content: '';
-                position: absolute;
-                top: -50%;
-                left: -50%;
-                width: 200%;
-                height: 200%;
-                background: url('https://images.unsplash.com/photo-1581092160607-1e2f6ae1218b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
-                opacity: 0.1;
-                z-index: 0;
-            }
-
-            #contact > * {
-                position: relative;
-                z-index: 1;
-            }
-
-            #contact h2 {
-                font-size: 2.8rem;
-                margin-bottom: 1rem;
-            }
-
-            #contact p {
-                font-size: 1.2rem;
-                font-family: 'Lora', serif;
-                color: #2f2a26;
-                max-width: 600px;
-                margin: 0 auto 1.5rem;
-            }
-
-            .contact-links {
-                display: flex;
-                justify-content: center;
-                gap: 1.5rem;
-                margin-top: 1.5rem;
-                flex-wrap: wrap;
-            }
-
-            .contact-links a {
-                display: flex;
-                align-items: center;
-                text-decoration: none;
-                color: #2f2a26;
-                font-family: 'Lora', serif;
-                font-size: 1.1rem;
-                font-weight: 600;
-                transition: color 0.3s ease;
-            }
-
-            .contact-links a img {
-                width: 28px;
-                height: 28px;
-                margin-right: 0.6rem;
-            }
-
-            .contact-links a:hover {
-                color: #b8684f;
-            }
-
-            /* Order Modal (Fixed Sidebar) */
-            .modal {
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 350px;
-                height: 100%;
-                background: #f5e9df;
-                z-index: 1100;
-                padding: 2rem;
-                box-shadow: -8px 0 25px rgba(0, 0, 0, 0.2);
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
-                display: block;
-            }
-
-            .modal.open {
-                transform: translateX(0);
-            }
-
-            .modal-content {
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-            }
-
-            .modal-content h3 {
-                font-size: 1.8rem;
-                color: #2f2a26;
-                margin-bottom: 1rem;
-                text-align: center;
-            }
-
-            .modal-content p {
-                font-family: 'Lora', serif;
-                font-size: 1rem;
-                color: #555;
-                margin-bottom: 1.2rem;
-                text-align: center;
-            }
-
-            .modal-content textarea {
-                width: 100%;
-                height: 200px;
-                padding: 1rem;
-                border: 2px solid #b8684f;
-                border-radius: 8px;
-                margin-bottom: 1.2rem;
-                font-family: 'Lora', serif;
-                font-size: 1rem;
-                resize: none;
-            }
-
-            .modal-content button {
-                background: #b8684f;
-                color: #fff;
-                border: none;
-                padding: 0.8rem;
-                border-radius: 30px;
-                font-size: 1rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: background 0.3s ease;
-                margin: 0.5rem 0;
-            }
-
-            .modal-content button:hover {
-                background: #58745d;
-            }
-
-            .close-button {
-                background: #555;
-                color: #fff;
-                border: none;
-                padding: 0.8rem;
-                border-radius: 30px;
-                font-size: 1rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: background 0.3s ease;
-                margin-top: auto;
-            }
-
-            .close-button:hover {
-                background: #333;
-            }
-
-            /* Footer */
-            footer {
-                background: #2f2a26;
-                color: #f5e9df;
-                text-align: center;
-                padding: 2rem;
-                font-family: 'Lora', serif;
-                font-size: 1rem;
-            }
-
-            .footer-links {
-                margin-top: 1rem;
-            }
-
-            .footer-links a {
-                display: inline-flex;
-                align-items: center;
-                text-decoration: none;
-                color: #f5e9df;
-                font-size: 0.95rem;
-                font-weight: 600;
-                margin: 0 1rem;
-                transition: color 0.3s ease;
-            }
-
-            .footer-links a img {
-                width: 24px;
-                height: 24px;
-                margin-right: 0.5rem;
-            }
-
-            .footer-links a:hover {
-                color: #b8684f;
-            }
-
-            /* Animations */
-            @keyframes fadeInUp {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-
-            @keyframes slideInUp {
-                from { opacity: 0; transform: translateY(15px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-
-            /* Responsive */
-            @media (max-width: 768px) {
-                header {
-                    height: 70vh;
-                }
-
-                header h1 {
-                    font-size: 3rem;
-                }
-
-                header p {
-                    font-size: 1.2rem;
-                }
-
-                .logo {
-                    width: 70px;
-                    height: 70px;
-                }
-
-                /* Hamburger Menu */
-                .hamburger {
-                    display: block;
-                }
-
-                nav ul {
-                    display: none;
-                    flex-direction: column;
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    width: 100%;
-                    background: #f5e9df;
-                    padding: 1rem 0;
-                    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-                    max-height: 0;
-                    opacity: 0;
-                    overflow: hidden;
-                }
-
-                nav ul.active {
-                    display: flex;
-                    max-height: 400px;
-                    opacity: 1;
-                }
-
-                nav ul li {
-                    margin: 0.8rem 0;
-                    text-align: center;
-                }
-
-                h2 {
-                    font-size: 2rem;
-                }
-
-                .gallery-item img {
-                    height: 280px;
-                }
-
-                .gallery-item .overlay span {
-                    font-size: 0.95rem;
-                }
-
-                .gallery-item .overlay button {
-                    padding: 0.5rem 1.5rem;
-                    font-size: 0.9rem;
-                }
-
-                .workshop-banner h3 {
-                    font-size: 1.5rem;
-                }
-
-                .workshop-banner p {
-                    font-size: 0.95rem;
-                }
-
-                .workshop-card img {
-                    height: 200px;
-                }
-
-                .workshop-content h4 {
-                    font-size: 1.3rem;
-                }
-
-                .workshop-content p {
-                    font-size: 0.95rem;
-                }
-
-                .step svg {
-                    width: 70px;
-                    height: 70px;
-                }
-
-                .step h3 {
-                    font-size: 1.4rem;
-                }
-
-                .testimonials-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .modal {
-                    width: 300px;
-                }
-
-                .personalized-button {
-                    bottom: 80px;
-                    right: 20px;
-                    padding: 0.7rem 1.2rem;
-                    font-size: 0.9rem;
-                }
-
-                .personalized-button svg {
-                    width: 18px;
-                    height: 18px;
-                }
-
-                .whatsapp-button {
-                    bottom: 15px;
-                    right: 20px;
-                    width: 55px;
-                    height: 55px;
-                }
-
-                .whatsapp-button img {
-                    width: 28px;
-                    height: 28px;
-                }
-
-                #contact h2 {
-                    font-size: 2.2rem;
-                }
-
-                #contact p {
-                    font-size: 1.1rem;
-                }
-            }
-
-            @media (max-width: 480px) {
-                header h1 {
-                    font-size: 2.2rem;
-                }
-
-                header p {
-                    font-size: 1rem;
-                }
-
-                .logo {
-                    width: 60px;
-                    height: 60px;
-                }
-
-                .cta-button {
-                    padding: 0.7rem 1.8rem;
-                    font-size: 1rem;
-                }
-
-                .gallery-item img {
-                    height: 240px;
-                }
-
-                .gallery-item .overlay span {
-                    font-size: 0.9rem;
-                }
-
-                .gallery-item .overlay button {
-                    padding: 0.4rem 1.2rem;
-                    font-size: 0.85rem;
-                }
-
-                .step h3 {
-                    font-size: 1.3rem;
-                }
-
-                .step svg {
-                    width: 60px;
-                    height: 60px;
-                }
-
-                .order-guide {
-                    font-size: 1rem;
-                }
-
-                .workshop-banner h3 {
-                    font-size: 1.3rem;
-                }
-
-                .workshop-banner p {
-                    font-size: 0.9rem;
-                }
-
-                .workshop-card img {
-                    height: 180px;
-                }
-
-                .testimonial-card p {
-                    font-size: 0.95rem;
-                }
-
-                .testimonial-card span {
-                    font-size: 0.95rem;
-                }
-
-                .modal {
-                    width: 100%;
-                    max-width: 280px;
-                }
-
-                .modal-content h3 {
-                    font-size: 1.6rem;
-                }
-
-                .modal-content textarea {
-                    height: 150px;
-                }
-
-                .modal-content button, .close-button {
-                    padding: 0.7rem;
-                    font-size: 0.9rem;
-                }
-
-                .personalized-button {
-                    bottom: 70px;
-                    padding: 0.6rem 1rem;
-                    font-size: 0.85rem;
-                }
-
-                .personalized-button svg {
-                    width: 16px;
-                    height: 16px;
-                }
-
-                .whatsapp-button {
-                    width: 50px;
-                    height: 50px;
-                }
-
-                .whatsapp-button img {
-                    width: 24px;
-                    height: 24px;
-                }
-
-                .contact-links {
-                    flex-direction: column;
-                    gap: 1rem;
-                }
-
-                #contact h2 {
-                    font-size: 1.8rem;
-                }
-
-                #contact p {
-                    font-size: 1rem;
-                }
-
-                .contact-links a {
-                    font-size: 1rem;
-                }
-
-                .contact-links a img {
-                    width: 24px;
-                    height: 24px;
-                }
-            }
-
-            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;600&display=swap');
-        </style>
-    </head>
-    <body>
-        <header>
-            <img src="https://ik.imagekit.io/fuiyez2ze/little%20logo.jpg?updatedAt=1748504154187" alt="Little Miss Arty Logo" class="logo">
-            <h1>Craft Your Story with Clay</h1>
-            <p>Handcrafted pottery and immersive workshops by Little Miss Arty</p>
-            <button class="cta-button" onclick="openModal('Workshop Registration')">Join a Workshop</button>
-        </header>
-
-        <div class="workshop-banner">
-            <h3>Join Our Pottery Workshop!</h3>
-            <p>Date: June 15, 2025 | Price: ₹500 | Craft, create, and capture your art with clay-making videos!</p>
-            <button class="cta-button" onclick="openModal('Workshop Registration')">Register Now</button>
-        </div>
-
-        <nav>
-            <div class="nav-container">
-                <button class="hamburger" aria-label="Toggle Menu">
-                    <svg viewBox="0 0 24 24" class="hamburger-icon">
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                    <svg viewBox="0 0 24 24" class="close-icon" style="display: none;">
-                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-                    </svg>
-                </button>
-                <ul>
-                    <li><a href="#gallery">Portfolio</a></li>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#workshops">Workshops</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RhythmFlow Dance Academy: Premier dance training with expert instructors and flexible classes.">
+    <meta name="keywords" content="dance academy, hip-hop, ballet, salsa, dance classes">
+    <meta property="og:title" content="RhythmFlow Dance Academy">
+    <meta property="og:description" content="Join our dance community with top instructors and diverse classes.">
+    <meta property="og:image" content="https://placehold.co/500x200/1c1c2e/ffd700?text=RhythmFlow">
+    <meta property="og:url" content="https://rhythmflow.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="data:application/json,{'name':'RhythmFlow Dance Academy','short_name':'RhythmFlow','start_url':'/','display':'standalone','background_color':'#0a0a1a','theme_color':'#ffd700','icons':[{'src':'https://placehold.co/192x192/1c1c2e/ffd700?text=RF','sizes':'192x192','type':'image/png'}]}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>RhythmFlow Dance Academy</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+        body{background:linear-gradient(135deg,#0a0a1a,#1c1c2e);color:#fff;}
+        header{position:fixed;width:100%;top:0;background:rgba(0,0,0,0.9);padding:15px 20px;display:flex;justify-content:space-between;align-items:center;z-index:1000;}
+        header.scrolled{background:rgba(0,0,0,0.95);box-shadow:0 2px 5px rgba(255,215,0,0.2);}
+        .logo{font-size:1.5rem;color:#ffd700;font-weight:600;}
+        nav ul{list-style:none;display:flex;gap:15px;}
+        nav ul li a{color:#fff;text-decoration:none;font-size:0.9rem;}
+        nav ul li a:hover,nav ul li a.active{color:#ffd700;}
+        .hamburger{display:none;cursor:pointer;font-size:1.2rem;color:#fff;}
+        .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:url('https://placehold.co/1920x1080/1c1c2e/ffd700?text=Hero+Banner') center/cover;opacity:0.8;}
+        .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:-1;}
+        .hero-content h1{font-size:3rem;color:#fff;margin-bottom:15px;}
+        .hero-content p{font-size:1.2rem;color:#f0f0f0;margin-bottom:20px;}
+        .btn{background:linear-gradient(45deg,#ffd700,#ff4d4d);color:#fff;padding:10px 30px;border-radius:20px;text-decoration:none;font-size:1rem;}
+        .btn:hover{background:linear-gradient(45deg,#ff4d4d,#ffd700);transform:translateY(-2px);transition:0.3s;}
+        .stats-bar{display:flex;justify-content:center;gap:20px;padding:10px;background:rgba(255,255,255,0.1);margin:15px auto;max-width:800px;border-radius:8px;}
+        .stat-item .stat-number{font-size:1.5rem;color:#ffd700;}
+        .stat-item .stat-label{font-size:0.9rem;color:#e0e0e0;}
+        .about,.classes,.instructors,.contact{padding:60px 20px;text-align:center;}
+        h2{font-size:2rem;color:#ffd700;margin-bottom:20px;}
+        .about img,.class-card img,.instructor-card img{width:100%;max-width:500px;border-radius:8px;margin:10px 0;height:200px;object-fit:cover;}
+        .class-grid,.instructor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;max-width:1000px;margin:0 auto;}
+        .class-card,.instructor-card{background:rgba(255,255,255,0.1);border-radius:8px;padding:15px;}
+        .class-card h3,.instructor-card h3{font-size:1.2rem;color:#ffd700;margin:10px 0;}
+        .class-card p,.instructor-card p{font-size:0.9rem;color:#e0e0e0;}
+        .contact form{max-width:500px;margin:0 auto;display:grid;gap:10px;}
+        .contact input,.contact textarea{background:rgba(255,255,255,0.1);border:1px solid #ffd700;padding:8px;border-radius:5px;color:#fff;font-size:0.9rem;}
+        .contact textarea{resize:vertical;min-height:80px;}
+        .contact button{background:linear-gradient(45deg,#ffd700,#ff4d4d);border:none;padding:8px;border-radius:5px;color:#fff;cursor:pointer;}
+        .contact button:hover{transform:translateY(-2px);transition:0.3s;}
+        .contact-info{margin-top:15px;font-size:0.9rem;}
+        .contact-info a{color:#ffd700;text-decoration:none;}
+        .contact-info a:hover{color:#ff4d4d;}
+        .footer{background:#0a0a1a;padding:20px;text-align:center;}
+        .footer p,.footer a{color:#e0e0e0;font-size:0.9rem;}
+        .footer a{color:#ffd700;}
+        .footer a:hover{color:#ff4d4d;}
+        .booking-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:2000;justify-content:center;align-items:center;}
+        .booking-modal-content{background:#1c1c2e;border-radius:8px;padding:15px;max-width:500px;width:90%;text-align:center;}
+        .booking-modal-content select,.booking-modal-content input{background:rgba(255,255,255,0.1);border:1px solid #ffd700;padding:8px;border-radius:5px;color:#fff;width:100%;margin-bottom:10px;}
+        .booking-modal-close{position:absolute;top:10px;right:10px;color:#fff;font-size:1.2rem;cursor:pointer;}
+        @media (max-width:768px){
+            .hero-content h1{font-size:2rem;}
+            .hero-content p{font-size:1rem;}
+            nav ul{display:none;flex-direction:column;position:absolute;top:50px;left:0;width:100%;background:rgba(0,0,0,0.9);padding:15px;}
+            nav ul.active{display:flex;}
+            .hamburger{display:block;}
+            .stats-bar{flex-direction:column;gap:10px;}
+            .btn{padding:8px 20px;font-size:0.9rem;}
+        }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <div class="logo" aria-label="RhythmFlow Dance Academy Logo">RhythmFlow</div>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="#home" class="active" aria-current="page">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#instructors">Instructors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
+        <div class="hamburger" aria-label="Toggle mobile menu">☰</div>
+    </header>
 
-        <section id="gallery">
-            <h2>Our Artistry</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="https://ik.imagekit.io/fuiyez2ze/Little%201.PNG?updatedAt=1748498439889" alt="Handcrafted Clay Pot">
-                    <div class="overlay">
-                        <span>Handcrafted Clay Pot</span>
-                        <button onclick="openModal('Handcrafted Clay Pot')">Order Now</button>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://ik.imagekit.io/fuiyez2ze/Little%202.PNG?updatedAt=1748499514588" alt="Rustic Clay Vase">
-                    <div class="overlay">
-                        <span>Rustic Clay Vase</span>
-                        <button onclick="openModal('Rustic Clay Vase')">Order Now</button>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://ik.imagekit.io/fuiyez2ze/little%203.PNG?updatedAt=1748499521884" alt="Artisan Clay Bowl">
-                    <div class="overlay">
-                        <span>Artisan Clay Bowl</span>
-                        <button onclick="openModal('Artisan Clay Bowl')">Order Now</button>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://ik.imagekit.io/fuiyez2ze/little%204.PNG?updatedAt=1748499511336" alt="Textured Clay Jar">
-                    <div class="overlay">
-                        <span>Textured Clay Jar</span>
-                        <button onclick="openModal('Textured Clay Jar')">Order Now</button>
-                    </div>
-                </div>
+    <section id="home" class="hero" role="main">
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+            <h1>Dance with Passion</h1>
+            <p>Join RhythmFlow Dance Academy for world-class training in diverse styles.</p>
+            <a href="#booking-modal" class="btn" onclick="openBookingModal()">Book a Class</a>
+        </div>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number" data-target="5000">0</span>
+                <span class="stat-label">Students</span>
             </div>
-            <button class="cta-button" onclick="openModal()">Design Your Own</button>
-        </section>
-
-        <section id="process">
-            <h2>Your Pottery in 3 Steps</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
-                    </svg>
-                    <h3>Choose Your Idea</h3>
-                    <p>Explore our collection or dream up a custom design to bring your vision to life.</p>
-                </div>
-                <div class="step">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20 6h-4V4c0-1.11-.9-2-2-2h-4c-1.11 0-2 .9-2 2v2H4c-1.1 0-1.99.9-1.99 2L2 19c0 1.11.89 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 0h-4V4h4v2z"/>
-                    </svg>
-                    <h3>Describe It</h3>
-                    <p>Share your vision with details or images to guide our artisans.</p>
-                </div>
-                <div class="step">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M21 3H3C1.9 3 1 3.9 1 5v8c0 1.1 .9 2 2 2h8l3 3v-3h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 12h-5.59l-1.41 1.41L12 12.41 10 14.41l-2-2V5h13v10z"/>
-                    </svg>
-                    <h3>Delivered</h3>
-                    <p>Receive your handcrafted pottery, crafted with care and precision.</p>
-                </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="20">0</span>
+                <span class="stat-label">Instructors</span>
             </div>
-            <div class="order-guide">
-                <p><strong>How to Order:</strong> Browse our portfolio and click "Create Personalized Pottery" to design your custom piece or inquire about workshops. Chat with us on WhatsApp for quick queries!</p>
+            <div class="stat-item">
+                <span class="stat-number" data-target="10">0</span>
+                <span class="stat-label">Years</span>
             </div>
-        </section>
-
-        <section id="workshops">
-            <h2>Immersive Clay Workshops</h2>
-            <div class="workshops-info">
-                <p>Learn hands-on techniques, create unique pieces, and capture your journey with clay-making videos for only ₹500. Perfect for all skill levels!</p>
-                <p><strong>Next Workshop:</strong> June 15, 2025 | Register Now!</p>
-            </div>
-            <div class="workshops-grid">
-                <div class="workshop-card">
-                    <img src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=220&q=80" alt="Wheel Throwing Workshop">
-                    <div class="workshop-content">
-                        <h4>Wheel Throwing</h4>
-                        <p>Master the pottery wheel to create stunning vessels with expert guidance.</p>
-                        <button class="cta-button" onclick="openModal('Wheel Throwing Workshop Registration')">Join Now</button>
-                    </div>
-                </div>
-                <div class="workshop-card">
-                    <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=220&q=80" alt="Hand Building Workshop">
-                    <div class="workshop-content">
-                        <h4>Hand Building</h4>
-                        <p>Shape clay by hand to craft unique sculptures and functional pieces.</p>
-                        <button class="cta-button" onclick="openModal('Hand Building Workshop Registration')">Join Now</button>
-                    </div>
-                </div>
-                <div class="workshop-card">
-                    <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=220&q=80" alt="Video Storytelling Workshop">
-                    <div class="workshop-content">
-                        <h4>Video Storytelling</h4>
-                        <p>Film your pottery process to create a shareable story of your art.</p>
-                        <button class="cta-button" onclick="openModal('Video Storytelling Workshop Registration')">Join Now</button>
-                    </div>
-                </div>
-            </div>
-            <button class="cta-button" onclick="openModal('Workshop Registration')">Reserve Your Slot</button>
-        </section>
-
-        <section id="testimonials">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>“The custom pottery I ordered was beautifully crafted and exceeded my expectations!”</p>
-                    <span>Priya Sharma</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>“The workshop was a blast, and I loved creating my own clay piece!”</p>
-                    <span>Arjun Patel</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>“Little Miss Arty’s attention to detail made my order truly special.”</p>
-                    <span>Sneha Rao</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="qa">
-            <h2>Your Questions Answered</h2>
-            <div class="qa-container">
-                <details>
-                    <summary>How long does it take to create my pottery?</summary>
-                    <p>Most pieces are crafted in 3-4 weeks, with progress updates provided.</p>
-                </details>
-                <details>
-                    <summary>Can I order a custom pottery design?</summary>
-                    <p>Absolutely! Click the "Create Customized Pottery" button to share your vision.</p>
-                </details>
-                <details>
-                    <summary>What can I expect from the workshop?</summary>
-                    <p>Learn hands-on clay techniques, create a piece, and record a clay-making video to capture your experience.</p>
-                </details>
-                <details>
-                    <summary>Are payments secure?</summary>
-                    <p>We use trusted payment methods confirmed after your order or workshop registration.</p>
-                </details>
-            </div>
-        </section>
-
-    <section id="contact">
-        <h2>Let's Create Together</h2>
-        <p>Ready to craft pottery or join a workshop? Click <strong>Create Personalized Pottery</strong> to start your creative journey or chat with us on WhatsApp!</p>
-        <button class="cta-button" onclick="openModal()">Get Started</button>
-        <div class="contact-links">
-            <a href="https://www.instagram.com/littlemissarty/" target="_blank">
-                <img src="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico" alt="Instagram">
-                Follow @littlemissarty
-            </a>
         </div>
     </section>
 
-    <!-- Order Modal -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <h3>Create Your Pottery</h3>
-            <p>Share your custom pottery ideas, workshop registration, or any inquiry.</p>
-            <textarea id="orderDetails" placeholder="E.g., 'Custom Pottery: Blue Ceramic Mug', 'Workshop Registration: June 15', or 'Inquiry: ...'"></textarea>
-            <button id="submitOrder">Submit Inquiry</button>
-            <button class="close-button" onclick="closeModal()">Close</button>
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>RhythmFlow Dance Academy offers expert-led classes in multiple dance forms, serving thousands of students with passion and excellence.</p>
+        <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=About+Us" 
+             onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
+             alt="About RhythmFlow" loading="lazy">
+    </section>
+
+    <section id="classes" class="classes">
+        <h2>Our Classes</h2>
+        <div class="class-grid">
+            <div class="class-card">
+                <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Hip-Hop" 
+                     onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
+                     alt="Hip-Hop" loading="lazy">
+                <h3>Hip-Hop</h3>
+                <p>Energetic urban dance styles.</p>
+                <a href="#booking-modal" class="btn" onclick="openBookingModal('Hip-Hop')">Book</a>
+            </div>
+            <div class="class-card">
+                <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Classical+Ballet" 
+                     onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
+                     alt="Classical Ballet" loading="lazy">
+                <h3>Classical Ballet</h3>
+                <p>Graceful and precise techniques.</p>
+                <a href="#booking-modal" class="btn" onclick="openBookingModal('Classical+Ballet')">Book</a>
+            </div>
+            <div class="class-card">
+                <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Salsa" 
+                     onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
+                     alt="Salsa" loading="lazy">
+                <h3>Salsa</h3>
+                <p>Vibrant Latin rhythms.</p>
+                <a href="#booking-modal" class="btn" onclick="openBookingModal('Salsa')">Book</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="instructors" class="instructors">
+        <h2>Our Instructors</h2>
+        <div class="instructor-grid">
+            <div class="instructor-card">
+                <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Emma+Johnson" 
+                     onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
+                     alt="Emma Johnson" loading="lazy">
+                <h3>Emma Johnson</h3>
+                <p>Hip-Hop Specialist</p>
+            </div>
+            <div class="instructor-card">
+                <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Maria+Lopez" 
+                     onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
+                     alt="Maria Lopez" loading="lazy">
+                <h3>Maria Lopez</h3>
+                <p>Ballet Expert</p>
+            </div>
+            <div class="instructor-card">
+                <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Carlos+Smith" 
+                     onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
+                     alt="Carlos Smith" loading="lazy">
+                <h3>Carlos Smith</h3>
+                <p>Salsa Instructor</p>
+            </div>
+            <div class="instructor-card">
+                <img src="https://placehold.co/500x200/1c1c2e/ffd700?text=Sofia+Lee" 
+                     onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
+                     alt="Sofia Lee" loading="lazy">
+                <h3>Sofia Lee</h3>
+                <p>Contemporary Dance</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form" aria-label="Contact form">
+            <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
+            <input type="email" name="email" placeholder="Your Email" required aria-label="Email">
+            <input type="tel" name="phone" placeholder="Your Phone" required aria-label="Phone">
+            <textarea name="message" placeholder="Your Message" required aria-label="Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div class="contact-info">
+            <p>Phone: <a href="tel:+11234567890">+1-123-456-7890</a></p>
+            <p>Email: <a href="mailto:info@rhythmflow.com">info@rhythmflow.com</a></p>
+            <p>
+                <a href="https://instagram.com/rhythmflow" target="_blank" aria-label="Instagram">Instagram</a> |
+                <a href="https://youtube.com/@rhythmflow" target="_blank" aria-label="YouTube">YouTube</a>
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+        <p>© 2024 RhythmFlow Dance Academy</p>
+        <p>Phone: <a href="tel:+11234567890">+1-123-456-7890</a> | Email: <a href="mailto:info@rhythmflow.com">info@rhythmflow.com</a></p>
+    </footer>
+
+    <div class="booking-modal" id="booking-modal" aria-label="Booking form modal">
+        <div class="booking-modal-content">
+            <span class="booking-modal-close" onclick="closeBookingModal()" aria-label="Close">×</span>
+            <h2>Book a Class</h2>
+            <form id="booking-form" aria-label="Booking form">
+                <select id="class-select" name="class" required aria-label="Select class">
+                    <option value="" disabled selected>Choose a Class</option>
+                    <option value="Hip-Hop">Hip-Hop</option>
+                    <option value="Classical Ballet">Classical Ballet</option>
+                    <option value="Salsa">Salsa</option>
+                </select>
+                <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
+                <input type="email" name="email" placeholder="Your Email" required aria-label="Email">
+                <input type="tel" name="phone" placeholder="Your Phone" required aria-label="Phone">
+                <button type="submit">Book Now</button>
+            </form>
         </div>
     </div>
 
-    <!-- Customized Pottery Button -->
-    <button class="personalized-button" onclick="openModal()">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21 15.5v-6h-2v6h-6v-6h4v2h-4v-2h-6v2h-4v4h4zM12 2C6.48 2 2 6.48 2 12s4.48 10px 10px 10s-4.48 10px-10px 10pxS17.52 2 12 2zm2px 18px-4.41 0-8-4.59-8s 3.59-8 8-8 8 3.59 8 8-3.59 8-8 0 0zm-2-6h4v-2h-4v-6h-2v8z"/>
-        </svg>
-        Create Personalized Pottery
-    </button>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/918894879696?text=Hello!%E2%80%88I%E2%80%99m%20interested%20in%20Little%20Miss%20Arty." class="whatsapp-button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp">
-    </a>
-
-    <footer>
-        <p>© 2025 Little Miss Arty. Crafted with Passion.</p>
-        <div class="footer-links">
-            <a href="https://www.instagram.com/littlemissarty/" target="_blank">
-                <img src="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico" alt="Instagram">
-                Follow @littlemissarty
-            </a>
-        </div>
-    </footer>
-
     <script>
-        // Modal Functions
-        function openModal(product) {
-            console.log('openModal:', product);
-            const modal = document.getElementById('orderModal');
-            const textarea = document.getElementById('orderDetails');
-            if (!modal) {
-                console.error('Modal element not found');
-                return;
-            }
-            if (product) {
-                textarea.value = product.includes('Workshop') ? `Workshop Registration: ${product}` : `Custom Pottery: ${product}`;
-            } else {
-                textarea.value = '';
-            }
-            modal.classList.add('open');
-        }
+        const GOOGLE_API_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL'; // Replace with Google Apps Script URL
 
-        function closeModal() {
-            console.log('closeModal called');
-            const modal = document.getElementById('orderModal');
-            if (modal) {
-                modal.classList.remove('open');
-            }
-        }
-
-        // Submit Inquiry
-        document.getElementById('submitOrder').onclick = () => {
-            console.log('Submit button clicked');
-            const textarea = document.getElementById('orderDetails');
-            const message = encodeURIComponent(`Hello! ${textarea.value || 'I’m interested in personalized pottery or workshops.'}`);
-            window.location.href = `https://wa.me/918894879696?text=${message}`;
-            closeModal();
-        };
+        // Header Scroll
+        window.addEventListener('scroll', () => {
+            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 0);
+        });
 
         // Hamburger Menu
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.querySelector('.hamburger');
-            const navList = document.querySelector('nav ul');
-            const hamburgerIcon = document.querySelector('.hamburger-icon');
-            const closeIcon = document.querySelector('.close-icon');
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.textContent = navMenu.classList.contains('active') ? '✖' : '☰';
+        });
 
-            hamburger.addEventListener('click', () => {
-                navList.classList.toggle('active');
-                hamburgerIcon.style.display = navList.classList.contains('active') ? 'none' : 'block';
-                closeIcon.style.display = navList.classList.contains('active') ? 'block' : 'none';
-            });
-
-            // Close menu when clicking a link
-            navList.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navList.classList.remove('active');
-                    hamburgerIcon.style.display = 'block';
-                    closeIcon.style.display = 'none';
+        // Form Submission
+        async function submitToGoogleSheet(formId, data) {
+            try {
+                if (!GOOGLE_API_URL.includes('https://script.google.com')) {
+                    alert('Please configure Google Apps Script URL');
+                    return;
+                }
+                const response = await fetch(GOOGLE_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
                 });
-            });
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('Submission successful!');
+                    document.getElementById(formId).reset();
+                    if (formId === 'booking-form') closeBookingModal();
+                } else {
+                    alert('Submission failed. Please try again.');
+                }
+            } catch (error) {
+                console.error('Form error:', error);
+                alert('Error submitting form.');
+            }
+        }
 
-            // Lazy Load Images
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.setAttribute('loading', 'lazy');
-            });
-
-            // Debug Modal Buttons
-            const buttons = document.querySelectorAll('[onclick*="openModal"]');
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    console.log('Button clicked:', button.textContent);
-                });
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitToGoogleSheet('contact-form', {
+                type: 'Contact',
+                name: e.target.name.value.trim(),
+                email: e.target.email.value.trim(),
+                phone: e.target.phone.value.trim(),
+                details: e.target.message.value.trim()
             });
         });
+
+        document.getElementById('booking-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitToGoogleSheet('booking-form', {
+                type: 'Booking',
+                name: e.target.name.value.trim(),
+                email: e.target.email.value.trim(),
+                phone: e.target.phone.value.trim(),
+                details: e.target.class.value
+            });
+        });
+
+        // Booking Modal
+        function openBookingModal(className) {
+            const modal = document.getElementById('booking-modal');
+            const classSelect = document.getElementById('class-select');
+            if (className) classSelect.value = className.replace(/\+/g, ' ');
+            modal.style.display = 'flex';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('booking-modal').style.display = 'none';
+        }
+
+        document.querySelector('.booking-modal-close').addEventListener('click', closeBookingModal);
+        document.getElementById('booking-modal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeBookingModal();
+        });
+
+        // Stats Animation
+        const stats = document.querySelectorAll('.stat-number');
+        const observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                stats.forEach(stat => {
+                    const target = parseInt(stat.dataset.target);
+                    let count = 0;
+                    const increment = target / 20;
+                    const update = () => {
+                        if (count < target) {
+                            count += increment;
+                            stat.textContent = Math.ceil(count);
+                            setTimeout(update, 50);
+                        } else {
+                            stat.textContent = target + '+';
+                        }
+                    };
+                    update();
+                });
+                observer.disconnect();
+            }
+        }, { threshold: 0.5 });
+        observer.observe(document.querySelector('.stats-bar'));
+
+        // Image Load
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', () => console.log(`Loaded: ${img.src}`));
+            img.addEventListener('error', () => console.error(`Failed: ${img.src}`));
+        });
+
+        // PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(() => console.log('Service Worker registered'))
+                .catch(error => console.error('Service Worker error:', error));
+        }
     </script>
 </body>
 </html>
