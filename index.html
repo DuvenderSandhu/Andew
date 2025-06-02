@@ -11,6 +11,7 @@
     <meta property="og:url" content="https://rhythmflow.com">
     <meta name="twitter:card" content="summary_large_image">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://favicon.io/emoji-favicons/dancer" sizes="32x32">
     <title>RhythmFlow Dance Academy</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
@@ -22,7 +23,7 @@
         nav ul li a { color: #fff; text-decoration: none; font-size: 1rem; transition: color 0.3s; }
         nav ul li a:hover, nav ul li a.active { color: #ffd700; }
         .hamburger { display: none; cursor: pointer; font-size: 1.5rem; color: #fff; }
-        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('https://images.unsplash.com/photo-1522642888367-8d98750c243c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover; position: relative; filter: grayscale(20%); }
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('https://images.unsplash.com/photo-1522642888367-8d98750c243c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover; position: relative; filter: grayscale(20%); }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: -1; }
         .hero-content h1 { font-size: 4rem; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 1rem; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
         .hero-content p { font-size: 1.5rem; color: #f0f0f0; margin-bottom: 1.5rem; }
@@ -56,7 +57,8 @@
         .footer a:hover { color: #ff4d4d; }
         .booking-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 2000; justify-content: center; align-items: center; }
         .booking-modal-content { background: #1c1f2e; border-radius: 0.5rem; padding: 1.5rem; max-width: 31.25rem; width: 90%; text-align: center; position: relative; }
-        .booking-modal-content select, .booking-modal-content input { background: rgba(255, 255, 255, 0.1); border: 1px solid #ffd700; padding: 0.5rem; border-radius: 0.3125rem; color: #fff; width: 100%; margin-bottom: 0.625rem; font-size: 0.9rem; }
+        .booking-modal-content select, .booking-modal-content input { background: #2a2d3e; border: 1px solid #ffd700; padding: 0.5rem; border-radius: 0.3125rem; color: #fff; width: 100%; margin-bottom: 0.625rem; font-size: 0.9rem; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+        .booking-modal-content select { background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffd700%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 0.7rem top 50%; background-size: 0.65rem auto; }
         .booking-modal-close { position: absolute; top: 0.625rem; right: 0.625rem; color: #fff; font-size: 1.5rem; cursor: pointer; }
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -124,7 +126,7 @@
         <h2>Our Classes</h2>
         <div class="class-grid">
             <div class="class-card">
-                <img src="https://images.unsplash.com/photo-1621976360623-004223992275?q=80&w=1428&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                <img src="https://images.unsplash.com/photo-1621976360623-004223992275?q=80&w=1428&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Hip-Hop" loading="lazy">
                 <h3>Hip-Hop</h3>
@@ -132,7 +134,7 @@
                 <a href="#booking-modal" class="btn" onclick="openBookingModal('Hip-Hop')">Book Now</a>
             </div>
             <div class="class-card">
-                <img src="https://images.unsplash.com/photo-1528392944531-e63de93f8751?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                <img src="https://images.unsplash.com/photo-1528392944531-e63de93f8751?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Classical Ballet" loading="lazy">
                 <h3>Classical Ballet</h3>
@@ -140,7 +142,7 @@
                 <a href="#booking-modal" class="btn" onclick="openBookingModal('Classical+Ballet')">Book Now</a>
             </div>
             <div class="class-card">
-                <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Salsa" loading="lazy">
                 <h3>Salsa</h3>
@@ -154,28 +156,28 @@
         <h2>Our Instructors</h2>
         <div class="instructor-grid">
             <div class="instructor-card">
-                <img src="https://images.unsplash.com/photo-1578619627285-e3a1d382f2bf?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                <img src="https://images.unsplash.com/photo-1578619627285-e3a1d382f2bf?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Emma Johnson" loading="lazy">
                 <h3>Emma Johnson</h3>
                 <p>Hip-Hop Specialist with 10+ years of experience.</p>
             </div>
             <div class="instructor-card">
-                <img src="https://images.unsplash.com/photo-1582707718995-6d1404d4f547?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                <img src="https://images.unsplash.com/photo-1582707718995-6d1404d4f547?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Maria Lopez" loading="lazy">
                 <h3>Maria Lopez</h3>
                 <p>Ballet Expert trained in classical techniques.</p>
             </div>
             <div class="instructor-card">
-                <img src="https://images.unsplash.com/photo-1504505278590-428d1acd0f07?q=80&w=1481&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                <img src="https://images.unsplash.com/photo-1504505278590-428d1acd0f07?q=80&w=1481&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Carlos Smith" loading="lazy">
                 <h3>Carlos Smith</h3>
                 <p>Salsa Instructor with a passion for Latin dance.</p>
             </div>
             <div class="instructor-card">
-                <img src="https://images.unsplash.com/photo-1504505278590-428d1acd0f07?q=80&w=1481&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                <img src="https://images.unsplash.com/photo-1504505278590-428d1acd0f07?q=80&w=1481&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                      onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" 
                      alt="Sofia Lee" loading="lazy">
                 <h3>Sofia Lee</h3>
@@ -188,14 +190,14 @@
         <h2>What Our Students Say</h2>
         <div class="testimonial-grid">
             <div class="testimonial-card">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMGltYWdlfGVufDB8fDB8fHww" 
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMGltYWdlfGVufDB8fDB8fHww" 
                      onerror="this.src='https://placehold.co/80x80/1c1c2e/ffd700?text=Fallback'" 
                      alt="Student" loading="lazy">
                 <h3>Jane Doe</h3>
                 <p>"RhythmFlow transformed my dance skills and confidence!"</p>
             </div>
             <div class="testimonial-card">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMGltYWdlfGVufDB8fDB8fHww" 
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMGltYWdlfGVufDB8fDB8fHww" 
                      onerror="this.src='https://placehold.co/80x80/1c1c2e/ffd700?text=Fallback'" 
                      alt="Student" loading="lazy">
                 <h3>Mike Smith</h3>
@@ -272,7 +274,9 @@
             const iframe = document.getElementsByName('form-response')[0];
             iframe.onload = () => {
                 try {
-                    const response = iframe.contentDocument.body.textContent;
+                    const response = iframe.contentDocument?.body?.textContent || '';
+                    console.log('Iframe response:', response); // Debug log
+                    if (!response) throw new Error('Empty response from server');
                     const result = JSON.parse(response);
                     if (result.status === 'success') {
                         alert('Submission successful!');
@@ -282,6 +286,7 @@
                         alert('Submission failed: ' + (result.message || 'Unknown error'));
                     }
                 } catch (error) {
+                    console.error('Form submission error:', error.message); // Debug log
                     alert('Thank you for your Submission');
                 }
             };
