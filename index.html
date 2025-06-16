@@ -129,19 +129,19 @@
             <div class="class-card">
                 <img src="https://images.unsplash.com/photo-1621976360623-004223992275?q=80&w=1428&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="Hip-Hop" loading="lazy">
                 <h3>Hip-Hop</h3>
-                <p>Energetic urban dance styles to ignite your rhythm. (₹1500)</p>
+                <p>Energetic urban dance styles to ignite your rhythm. (₹1)</p>
                 <a href="#booking-modal" class="btn" onclick="openBookingModal('Hip-Hop')">Book Now</a>
             </div>
             <div class="class-card">
                 <img src="https://images.unsplash.com/photo-1528392944531-e63de93f8751?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="Classical Ballet" loading="lazy">
                 <h3>Classical Ballet</h3>
-                <p>Graceful techniques for poise and precision. (₹2000)</p>
+                <p>Graceful techniques for poise and precision. (₹1)</p>
                 <a href="#booking-modal" class="btn" onclick="openBookingModal('Classical Ballet')">Book Now</a>
             </div>
             <div class="class-card">
                 <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="Salsa" loading="lazy">
                 <h3>Salsa</h3>
-                <p>Vibrant Latin rhythms to spice up your moves. (₹1800)</p>
+                <p>Vibrant Latin rhythms to spice up your moves. (₹1)</p>
                 <a href="#booking-modal" class="btn" onclick="openBookingModal('Salsa')">Book Now</a>
             </div>
         </div>
@@ -191,7 +191,7 @@
 
     <section id="contact" class="contact fade-in">
         <h2>Contact Us</h2>
-        <form id="contact-form" aria-label="Contact form" method="POST" action="https://script.google.com/macros/s/AKfycbxQW9F-q7rF4ZkavUTt8eGP9Knp0b5X51ZA19pn9wPGyC1WoiqDcwAS5gHM1rxks_x6CQ/exec" target="form-response">
+        <form id="contact-form" aria-label="Contact form" method="POST" action="https://script.google.com/macros/s/AKfycby1Qfo-uhiokTb2bcOpwV8e3GHggk3dHQwyqiGjNmrMVPSmVld6EsVmB7nyOYCYoU3K4g/exec" target="form-response">
             <input type="hidden" name="type" value="Contact">
             <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
             <input type="email" name="email" placeholder="Your Email" required aria-label="Email">
@@ -201,7 +201,7 @@
         </form>
         <iframe name="form-response" class="hidden"></iframe>
         <div class="contact-info">
-            <p>Phone: <a href="tel:+91YOURPHONENUMBER">+91-YOUR-PHONE-NUMBER</a></p>
+            <p>Phone: <a href="tel:+91YOURPHONENUMBER">+91-YOUR-PHONE-NUMBER</a> <!-- Replace with your actual phone number --></p>
             <p>Email: <a href="mailto:info@rhythmflow.com">info@rhythmflow.com</a></p>
             <p><a href="https://instagram.com/rhythmflow" target="_blank" aria-label="Instagram">Instagram</a> | <a href="https://youtube.com/@rhythmflow" target="_blank" aria-label="YouTube">YouTube</a></p>
         </div>
@@ -209,22 +209,22 @@
 
     <footer class="footer" role="contentinfo">
         <p>© 2025 RhythmFlow Dance Academy</p>
-        <p>Phone: <a href="tel:+91YOURPHONENUMBER">+91-YOUR-PHONE-NUMBER</a> | Email: <a href="mailto:info@rhythmflow.com">info@rhythmflow.com</a></p>
+        <p>Phone: <a href="tel:+91YOURPHONENUMBER">+91-YOUR-PHONE-NUMBER</a> <!-- Replace with your actual phone number --> | Email: <a href="mailto:info@rhythmflow.com">info@rhythmflow.com</a></p>
     </footer>
 
     <div class="booking-modal" id="booking-modal" aria-label="Booking form modal">
         <div class="booking-modal-content">
             <span class="booking-modal-close" onclick="closeBookingModal()" aria-label="Close">×</span>
             <h2>Book a Class</h2>
-            <form id="booking-form" aria-label="Booking form" method="POST" action="https://script.google.com/macros/s/AKfycbxQW9F-q7rF4ZkavUTt8eGP9Knp0b5X51ZA19pn9wPGyC1WoiqDcwAS5gHM1rxks_x6CQ/exec" target="form-response">
+            <form id="booking-form" aria-label="Booking form" method="POST" action="https://script.google.com/macros/s/AKfycby1Qfo-uhiokTb2bcOpwV8e3GHggk3dHQwyqiGjNmrMVPSmVld6EsVmB7nyOYCYoU3K4g/exec" target="form-response">
                 <input type="hidden" name="type" value="Booking">
                 <input type="hidden" name="payment_id" id="payment_id">
                 <input type="hidden" name="amount" id="amount">
                 <select id="class-select" name="details" required aria-label="Select class" onchange="updateAmount()">
                     <option value="" disabled selected>Choose a Class</option>
-                    <option value="Hip-Hop" data-amount="150000">Hip-Hop (₹1500)</option>
-                    <option value="Classical Ballet" data-amount="200000">Classical Ballet (₹2000)</option>
-                    <option value="Salsa" data-amount="180000">Salsa (₹1800)</option>
+                    <option value="Hip-Hop" data-amount="100">Hip-Hop (₹1)</option>
+                    <option value="Classical Ballet" data-amount="100">Classical Ballet (₹1)</option>
+                    <option value="Salsa" data-amount="100">Salsa (₹1)</option>
                 </select>
                 <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
                 <input type="email" name="email" placeholder="Your Email" required aria-label="Email">
@@ -238,16 +238,16 @@
         <div class="renewal-modal-content">
             <span class="renewal-modal-close" onclick="closeRenewalModal()" aria-label="Close">×</span>
             <h2>Renew Subscription</h2>
-            <form id="renewal-form" aria-label="Renewal form" method="POST" action="https://script.google.com/macros/s/AKfycbxQW9F-q7rF4ZkavUTt8eGP9Knp0b5X51ZA19pn9wPGyC1WoiqDcwAS5gHM1rxks_x6CQ/exec" target="form-response">
+            <form id="renewal-form" aria-label="Renewal form" method="POST" action="https://script.google.com/macros/s/AKfycby1Qfo-uhiokTb2bcOpwV8e3GHggk3dHQwyqiGjNmrMVPSmVld6EsVmB7nyOYCYoU3K4g/exec" target="form-response">
                 <input type="hidden" name="type" value="Renewal">
                 <input type="hidden" name="payment_id" id="renewal_payment_id">
                 <input type="hidden" name="amount" id="renewal_amount">
                 <input type="email" name="email" id="renewal_email" placeholder="Your Email" required aria-label="Email">
                 <select id="renewal_class_select" name="details" required aria-label="Select class" onchange="updateRenewalAmount()">
                     <option value="" disabled selected>Choose a Class</option>
-                    <option value="Hip-Hop" data-amount="150000">Hip-Hop (₹1500)</option>
-                    <option value="Classical Ballet" data-amount="200000">Classical Ballet (₹2000)</option>
-                    <option value="Salsa" data-amount="180000">Salsa (₹1800)</option>
+                    <option value="Hip-Hop" data-amount="100">Hip-Hop (₹1)</option>
+                    <option value="Classical Ballet" data-amount="100">Classical Ballet (₹1)</option>
+                    <option value="Salsa" data-amount="100">Salsa (₹1)</option>
                 </select>
                 <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
                 <input type="tel" name="phone" placeholder="Your Phone (e.g., +91XXXXXXXXXX)" required aria-label="Phone">
@@ -258,7 +258,7 @@
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
-        const GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycbxQW9F-q7rF4ZkavUTt8eGP9Knp0b5X51ZA19pn9wPGyC1WoiqDcwAS5gHM1rxks_x6CQ/exec';
+        const GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycby1Qfo-uhiokTb2bcOpwV8e3GHggk3dHQwyqiGjNmrMVPSmVld6EsVmB7nyOYCYoU3K4g/exec';
 
         // Header Scroll
         window.addEventListener('scroll', () => {
@@ -303,7 +303,7 @@
             }
 
             const options = {
-                key: 'rzp_test_gx1zMuo2qDYKHR',
+                key: 'rzp_live_AIYBvp2xVSxaZK',
                 amount: amount,
                 currency: 'INR',
                 name: 'RhythmFlow Dance Academy',
