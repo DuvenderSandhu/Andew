@@ -1,456 +1,946 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RhythmFlow Dance Academy: Expert-led dance training with vibrant classes.">
-    <meta name="keywords" content="dance academy, hip-hop, ballet, salsa, dance classes, dance studio">
-    <meta property="og:title" content="RhythmFlow Dance Academy">
-    <meta property="og:description" content="Join our passionate dance community with top instructors.">
-    <meta property="og:image" content="https://placehold.co/1200x600/1c1c2e/ffd700?text=RhythmFlow+Dance">
-    <meta property="og:url" content="https://rhythmflow.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="https://favicon.io/emoji-favicons/dancer" sizes="32x32">
-    <title>RhythmFlow Dance Academy</title>
+    <meta name="description" content="PulseFit Gym - India's premier gym for independent training with optional Zumba, Yoga, Cardio classes. Book now!">
+    <meta name="keywords" content="gym, fitness, India, Zumba, Yoga, Cardio, PulseFit Gym">
+    <title>PulseFit Gym - Elite Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        body { background: linear-gradient(135deg, #0a0d1b, #1c1f2e); color: #fff; }
-        header { position: fixed; width: 100%; top: 0; background: rgba(10, 10, 27, 0.85); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: background-color 0.3s; }
-        header.scrolled { background: rgba(10, 10, 27, 0.95); box-shadow: 0 2px 5px rgba(255, 215, 0, 0.2); }
-        .logo { font-size: 1.75rem; color: #ffd700; font-weight: 700; font-family: 'Playfair Display', serif; }
-        nav ul { list-style: none; display: flex; gap: 1.5rem; }
-        nav ul li a { color: #fff; text-decoration: none; font-size: 1rem; transition: color 0.3s; }
-        nav ul li a:hover, nav ul li a.active { color: #ffd700; }
-        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; color: #fff; }
-        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('https://images.unsplash.com/photo-1522642888367-8d98750c243c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover; position: relative; filter: grayscale(20%); }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: -1; }
-        .hero-content h1 { font-size: 4rem; color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 1rem; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
-        .hero-content p { font-size: 1.5rem; color: #f0f0f0; margin-bottom: 1.5rem; }
-        .btn { background: linear-gradient(45deg, #ffd700, #ff4d4d); color: #fff; padding: 0.75rem 2rem; border-radius: 1.5rem; text-decoration: none; font-size: 1.1rem; transition: all 0.3s; display: inline-block; cursor: pointer; }
-        .btn:hover { background: linear-gradient(45deg, #ff4d4d, #ffd700); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(255, 77, 77, 0.3); }
-        .stats-bar { display: flex; justify-content: center; gap: 2rem; padding: 1rem; background: rgba(255, 255, 255, 0.1); margin: 1rem auto; max-width: 50rem; border-radius: 0.5rem; }
-        .stat-item .stat-number { font-size: 2rem; color: #ffd700; font-weight: 600; }
-        .stat-item .stat-label { font-size: 0.9rem; color: #e0e0e0; }
-        .about, .classes, .instructors, .testimonials, .contact { padding: 4rem 1.25rem; text-align: center; }
-        h2 { font-size: 2.5rem; color: #ffd700; font-family: 'Playfair Display', serif; margin-bottom: 1.5rem; }
-        .about img, .class-card img, .instructor-card img, .testimonial-card img { width: 100%; max-width: 31.25rem; border-radius: 0.5rem; margin: 0.625rem 0; height: 12.5rem; object-fit: cover; transition: transform 0.3s; }
-        .about img:hover, .class-card img:hover, .instructor-card img:hover { transform: scale(1.05); }
-        .class-grid, .instructor-grid, .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); gap: 1.5rem; max-width: 62.5rem; margin: 0 auto; }
-        .class-card, .instructor-card, .testimonial-card { background: rgba(255, 255, 255, 0.05); border-radius: 0.5rem; padding: 1rem; transition: transform 0.3s, box-shadow 0.3s; }
-        .class-card:hover, .instructor-card:hover, .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(255, 215, 0, 0.2); }
-        .class-card h3, .instructor-card h3, .testimonial-card h3 { font-size: 1.3rem; color: #ffd700; margin: 0.625rem 0; font-family: 'Playfair Display', serif; }
-        .class-card p, .instructor-card p, .testimonial-card p { font-size: 0.9rem; color: #e0e0e0; }
-        .testimonial-card img { width: 5rem; height: 5rem; border-radius: 50%; margin: 0 auto; }
-        .contact form { max-width: 31.25rem; margin: 0 auto; display: grid; gap: 0.625rem; }
-        .contact input, .contact textarea { background: rgba(255, 255, 255, 0.1); border: 1px solid #ffd700; padding: 0.5rem; border-radius: 0.3125rem; color: #fff; font-size: 0.9rem; transition: border-color 0.3s; }
-        .contact input:focus, .contact textarea:focus { border-color: #ff4d4d; outline: none; }
-        .contact textarea { resize: vertical; min-height: 6rem; }
-        .contact button { background: linear-gradient(45deg, #ffd700, #ff4d4d); border: none; padding: 0.5rem; border-radius: 0.3125rem; color: #fff; cursor: pointer; font-size: 1rem; }
-        .contact button:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(255, 77, 77, 0.3); }
-        .contact-info { margin-top: 1rem; font-size: 0.9rem; }
-        .contact-info a { color: #ffd700; text-decoration: none; }
-        .contact-info a:hover { color: #ff4d4d; }
-        .footer { background: #0a0d1b; padding: 1.5rem; text-align: center; }
-        .footer p, .footer a { color: #e0e0e0; font-size: 0.9rem; }
-        .footer a { color: #ffd700; }
-        .footer a:hover { color: #ff4d4d; }
-        .booking-modal, .renewal-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 2000; justify-content: center; align-items: center; }
-        .booking-modal-content, .renewal-modal-content { background: #1c1f2e; border-radius: 0.5rem; padding: 1.5rem; max-width: 31.25rem; width: 90%; text-align: center; position: relative; }
-        .booking-modal-content select, .booking-modal-content input, .renewal-modal-content select, .renewal-modal-content input { background: #2a2d3e; border: 1px solid #ffd700; padding: 0.5rem; border-radius: 0.3125rem; color: #fff; width: 100%; margin-bottom: 0.625rem; font-size: 0.9rem; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
-        .booking-modal-content select, .renewal-modal-content select { background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffd700%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 0.7rem top 50%; background-size: 0.65rem auto; }
-        .booking-modal-close, .renewal-modal-close { position: absolute; top: 0.625rem; right: 0.625rem; color: #fff; font-size: 1.5rem; cursor: pointer; }
-        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-        iframe.hidden { display: none; }
-        @media (max-width: 48rem) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero-content p { font-size: 1rem; }
-            nav ul { display: none; flex-direction: column; position: absolute; top: 3.125rem; left: 0; width: 100%; background: rgba(10, 10, 27, 0.9); padding: 1rem; }
-            nav ul.active { display: flex; }
-            .hamburger { display: block; }
-            .stats-bar { flex-direction: column; gap: 0.625rem; }
-            .btn { padding: 0.5rem 1.25rem; font-size: 0.9rem; }
-            .class-grid, .instructor-grid, .testimonial-grid { grid-template-columns: 1fr; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            color: #1a202c;
+            background-color: #f7fafc;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a237e, #4c51bf);
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1593079831268-3381b0db4a77') no-repeat center/cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        header .logo {
+            width: 180px;
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.4rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .sticky-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .sticky-cta a, .sticky-cta button {
+            background: linear-gradient(45deg, #f6b800, #f97316);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+
+        .sticky-cta .whatsapp {
+            background: #25D366;
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sticky-cta a:hover, .sticky-cta button:hover {
+            transform: translateY(-3px);
+        }
+
+        .sticky-cta .whatsapp:hover {
+            background: #20b858;
+        }
+
+        nav {
+            background-color: #1a237e;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f6b800;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1584735935682-2f2b69ffcf14') no-repeat center/cover;
+            color: white;
+            text-align: center;
+            padding: 10rem 0;
+            position: relative;
+            animation: hero-slide 1s ease-in-out;
+        }
+
+        @keyframes hero-slide {
+            from { opacity: 0; transform: scale(1.1); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .hero h2 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero .cta-button {
+            background: linear-gradient(45deg, #f6b800, #f97316);
+            color: white;
+            padding: 1.5rem 4rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero .cta-button:hover {
+            background: linear-gradient(45deg, #f97316, #f6b800);
+            transform: translateY(-5px);
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: #f6b800;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card i {
+            font-size: 3.5rem;
+            color: #f6b800;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+
+        .booking-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+        }
+
+        .form-progress span {
+            flex: 1;
+            text-align: center;
+            padding: 0.8rem;
+            background-color: #e2e8f0;
+            border-radius: 50px;
+            font-size: 1rem;
+            color: #4a5568;
+            transition: all 0.3s;
+        }
+
+        .form-progress .active {
+            background-color: #f6b800;
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #f6b800;
+            outline: none;
+        }
+
+        .class-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .class-options label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: #1a237e;
+            cursor: pointer;
+        }
+
+        .payment-options {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .payment-options label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: #1a237e;
+            cursor: pointer;
+        }
+
+        button {
+            background: linear-gradient(45deg, #f6b800, #f97316);
+            color: white;
+            padding: 1.25rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #f97316, #f6b800);
+            transform: translateY(-3px);
+        }
+
+        .message {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-card img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 4px solid #f6b800;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+
+        .trainers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        .trainer-card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .trainer-card img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 4px solid #f6b800;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        .pricing-card {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card .popular {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: #f6b800;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .pricing-card .price {
+            font-size: 2.8rem;
+            color: #f6b800;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item summary {
+            font-weight: 600;
+            cursor: pointer;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+
+        .faq-item summary:hover {
+            background-color: #f7fafc;
+        }
+
+        .faq-item p {
+            padding: 1.5rem;
+            background-color: #f7fafc;
+            border-radius: 8px;
+            color: #4a5568;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .blog-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-card a {
+            color: #f6b800;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        footer a {
+            color: #f6b800;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 1rem;
+        }
+
+        footer .whatsapp {
+            background: #25D366;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        footer .whatsapp:hover {
+            background: #20b858;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .sticky-cta a, .sticky-cta button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .booking-form {
+                padding: 2rem;
+            }
+
+            section h2 {
+                font-size: 2.2rem;
+            }
         }
     </style>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
-    <header role="banner">
-        <div class="logo" aria-label="RhythmFlow Dance Academy Logo">RhythmFlow</div>
-        <nav role="navigation" aria-label="Main navigation">
-            <ul>
-                <li><a href="#home" class="active" aria-current="page">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#classes">Classes</a></li>
-                <li><a href="#instructors">Instructors</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#renewal-modal" onclick="openRenewalModal()">Renew</a></li>
-            </ul>
-        </nav>
-        <div class="hamburger" aria-label="Toggle mobile menu">☰</div>
+    <header>
+        <img src="https://via.placeholder.com/180x60?text=PulseFit+Logo" alt="PulseFit Gym Logo" class="logo">
+        <h1>PulseFit Gym</h1>
+        <p>India's Elite Fitness Destination</p>
     </header>
 
-    <section id="home" class="hero" role="main">
-        <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="hero-content fade-in">
-            <h1>Move with Passion</h1>
-            <p>Discover world-class dance training at RhythmFlow Dance Academy.</p>
-            <a href="#booking-modal" class="btn" onclick="openBookingModal()">Book a Class Now</a>
-            <a href="#renewal-modal" class="btn" onclick="openRenewalModal()" style="margin-left: 1rem;">Renew Subscription</a>
-        </div>
-        <div class="stats-bar fade-in">
-            <div class="stat-item">
-                <span class="stat-number" data-target="5000">0</span>
-                <span class="stat-label">Students</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="20">0</span>
-                <span class="stat-label">Instructors</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="10">0</span>
-                <span class="stat-label">Years</span>
-            </div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#trainers">Trainers</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#booking">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <div class="sticky-cta">
+        <a href="#booking"><button>Book Now</button></a>
+        <a href="https://wa.me/+919876543210?text=Hi%2C%20I%27m%20interested%20in%20joining%20PulseFit%20Gym%21" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Unleash Your Potential</h2>
+            <p>Join PulseFit Gym for world-class facilities and optional Zumba, Yoga, and Cardio classes. Start your fitness journey today!</p>
+            <a href="#booking" class="cta-button">Join Now</a>
         </div>
     </section>
 
-    <section id="about" class="about fade-in">
-        <h2>About Us</h2>
-        <p>RhythmFlow Dance Academy is your home for passionate dance training, offering expert-led classes in diverse styles for all skill levels.</p>
-        <img src="https://t3.ftcdn.net/jpg/03/12/00/38/360_F_312003832_T2hmgMlJOnDYcDjKybmtyRL0k5taIetb.jpg" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="About RhythmFlow" loading="lazy">
-    </section>
-
-    <section id="classes" class="classes fade-in">
-        <h2>Our Classes</h2>
-        <div class="class-grid">
-            <div class="class-card">
-                <img src="https://images.unsplash.com/photo-1621976360623-004223992275?q=80&w=1428&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="Hip-Hop" loading="lazy">
-                <h3>Hip-Hop</h3>
-                <p>Energetic urban dance styles to ignite your rhythm. (₹1)</p>
-                <a href="#booking-modal" class="btn" onclick="openBookingModal('Hip-Hop')">Book Now</a>
-            </div>
-            <div class="class-card">
-                <img src="https://images.unsplash.com/photo-1528392944531-e63de93f8751?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="Classical Ballet" loading="lazy">
-                <h3>Classical Ballet</h3>
-                <p>Graceful techniques for poise and precision. (₹1)</p>
-                <a href="#booking-modal" class="btn" onclick="openBookingModal('Classical Ballet')">Book Now</a>
-            </div>
-            <div class="class-card">
-                <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="Salsa" loading="lazy">
-                <h3>Salsa</h3>
-                <p>Vibrant Latin rhythms to spice up your moves. (₹1)</p>
-                <a href="#booking-modal" class="btn" onclick="openBookingModal('Salsa')">Book Now</a>
+    <section id="features">
+        <div class="container">
+            <h2>Why PulseFit?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>State-of-the-Art Gear</h3>
+                    <p>Access top-tier equipment for strength and cardio.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Thriving Community</h3>
+                    <p>Connect with passionate fitness enthusiasts.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Access</h3>
+                    <p>Train anytime with round-the-clock gym access.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="instructors" class="instructors fade-in">
-        <h2>Our Instructors</h2>
-        <div class="instructor-grid">
-            <div class="instructor-card">
-                <img src="https://images.unsplash.com/photo-1578619627285-e3a1d382f2bf?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="Emma Johnson" loading="lazy">
-                <h3>Emma Johnson</h3>
-                <p>Hip-Hop Specialist with 10+ years of experience.</p>
+    <section id="classes">
+        <div class="container">
+            <h2>Optional Classes</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Zumba</h3>
+                    <p>Dance your way to fitness with high-energy Zumba.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-spa"></i>
+                    <h3>Yoga</h3>
+                    <p>Boost flexibility and mindfulness with Yoga.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Cardio</h3>
+                    <p>Elevate endurance with intense Cardio sessions.</p>
+                </div>
             </div>
-            <div class="instructor-card">
-                <img src="https://images.unsplash.com/photo-1582707718995-6d1404d4f547?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="Maria Lopez" loading="lazy">
-                <h3>Maria Lopez</h3>
-                <p>Ballet Expert trained in classical techniques.</p>
-            </div>
-            <div class="instructor-card">
-                <img src="https://images.unsplash.com/photo-1504505278590-428d1acd0f07?q=80&w=1481&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="Carlos Smith" loading="lazy">
-                <h3>Carlos Smith</h3>
-                <p>Salsa Instructor with a passion for Latin dance.</p>
-            </div>
-            <div class="instructor-card">
-                <img src="https://images.unsplash.com/photo-1504505278590-428d1acd0f07?q=80&w=1481&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onerror="this.src='https://placehold.co/500x200/1c1c2e/ffd700?text=Fallback+Image'" alt="Sofia Lee" loading="lazy">
-                <h3>Sofia Lee</h3>
-                <p>Contemporary Dance innovator and choreographer.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials fade-in">
-        <h2>What Our Students Say</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMGltYWdlfGVufDB8fDB8fHww" onerror="this.src='https://placehold.co/80x80/1c1c2e/ffd700?text=Fallback'" alt="Student" loading="lazy">
-                <h3>Jane Doe</h3>
-                <p>"RhythmFlow transformed my dance skills and confidence!"</p>
-            </div>
-            <div class="testimonial-card">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMGltYWdlfGVufDB8fDB8fHww" onerror="this.src='https://placehold.co/80x80/1c1c2e/ffd700?text=Fallback'" alt="Student" loading="lazy">
-                <h3>Mike Smith</h3>
-                <p>"The instructors are amazing, and classes are so fun!"</p>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#booking"><button>Add Classes</button></a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact fade-in">
-        <h2>Contact Us</h2>
-        <form id="contact-form" aria-label="Contact form" method="POST" action="https://script.google.com/macros/s/AKfycbzdK2cSkOTxXg-SnH8tbD_RTUy9lGczhx_P6Vui-UV6TL-FcTSw217zjTUucqhyGjSG6A/exec" target="form-response">
-            <input type="hidden" name="type" value="Contact">
-            <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
-            <input type="email" name="email" placeholder="Your Email" required aria-label="Email">
-            <input type="tel" name="phone" placeholder="Your Phone (e.g., +91XXXXXXXXXX)" required aria-label="Phone">
-            <textarea name="details" placeholder="Your Message" required aria-label="Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <iframe name="form-response" class="hidden"></iframe>
-        <div class="contact-info">
-            <p>Phone: <a href="tel:+91YOURPHONENUMBER">+91-YOUR-PHONE-NUMBER</a> <!-- Replace with your actual phone number --></p>
-            <p>Email: <a href="mailto:info@rhythmflow.com">info@rhythmflow.com</a></p>
-            <p><a href="https://instagram.com/rhythmflow" target="_blank" aria-label="Instagram">Instagram</a> | <a href="https://youtube.com/@rhythmflow" target="_blank" aria-label="YouTube">YouTube</a></p>
+    <section id="trainers">
+        <div class="container">
+            <h2>Our Elite Trainers</h2>
+            <div class="trainers-grid">
+                <div class="trainer-card">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" alt="Anita Sharma">
+                    <h3>Anita Sharma</h3>
+                    <p>Yoga Master with 15 years in Hatha and Vinyasa.</p>
+                </div>
+                <div class="trainer-card">
+                    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" alt="Rahul Verma">
+                    <h3>Rahul Verma</h3>
+                    <p>Zumba expert passionate about dance fitness.</p>
+                </div>
+                <div class="trainer-card">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Vikram Singh">
+                    <h3>Vikram Singh</h3>
+                    <p>Cardio specialist in HIIT and endurance.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="footer" role="contentinfo">
-        <p>© 2025 RhythmFlow Dance Academy</p>
-        <p>Phone: <a href="tel:+91YOURPHONENUMBER">+91-YOUR-PHONE-NUMBER</a> <!-- Replace with your actual phone number --> | Email: <a href="mailto:info@rhythmflow.com">info@rhythmflow.com</a></p>
+    <section id="pricing">
+        <div class="container">
+            <h2>Membership Plans</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>1 Month</h3>
+                    <p class="price">₹1,000</p>
+                    <p>Gym access + optional classes.</p>
+                    <a href="#booking"><button>Join Now</button></a>
+                </div>
+                <div class="pricing-card">
+                    <h3>3 Months</h3>
+                    <p class="price">₹2,700</p>
+                    <p>Save 10% with quarterly plan.</p>
+                    <a href="#booking"><button>Join Now</button></a>
+                    <span class="popular">Most Popular</span>
+                </div>
+                <div class="pricing-card">
+                    <h3>6 Months</h3>
+                    <p class="price">₹5,000</p>
+                    <p>Best value with 15% savings.</p>
+                    <a href="#booking"><button>Join Now</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>Member Success Stories</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Priya M.">
+                    <p>"PulseFit's gym and classes transformed my fitness journey!"</p>
+                    <p><strong>Priya M., Mumbai</strong></p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Rohan K.">
+                    <p>"The community and trainers keep me motivated daily."</p>
+                    <p><strong>Rohan K., Delhi</strong></p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1519085360753-afccb9907aa1" alt="Neha S.">
+                    <p>"World-class facilities and easy booking. Love it!"</p>
+                    <p><strong>Neha S., Bangalore</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <details class="faq-item">
+                <summary>How do I join PulseFit?</summary>
+                <p>Fill the booking form, select your membership, add classes (optional), and choose payment method. You'll get a confirmation email.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Are classes mandatory?</summary>
+                <p>No, our general membership is for independent training. Classes are optional.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What payment options are available?</summary>
+                <p>Pay online via Razorpay or cash at the gym.</p>
+            </details>
+            <details class="faq-item">
+                <summary>How do I renew my membership?</summary>
+                <p>Book again using the same email to extend your membership.</p>
+            </details>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <h2>Fitness Insights</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Yoga Benefits">
+                    <h3>Benefits of Yoga</h3>
+                    <p>Boost your physical and mental health with yoga.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1546484396-fb3fc6f95f98" alt="Gym Tips">
+                    <h3>Gym Workout Tips</h3>
+                    <p>Maximize your gym sessions with these tips.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" alt="Zumba Guide">
+                    <h3>Zumba for Beginners</h3>
+                    <p>Start your Zumba journey with ease.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <div class="container">
+            <h2>Join PulseFit Today</h2>
+            <form id="bookingForm" class="booking-form">
+                <div class="form-progress">
+                    <span class="active">Personal Info</span>
+                    <span>Membership</span>
+                    <span>Payment</span>
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required pattern="[6-9][0-9]{9}" title="Valid Indian number: 10 digits, starts with 6/7/8/9">
+                </div>
+                <div class="form-group">
+                    <label>Membership Duration</label>
+                    <select id="membershipDuration" required>
+                        <option value="1">1 Month (₹1,000)</option>
+                        <option value="3">3 Months (₹2,700)</option>
+                        <option value="6">6 Months (₹5,000)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Add Optional Classes</label>
+                    <div class="class-options">
+                        <label><input type="checkbox" name="classes" value="Yoga"> Yoga</label>
+                        <label><input type="checkbox" name="classes" value="Zumba"> Zumba</label>
+                        <label><input type="checkbox" name="classes" value="Cardio"> Cardio</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <div class="payment-options">
+                        <label><input type="radio" name="paymentMethod" value="Cash" checked> Cash</label>
+                        <label><input type="radio" name="paymentMethod" value="Online"> Online (Razorpay)</label>
+                    </div>
+                </div>
+                <button type="submit">Book Membership</button>
+                <div id="formMessage" class="message"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                © 2025 PulseFit Gym. All rights reserved. |
+                <a href="mailto:contact@pulsefitgym.com">contact@pulsefitgym.com</a> |
+                <a href="tel:+919876543210">+91 98765 43210</a> |
+                <a href="https://wa.me/+919876543210?text=Hi%2C%20I%27m%20interested%20in%20joining%20PulseFit%20Gym%21" class="whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Us
+                </a>
+            </p>
+        </div>
     </footer>
 
-    <div class="booking-modal" id="booking-modal" aria-label="Booking form modal">
-        <div class="booking-modal-content">
-            <span class="booking-modal-close" onclick="closeBookingModal()" aria-label="Close">×</span>
-            <h2>Book a Class</h2>
-            <form id="booking-form" aria-label="Booking form" method="POST" action="https://script.google.com/macros/s/AKfycbzdK2cSkOTxXg-SnH8tbD_RTUy9lGczhx_P6Vui-UV6TL-FcTSw217zjTUucqhyGjSG6A/exec" target="form-response">
-                <input type="hidden" name="type" value="Booking">
-                <input type="hidden" name="payment_id" id="payment_id">
-                <input type="hidden" name="amount" id="amount">
-                <select id="class-select" name="details" required aria-label="Select class" onchange="updateAmount()">
-                    <option value="" disabled selected>Choose a Class</option>
-                    <option value="Hip-Hop" data-amount="100">Hip-Hop (₹1)</option>
-                    <option value="Classical Ballet" data-amount="100">Classical Ballet (₹1)</option>
-                    <option value="Salsa" data-amount="100">Salsa (₹1)</option>
-                </select>
-                <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
-                <input type="email" name="email" placeholder="Your Email" required aria-label="Email">
-                <input type="tel" name="phone" placeholder="Your Phone (e.g., +91XXXXXXXXXX)" required aria-label="Phone">
-                <button type="button" class="btn" onclick="initiatePayment('booking-form')">Pay and Book</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="renewal-modal" id="renewal-modal" aria-label="Renewal form modal">
-        <div class="renewal-modal-content">
-            <span class="renewal-modal-close" onclick="closeRenewalModal()" aria-label="Close">×</span>
-            <h2>Renew Subscription</h2>
-            <form id="renewal-form" aria-label="Renewal form" method="POST" action="https://script.google.com/macros/s/AKfycbzdK2cSkOTxXg-SnH8tbD_RTUy9lGczhx_P6Vui-UV6TL-FcTSw217zjTUucqhyGjSG6A/exec" target="form-response">
-                <input type="hidden" name="type" value="Renewal">
-                <input type="hidden" name="payment_id" id="renewal_payment_id">
-                <input type="hidden" name="amount" id="renewal_amount">
-                <input type="email" name="email" id="renewal_email" placeholder="Your Email" required aria-label="Email">
-                <select id="renewal_class_select" name="details" required aria-label="Select class" onchange="updateRenewalAmount()">
-                    <option value="" disabled selected>Choose a Class</option>
-                    <option value="Hip-Hop" data-amount="100">Hip-Hop (₹1)</option>
-                    <option value="Classical Ballet" data-amount="100">Classical Ballet (₹1)</option>
-                    <option value="Salsa" data-amount="100">Salsa (₹1)</option>
-                </select>
-                <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
-                <input type="tel" name="phone" placeholder="Your Phone (e.g., +91XXXXXXXXXX)" required aria-label="Phone">
-                <button type="button" class="btn" onclick="initiatePayment('renewal-form')">Pay and Renew</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
-        const GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycbzdK2cSkOTxXg-SnH8tbD_RTUy9lGczhx_P6Vui-UV6TL-FcTSw217zjTUucqhyGjSG6A/exec';
-
-        // Header Scroll
-        window.addEventListener('scroll', () => {
-            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 0);
+        // Form progress animation
+        const inputs = document.querySelectorAll('.form-group input, .form-group select, .payment-options input');
+        const progressSteps = document.querySelectorAll('.form-progress span');
+        inputs.forEach((input, index) => {
+            input.addEventListener('focus', () => {
+                progressSteps.forEach(step => step.classList.remove('active'));
+                progressSteps[Math.min(Math.floor(index / 2), 2)].classList.add('active');
+            });
         });
 
-        // Hamburger Menu
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('nav ul');
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.textContent = navMenu.classList.contains('active') ? '✖' : '☰';
-        });
+        // Form submission
+        const bookingForm = document.getElementById('bookingForm');
+        const formMessage = document.getElementById('formMessage');
+        const APPS_SCRIPT_URL = 'YOUR_BOOKING_APPS_SCRIPT_URL';
 
-        // Update Amount Field
-        function updateAmount() {
-            const classSelect = document.getElementById('class-select');
-            const amountInput = document.getElementById('amount');
-            const selectedOption = classSelect.options[classSelect.selectedIndex];
-            amountInput.value = selectedOption ? selectedOption.dataset.amount : '';
-        }
+        bookingForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-        function updateRenewalAmount() {
-            const classSelect = document.getElementById('renewal_class_select');
-            const amountInput = document.getElementById('renewal_amount');
-            const selectedOption = classSelect.options[classSelect.selectedIndex];
-            amountInput.value = selectedOption ? selectedOption.dataset.amount : '';
-        }
-
-        // Initiate Razorpay Payment
-        function initiatePayment(formId) {
-            const form = document.getElementById(formId);
-            const classSelect = document.getElementById(formId === 'booking-form' ? 'class-select' : 'renewal_class_select');
-            const name = form.querySelector('input[name="name"]').value;
-            const email = form.querySelector('input[name="email"]').value;
-            const phone = form.querySelector('input[name="phone"]').value;
-            const amount = parseInt(form.querySelector(`input[name="amount"]`).value);
-
-            if (!classSelect.value || !name || !email || !phone || !amount) {
-                alert('Please fill all fields before proceeding to payment.');
+            // Validate phone number
+            const phone = document.getElementById('phone').value;
+            const phoneRegex = /^[6-9][0-9]{9}$/;
+            if (!phoneRegex.test(phone)) {
+                showMessage('error', 'Please enter a valid Indian phone number (10 digits, starts with 6/7/8/9)');
                 return;
             }
 
-            const options = {
-                key: 'rzp_live_AIYBvp2xVSxaZK',
-                amount: amount,
-                currency: 'INR',
-                name: 'RhythmFlow Dance Academy',
-                description: `Payment for ${classSelect.value} ${formId === 'booking-form' ? 'Class' : 'Renewal'}`,
-                image: 'https://favicon.io/emoji-favicons/dancer',
-                handler: function (response) {
-                    form.querySelector(`input[name="payment_id"]`).value = response.razorpay_payment_id;
-                    submitForm(formId);
-                },
-                prefill: {
-                    name: name,
-                    email: email,
-                    contact: phone
-                },
-                theme: {
-                    color: '#ffd700'
-                }
+            // Collect selected classes
+            const selectedClasses = Array.from(document.querySelectorAll('input[name="classes"]:checked'))
+                .map(checkbox => checkbox.value);
+
+            // Determine amount
+            const duration = parseInt(document.getElementById('membershipDuration').value);
+            const amount = duration === 1 ? 100000 : duration === 3 ? 270000 : 500000; // in paise
+            const paidAmount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000; // in INR
+
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: phone,
+                membershipDuration: duration,
+                classes: selectedClasses,
+                paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value,
+                paymentStatus: 'Pending',
+                paidAmount: paidAmount,
+                timestamp: new Date().toISOString()
             };
 
-            const rzp = new Razorpay(options);
-            rzp.on('payment.failed', function (response) {
-                alert('Payment failed: ' + response.error.description);
-            });
-            rzp.open();
-        }
-
-        // Form Submission
-        function submitForm(formId) {
-            const form = document.getElementById(formId);
-            form.submit();
-        }
-
-        function handleFormSubmit(formId) {
-            const form = document.getElementById(formId);
-            const iframe = document.getElementsByName('form-response')[0];
-            iframe.onload = () => {
-                try {
-                    const response = iframe.contentDocument?.body?.textContent || '';
-                    if (!response) throw new Error('Empty response from server');
-                    const result = JSON.parse(response);
-                    if (result.status === 'success') {
-                        alert(formId === 'booking-form' ? 'Payment and booking successful! Check your email for confirmation.' : formId === 'renewal-form' ? 'Subscription renewed successfully! Check your email for confirmation.' : 'Thank you for your message!');
-                        form.reset();
-                        if (formId === 'booking-form') closeBookingModal();
-                        if (formId === 'renewal-form') closeRenewalModal();
-                    } else {
-                        alert('Submission failed: ' + (result.message || 'Unknown error'));
-                    }
-                } catch (error) {
-                    alert('Thank you for your submission');
-                }
-            };
-        }
-
-        handleFormSubmit('contact-form');
-        handleFormSubmit('booking-form');
-        handleFormSubmit('renewal-form');
-
-        // Booking Modal
-        function openBookingModal(className) {
-            const modal = document.getElementById('booking-modal');
-            const classSelect = document.getElementById('class-select');
-            if (className) classSelect.value = className;
-            updateAmount();
-            modal.style.display = 'flex';
-        }
-
-        function closeBookingModal() {
-            document.getElementById('booking-modal').style.display = 'none';
-            document.getElementById('booking-form').reset();
-        }
-
-        // Renewal Modal
-        function openRenewalModal() {
-            const modal = document.getElementById('renewal-modal');
-            const urlParams = new URLSearchParams(window.location.hash.substring(1));
-            const email = urlParams.get('email');
-            const className = urlParams.get('class');
-            if (email) document.getElementById('renewal_email').value = email;
-            if (className) document.getElementById('renewal_class_select').value = className;
-            updateRenewalAmount();
-            modal.style.display = 'flex';
-        }
-
-        function closeRenewalModal() {
-            document.getElementById('renewal-modal').style.display = 'none';
-            document.getElementById('renewal-form').reset();
-        }
-
-        document.querySelector('.booking-modal-close').addEventListener('click', closeBookingModal);
-        document.querySelector('.renewal-modal-close').addEventListener('click', closeRenewalModal);
-        document.getElementById('booking-modal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) closeBookingModal();
-        });
-        document.getElementById('renewal-modal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) closeRenewalModal();
-        });
-
-        // Stats Animation
-        const stats = document.querySelectorAll('.stat-number');
-        const observer = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting) {
-                stats.forEach(stat => {
-                    const target = parseInt(stat.dataset.target);
-                    let count = 0;
-                    const increment = target / 20;
-                    const update = () => {
-                        if (count < target) {
-                            count += increment;
-                            stat.textContent = Math.ceil(count);
-                            setTimeout(update, 50);
-                        } else {
-                            stat.textContent = target + '+';
+            try {
+                if (formData.paymentMethod === 'Online') {
+                    // Razorpay payment
+                    const options = {
+                        key: 'rzp_test_gx1zMuo2qDYKHR',
+                        amount: amount,
+                        currency: 'INR',
+                        name: 'PulseFit Gym',
+                        description: 'Membership Payment',
+                        handler: async function (response) {
+                            formData.paymentStatus = 'Completed';
+                            formData.razorpayPaymentId = response.razorpay_payment_id;
+                            await submitBooking(formData);
+                        },
+                        prefill: {
+                            name: formData.fullName,
+                            email: formData.email,
+                            contact: formData.phone
+                        },
+                        theme: {
+                            color: '#f6b800'
                         }
                     };
-                    update();
-                });
-                observer.disconnect();
-            }
-        }, {threshold: 0.5});
-        observer.observe(document.querySelector('.stats-bar'));
-
-        // Fade-In Animation
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const fadeObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    fadeObserver.unobserve(entry.target);
+                    const rzp = new Razorpay(options);
+                    rzp.open();
+                } else {
+                    // Cash payment
+                    await submitBooking(formData);
                 }
-            });
-        }, {threshold: 0.1});
-        fadeElements.forEach(el => fadeObserver.observe(el));
-
-        // Image Load Logging
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('load', () => console.log(`Loaded: ${img.src}`));
-            img.addEventListener('error', () => console.error(`Failed: ${img.src}`));
-        });
-
-        // Prefill Renewal Modal from URL
-        window.addEventListener('load', () => {
-            if (window.location.hash.includes('renewal-modal')) {
-                openRenewalModal();
+            } catch (error) {
+                showMessage('error', 'Error processing booking. Please try again or contact support via WhatsApp.');
+                console.error('Error:', error);
             }
         });
+
+        async function submitBooking(formData) {
+            try {
+                const response = await fetch(`${APPS_SCRIPT_URL}?type=booking`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                showMessage('success', `Booking confirmed! ${formData.paymentMethod === 'Cash' ? `Please pay ₹${formData.paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for details.'}`);
+                bookingForm.reset();
+                progressSteps.forEach(step => step.classList.remove('active'));
+                progressSteps[0].classList.add('active');
+                document.querySelector('input[name="paymentMethod"][value="Cash"]').checked = true;
+            } catch (error) {
+                showMessage('error', 'Error submitting booking. Please try again or contact support via WhatsApp.');
+                console.error('Error:', error);
+            }
+        }
+
+        function showMessage(type, message) {
+            formMessage.className = `message ${type}`;
+            formMessage.textContent = message;
+            formMessage.style.display = 'block';
+            setTimeout(() => formMessage.style.display = 'none', 5000);
+        }
     </script>
 </body>
 </html>
-```
