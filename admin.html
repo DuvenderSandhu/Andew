@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Mobile-First Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -17,79 +18,85 @@
         body {
             color: #1a202c;
             background-color: #f7fafc;
+            font-size: 16px;
         }
 
         .container {
+            width: 100%;
             max-width: 1280px;
             margin: 0 auto;
-            padding: 24px;
+            padding: 16px;
         }
 
         header {
             background: linear-gradient(135deg, #1a237e, #4c51bf);
             color: white;
             text-align: center;
-            padding: 3rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-size: 1.8rem;
             font-weight: 700;
         }
 
         .auth-section {
-            max-width: 400px;
-            margin: 4rem auto;
-            padding: 3rem;
+            max-width: 100%;
+            margin: 2rem auto;
+            padding: 1.5rem;
             background-color: white;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .auth-section input {
             width: 100%;
-            padding: 1rem;
+            padding: 0.75rem;
             border: 1px solid #d1d5db;
             border-radius: 8px;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
-        .dashboard-section, .bookings-section, .members-section, .expired-section, .unpaid-section {
+        .dashboard-section,
+        .bookings-section,
+        .members-section,
+        .expired-section,
+        .unpaid-section {
             background-color: white;
-            padding: 3rem;
-            margin: 2.5rem 0;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .filters {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .filters input, .filters select {
-            padding: 1rem;
+        .filters input,
+        .filters select {
+            padding: 0.75rem;
             border: 1px solid #d1d5db;
             border-radius: 8px;
-            font-size: 1rem;
-            min-width: 180px;
+            font-size: 0.9rem;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 2rem;
-            border-radius: 8px;
-            overflow: hidden;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            overflow-x: auto;
+            display: block;
         }
 
         th, td {
             border: 1px solid #e2e8f0;
-            padding: 1.5rem;
+            padding: 0.75rem;
             text-align: left;
         }
 
@@ -102,38 +109,42 @@
         button {
             background: linear-gradient(45deg, #f6b800, #f97316);
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1rem;
             border: none;
-            border-radius: 12px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s;
         }
 
-        button:hover {
+        button:hover,
+        button:focus {
             background: linear-gradient(45deg, #f97316, #f6b800);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .remove-button {
             background: linear-gradient(45deg, #e53e3e, #c53030);
         }
 
-        .remove-button:hover {
+        .remove-button:hover,
+        .remove-button:focus {
             background: linear-gradient(45deg, #c53030, #e53e3e);
         }
 
         .action-buttons button {
-            margin-right: 0.5rem;
+            margin: 0.3rem 0;
+            width: 100%;
         }
 
         .message {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
+            margin: 1rem 0;
+            padding: 1rem;
             border-radius: 8px;
             display: none;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
         }
 
         .success {
@@ -148,43 +159,99 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .stat-card {
             background-color: #f7fafc;
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .stat-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #f6b800;
         }
 
-        @media (max-width: 768px) {
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 24px;
+            }
+
+            header {
+                padding: 3rem;
+            }
+
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            .auth-section {
+                max-width: 400px;
+                padding: 2rem;
+                margin: 4rem auto;
+            }
+
+            .auth-section input {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .dashboard-section,
+            .bookings-section,
+            .members-section,
+            .expired-section,
+            .unpaid-section {
+                padding: 2rem;
+                margin: 2rem 0;
+            }
+
             .filters {
-                flex-direction: column;
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+
+            .filters input,
+            .filters select {
+                padding: 1rem;
+                font-size: 1rem;
+                min-width: 180px;
             }
 
             table {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
 
             th, td {
                 padding: 1rem;
             }
 
-            .auth-section {
-                padding: 2rem;
+            .action-buttons button {
+                margin-right: 0.5rem;
+                margin-bottom: 0;
+                width: auto;
             }
 
-            header h1 {
-                font-size: 2.2rem;
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem;
+            }
+
+            .stat-card h3 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -231,7 +298,7 @@
                 <select id="filterStatus">
                     <option value="">All Statuses</option>
                     <option value="Pending">Pending</option>
-                    <option value="Confirmed">Confirmed</option>
+                    <option value="Completed">Confirmed</option>
                     <option value="Unpaid">Unpaid</option>
                 </select>
             </div>
@@ -262,7 +329,7 @@
                     <option value="Expired">Expired</option>
                 </select>
             </div>
-            <table id="membersTable">
+            <table id="members-table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -277,7 +344,7 @@
                 </thead>
                 <tbody id="membersBody"></tbody>
             </table>
-            <div style="margin-top: 3rem;">
+            <div style="margin-top: 2rem;">
                 <h3>Extend Membership</h3>
                 <select id="memberSelect"></select>
                 <select id="extendMonths">
@@ -326,7 +393,7 @@
 
     <script>
         const ADMIN_PASSWORD = 'pulsefitadmin2025';
-        const APPS_SCRIPT_URL = 'YOUR_BOOKING_APPS_SCRIPT_URL';
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxZheWAAdliu0Ti0nNBXNSvbSsr5c024JlLMTO4bJGszR5CtUMPUOuKcApi02zQHrMOSQ/exec';
 
         async function authenticate() {
             const password = document.getElementById('adminPassword').value;
@@ -354,6 +421,9 @@
                     throw new Error('Invalid response format. Ensure the Apps Script URL is correct and deployed with "Anyone" access.');
                 }
                 const data = await response.json();
+                if (data.error) {
+                    throw new Error(data.error);
+                }
                 document.getElementById('totalMembers').textContent = data.totalMembers;
                 document.getElementById('activeMembers').textContent = data.activeMembers;
                 document.getElementById('expiredMembers').textContent = data.expiredMembers;
@@ -493,7 +563,11 @@
                     body: JSON.stringify({ id: bookingId })
                 });
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const result = await response.json();
+                if (result.error) {
+                    throw new Error(result.error);
                 }
                 showMessage('extendMessage', 'success', 'Payment marked as completed');
                 await loadDashboard();
@@ -512,9 +586,13 @@
                     body: JSON.stringify({ id: bookingId })
                 });
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                showMessage('extendMessage', 'success', 'Booking removed');
+                const result = await response.json();
+                if (result.error) {
+                    throw new Error(result.error);
+                }
+                showMessage('extendMessage', 'success', 'Booking removed successfully');
                 await loadDashboard();
             } catch (error) {
                 showMessage('extendMessage', 'error', `Error removing booking: ${error.message}`);
@@ -530,9 +608,13 @@
                     body: JSON.stringify({ id: bookingId })
                 });
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                showMessage('extendMessage', 'success', 'Reminder sent');
+                const result = await response.json();
+                if (result.error) {
+                    throw new Error(result.error);
+                }
+                showMessage('extendMessage', 'success', 'Reminder sent successfully');
             } catch (error) {
                 showMessage('extendMessage', 'error', `Error sending reminder: ${error.message}`);
                 console.error('Error:', error);
@@ -546,6 +628,7 @@
                 showMessage('extendMessage', 'error', 'Please select a member');
                 return;
             }
+
             try {
                 const response = await fetch(`${APPS_SCRIPT_URL}?type=extendMembership`, {
                     method: 'POST',
@@ -553,9 +636,13 @@
                     body: JSON.stringify({ id: memberId, months: months })
                 });
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                showMessage('extendMessage', 'success', 'Membership extended');
+                const result = await response.json();
+                if (result.error) {
+                    throw new Error(result.error);
+                }
+                showMessage('extendMessage', 'success', 'Membership extended successfully');
                 await loadDashboard();
             } catch (error) {
                 showMessage('extendMessage', 'error', `Error extending membership: ${error.message}`);
