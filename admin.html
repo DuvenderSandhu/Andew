@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseFit Gym - Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            color: #1a202c;
+            background-color: #f7fafc;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a237e, #4c51bf);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        .auth-section {
+            max-width: 400px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .auth-section input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .dashboard-section, .bookings-section, .members-section, .expired-section, .unpaid-section {
+            background-color: white;
+            padding: 3rem;
+            margin: 2.5rem 0;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .filters {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filters input, .filters select {
+            padding: 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            min-width: 180px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1a237e;
+            color: white;
+            font-weight: 600;
+        }
+
+        button {
+            background: linear-gradient(45deg, #f6b800, #f97316);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #f97316, #f6b800);
+            transform: translateY(-3px);
+        }
+
+        .remove-button {
+            background: linear-gradient(45deg, #e53e3e, #c53030);
+        }
+
+        .remove-button:hover {
+            background: linear-gradient(45deg, #c53030, #e53e3e);
+        }
+
+        .action-buttons button {
+            margin-right: 0.5rem;
+        }
+
+        .message {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background-color: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3 {
+            font-size: 1.8rem;
+            color: #f6b800;
+        }
+
+        @media (max-width: 768px) {
+            .filters {
+                flex-direction: column;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 1rem;
+            }
+
+            .auth-section {
+                padding: 2rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PulseFit Gym - Admin Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="auth-section" id="authSection">
+            <h2>Admin Login</h2>
+            <input type="password" id="adminPassword" placeholder="Enter Admin Password">
+            <button onclick="authenticate()">Login</button>
+            <div id="authMessage" class="message"></div>
+        </div>
+
+        <div class="dashboard-section" id="dashboardSection" style="display: none;">
+            <h2>Dashboard</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 id="totalMembers">0</h3>
+                    <p>Total Members</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="activeMembers">0</h3>
+                    <p>Active Members</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="expiredMembers">0</h3>
+                    <p>Expired Members</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="totalRevenue">₹0</h3>
+                    <p>Total Revenue</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bookings-section" id="bookingsSection" style="display: none;">
+            <h2>Bookings</h2>
+            <div class="filters">
+                <input type="date" id="filterDate">
+                <select id="filterStatus">
+                    <option value="">All Statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Unpaid">Unpaid</option>
+                </select>
+            </div>
+            <table id="bookingsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Duration (Months)</th>
+                        <th>Classes</th>
+                        <th>Start Date</th>
+                        <th>Payment Method</th>
+                        <th>Payment Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingsBody"></tbody>
+            </table>
+        </div>
+
+        <div class="members-section" id="membersSection" style="display: none;">
+            <h2>Active Members</h2>
+            <div class="filters">
+                <select id="filterMemberStatus">
+                    <option value="">All</option>
+                    <option value="Active">Active</option>
+                    <option value="Expired">Expired</option>
+                </select>
+            </div>
+            <table id="membersTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th>Paid ₹</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="membersBody"></tbody>
+            </table>
+            <div style="margin-top: 3rem;">
+                <h3>Extend Membership</h3>
+                <select id="memberSelect"></select>
+                <select id="extendMonths">
+                    <option value="1">1 Month (₹1,000)</option>
+                    <option value="3">3 Months (₹2,700)</option>
+                    <option value="6">6 Months (₹5,000)</option>
+                </select>
+                <button onclick="extendMembership()">Extend</button>
+                <div id="extendMessage" class="message"></div>
+            </div>
+        </div>
+
+        <div class="expired-section" id="expiredSection" style="display: none;">
+            <h2>Expired Memberships</h2>
+            <table id="expiredTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>End Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="expiredBody"></tbody>
+            </table>
+        </div>
+
+        <div class="unpaid-section" id="unpaidSection" style="display: none;">
+            <h2>Unpaid Bookings (Over 24 Hours)</h2>
+            <table id="unpaidTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Booked On</th>
+                        <th>Amount ₹</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="unpaidBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const ADMIN_PASSWORD = 'pulsefitadmin2025';
+        const APPS_SCRIPT_URL = 'YOUR_BOOKING_APPS_SCRIPT_URL';
+
+        async function authenticate() {
+            const password = document.getElementById('adminPassword').value;
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('authSection').style.display = 'none';
+                document.getElementById('dashboardSection').style.display = 'block';
+                document.getElementById('bookingsSection').style.display = 'block';
+                document.getElementById('membersSection').style.display = 'block';
+                document.getElementById('expiredSection').style.display = 'block';
+                document.getElementById('unpaidSection').style.display = 'block';
+                await loadDashboard();
+            } else {
+                showMessage('authMessage', 'error', 'Invalid password');
+            }
+        }
+
+        async function loadDashboard() {
+            try {
+                const response = await fetch(`${APPS_SCRIPT_URL}?type=dashboard`, { method: 'GET' });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    throw new Error('Invalid response format. Ensure the Apps Script URL is correct and deployed with "Anyone" access.');
+                }
+                const data = await response.json();
+                document.getElementById('totalMembers').textContent = data.totalMembers;
+                document.getElementById('activeMembers').textContent = data.activeMembers;
+                document.getElementById('expiredMembers').textContent = data.expiredMembers;
+                document.getElementById('totalRevenue').textContent = `₹${data.totalRevenue}`;
+                renderBookings(data.bookings);
+                renderMembers(data.members);
+                renderExpired(data.members);
+                renderUnpaid(data.bookings);
+            } catch (error) {
+                showMessage('authMessage', 'error', `Error loading dashboard: ${error.message}. Please check the Apps Script URL and deployment settings.`);
+                console.error('Error:', error);
+            }
+        }
+
+        function renderBookings(bookings) {
+            const tbody = document.getElementById('bookingsBody');
+            tbody.innerHTML = '';
+            const filterDate = document.getElementById('filterDate').value;
+            const filterStatus = document.getElementById('filterStatus').value;
+
+            bookings.forEach(booking => {
+                if (
+                    (filterDate && booking.createdDate !== filterDate) ||
+                    (filterStatus && booking.paymentStatus !== filterStatus)
+                ) {
+                    return;
+                }
+                const row = `<tr>
+                    <td>${booking.fullName}</td>
+                    <td>${booking.email}</td>
+                    <td>${booking.phone}</td>
+                    <td>${booking.membershipDuration}</td>
+                    <td>${booking.classes.join(', ') || 'None'}</td>
+                    <td>${booking.startDate}</td>
+                    <td>${booking.paymentMethod}</td>
+                    <td>${booking.paymentStatus}</td>
+                    <td class="action-buttons">
+                        ${booking.paymentMethod === 'Cash' && booking.paymentStatus !== 'Completed' ? `<button onclick="markPaid(${booking.id})">Mark Paid</button>` : ''}
+                        <button class="remove-button" onclick="deleteBooking(${booking.id})">Remove</button>
+                        <button onclick="sendReminder(${booking.id})">Send Reminder</button>
+                    </td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+
+            document.getElementById('filterDate').addEventListener('change', loadDashboard);
+            document.getElementById('filterStatus').addEventListener('change', () => renderBookings(bookings));
+        }
+
+        function renderMembers(members) {
+            const tbody = document.getElementById('membersBody');
+            tbody.innerHTML = '';
+            const filterMemberStatus = document.getElementById('filterMemberStatus').value;
+
+            members.forEach(member => {
+                if (filterMemberStatus && member.status !== filterMemberStatus) {
+                    return;
+                }
+                const row = `<tr>
+                    <td>${member.fullName}</td>
+                    <td>${member.email}</td>
+                    <td>${member.phone}</td>
+                    <td>${member.startDate}</td>
+                    <td>${member.endDate}</td>
+                    <td>${member.status}</td>
+                    <td>₹${member.paidAmount}</td>
+                    <td class="action-buttons">
+                        <button onclick="extendMembership(${member.id}, '${member.email}')">Extend</button>
+                        <button class="remove-button" onclick="deleteBooking(${member.id})">Remove</button>
+                    </td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+
+            document.getElementById('filterMemberStatus').addEventListener('change', () => renderMembers(members));
+            populateMemberSelect(members);
+        }
+
+        function renderExpired(members) {
+            const tbody = document.getElementById('expiredBody');
+            tbody.innerHTML = '';
+
+            members.forEach(member => {
+                if (member.status !== 'Expired') return;
+                const row = `<tr>
+                    <td>${member.fullName}</td>
+                    <td>${member.email}</td>
+                    <td>${member.phone}</td>
+                    <td>${member.endDate}</td>
+                    <td class="action-buttons">
+                        <button onclick="sendReminder(${member.id})">Send Renewal Reminder</button>
+                    </td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function renderUnpaid(bookings) {
+            const tbody = document.getElementById('unpaidBody');
+            tbody.innerHTML = '';
+            const now = new Date();
+
+            bookings.forEach(booking => {
+                const bookingDate = new Date(booking.timestamp);
+                const hoursDiff = (now - bookingDate) / (1000 * 60 * 60);
+                if (booking.paymentStatus !== 'Pending' || hoursDiff < 24) return;
+
+                const row = `<tr>
+                    <td>${booking.fullName}</td>
+                    <td>${booking.email}</td>
+                    <td>${booking.phone}</td>
+                    <td>${booking.timestamp.split('T')[0]}</td>
+                    <td>₹${booking.paidAmount}</td>
+                    <td class="action-buttons">
+                        <button onclick="markPaid(${booking.id})">Mark Paid</button>
+                        <button class="remove-button" onclick="deleteBooking(${booking.id})">Remove</button>
+                        <button onclick="sendReminder(${booking.id})">Send Reminder</button>
+                    </td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function populateMemberSelect(members) {
+            const select = document.getElementById('memberSelect');
+            select.innerHTML = '<option value="0" disabled selected>Select Member</option>';
+            members.forEach(member => {
+                select.innerHTML += `<option value="${member.id}">${member.fullName} (${member.email})</option>`;
+            });
+        }
+
+        async function markPaid(bookingId) {
+            try {
+                const response = await fetch(`${APPS_SCRIPT_URL}?type=markPaid`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: bookingId })
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                showMessage('extendMessage', 'success', 'Payment marked as completed');
+                await loadDashboard();
+            } catch (error) {
+                showMessage('extendMessage', 'error', `Error marking payment: ${error.message}`);
+                console.error('Error:', error);
+            }
+        }
+
+        async function deleteBooking(bookingId) {
+            if (!confirm('Are you sure you want to remove this booking?')) return;
+            try {
+                const response = await fetch(`${APPS_SCRIPT_URL}?type=delete`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: bookingId })
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                showMessage('extendMessage', 'success', 'Booking removed');
+                await loadDashboard();
+            } catch (error) {
+                showMessage('extendMessage', 'error', `Error removing booking: ${error.message}`);
+                console.error('Error:', error);
+            }
+        }
+
+        async function sendReminder(bookingId) {
+            try {
+                const response = await fetch(`${APPS_SCRIPT_URL}?type=sendReminder`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: bookingId })
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                showMessage('extendMessage', 'success', 'Reminder sent');
+            } catch (error) {
+                showMessage('extendMessage', 'error', `Error sending reminder: ${error.message}`);
+                console.error('Error:', error);
+            }
+        }
+
+        async function extendMembership() {
+            const memberId = parseInt(document.getElementById('memberSelect').value);
+            const months = parseInt(document.getElementById('extendMonths').value);
+            if (!memberId) {
+                showMessage('extendMessage', 'error', 'Please select a member');
+                return;
+            }
+            try {
+                const response = await fetch(`${APPS_SCRIPT_URL}?type=extendMembership`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: memberId, months: months })
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                showMessage('extendMessage', 'success', 'Membership extended');
+                await loadDashboard();
+            } catch (error) {
+                showMessage('extendMessage', 'error', `Error extending membership: ${error.message}`);
+                console.error('Error:', error);
+            }
+        }
+
+        function showMessage(elementId, type, message) {
+            const messageDiv = document.getElementById(elementId);
+            messageDiv.className = `message ${type}`;
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+            setTimeout(() => messageDiv.style.display = 'none', 5000);
+        }
+    </script>
+</body>
+</html>
