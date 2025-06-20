@@ -36,7 +36,7 @@
             background: linear-gradient(135deg, #1a237e, #4c51bf);
             color: white;
             text-align: center;
-            padding: 3rem 0;
+            padding: 2rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -54,18 +54,18 @@
         }
 
         header .logo {
-            width: 150px;
-            margin-bottom: 1rem;
-        }
-
-        header h1 {
-            font-size: 2rem;
-            font-weight: 700;
+            width: 120px;
             margin-bottom: 0.5rem;
         }
 
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
         header p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             max-width: 90%;
             margin: 0 auto;
         }
@@ -73,12 +73,12 @@
         /* Sticky CTA */
         .sticky-cta {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 15px;
+            right: 15px;
             z-index: 1000;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         .sticky-cta a {
@@ -86,87 +86,100 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .sticky-cta .book-now {
             background: linear-gradient(45deg, #f6b800, #f97316);
             color: white;
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
+            padding: 0.8rem 1.2rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .sticky-cta .book-now:hover,
         .sticky-cta .book-now:focus {
             background: linear-gradient(45deg, #f97316, #f6b800);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
         .sticky-cta .whatsapp {
             background: #25D366;
             color: white;
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
         }
 
         .sticky-cta .whatsapp:hover,
         .sticky-cta .whatsapp:focus {
             background: #20b858;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
         .sticky-cta i {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
 
         /* Navigation */
         nav {
             background-color: #1a237e;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             position: sticky;
             top: 0;
-            z-index: 1;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
         }
 
         .nav-toggle {
-            display: block;
             background: none;
             border: none;
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
             padding: 0.5rem;
+            z-index: 1001;
         }
 
         .nav-menu {
             display: none;
-            flex-direction: column;
-            background-color: #1a237e;
-            position: absolute;
-            top: 100%;
+            position: fixed;
+            top: 0;
             left: 0;
-            width: 100%;
-            padding: 1rem 0;
+            width: 75%;
+            height: 100vh;
+            background-color: #1a237e;
+            flex-direction: column;
+            padding: 4rem 1rem 1rem;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
         }
 
         .nav-menu.active {
             display: flex;
+            transform: translateX(0);
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 1rem;
-            padding: 0.75rem 1rem;
+            padding: 0.8rem 1rem;
             display: block;
+            transition: color 0.2s;
         }
 
         nav a:hover,
@@ -174,12 +187,28 @@
             color: #f6b800;
         }
 
+        /* Overlay for mobile menu */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
         /* Hero */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1584735935682-2f2b69ffcf14') no-repeat center/cover;
             color: white;
             text-align: center;
-            padding: 6rem 0;
+            padding: 5rem 0;
             animation: hero-slide 1s ease-in-out;
         }
 
@@ -189,57 +218,57 @@
         }
 
         .hero h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .hero p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             max-width: 90%;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1.2rem;
         }
 
         .hero .cta-button {
             background: linear-gradient(45deg, #f6b800, #f97316);
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             border: none;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         .hero .cta-button:hover,
         .hero .cta-button:focus {
             background: linear-gradient(45deg, #f97316, #f6b800);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         /* Sections */
         section {
-            padding: 3rem 0;
+            padding: 2.5rem 0;
         }
 
         section h2 {
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #1a237e;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             position: relative;
         }
 
         section h2::after {
             content: '';
-            width: 60px;
+            width: 50px;
             height: 3px;
             background-color: #f6b800;
             position: absolute;
-            bottom: -8px;
+            bottom: -6px;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -251,7 +280,7 @@
         .blog-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
 
         .service-card,
@@ -260,94 +289,95 @@
         .pricing-card,
         .blog-card {
             background-color: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 1.2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.3s;
         }
 
         .service-card:hover,
         .pricing-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
         }
 
         .service-card i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #f6b800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .service-card h3,
         .trainer-card h3,
         .pricing-card h3,
         .blog-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #1a237e;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .pricing-card .price {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: #f6b800;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .pricing-card .popular {
             position: absolute;
-            top: -12px;
-            right: 12px;
+            top: -10px;
+            right: 10px;
             background-color: #f6b800;
             color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
         }
 
         .testimonial-card img,
         .trainer-card img {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            margin-bottom: 1rem;
-            border: 3px solid #f6b800;
+            margin-bottom: 0.8rem;
+            border: 2px solid #f6b800;
         }
 
         .blog-card img {
             width: 100%;
-            height: 150px;
+            height: 140px;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
         }
 
         .blog-card a {
             color: #f6b800;
             font-weight: 600;
             text-decoration: none;
+            font-size: 0.9rem;
         }
 
         /* Booking Form */
         .booking-form {
             background-color: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 1.2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .form-progress {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.8rem;
         }
 
         .form-progress span {
             flex: 1;
             text-align: center;
-            padding: 0.5rem;
+            padding: 0.4rem;
             background-color: #e2e8f0;
-            border-radius: 20px;
+            border-radius: 15px;
             color: #4a5568;
         }
 
@@ -357,24 +387,24 @@
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .form-group label {
             display: block;
             font-weight: 600;
             color: #1a237e;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.8rem;
         }
 
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.6rem;
             border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 0.9rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
         }
 
         .form-group input:focus,
@@ -387,28 +417,28 @@
         .payment-options {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
         }
 
         .class-options label,
         .payment-options label {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             font-weight: 500;
             color: #1a237e;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         button {
             background: linear-gradient(45deg, #f6b800, #f97316);
             color: white;
-            padding: 1rem;
+            padding: 0.8rem;
             border: none;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             width: 100%;
@@ -418,16 +448,16 @@
         button:hover,
         button:focus {
             background: linear-gradient(45deg, #f97316, #f6b800);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .message {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: 8px;
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            border-radius: 6px;
             display: none;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .success {
@@ -442,16 +472,17 @@
 
         /* FAQ */
         .faq-item {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .faq-item summary {
             font-weight: 600;
             cursor: pointer;
-            padding: 1rem;
+            padding: 0.8rem;
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
         }
 
         .faq-item summary:hover,
@@ -460,11 +491,11 @@
         }
 
         .faq-item p {
-            padding: 1rem;
+            padding: 0.8rem;
             background-color: #f7fafc;
-            border-radius: 8px;
+            border-radius: 6px;
             color: #4a5568;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         /* Footer */
@@ -472,24 +503,24 @@
             background-color: #1a237e;
             color: white;
             text-align: center;
-            padding: 2rem 0;
-            font-size: 0.9rem;
+            padding: 1.5rem 0;
+            font-size: 0.8rem;
         }
 
         footer a {
             color: #f6b800;
             text-decoration: none;
             font-weight: 600;
-            margin: 0 0.5rem;
+            margin: 0 0.4rem;
         }
 
         footer .whatsapp {
             background: #25D366;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         footer .whatsapp:hover,
@@ -508,35 +539,39 @@
             }
 
             header {
-                padding: 5rem 0;
+                padding: 4rem 0;
             }
 
             header h1 {
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
 
             header p {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 max-width: 600px;
             }
 
             .sticky-cta {
-                bottom: 30px;
-                right: 30px;
+                bottom: 20px;
+                right: 20px;
             }
 
             .sticky-cta .book-now {
-                padding: 1.2rem 2rem;
-                font-size: 1.2rem;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
             }
 
             .sticky-cta .whatsapp {
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
             }
 
             .sticky-cta i {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
+            }
+
+            .nav-container {
+                padding: 0 24px;
             }
 
             .nav-toggle {
@@ -545,42 +580,49 @@
 
             .nav-menu {
                 display: flex !important;
-                flex-direction: row;
                 position: static;
+                width: auto;
+                height: auto;
+                flex-direction: row;
                 padding: 0;
-                justify-content: center;
-                gap: 2rem;
+                box-shadow: none;
+                transform: none;
+                gap: 1.5rem;
             }
 
             nav a {
-                font-size: 1.1rem;
+                font-size: 1rem;
                 padding: 0.5rem 1rem;
             }
 
+            .overlay {
+                display: none !important;
+            }
+
             .hero {
-                padding: 10rem 0;
+                padding: 8rem 0;
             }
 
             .hero h2 {
-                font-size: 4rem;
+                font-size: 3.5rem;
             }
 
             .hero p {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 max-width: 700px;
             }
 
             .hero .cta-button {
-                padding: 1.5rem 4rem;
-                font-size: 1.3rem;
+                padding: 1.2rem 3rem;
+                font-size: 1.1rem;
             }
 
             section {
-                padding: 6rem 0;
+                padding: 4rem 0;
             }
 
             section h2 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
 
             .services-grid,
@@ -588,8 +630,8 @@
             .trainers-grid,
             .pricing-grid,
             .blog-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2.5rem;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
             }
 
             .service-card,
@@ -597,87 +639,89 @@
             .trainer-card,
             .pricing-card,
             .blog-card {
-                padding: 2rem;
+                padding: 1.5rem;
             }
 
             .service-card i {
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
 
             .service-card h3,
             .trainer-card h3,
             .pricing-card h3,
             .blog-card h3 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
 
             .pricing-card .price {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .testimonial-card img,
             .trainer-card img {
-                width: 90px;
-                height: 90px;
+                width: 80px;
+                height: 80px;
             }
 
             .blog-card img {
-                height: 200px;
+                height: 180px;
             }
 
             .booking-form {
-                max-width: 800px;
-                padding: 2rem;
+                max-width: 700px;
+                padding: 1.5rem;
             }
 
             .form-progress {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             .form-group label {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             .form-group input,
             .form-group select {
-                padding: 1rem;
-                font-size: 1rem;
+                padding: 0.8rem;
+                font-size: 0.9rem;
             }
 
             .class-options label,
             .payment-options label {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             footer {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
+    <div class="overlay" id="overlay"></div>
     <header>
-<!--         <img src="https://via.placeholder.com/150x50?text=PulseFit+Logo" alt="PulseFit Gym Logo" class="logo"> -->
         <h1>PulseFit Gym</h1>
         <p>India's Elite Fitness Destination</p>
     </header>
 
     <nav>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#classes">Classes</a></li>
-            <li><a href="#trainers">Trainers</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#booking">Book Now</a></li>
-        </ul>
+        <div class="nav-container">
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#trainers">Trainers</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#booking">Book Now</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div class="sticky-cta">
@@ -740,7 +784,7 @@
                     <p>Elevate endurance with intense Cardio sessions.</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 2rem;">
+            <div style="text-align: center; margin-top: 1.5rem;">
                 <a href="#booking"><button>Add Classes</button></a>
             </div>
         </div>
@@ -870,7 +914,7 @@
     <section id="booking">
         <div class="container">
             <h2>Checkout</h2>
-            <form id="bookingForm" class="booking-form">
+            <form id="bookingForm" class="booking-form" action="YOUR_APPS_SCRIPT_URL" method="POST">
                 <div class="form-progress">
                     <span class="active">Personal Info</span>
                     <span>Membership</span>
@@ -878,19 +922,19 @@
                 </div>
                 <div class="form-group">
                     <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" placeholder="Enter your name" required>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="Enter your phone number" required pattern="[6-9][0-9]{9}" title="Valid Indian number: 10 digits, starts with 6/7/8/9">
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="[6-9][0-9]{9}" title="Valid Indian number: 10 digits, starts with 6/7/8/9">
                 </div>
                 <div class="form-group">
                     <label>Membership Duration</label>
-                    <select id="membershipDuration" required>
+                    <select id="membershipDuration" name="membershipDuration" required>
                         <option value="1">1 Month (₹1,000)</option>
                         <option value="3">3 Months (₹2,700)</option>
                         <option value="6">6 Months (₹5,000)</option>
@@ -899,9 +943,9 @@
                 <div class="form-group">
                     <label>Add Optional Classes</label>
                     <div class="class-options">
-                        <label><input type="checkbox" name="classes" value="Yoga"> Yoga</label>
-                        <label><input type="checkbox" name="classes" value="Zumba"> Zumba</label>
-                        <label><input type="checkbox" name="classes" value="Cardio"> Cardio</label>
+                        <label><input type="checkbox" name="classes[]" value="Yoga"> Yoga</label>
+                        <label><input type="checkbox" name="classes[]" value="Zumba"> Zumba</label>
+                        <label><input type="checkbox" name="classes[]" value="Cardio"> Cardio</label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -911,6 +955,10 @@
                         <label><input type="radio" name="paymentMethod" value="Online"> Online (Razorpay)</label>
                     </div>
                 </div>
+                <input type="hidden" name="paymentStatus" id="paymentStatus" value="Pending">
+                <input type="hidden" name="paidAmount" id="paidAmount">
+                <input type="hidden" name="razorpayPaymentId" id="razorpayPaymentId">
+                <input type="hidden" name="timestamp" id="timestamp">
                 <button type="submit">Book Membership</button>
                 <div id="formMessage" class="message"></div>
             </form>
@@ -933,9 +981,22 @@
     <script>
         // Navigation Toggle
         const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+        const navMenu = document.querySelector('#navMenu');
+        const overlay = document.querySelector('#overlay');
+        const navIcon = navToggle.querySelector('i');
+
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            navIcon.classList.toggle('fa-bars');
+            navIcon.classList.toggle('fa-times');
+        });
+
+        overlay.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            navIcon.classList.add('fa-bars');
+            navIcon.classList.remove('fa-times');
         });
 
         // Form progress animation
@@ -951,9 +1012,8 @@
         // Form submission
         const bookingForm = document.getElementById('bookingForm');
         const formMessage = document.getElementById('formMessage');
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxB_mqEt91GLAX8bLnVD9qafrtbB-d5mbhzQUDBmOBTNI0-QDbDDVYsMPzcZsxnF79pDg/exec';
 
-        bookingForm.addEventListener('submit', async (e) => {
+        bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
             // Validate phone number
@@ -964,89 +1024,77 @@
                 return;
             }
 
-            // Collect selected classes
-            const selectedClasses = Array.from(document.querySelectorAll('input[name="classes"]:checked'))
-                .map(checkbox => checkbox.value);
-
             // Determine amount
             const duration = parseInt(document.getElementById('membershipDuration').value);
-            const amount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000; // in INR
-            const paidAmount = amount;
+            const amount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000;
 
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                email: document.getElementById('email').value,
-                phone: phone,
-                membershipDuration: duration,
-                classes: selectedClasses,
-                paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value,
-                paymentStatus: 'Pending',
-                paidAmount: paidAmount,
-                timestamp: new Date().toISOString()
-            };
+            // Set hidden fields
+            document.getElementById('paidAmount').value = amount;
+            document.getElementById('timestamp').value = new Date().toISOString();
 
-            try {
-                if (formData.paymentMethod === 'Online') {
-                    // Razorpay payment
-                    const options = {
-                        key: 'rzp_test_gx1zMuo2qDYKHR',
-                        amount: amount * 100, // Convert INR to paise
-                        currency: 'INR',
-                        name: 'PulseFit Gym',
-                        description: 'Membership Payment',
-                        handler: async function (response) {
-                            formData.paymentStatus = 'Completed';
-                            formData.razorpayPaymentId = response.razorpay_payment_id;
-                            await submitBooking(formData);
-                        },
-                        prefill: {
-                            name: formData.fullName,
-                            email: formData.email,
-                            contact: formData.phone
-                        },
-                        theme: {
-                            color: '#f6b800'
-                        }
-                    };
-                    const rzp = new Razorpay(options);
-                    rzp.open();
-                } else {
-                    // Cash payment
-                    await submitBooking(formData);
-                }
-            } catch (error) {
-                showMessage('error', 'Error processing booking. Please try again or contact support via WhatsApp.');
-                console.error('Error:', error);
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+            if (paymentMethod === 'Online') {
+                // Razorpay payment
+                const options = {
+                    key: 'rzp_test_gx1zMuo2qDYKHR',
+                    amount: amount * 100, // Convert INR to paise
+                    currency: 'INR',
+                    name: 'PulseFit Gym',
+                    description: 'Membership Payment',
+                    handler: function (response) {
+                        // Update hidden fields
+                        document.getElementById('paymentStatus').value = 'Completed';
+                        document.getElementById('razorpayPaymentId').value = response.razorpay_payment_id;
+                        // Submit the form
+                        submitForm();
+                    },
+                    prefill: {
+                        name: document.getElementById('fullName').value,
+                        email: document.getElementById('email').value,
+                        contact: document.getElementById('phone').value
+                    },
+                    theme: {
+                        color: '#f6b800'
+                    }
+                };
+                const rzp = new Razorpay(options);
+                rzp.open();
+            } else {
+                // Cash payment
+                document.getElementById('paymentStatus').value = 'Pending';
+                document.getElementById('razorpayPaymentId').value = '';
+                submitForm();
             }
         });
 
-        async function submitBooking(formData) {
-            try {
-                const response = await fetch(`${APPS_SCRIPT_URL}?type=booking`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                const contentType = response.headers.get('content-type');
-                if (!contentType || !contentType.includes('application/json')) {
-                    throw new Error('Invalid response format. Please ensure the Apps Script is deployed correctly.');
-                }
-                const result = await response.json();
-                if (result.error) {
-                    throw new Error(result.error);
-                }
-                showMessage('success', `Booking confirmed! ${formData.paymentMethod === 'Cash' ? `Please pay ₹${formData.paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for details.'}`);
-                bookingForm.reset();
-                progressSteps.forEach(step => step.classList.remove('active'));
-                progressSteps[0].classList.add('active');
-                document.querySelector('input[name="paymentMethod"][value="Cash"]').checked = true;
-            } catch (error) {
-                showMessage('error', `Error submitting booking: ${error.message}. Please try again or contact support via WhatsApp.`);
-                console.error('Error:', error);
+        function submitForm() {
+            const form = document.getElementById('bookingForm');
+            const formData = new FormData(form);
+
+            // Create a temporary form to submit data
+            const tempForm = document.createElement('form');
+            tempForm.method = 'POST';
+            tempForm.action = form.action;
+            tempForm.style.display = 'none';
+
+            for (const [key, value] of formData.entries()) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = value;
+                tempForm.appendChild(input);
             }
+
+            document.body.appendChild(tempForm);
+            tempForm.submit();
+
+            // Show success message
+            showMessage('success', `Booking submitted! ${document.getElementById('paymentStatus').value === 'Pending' ? `Please pay ₹${document.getElementById('paidAmount').value} at the gym within 24 hours.` : 'Payment completed. Check your email for details.'}`);
+            bookingForm.reset();
+            progressSteps.forEach(step => step.classList.remove('active'));
+            progressSteps[0].classList.add('active');
+            document.querySelector('input[name="paymentMethod"][value="Cash"]').checked = true;
         }
 
         function showMessage(type, message) {
