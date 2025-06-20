@@ -8,6 +8,8 @@
     <title>PulseFit Gym - Elite Fitness</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <style>
         /* Mobile-First Base Styles */
         * {
@@ -696,7 +698,6 @@
             }
         }
     </style>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
     <div class="overlay" id="overlay"></div>
@@ -720,6 +721,7 @@
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#booking">Book Now</a></li>
+                <li><a href="#renew">Renew Membership</a></li>
             </ul>
         </div>
     </nav>
@@ -727,6 +729,9 @@
     <div class="sticky-cta">
         <a href="#booking" class="book-now">
             <i class="fas fa-calendar-check"></i> Book Now
+        </a>
+        <a href="#renew" class="book-now">
+            <i class="fas fa-redo"></i> Renew
         </a>
         <a href="https://wa.me/+919876543210?text=Hi%2C%20I%27m%20interested%20in%20joining%20PulseFit%20Gym%21" class="whatsapp" target="_blank">
             <i class="fab fa-whatsapp"></i>
@@ -880,40 +885,18 @@
             </details>
             <details class="faq-item">
                 <summary>How do I renew my membership?</summary>
-                <p>Book again using the same email to extend your membership.</p>
+                <p>Go to the Renew Membership section, enter your name, select the duration and payment method to extend your membership.</p>
             </details>
-        </div>
-    </section>
-
-    <section id="blog">
-        <div class="container">
-            <h2>Fitness Insights</h2>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Yoga Benefits">
-                    <h3>Benefits of Yoga</h3>
-                    <p>Boost your physical and mental health with yoga.</p>
-                    <a href="#">Read More</a>
-                </div>
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1546484396-fb3fc6f95f98" alt="Gym Tips">
-                    <h3>Gym Workout Tips</h3>
-                    <p>Maximize your gym sessions with these tips.</p>
-                    <a href="#">Read More</a>
-                </div>
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" alt="Zumba Guide">
-                    <h3>Zumba for Beginners</h3>
-                    <p>Start your Zumba journey with ease.</p>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
         </div>
     </section>
 
     <section id="booking">
         <div class="container">
             <h2>Checkout</h2>
+            <div class="mb-6 flex justify-center gap-4">
+                <button id="newBookingBtn" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">New Booking</button>
+                <button id="renewMembershipBtn" class="bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-600 transition">Renew Membership</button>
+            </div>
             <form id="bookingForm" class="booking-form" action="https://script.google.com/macros/s/AKfycbzScKDJrm_tKUA3zY52sTcBapLfS8x_-SNQwAJkV6fB4asU3PTUPBTf6YxT-6dWv95k2Q/exec" method="POST">
                 <div class="form-progress">
                     <span class="active">Personal Info</span>
@@ -959,8 +942,41 @@
                 <input type="hidden" name="paidAmount" id="paidAmount">
                 <input type="hidden" name="razorpayPaymentId" id="razorpayPaymentId">
                 <input type="hidden" name="timestamp" id="timestamp">
+                <input type="hidden" name="isRenewal" id="isRenewal" value="false">
                 <button type="submit">Book Membership</button>
                 <div id="formMessage" class="message"></div>
+            </form>
+            <form id="renewalForm" class="booking-form hidden" action="https://script.google.com/macros/s/AKfycbzScKDJrm_tKUA3zY52sTcBapLfS8x_-SNQwAJkV6fB4asU3PTUPBTf6YxT-6dWv95k2Q/exec" method="POST">
+                <div class="form-progress">
+                    <span class="active">Member Info</span>
+                    <span>Payment</span>
+                </div>
+                <div class="form-group">
+                    <label for="renewFullName">Full Name</label>
+                    <input type="text" id="renewFullName" name="fullName" placeholder="Enter your name as registered" required>
+                </div>
+                <div class="form-group">
+                    <label>Membership Duration</label>
+                    <select id="renewMembershipDuration" name="membershipDuration" required>
+                        <option value="1">1 Month (₹1,000)</option>
+                        <option value="3">3 Months (₹2,700)</option>
+                        <option value="6">6 Months (₹5,000)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <div class="payment-options">
+                        <label><input type="radio" name="paymentMethod" value="Cash" checked> Cash</label>
+                        <label><input type="radio" name="paymentMethod" value="Online"> Online (Razorpay)</label>
+                    </div>
+                </div>
+                <input type="hidden" name="paymentStatus" id="renewPaymentStatus" value="Pending">
+                <input type="hidden" name="paidAmount" id="renewPaidAmount">
+                <input type="hidden" name="razorpayPaymentId" id="renewRazorpayPaymentId">
+                <input type="hidden" name="timestamp" id="renewTimestamp">
+                <input type="hidden" name="isRenewal" id="renewIsRenewal" value="true">
+                <button type="submit">Renew Membership</button>
+                <div id="renewalMessage" class="message"></div>
             </form>
         </div>
     </section>
@@ -973,7 +989,8 @@
                 <a href="tel:+919876543210">+91 98765 43210</a> |
                 <a href="https://wa.me/+919876543210?text=Hi%2C%20I%27m%20interested%20in%20joining%20PulseFit%20Gym%21" class="whatsapp" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp Us
-                </a>
+                </a> |
+                <a href="#renew">Renew Membership</a>
             </p>
         </div>
     </footer>
@@ -999,20 +1016,48 @@
             navIcon.classList.remove('fa-times');
         });
 
-        // Form progress animation
-        const inputs = document.querySelectorAll('.form-group input, .form-group select, .payment-options input');
-        const progressSteps = document.querySelectorAll('.form-progress span');
-        inputs.forEach((input, index) => {
-            input.addEventListener('focus', () => {
-                progressSteps.forEach(step => step.classList.remove('active'));
-                progressSteps[Math.min(Math.floor(index / 2), 2)].classList.add('active');
-            });
+        // Form Toggle
+        const newBookingBtn = document.getElementById('newBookingBtn');
+        const renewMembershipBtn = document.getElementById('renewMembershipBtn');
+        const bookingForm = document.getElementById('bookingForm');
+        const renewalForm = document.getElementById('renewalForm');
+
+        newBookingBtn.addEventListener('click', () => {
+            bookingForm.classList.remove('hidden');
+            renewalForm.classList.add('hidden');
+            newBookingBtn.classList.add('bg-indigo-600');
+            newBookingBtn.classList.remove('bg-indigo-400');
+            renewMembershipBtn.classList.add('bg-teal-400');
+            renewMembershipBtn.classList.remove('bg-teal-500');
         });
 
-        // Form submission
-        const bookingForm = document.getElementById('bookingForm');
-        const formMessage = document.getElementById('formMessage');
+        renewMembershipBtn.addEventListener('click', () => {
+            bookingForm.classList.add('hidden');
+            renewalForm.classList.remove('hidden');
+            newBookingBtn.classList.add('bg-indigo-400');
+            newBookingBtn.classList.remove('bg-indigo-600');
+            renewMembershipBtn.classList.add('bg-teal-500');
+            renewMembershipBtn.classList.remove('bg-teal-400');
+        });
 
+        // Form progress animation
+        function updateProgress(formId, index) {
+            const progressSteps = document.querySelectorAll(`#${formId} .form-progress span`);
+            progressSteps.forEach(step => step.classList.remove('active'));
+            progressSteps[Math.min(index, progressSteps.length - 1)].classList.add('active');
+        }
+
+        const bookingInputs = document.querySelectorAll('#bookingForm .form-group input, #bookingForm .form-group select, #bookingForm .payment-options input');
+        bookingInputs.forEach((input, index) => {
+            input.addEventListener('focus', () => updateProgress('bookingForm', Math.floor(index / 2)));
+        });
+
+        const renewalInputs = document.querySelectorAll('#renewalForm .form-group input, #renewalForm .form-group select, #renewalForm .payment-options input');
+        renewalInputs.forEach((input, index) => {
+            input.addEventListener('focus', () => updateProgress('renewalForm', Math.floor(index / 2)));
+        });
+
+        // Booking Form Submission
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -1020,7 +1065,7 @@
             const phone = document.getElementById('phone').value;
             const phoneRegex = /^[6-9][0-9]{9}$/;
             if (!phoneRegex.test(phone)) {
-                showMessage('error', 'Please enter a valid Indian phone number (10 digits, starts with 6/7/8/9)');
+                showMessage('formMessage', 'error', 'Please enter a valid Indian phone number (10 digits, starts with 6/7/8/9)');
                 return;
             }
 
@@ -1029,10 +1074,12 @@
             const amount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000;
 
             // Set hidden fields
+            const now = new Date();
             document.getElementById('paidAmount').value = amount;
-            document.getElementById('timestamp').value = new Date().toISOString();
+            document.getElementById('timestamp').value = now.toISOString();
+            document.getElementById('isRenewal').value = 'false';
 
-            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            const paymentMethod = document.querySelector('#bookingForm input[name="paymentMethod"]:checked').value;
 
             if (paymentMethod === 'Online') {
                 // Razorpay payment
@@ -1047,7 +1094,7 @@
                         document.getElementById('paymentStatus').value = 'Completed';
                         document.getElementById('razorpayPaymentId').value = response.razorpay_payment_id;
                         // Submit the form
-                        submitForm();
+                        submitForm('bookingForm', 'formMessage');
                     },
                     prefill: {
                         name: document.getElementById('fullName').value,
@@ -1064,12 +1111,60 @@
                 // Cash payment
                 document.getElementById('paymentStatus').value = 'Pending';
                 document.getElementById('razorpayPaymentId').value = '';
-                submitForm();
+                submitForm('bookingForm', 'formMessage');
             }
         });
 
-        function submitForm() {
-            const form = document.getElementById('bookingForm');
+        // Renewal Form Submission
+        renewalForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Determine amount
+            const duration = parseInt(document.getElementById('renewMembershipDuration').value);
+            const amount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000;
+
+            // Set hidden fields
+            const now = new Date();
+            document.getElementById('renewPaidAmount').value = amount;
+            document.getElementById('renewTimestamp').value = now.toISOString();
+            document.getElementById('renewIsRenewal').value = 'true';
+
+            const paymentMethod = document.querySelector('#renewalForm input[name="paymentMethod"]:checked').value;
+
+            if (paymentMethod === 'Online') {
+                // Razorpay payment
+                const options = {
+                    key: 'rzp_test_gx1zMuo2qDYKHR',
+                    amount: amount * 100, // Convert INR to paise
+                    currency: 'INR',
+                    name: 'PulseFit Gym',
+                    description: 'Membership Renewal Payment',
+                    handler: function (response) {
+                        // Update hidden fields
+                        document.getElementById('renewPaymentStatus').value = 'Completed';
+                        document.getElementById('renewRazorpayPaymentId').value = response.razorpay_payment_id;
+                        // Submit the form
+                        submitForm('renewalForm', 'renewalMessage');
+                    },
+                    prefill: {
+                        name: document.getElementById('renewFullName').value
+                    },
+                    theme: {
+                        color: '#f6b800'
+                    }
+                };
+                const rzp = new Razorpay(options);
+                rzp.open();
+            } else {
+                // Cash payment
+                document.getElementById('renewPaymentStatus').value = 'Pending';
+                document.getElementById('renewRazorpayPaymentId').value = '';
+                submitForm('renewalForm', 'renewalMessage');
+            }
+        });
+
+        function submitForm(formId, messageId) {
+            const form = document.getElementById(formId);
             const formData = new FormData(form);
 
             // Create a temporary form to submit data
@@ -1090,18 +1185,27 @@
             tempForm.submit();
 
             // Show success message
-            showMessage('success', `Booking submitted! ${document.getElementById('paymentStatus').value === 'Pending' ? `Please pay ₹${document.getElementById('paidAmount').value} at the gym within 24 hours.` : 'Payment completed. Check your email for details.'}`);
-            bookingForm.reset();
+            const isRenewal = formId === 'renewalForm';
+            const paymentStatus = document.getElementById(isRenewal ? 'renewPaymentStatus' : 'paymentStatus').value;
+            const paidAmount = document.getElementById(isRenewal ? 'renewPaidAmount' : 'paidAmount').value;
+            const message = isRenewal
+                ? `Membership renewal submitted! ${paymentStatus === 'Pending' ? `Please pay ₹${paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for details.'}`
+                : `Booking submitted! ${paymentStatus === 'Pending' ? `Please pay ₹${paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for details.'}`;
+            showMessage(messageId, 'success', message);
+            
+            form.reset();
+            const progressSteps = document.querySelectorAll(`#${formId} .form-progress span`);
             progressSteps.forEach(step => step.classList.remove('active'));
             progressSteps[0].classList.add('active');
-            document.querySelector('input[name="paymentMethod"][value="Cash"]').checked = true;
+            document.querySelector(`#${formId} input[name="paymentMethod"][value="Cash"]`).checked = true;
         }
 
-        function showMessage(type, message) {
-            formMessage.className = `message ${type}`;
-            formMessage.textContent = message;
-            formMessage.style.display = 'block';
-            setTimeout(() => formMessage.style.display = 'none', 5000);
+        function showMessage(elementId, type, message) {
+            const messageDiv = document.getElementById(elementId);
+            messageDiv.className = `message ${type}`;
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+            setTimeout(() => messageDiv.style.display = 'none', 5000);
         }
     </script>
 </body>
