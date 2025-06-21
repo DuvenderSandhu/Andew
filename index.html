@@ -55,11 +55,6 @@
             z-index: -1;
         }
 
-        header .logo {
-            width: 120px;
-            margin-bottom: 0.5rem;
-        }
-
         header h1 {
             font-size: 1.8rem;
             font-weight: 700;
@@ -105,7 +100,7 @@
         .sticky-cta .book-now:hover,
         .sticky-cta .book-now:focus {
             background: linear-gradient(45deg, #f97316, #f6b800);
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.05);
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
@@ -120,7 +115,7 @@
         .sticky-cta .whatsapp:hover,
         .sticky-cta .whatsapp:focus {
             background: #20b858;
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.05);
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
@@ -130,11 +125,14 @@
 
         /* Navigation */
         nav {
-            background-color: #1a237e;
+            background: linear-gradient(180deg, #1a237e, #2c388a);
             padding: 0.8rem 0;
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
+            height: 48px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         .nav-container {
@@ -142,12 +140,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 16px;
+            height: 100%;
+        }
+
+        .nav-container .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #f6b800;
+            letter-spacing: 1px;
         }
 
         .nav-toggle {
             background: none;
             border: none;
-            color: white;
+            color: #f6b800;
             font-size: 1.5rem;
             cursor: pointer;
             padding: 0.5rem;
@@ -161,7 +167,7 @@
             left: 0;
             width: 75%;
             height: 100vh;
-            background-color: #1a237e;
+            background: #1a237e;
             flex-direction: column;
             padding: 4rem 1rem 1rem;
             box-shadow: 2px 0 10px rgba(0,0,0,0.3);
@@ -177,16 +183,18 @@
         nav a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1rem;
             padding: 0.8rem 1rem;
             display: block;
-            transition: color 0.2s;
+            transition: all 0.2s ease;
+            border-radius: 4px;
         }
 
         nav a:hover,
         nav a:focus {
             color: #f6b800;
+            background: rgba(246,184,0,0.1);
         }
 
         /* Overlay for mobile menu */
@@ -207,15 +215,17 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1584735935682-2f2b69ffcf14') no-repeat center/cover;
+            background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%), url('https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg') no-repeat center/cover;
             color: white;
             text-align: center;
             padding: 5rem 0;
+            position: relative;
+            background-attachment: fixed;
             animation: hero-slide 1s ease-in-out;
         }
 
         @keyframes hero-slide {
-            from { opacity: 0; transform: scale(1.1); }
+            from { opacity: 0; transform: scale(1.05); }
             to { opacity: 1; transform: scale(1); }
         }
 
@@ -223,31 +233,35 @@
             font-size: 1.8rem;
             font-weight: 800;
             margin-bottom: 0.8rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
             font-size: 0.9rem;
             max-width: 90%;
             margin: 0 auto 1.2rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
 
         .hero .cta-button {
             background: linear-gradient(45deg, #f6b800, #f97316);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.8rem;
             border: none;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            min-height: 48px;
         }
 
         .hero .cta-button:hover,
         .hero .cta-button:focus {
             background: linear-gradient(45deg, #f97316, #f6b800);
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
         /* Sections */
@@ -367,27 +381,6 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
-        .form-progress {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.2rem;
-            font-size: 0.8rem;
-        }
-
-        .form-progress span {
-            flex: 1;
-            text-align: center;
-            padding: 0.4rem;
-            background-color: #e2e8f0;
-            border-radius: 15px;
-            color: #4a5568;
-        }
-
-        .form-progress .active {
-            background-color: #f6b800;
-            color: white;
-        }
-
         .form-group {
             margin-bottom: 1.2rem;
         }
@@ -407,6 +400,7 @@
             border: 1px solid #d1d5db;
             border-radius: 6px;
             font-size: 0.8rem;
+            min-height: 44px;
         }
 
         .form-group input:focus,
@@ -434,32 +428,44 @@
             font-size: 0.8rem;
         }
 
-        button {
+        .payment-options input[type="radio"] {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+        }
+
+        .form-group button,
+        .form-toggle-btn {
             background: linear-gradient(45deg, #f6b800, #f97316);
             color: white;
-            padding: 0.8rem;
+            padding: 0.9rem;
             border: none;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
             cursor: pointer;
             width: 100%;
             transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            min-height: 48px;
         }
 
-        button:hover,
-        button:focus {
+        .form-group button:hover,
+        .form-group button:focus,
+        .form-toggle-btn:hover,
+        .form-toggle-btn:focus {
             background: linear-gradient(45deg, #f97316, #f6b800);
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
         .message {
-            margin-top: 0.8rem;
-            padding: 0.8rem;
+            margin-top: 1rem;
+            padding: 1rem;
             border-radius: 6px;
-            display: none;
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 1rem;
+            font-weight: bold;
         }
 
         .success {
@@ -470,6 +476,73 @@
         .error {
             background-color: #f8d7da;
             color: #721c24;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left:0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: #1a1f;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .modal-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content p {
+            font-size: 0.9rem;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .modal-buttons button {
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            min-height: 44px;
+            width: 50%;
+        }
+
+        .modal-buttons .cancel-btn {
+            background: #e2e8f0;
+            color: #1a202c;
+        }
+
+        .modal-buttons .cancel-btn:hover,
+        .modal-buttons .cancel-btn:focus {
+            background: #cbd5e0;
+            transform: translateY(-2px);
         }
 
         /* FAQ */
@@ -512,17 +585,17 @@
         footer a {
             color: #f6b800;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: bold;
             margin: 0 0.4rem;
         }
 
         footer .whatsapp {
             background: #25D366;
             padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            display: inline-flex;
+            border-radius: 12px;
+            display: inline-block;
             align-items: center;
-            gap: 0.4rem;
+            gap: 4px;
         }
 
         footer .whatsapp:hover,
@@ -564,8 +637,8 @@
             }
 
             .sticky-cta .whatsapp {
-                width: 50px;
-                height: 50px;
+                width: 44px;
+                height: 44px;
             }
 
             .sticky-cta i {
@@ -587,14 +660,15 @@
                 height: auto;
                 flex-direction: row;
                 padding: 0;
+                background: transparent;
                 box-shadow: none;
-                transform: none;
-                gap: 1.5rem;
+                transform: none !important;
+                gap: 1rem;
             }
 
             nav a {
                 font-size: 1rem;
-                padding: 0.5rem 1rem;
+                padding: 0.5rem 0.8rem;
             }
 
             .overlay {
@@ -606,17 +680,18 @@
             }
 
             .hero h2 {
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
 
             .hero p {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
                 max-width: 700px;
             }
 
             .hero .cta-button {
-                padding: 1.2rem 3rem;
+                padding: 12px 36px;
                 font-size: 1.1rem;
+                min-height: 52px;
             }
 
             section {
@@ -624,7 +699,7 @@
             }
 
             section h2 {
-                font-size: 2.5rem;
+                font-size: 2.4rem;
             }
 
             .services-grid,
@@ -632,7 +707,7 @@
             .trainers-grid,
             .pricing-grid,
             .blog-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 gap: 2rem;
             }
 
@@ -642,7 +717,7 @@
             .pricing-card,
             .blog-card {
                 padding: 1.5rem;
-            }
+            } 
 
             .service-card i {
                 font-size: 3rem;
@@ -652,7 +727,7 @@
             .trainer-card h3,
             .pricing-card h3,
             .blog-card h3 {
-                font-size: 1.3rem;
+                font-size: 0.7rem;
             }
 
             .pricing-card .price {
@@ -660,7 +735,7 @@
             }
 
             .testimonial-card img,
-            .trainer-card img {
+            .trainer-card .img {
                 width: 80px;
                 height: 80px;
             }
@@ -670,12 +745,9 @@
             }
 
             .booking-form {
-                max-width: 700px;
-                padding: 1.5rem;
-            }
-
-            .form-progress {
-                font-size: 0.9rem;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 2rem;
             }
 
             .form-group label {
@@ -684,13 +756,37 @@
 
             .form-group input,
             .form-group select {
-                padding: 0.8rem;
+                padding: 8px;
                 font-size: 0.9rem;
+                min-height: 48px;
+            }
+
+            .form-group .button {
+                padding: 10px;
+                font-size: 1rem;
             }
 
             .class-options label,
             .payment-options label {
                 font-size: 0.9rem;
+
+            }
+
+            .payment-options input[type="radio"] {
+                width: 18px;
+                height: 18px;
+            }
+
+            .modal-content {
+                padding: 2rem;
+            }
+
+            .modal-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .modal-content p {
+                font-size: 1rem;
             }
 
             footer {
@@ -702,12 +798,15 @@
 <body>
     <div class="overlay" id="overlay"></div>
     <header>
-        <h1>PulseFit Gym</h1>
-        <p>India's Elite Fitness Destination</p>
+        <div class="container">
+            <h1>PulseFit Gym</h1>
+            <p>India's Premier Fitness Destination</p>
+        </div>
     </header>
 
     <nav>
         <div class="nav-container">
+            <span class="logo-text">PulseFit</span>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
@@ -733,7 +832,7 @@
         <a href="#renew" class="book-now">
             <i class="fas fa-redo"></i> Renew
         </a>
-        <a href="https://wa.me/+919876543210?text=Hi%2C%20I%27m%20interested%20in%20joining%20PulseFit%20Gym%21" class="whatsapp" target="_blank">
+        <a href="https://wa.me/+919876543210?text=Hi%2C%20I%27m%20interested%20in%20PulseFit%20Gym%21" class="whatsapp" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
@@ -789,8 +888,8 @@
                     <p>Elevate endurance with intense Cardio sessions.</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 1.5rem;">
-                <a href="#booking"><button>Add Classes</button></a>
+            <div class="text-center mt-6">
+                <a href="#booking" class="form-group"><button>Add Classes</button></a>
             </div>
         </div>
     </section>
@@ -826,20 +925,20 @@
                     <h3>1 Month</h3>
                     <p class="price">₹1,000</p>
                     <p>Gym access + optional classes.</p>
-                    <a href="#booking"><button>Join Now</button></a>
+                    <a href="#booking" class="form-group"><button>Join Now</button></a>
                 </div>
                 <div class="pricing-card">
                     <h3>3 Months</h3>
                     <p class="price">₹2,700</p>
                     <p>Save 10% with quarterly plan.</p>
-                    <a href="#booking"><button>Join Now</button></a>
+                    <a href="#booking" class="form-group"><button>Join Now</button></a>
                     <span class="popular">Most Popular</span>
                 </div>
                 <div class="pricing-card">
                     <h3>6 Months</h3>
                     <p class="price">₹5,000</p>
                     <p>Best value with 15% savings.</p>
-                    <a href="#booking"><button>Join Now</button></a>
+                    <a href="#booking" class="form-group"><button>Join Now</button></a>
                 </div>
             </div>
         </div>
@@ -885,8 +984,34 @@
             </details>
             <details class="faq-item">
                 <summary>How do I renew my membership?</summary>
-                <p>Go to the Renew Membership section, enter your name, select the duration and payment method to extend your membership.</p>
+                <p>Go to the Renew Membership section, enter your registered email, select the duration and payment method to extend your membership.</p>
             </details>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <h2>Fitness Insights</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f" alt="Yoga Benefits">
+                    <h3>Benefits of Yoga</h3>
+                    <p>Boost your physical and mental health with yoga.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Gym Tips">
+                    <h3>Gym Workout Tips</h3>
+                    <p>Maximize your gym sessions with these tips.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.pexels.com/photos/32626882/pexels-photo-32626882.jpeg" alt="Zumba Guide">
+                    <h3>Zumba for Beginners</h3>
+                    <p>Start your Zumba journey with ease.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -894,15 +1019,10 @@
         <div class="container">
             <h2>Checkout</h2>
             <div class="mb-6 flex justify-center gap-4">
-                <button id="newBookingBtn" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">New Booking</button>
-                <button id="renewMembershipBtn" class="bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-600 transition">Renew Membership</button>
+                <button id="newBookingBtn" class="form-toggle-btn bg-indigo-600">New Booking</button>
+                <button id="renewMembershipBtn" class="form-toggle-btn bg-teal-500">Renew Membership</button>
             </div>
             <form id="bookingForm" class="booking-form" action="https://script.google.com/macros/s/AKfycbzScKDJrm_tKUA3zY52sTcBapLfS8x_-SNQwAJkV6fB4asU3PTUPBTf6YxT-6dWv95k2Q/exec" method="POST">
-                <div class="form-progress">
-                    <span class="active">Personal Info</span>
-                    <span>Membership</span>
-                    <span>Payment</span>
-                </div>
                 <div class="form-group">
                     <label for="fullName">Full Name</label>
                     <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
@@ -916,7 +1036,7 @@
                     <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="[6-9][0-9]{9}" title="Valid Indian number: 10 digits, starts with 6/7/8/9">
                 </div>
                 <div class="form-group">
-                    <label>Membership Duration</label>
+                    <label for="membershipDuration">Membership Duration</label>
                     <select id="membershipDuration" name="membershipDuration" required>
                         <option value="1">1 Month (₹1,000)</option>
                         <option value="3">3 Months (₹2,700)</option>
@@ -943,20 +1063,20 @@
                 <input type="hidden" name="razorpayPaymentId" id="razorpayPaymentId">
                 <input type="hidden" name="timestamp" id="timestamp">
                 <input type="hidden" name="isRenewal" id="isRenewal" value="false">
-                <button type="submit">Book Membership</button>
+                <input type="hidden" name="startDate" id="startDate">
+                <input type="hidden" name="endDate" id="endDate">
+                <div class="form-group">
+                    <button type="button" id="confirmBookingBtn">Confirm Booking</button>
+                </div>
                 <div id="formMessage" class="message"></div>
             </form>
             <form id="renewalForm" class="booking-form hidden" action="https://script.google.com/macros/s/AKfycbzScKDJrm_tKUA3zY52sTcBapLfS8x_-SNQwAJkV6fB4asU3PTUPBTf6YxT-6dWv95k2Q/exec" method="POST">
-                <div class="form-progress">
-                    <span class="active">Member Info</span>
-                    <span>Payment</span>
+                <div class="form-group">
+                    <label for="renewEmail">Registered Email</label>
+                    <input type="email" id="renewEmail" name="email" placeholder="Enter your registered email" required>
                 </div>
                 <div class="form-group">
-                    <label for="renewFullName">Full Name</label>
-                    <input type="text" id="renewFullName" name="fullName" placeholder="Enter your name as registered" required>
-                </div>
-                <div class="form-group">
-                    <label>Membership Duration</label>
+                    <label for="renewMembershipDuration">Membership Duration</label>
                     <select id="renewMembershipDuration" name="membershipDuration" required>
                         <option value="1">1 Month (₹1,000)</option>
                         <option value="3">3 Months (₹2,700)</option>
@@ -975,11 +1095,24 @@
                 <input type="hidden" name="razorpayPaymentId" id="renewRazorpayPaymentId">
                 <input type="hidden" name="timestamp" id="renewTimestamp">
                 <input type="hidden" name="isRenewal" id="renewIsRenewal" value="true">
-                <button type="submit">Renew Membership</button>
+                <div class="form-group">
+                    <button type="button" id="confirmRenewalBtn">Confirm Renewal</button>
+                </div>
                 <div id="renewalMessage" class="message"></div>
             </form>
         </div>
     </section>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h3>Confirm Your Selection</h3>
+            <div id="confirmationDetails"></div>
+            <div class="modal-buttons">
+                <button class="cancel-btn" id="cancelModalBtn">Cancel</button>
+                <button id="submitModalBtn" class="form-group">Submit</button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
@@ -1017,89 +1150,143 @@
         });
 
         // Form Toggle
-        const newBookingBtn = document.getElementById('newBookingBtn');
-        const renewMembershipBtn = document.getElementById('renewMembershipBtn');
-        const bookingForm = document.getElementById('bookingForm');
-        const renewalForm = document.getElementById('renewalForm');
+        const newBookingBtn = document.querySelector('#newBookingBtn');
+        const renewMembershipBtn = document.querySelector('#renewMembershipBtn');
+        const bookingForm = document.querySelector('#bookingForm');
+        const renewalForm = document.querySelector('#renewalForm');
+        const renewLinks = document.querySelectorAll('a[href="#renew"]');
 
-        newBookingBtn.addEventListener('click', () => {
-            bookingForm.classList.remove('hidden');
-            renewalForm.classList.add('hidden');
-            newBookingBtn.classList.add('bg-indigo-600');
-            newBookingBtn.classList.remove('bg-indigo-400');
-            renewMembershipBtn.classList.add('bg-teal-400');
-            renewMembershipBtn.classList.remove('bg-teal-500');
-        });
-
-        renewMembershipBtn.addEventListener('click', () => {
-            bookingForm.classList.add('hidden');
-            renewalForm.classList.remove('hidden');
-            newBookingBtn.classList.add('bg-indigo-400');
-            newBookingBtn.classList.remove('bg-indigo-600');
-            renewMembershipBtn.classList.add('bg-teal-500');
-            renewMembershipBtn.classList.remove('bg-teal-400');
-        });
-
-        // Form progress animation
-        function updateProgress(formId, index) {
-            const progressSteps = document.querySelectorAll(`#${formId} .form-progress span`);
-            progressSteps.forEach(step => step.classList.remove('active'));
-            progressSteps[Math.min(index, progressSteps.length - 1)].classList.add('active');
+        function toggleForms(showBooking) {
+            bookingForm.classList.toggle('hidden', !showBooking);
+            renewalForm.classList.toggle('hidden', showBooking);
+            newBookingBtn.classList.toggle('bg-indigo-600', showBooking);
+            newBookingBtn.classList.toggle('bg-indigo-400', !showBooking);
+            renewMembershipBtn.classList.toggle('bg-teal-500', !showBooking);
+            renewMembershipBtn.classList.toggle('bg-teal-400', showBooking);
+            if (!showBooking) {
+                window.scrollTo({ top: document.querySelector('#booking').offsetTop - 60, behavior: 'smooth' });
+            }
         }
 
-        const bookingInputs = document.querySelectorAll('#bookingForm .form-group input, #bookingForm .form-group select, #bookingForm .payment-options input');
-        bookingInputs.forEach((input, index) => {
-            input.addEventListener('focus', () => updateProgress('bookingForm', Math.floor(index / 2)));
+        newBookingBtn.addEventListener('click', () => toggleForms(true));
+        renewMembershipBtn.addEventListener('click', () => toggleForms(false));
+        renewLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                toggleForms(false);
+            });
         });
 
-        const renewalInputs = document.querySelectorAll('#renewalForm .form-group input, #renewalForm .form-group select, #renewalForm .payment-options input');
-        renewalInputs.forEach((input, index) => {
-            input.addEventListener('focus', () => updateProgress('renewalForm', Math.floor(index / 2)));
-        });
+        // Confirmation Modal
+        const modal = document.querySelector('#confirmationModal');
+        const confirmationDetails = document.querySelector('#confirmationDetails');
+        const cancelModalBtn = document.querySelector('#cancelModalBtn');
+        const submitModalBtn = document.querySelector('#submitModalBtn');
 
-        // Booking Form Submission
-        bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        function showModal(formId, data) {
+            confirmationDetails.innerHTML = `
+                <p><strong>${formId === 'bookingForm' ? 'Name' : 'Email'}:</strong> ${data.fullName || data.email}</p>
+                ${data.phone ? `<p><strong>Phone:</strong> ${data.phone}</p>` : ''}
+                <p><strong>Duration:</strong> ${data.duration} Month${data.duration > 1 ? 's' : ''} (₹${data.amount})</p>
+                ${data.classes ? `<p><strong>Classes:</strong> ${data.classes || 'None'}</p>` : ''}
+                <p><strong>Payment:</strong> ${data.paymentMethod}</p>
+                <p><strong>Start Date:</strong> ${data.startDate}</p>
+                <p><strong>End Date:</strong> ${data.endDate}</p>
+            `;
+            modal.classList.add('active');
+            submitModalBtn.onclick = () => submitForm(formId, data);
+        }
 
-            // Validate phone number
-            const phone = document.getElementById('phone').value;
+        cancelModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+
+        // Date Calculations
+        function calculateEndDate(startDate, duration) {
+            const endDate = new Date(startDate);
+            endDate.setMonth(endDate.getMonth() + duration);
+            endDate.setDate(endDate.getDate() - 1);
+            return endDate.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' });
+        }
+
+        // Booking Form
+        document.querySelector('#confirmBookingBtn').addEventListener('click', () => {
+            const form = bookingForm;
+            const fullName = form.querySelector('#fullName').value;
+            const email = form.querySelector('#email').value;
+            const phone = form.querySelector('#phone').value;
+            const duration = parseInt(form.querySelector('#membershipDuration').value);
+            const classes = Array.from(form.querySelectorAll('input[name="classes[]"]:checked')).map(c => c.value).join(', ');
+            const paymentMethod = form.querySelector('input[name="paymentMethod"]:checked').value;
+
+            // Validate
             const phoneRegex = /^[6-9][0-9]{9}$/;
+            if (!fullName || !email || !phone) {
+                showMessage('formMessage', 'error', 'Please fill all required fields.');
+                return;
+            }
             if (!phoneRegex.test(phone)) {
-                showMessage('formMessage', 'error', 'Please enter a valid Indian phone number (10 digits, starts with 6/7/8/9)');
+                showMessage('formMessage', 'error', 'Please enter a valid Indian phone number (10 digits, starts with 6/7/8/9).');
                 return;
             }
 
-            // Determine amount
-            const duration = parseInt(document.getElementById('membershipDuration').value);
             const amount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000;
+            const startDate = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' });
+            const endDate = calculateEndDate(new Date(), duration);
+
+            showModal('bookingForm', { fullName, email, phone, duration, amount, classes, paymentMethod, startDate, endDate });
+        });
+
+        // Renewal Form
+        document.querySelector('#confirmRenewalBtn').addEventListener('click', () => {
+            const form = renewalForm;
+            const email = form.querySelector('#renewEmail').value;
+            const duration = parseInt(form.querySelector('#renewMembershipDuration').value);
+            const paymentMethod = form.querySelector('input[name="paymentMethod"]:checked').value;
+
+            // Validate
+            if (!email) {
+                showMessage('renewalMessage', 'error', 'Please enter your registered email.');
+                return;
+            }
+
+            const amount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000;
+            const startDate = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' });
+            const endDate = calculateEndDate(new Date(), duration);
+
+            showModal('renewalForm', { email, duration, amount, paymentMethod, startDate, endDate });
+        });
+
+        async function submitForm(formId, data) {
+            const form = document.querySelector(`#${formId}`);
+            const now = new Date();
+            const amount = data.amount;
+            const paymentMethod = data.paymentMethod;
 
             // Set hidden fields
-            const now = new Date();
-            document.getElementById('paidAmount').value = amount;
-            document.getElementById('timestamp').value = now.toISOString();
-            document.getElementById('isRenewal').value = 'false';
-
-            const paymentMethod = document.querySelector('#bookingForm input[name="paymentMethod"]:checked').value;
+            form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}paymentStatus`).value = 'Pending';
+            form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}paidAmount`).value = amount;
+            form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}timestamp`).value = now.toISOString();
+            form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}razorpayPaymentId`).value = '';
+            if (formId === 'bookingForm') {
+                form.querySelector('#startDate').value = data.startDate;
+                form.querySelector('#endDate').value = data.endDate;
+            }
 
             if (paymentMethod === 'Online') {
-                // Razorpay payment
                 const options = {
                     key: 'rzp_test_gx1zMuo2qDYKHR',
-                    amount: amount * 100, // Convert INR to paise
+                    amount: amount * 100,
                     currency: 'INR',
                     name: 'PulseFit Gym',
-                    description: 'Membership Payment',
+                    description: formId === 'bookingForm' ? 'Membership Payment' : 'Membership Renewal Payment',
                     handler: function (response) {
-                        // Update hidden fields
-                        document.getElementById('paymentStatus').value = 'Completed';
-                        document.getElementById('razorpayPaymentId').value = response.razorpay_payment_id;
-                        // Submit the form
-                        submitForm('bookingForm', 'formMessage');
+                        form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}paymentStatus`).value = 'Completed';
+                        form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}razorpayPaymentId`).value = response.razorpay_payment_id;
+                        submitToServer(formId);
                     },
                     prefill: {
-                        name: document.getElementById('fullName').value,
-                        email: document.getElementById('email').value,
-                        contact: document.getElementById('phone').value
+                        name: data.fullName || '',
+                        email: data.email,
+                        contact: data.phone || ''
                     },
                     theme: {
                         color: '#f6b800'
@@ -1108,104 +1295,50 @@
                 const rzp = new Razorpay(options);
                 rzp.open();
             } else {
-                // Cash payment
-                document.getElementById('paymentStatus').value = 'Pending';
-                document.getElementById('razorpayPaymentId').value = '';
-                submitForm('bookingForm', 'formMessage');
+                await submitToServer(formId);
             }
-        });
+        }
 
-        // Renewal Form Submission
-        renewalForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Determine amount
-            const duration = parseInt(document.getElementById('renewMembershipDuration').value);
-            const amount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000;
-
-            // Set hidden fields
-            const now = new Date();
-            document.getElementById('renewPaidAmount').value = amount;
-            document.getElementById('renewTimestamp').value = now.toISOString();
-            document.getElementById('renewIsRenewal').value = 'true';
-
-            const paymentMethod = document.querySelector('#renewalForm input[name="paymentMethod"]:checked').value;
-
-            if (paymentMethod === 'Online') {
-                // Razorpay payment
-                const options = {
-                    key: 'rzp_test_gx1zMuo2qDYKHR',
-                    amount: amount * 100, // Convert INR to paise
-                    currency: 'INR',
-                    name: 'PulseFit Gym',
-                    description: 'Membership Renewal Payment',
-                    handler: function (response) {
-                        // Update hidden fields
-                        document.getElementById('renewPaymentStatus').value = 'Completed';
-                        document.getElementById('renewRazorpayPaymentId').value = response.razorpay_payment_id;
-                        // Submit the form
-                        submitForm('renewalForm', 'renewalMessage');
-                    },
-                    prefill: {
-                        name: document.getElementById('renewFullName').value
-                    },
-                    theme: {
-                        color: '#f6b800'
-                    }
-                };
-                const rzp = new Razorpay(options);
-                rzp.open();
-            } else {
-                // Cash payment
-                document.getElementById('renewPaymentStatus').value = 'Pending';
-                document.getElementById('renewRazorpayPaymentId').value = '';
-                submitForm('renewalForm', 'renewalMessage');
-            }
-        });
-
-        function submitForm(formId, messageId) {
-            const form = document.getElementById(formId);
+        async function submitToServer(formId) {
+            const form = document.querySelector(`#${formId}`);
             const formData = new FormData(form);
-
-            // Create a temporary form to submit data
-            const tempForm = document.createElement('form');
-            tempForm.method = 'POST';
-            tempForm.action = form.action;
-            tempForm.style.display = 'none';
-
-            for (const [key, value] of formData.entries()) {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = value;
-                tempForm.appendChild(input);
-            }
-
-            document.body.appendChild(tempForm);
-            tempForm.submit();
-
-            // Show success message
             const isRenewal = formId === 'renewalForm';
-            const paymentStatus = document.getElementById(isRenewal ? 'renewPaymentStatus' : 'paymentStatus').value;
-            const paidAmount = document.getElementById(isRenewal ? 'renewPaidAmount' : 'paidAmount').value;
-            const message = isRenewal
-                ? `Membership renewal submitted! ${paymentStatus === 'Pending' ? `Please pay ₹${paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for details.'}`
-                : `Booking submitted! ${paymentStatus === 'Pending' ? `Please pay ₹${paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for details.'}`;
-            showMessage(messageId, 'success', message);
-            
-            form.reset();
-            const progressSteps = document.querySelectorAll(`#${formId} .form-progress span`);
-            progressSteps.forEach(step => step.classList.remove('active'));
-            progressSteps[0].classList.add('active');
-            document.querySelector(`#${formId} input[name="paymentMethod"][value="Cash"]`).checked = true;
+            const paymentStatus = form.querySelector(`#${isRenewal ? 'renew' : ''}paymentStatus`).value;
+            const paidAmount = form.querySelector(`#${isRenewal ? 'renew' : ''}paidAmount`).value;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    showMessage(
+                        isRenewal ? 'renewalMessage' : 'formMessage',
+                        'success',
+                        `Thank you, your ${isRenewal ? 'renewal' : 'booking'} has been submitted! ${paymentStatus === 'Pending' ? `Please pay ₹${paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for details.'}`
+                    );
+                    modal.classList.remove('active');
+                    form.reset();
+                    form.querySelector(`input[name="paymentMethod"][value="Cash"]`).checked = true;
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                showMessage(
+                    isRenewal ? 'renewalMessage' : 'formMessage',
+                    'error',
+                    'Failed to submit. Please try again.'
+                );
+            }
         }
 
         function showMessage(elementId, type, message) {
-            const messageDiv = document.getElementById(elementId);
+            const messageDiv = document.querySelector(`#${elementId}`);
             messageDiv.className = `message ${type}`;
             messageDiv.textContent = message;
             messageDiv.style.display = 'block';
-            setTimeout(() => messageDiv.style.display = 'none', 5000);
+            setTimeout(() => messageDiv.style.display = 'none', 7000);
         }
     </script>
 </body>
