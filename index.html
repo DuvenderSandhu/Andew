@@ -434,9 +434,8 @@
             margin: 0;
         }
 
-        .form-group button,
-        .form-toggle-btn {
-            background: linear-gradient(45deg, #f6b800, #f97316);
+        .form-group .submit-btn {
+            background: linear-gradient(45deg, #1a237e, #4c51bf);
             color: white;
             padding: 0.9rem;
             border: none;
@@ -448,10 +447,60 @@
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             min-height: 48px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
-        .form-group button:hover,
-        .form-group button:focus,
+        .form-group .submit-btn:hover,
+        .form-group .submit-btn:focus {
+            background: linear-gradient(45deg, #4c51bf, #1a237e);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .form-group .submit-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .form-group .submit-btn .spinner {
+            border: 2px solid #f7fafc;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        .form-group .submit-btn:disabled .spinner {
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .form-toggle-btn {
+            background: linear-gradient(45deg, #f6b800, #f97316);
+            color: white;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            min-height: 48px;
+        }
+
         .form-toggle-btn:hover,
         .form-toggle-btn:focus {
             background: linear-gradient(45deg, #f97316, #f6b800);
@@ -483,7 +532,7 @@
             display: none;
             position: fixed;
             top: 0;
-            left:0;
+            left: 0;
             background: rgba(0,0,0,0.5);
             z-index: 1000;
             width: 100%;
@@ -499,7 +548,7 @@
 
         .modal-content {
             background: white;
-            padding: #1a1f;
+            padding: 2rem;
             border-radius: 10px;
             max-width: 500px;
             width: 100%;
@@ -543,6 +592,20 @@
         .modal-buttons .cancel-btn:focus {
             background: #cbd5e0;
             transform: translateY(-2px);
+        }
+
+        .modal-buttons .submit-btn {
+            background: linear-gradient(45deg, #1a237e, #4c51bf);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .modal-buttons .submit-btn:hover,
+        .modal-buttons .submit-btn:focus {
+            background: linear-gradient(45deg, #4c51bf, #1a237e);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
         /* FAQ */
@@ -727,7 +790,7 @@
             .trainer-card h3,
             .pricing-card h3,
             .blog-card h3 {
-                font-size: 0.7rem;
+                font-size: 1.3rem;
             }
 
             .pricing-card .price {
@@ -735,7 +798,7 @@
             }
 
             .testimonial-card img,
-            .trainer-card .img {
+            .trainer-card img {
                 width: 80px;
                 height: 80px;
             }
@@ -761,7 +824,7 @@
                 min-height: 48px;
             }
 
-            .form-group .button {
+            .form-group .submit-btn {
                 padding: 10px;
                 font-size: 1rem;
             }
@@ -769,7 +832,6 @@
             .class-options label,
             .payment-options label {
                 font-size: 0.9rem;
-
             }
 
             .payment-options input[type="radio"] {
@@ -889,7 +951,7 @@
                 </div>
             </div>
             <div class="text-center mt-6">
-                <a href="#booking" class="form-group"><button>Add Classes</button></a>
+                <a href="#booking" class="form-group"><button class="form-toggle-btn">Add Classes</button></a>
             </div>
         </div>
     </section>
@@ -925,20 +987,20 @@
                     <h3>1 Month</h3>
                     <p class="price">₹1,000</p>
                     <p>Gym access + optional classes.</p>
-                    <a href="#booking" class="form-group"><button>Join Now</button></a>
+                    <a href="#booking" class="form-group"><button class="form-toggle-btn">Join Now</button></a>
                 </div>
                 <div class="pricing-card">
                     <h3>3 Months</h3>
                     <p class="price">₹2,700</p>
                     <p>Save 10% with quarterly plan.</p>
-                    <a href="#booking" class="form-group"><button>Join Now</button></a>
+                    <a href="#booking" class="form-group"><button class="form-toggle-btn">Join Now</button></a>
                     <span class="popular">Most Popular</span>
                 </div>
                 <div class="pricing-card">
                     <h3>6 Months</h3>
                     <p class="price">₹5,000</p>
                     <p>Best value with 15% savings.</p>
-                    <a href="#booking" class="form-group"><button>Join Now</button></a>
+                    <a href="#booking" class="form-group"><button class="form-toggle-btn">Join Now</button></a>
                 </div>
             </div>
         </div>
@@ -1066,9 +1128,11 @@
                 <input type="hidden" name="startDate" id="startDate">
                 <input type="hidden" name="endDate" id="endDate">
                 <div class="form-group">
-                    <button type="button" id="confirmBookingBtn">Confirm Booking</button>
+                    <button type="button" id="confirmBookingBtn" class="submit-btn">
+                        <span class="spinner"></span> Confirm Booking
+                    </button>
                 </div>
-                <div id="formMessage" class="message"></div>
+                <div id="formMessage" class="message hidden"></div>
             </form>
             <form id="renewalForm" class="booking-form hidden" action="https://script.google.com/macros/s/AKfycbwnP5Zpp7ecl4fLVBWHVG5A3m-fWjq8Unp8jU8kcb1IXUu0GGmA09_SxKaeE5qckPo/exec" method="POST">
                 <div class="form-group">
@@ -1096,9 +1160,11 @@
                 <input type="hidden" name="timestamp" id="renewTimestamp">
                 <input type="hidden" name="isRenewal" id="renewIsRenewal" value="true">
                 <div class="form-group">
-                    <button type="button" id="confirmRenewalBtn">Confirm Renewal</button>
+                    <button type="button" id="confirmRenewalBtn" class="submit-btn">
+                        <span class="spinner"></span> Confirm Renewal
+                    </button>
                 </div>
-                <div id="renewalMessage" class="message"></div>
+                <div id="renewalMessage" class="message hidden"></div>
             </form>
         </div>
     </section>
@@ -1109,7 +1175,9 @@
             <div id="confirmationDetails"></div>
             <div class="modal-buttons">
                 <button class="cancel-btn" id="cancelModalBtn">Cancel</button>
-                <button id="submitModalBtn" class="form-group">Submit</button>
+                <button id="submitModalBtn" class="submit-btn">
+                    <span class="spinner"></span> Submit
+                </button>
             </div>
         </div>
     </div>
@@ -1197,9 +1265,18 @@
             submitModalBtn.onclick = () => submitForm(formId, data);
         }
 
-        cancelModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+        cancelModalBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            submitModalBtn.disabled = false;
+            submitModalBtn.querySelector('.spinner').style.display = 'none';
+        });
 
         // Date Calculations
+        function calculateStartDate() {
+            const now = new Date();
+            return new Date(now.getFullYear(), now.getMonth() + 1, 1);
+        }
+
         function calculateEndDate(startDate, duration) {
             const endDate = new Date(startDate);
             endDate.setMonth(endDate.getMonth() + duration);
@@ -1210,17 +1287,22 @@
         // Booking Form
         document.querySelector('#confirmBookingBtn').addEventListener('click', () => {
             const form = bookingForm;
-            const fullName = form.querySelector('#fullName').value;
-            const email = form.querySelector('#email').value;
-            const phone = form.querySelector('#phone').value;
+            const fullName = form.querySelector('#fullName').value.trim();
+            const email = form.querySelector('#email').value.trim();
+            const phone = form.querySelector('#phone').value.trim();
             const duration = parseInt(form.querySelector('#membershipDuration').value);
             const classes = Array.from(form.querySelectorAll('input[name="classes[]"]:checked')).map(c => c.value).join(', ');
             const paymentMethod = form.querySelector('input[name="paymentMethod"]:checked').value;
 
             // Validate
             const phoneRegex = /^[6-9][0-9]{9}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!fullName || !email || !phone) {
                 showMessage('formMessage', 'error', 'Please fill all required fields.');
+                return;
+            }
+            if (!emailRegex.test(email)) {
+                showMessage('formMessage', 'error', 'Please enter a valid email address.');
                 return;
             }
             if (!phoneRegex.test(phone)) {
@@ -1229,8 +1311,9 @@
             }
 
             const amount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000;
-            const startDate = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' });
-            const endDate = calculateEndDate(new Date(), duration);
+            const startDateObj = calculateStartDate();
+            const startDate = startDateObj.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' });
+            const endDate = calculateEndDate(startDateObj, duration);
 
             showModal('bookingForm', { fullName, email, phone, duration, amount, classes, paymentMethod, startDate, endDate });
         });
@@ -1238,28 +1321,42 @@
         // Renewal Form
         document.querySelector('#confirmRenewalBtn').addEventListener('click', () => {
             const form = renewalForm;
-            const email = form.querySelector('#renewEmail').value;
+            const email = form.querySelector('#renewEmail').value.trim();
             const duration = parseInt(form.querySelector('#renewMembershipDuration').value);
             const paymentMethod = form.querySelector('input[name="paymentMethod"]:checked').value;
 
             // Validate
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!email) {
                 showMessage('renewalMessage', 'error', 'Please enter your registered email.');
                 return;
             }
+            if (!emailRegex.test(email)) {
+                showMessage('renewalMessage', 'error', 'Please enter a valid email address.');
+                return;
+            }
 
             const amount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000;
-            const startDate = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' });
-            const endDate = calculateEndDate(new Date(), duration);
+            const startDateObj = new Date();
+            const startDate = startDateObj.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' });
+            const endDate = calculateEndDate(startDateObj, duration);
 
             showModal('renewalForm', { email, duration, amount, paymentMethod, startDate, endDate });
         });
 
         async function submitForm(formId, data) {
             const form = document.querySelector(`#${formId}`);
+            const submitBtn = form.querySelector('.submit-btn');
+            const modalSubmitBtn = submitModalBtn;
             const now = new Date();
             const amount = data.amount;
             const paymentMethod = data.paymentMethod;
+
+            // Disable buttons and show spinner
+            submitBtn.disabled = true;
+            modalSubmitBtn.disabled = true;
+            submitBtn.querySelector('.spinner').style.display = 'inline-block';
+            modalSubmitBtn.querySelector('.spinner').style.display = 'inline-block';
 
             // Set hidden fields
             form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}paymentStatus`).value = 'Pending';
@@ -1272,34 +1369,65 @@
             }
 
             if (paymentMethod === 'Online') {
-                const options = {
-                    key: 'rzp_test_gx1zMuo2qDYKHR',
-                    amount: amount * 100,
-                    currency: 'INR',
-                    name: 'PulseFit Gym',
-                    description: formId === 'bookingForm' ? 'Membership Payment' : 'Membership Renewal Payment',
-                    handler: function (response) {
-                        form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}paymentStatus`).value = 'Completed';
-                        form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}razorpayPaymentId`).value = response.razorpay_payment_id;
-                        submitToServer(formId);
-                    },
-                    prefill: {
-                        name: data.fullName || '',
-                        email: data.email,
-                        contact: data.phone || ''
-                    },
-                    theme: {
-                        color: '#f6b800'
-                    }
-                };
-                const rzp = new Razorpay(options);
-                rzp.open();
+                try {
+                    const options = {
+                        key: 'rzp_test_gx1zMuo2qDYKHR', // Replace with your live Razorpay key in production
+                        amount: amount * 100,
+                        currency: 'INR',
+                        name: 'PulseFit Gym',
+                        description: formId === 'bookingForm' ? 'Membership Payment' : 'Membership Renewal Payment',
+                        handler: async function (response) {
+                            form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}paymentStatus`).value = 'Completed';
+                            form.querySelector(`#${formId === 'bookingForm' ? '' : 'renew'}razorpayPaymentId`).value = response.razorpay_payment_id;
+                            await submitToServer(formId, submitBtn, modalSubmitBtn);
+                        },
+                        prefill: {
+                            name: data.fullName || '',
+                            email: data.email,
+                            contact: data.phone || ''
+                        },
+                        theme: {
+                            color: '#f6b800'
+                        },
+                        modal: {
+                            ondismiss: function () {
+                                submitBtn.disabled = false;
+                                modalSubmitBtn.disabled = false;
+                                submitBtn.querySelector('.spinner').style.display = 'none';
+                                modalSubmitBtn.querySelector('.spinner').style.display = 'none';
+                            }
+                        }
+                    };
+                    const rzp = new window.Razorpay(options);
+                    rzp.on('payment.failed', function (response) {
+                        showMessage(
+                            formId === 'bookingForm' ? 'formMessage' : 'renewalMessage',
+                            'error',
+                            `Payment failed: ${response.error.description}. Please try again.`
+                        );
+                        submitBtn.disabled = false;
+                        modalSubmitBtn.disabled = false;
+                        submitBtn.querySelector('.spinner').style.display = 'none';
+                        modalSubmitBtn.querySelector('.spinner').style.display = 'none';
+                    });
+                    rzp.open();
+                } catch (error) {
+                    showMessage(
+                        formId === 'bookingForm' ? 'formMessage' : 'renewalMessage',
+                        'error',
+                        'Failed to initialize payment. Please check your internet connection and try again.'
+                    );
+                    submitBtn.disabled = false;
+                    modalSubmitBtn.disabled = false;
+                    submitBtn.querySelector('.spinner').style.display = 'none';
+                    modalSubmitBtn.querySelector('.spinner').style.display = 'none';
+                }
             } else {
-                await submitToServer(formId);
+                await submitToServer(formId, submitBtn, modalSubmitBtn);
             }
         }
 
-        async function submitToServer(formId) {
+        async function submitToServer(formId, submitBtn, modalSubmitBtn) {
             const form = document.querySelector(`#${formId}`);
             const formData = new FormData(form);
             const isRenewal = formId === 'renewalForm';
@@ -1309,14 +1437,18 @@
             try {
                 const response = await fetch(form.action, {
                     method: 'POST',
-                    body: formData
+                    body: formData,
+                    headers: {
+                        'Accept': 'text/html'
+                    }
                 });
 
-                if (response.ok) {
+                const text = await response.text();
+                if (response.ok && text.includes('Booking Submitted')) {
                     showMessage(
                         isRenewal ? 'renewalMessage' : 'formMessage',
                         'success',
-                        `Thank you, your ${isRenewal ? 'renewal' : 'booking'} has been submitted! ${paymentStatus === 'Pending' ? `Please pay ₹${paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for details.'}`
+                        `Thank you, your ${isRenewal ? 'renewal' : 'booking'} has been submitted successfully! ${paymentStatus === 'Pending' ? `Please pay ₹${paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for confirmation.'}`
                     );
                     modal.classList.remove('active');
                     form.reset();
@@ -1328,8 +1460,13 @@
                 showMessage(
                     isRenewal ? 'renewalMessage' : 'formMessage',
                     'error',
-                    'Failed to submit. Please try again.'
+                    'Failed to submit. Please try again or contact support via WhatsApp.'
                 );
+            } finally {
+                submitBtn.disabled = false;
+                modalSubmitBtn.disabled = false;
+                submitBtn.querySelector('.spinner').style.display = 'none';
+                modalSubmitBtn.querySelector('.spinner').style.display = 'none';
             }
         }
 
@@ -1338,8 +1475,20 @@
             messageDiv.className = `message ${type}`;
             messageDiv.textContent = message;
             messageDiv.style.display = 'block';
-            setTimeout(() => messageDiv.style.display = 'none', 7000);
+            messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 10000);
         }
+
+        // Ensure Razorpay script is loaded
+        window.addEventListener('load', () => {
+            if (!window.Razorpay) {
+                showMessage('formMessage', 'error', 'Razorpay failed to load. Online payments are unavailable. Please select Cash or try again later.');
+                showMessage('renewalMessage', 'error', 'Razorpay failed to load. Online payments are unavailable. Please select Cash or try again later.');
+                document.querySelectorAll('input[name="paymentMethod"][value="Online"]').forEach(input => input.disabled = true);
+            }
+        });
     </script>
 </body>
 </html>
