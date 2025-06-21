@@ -125,14 +125,19 @@
 
         /* Navigation */
         nav {
-            background: linear-gradient(180deg, #1a237e, #2c388a);
-            padding: 0.8rem 0;
+            background: linear-gradient(180deg, #1a237e, #2c5282);
+            padding: 1rem 0;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            height: 48px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: linear-gradient(180deg, #2c5282, #1a237e);
+            padding: 0.8rem 0;
         }
 
         .nav-container {
@@ -140,24 +145,37 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 16px;
-            height: 100%;
         }
 
         .nav-container .logo-text {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #f6b800;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #f6b800, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-container .logo-text:hover {
+            transform: scale(1.05);
         }
 
         .nav-toggle {
             background: none;
             border: none;
             color: #f6b800;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
             padding: 0.5rem;
             z-index: 1001;
+            transition: color 0.3s ease;
+        }
+
+        .nav-toggle:hover {
+            color: #f97316;
         }
 
         .nav-menu {
@@ -187,14 +205,33 @@
             font-size: 1rem;
             padding: 0.8rem 1rem;
             display: block;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: #f6b800;
+            transition: left 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a:focus::after {
+            left: 0;
         }
 
         nav a:hover,
         nav a:focus {
             color: #f6b800;
             background: rgba(246,184,0,0.1);
+            transform: translateX(5px);
         }
 
         /* Overlay for mobile menu */
@@ -608,6 +645,27 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
+        .modal-buttons .submit-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .modal-buttons .submit-btn .spinner {
+            border: 2px solid #f7fafc;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        .modal-buttons .submit-btn:disabled .spinner {
+            display: inline-block;
+        }
+
         /* FAQ */
         .faq-item {
             margin-bottom: 0.8rem;
@@ -731,7 +789,12 @@
 
             nav a {
                 font-size: 1rem;
-                padding: 0.5rem 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+
+            nav a:hover,
+            nav a:focus {
+                transform: none;
             }
 
             .overlay {
@@ -866,7 +929,7 @@
         </div>
     </header>
 
-    <nav>
+    <nav id="navbar">
         <div class="nav-container">
             <span class="logo-text">PulseFit</span>
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -1202,6 +1265,7 @@
         const navMenu = document.querySelector('#navMenu');
         const overlay = document.querySelector('#overlay');
         const navIcon = navToggle.querySelector('i');
+        const navbar = document.querySelector('#navbar');
 
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -1215,6 +1279,15 @@
             overlay.classList.remove('active');
             navIcon.classList.add('fa-bars');
             navIcon.classList.remove('fa-times');
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
 
         // Form Toggle
@@ -1273,8 +1346,7 @@
 
         // Date Calculations
         function calculateStartDate() {
-            const now = new Date();
-            return new Date(now.getFullYear(), now.getMonth() + 1, 1);
+            return new Date();
         }
 
         function calculateEndDate(startDate, duration) {
@@ -1337,7 +1409,7 @@
             }
 
             const amount = duration === 1 ? 1000 : duration === 3 ? 2700 : 5000;
-            const startDateObj = new Date();
+            const startDateObj = calculateStartDate();
             const startDate = startDateObj.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' });
             const endDate = calculateEndDate(startDateObj, duration);
 
@@ -1395,6 +1467,7 @@
                                 modalSubmitBtn.disabled = false;
                                 submitBtn.querySelector('.spinner').style.display = 'none';
                                 modalSubmitBtn.querySelector('.spinner').style.display = 'none';
+                                modal.classList.remove('active');
                             }
                         }
                     };
@@ -1409,6 +1482,7 @@
                         modalSubmitBtn.disabled = false;
                         submitBtn.querySelector('.spinner').style.display = 'none';
                         modalSubmitBtn.querySelector('.spinner').style.display = 'none';
+                        modal.classList.remove('active');
                     });
                     rzp.open();
                 } catch (error) {
@@ -1421,6 +1495,7 @@
                     modalSubmitBtn.disabled = false;
                     submitBtn.querySelector('.spinner').style.display = 'none';
                     modalSubmitBtn.querySelector('.spinner').style.display = 'none';
+                    modal.classList.remove('active');
                 }
             } else {
                 await submitToServer(formId, submitBtn, modalSubmitBtn);
@@ -1448,7 +1523,7 @@
                     showMessage(
                         isRenewal ? 'renewalMessage' : 'formMessage',
                         'success',
-                        `Thank you, your ${isRenewal ? 'renewal' : 'booking'} has been submitted successfully! ${paymentStatus === 'Pending' ? `Please pay ₹${paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for confirmation.'}`
+                        `Your ${isRenewal ? 'Renewal' : 'Booking'} is Confirmed! ${paymentStatus === 'Pending' ? `Please pay ₹${paidAmount} at the gym within 24 hours.` : 'Payment completed. Check your email for confirmation.'}`
                     );
                     modal.classList.remove('active');
                     form.reset();
