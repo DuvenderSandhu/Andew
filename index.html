@@ -23,16 +23,6 @@
             line-height: 1.6;
         }
 
-        /* Particle Background */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
         /* Navbar */
         .navbar {
             position: fixed;
@@ -94,7 +84,7 @@
             color: #00c4cc;
             cursor: pointer;
             z-index: 1001;
-            margin:0px 0px 0px 20px;
+            margin: 0 0 0 20px;
             transition: transform 0.3s ease;
         }
 
@@ -114,7 +104,6 @@
             right: 0;
             height: 100vh;
             width: clamp(250px, 85%, 320px);
-            background: #0c0c1f;
             background: linear-gradient(135deg, #0c0c1f 70%, rgba(0, 196, 204, 0.3));
             align-items: center;
             justify-content: center;
@@ -124,10 +113,10 @@
             box-shadow: -10px 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        /* Hero Section */
+        /* Hero Section with Contact Form */
         .hero {
-            height: 100vh;
-            background: url('https://images.unsplash.com/photo-1508514177221-188b2747a11c') no-repeat center center/cover;
+            min-height: 100vh;
+            background: url('https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg') no-repeat center center/cover;
             background-attachment: fixed;
             display: flex;
             flex-direction: column;
@@ -136,7 +125,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            padding-top: clamp(4.5rem, 10vw, 6rem);
+            padding: clamp(6rem, 12vw, 8rem) 5% clamp(2rem, 5vw, 3rem);
         }
 
         .hero::before {
@@ -158,6 +147,7 @@
             flex-direction: column;
             align-items: center;
             gap: clamp(1.5rem, 4vw, 2rem);
+            flex-grow: 1;
         }
 
         .hero h1 {
@@ -168,7 +158,6 @@
             text-shadow: 0 0 10px rgba(255, 234, 0, 0.6);
             margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
             letter-spacing: 1.5px;
-            animation: zoomIn 1.5s ease;
         }
 
         .hero p {
@@ -246,12 +235,12 @@
 
         /* Services Section */
         .services {
-            padding: clamp(4rem, 10vw, 8rem) 5%;
+            padding: clamp(8rem, 15vw, 10rem) 5%;
             background: #ffffff;
             text-align: center;
         }
 
-        .services h2, .products h2, .process h2, .testimonials h2, .contact h2 {
+        .services h2, .products h2, .process h2, .clients h2, .contact h2 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 6vw, 4rem);
             font-weight: 900;
@@ -260,23 +249,17 @@
             letter-spacing: 1px;
         }
 
-        .services-video, .products-video, .process-video {
+        .services-img, .products-img, .process-img {
             max-width: 100%;
             width: 100%;
             aspect-ratio: 16/9;
+            object-fit: cover;
             margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
             border-radius: clamp(0.5rem, 2vw, 1rem);
-            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transform: perspective(1000px) rotateX(3deg);
-            transition: transform 0.5s ease;
         }
 
-        .services-video:hover, .products-video:hover, .process-video:hover {
-            transform: perspective(1000px) rotateX(0deg);
-        }
-
-        .services-grid, .products-grid, .testimonial-grid {
+        .services-grid, .products-grid, .clients-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 40vw, 350px), 1fr));
             gap: clamp(1rem, 3vw, 2rem);
@@ -284,39 +267,31 @@
             margin: 0 auto;
         }
 
-        .service-card, .product-card, .testimonial {
+        .service-card, .product-card {
             position: relative;
             background: #f5f7fa;
             padding: clamp(1.5rem, 4vw, 2.5rem);
             border-radius: clamp(0.5rem, 2vw, 1rem);
             text-align: center;
-            transition: all 0.5s ease;
-            transform: translateY(50px) scale(0.95);
-            opacity: 0;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
 
-        .service-card::before, .product-card::before, .testimonial::before {
+        .service-card:hover, .product-card:hover, .client-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card::before, .product-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 150px;
-            background: url('https://images.unsplash.com/photo-1509391366360-2e505a8eb216') no-repeat center center/cover;
+            background: url('https://images.pexels.com/photos/9875415/pexels-photo-9875415.jpeg') no-repeat center center/cover;
             opacity: 0.2;
             z-index: -1;
-        }
-
-        .service-card.visible, .product-card.visible, .testimonial.visible {
-            transform: translateY(0) scale(1);
-            opacity: 1;
-        }
-
-        .service-card:hover, .product-card:hover, .testimonial:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .service-card h3, .product-card h3 {
@@ -336,11 +311,11 @@
 
         /* Products Section */
         .products {
-            padding: clamp(4rem, 10vw, 8rem) 5%;
+            padding: clamp(8rem, 15vw, 10rem) 5%;
             background: linear-gradient(to bottom, #0c0c1f, #004080);
         }
 
-        .products h2, .testimonials h2 {
+        .products h2 {
             color: #ffffff;
             text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
         }
@@ -351,7 +326,7 @@
         }
 
         .product-card::before {
-            background: url('https://images.unsplash.com/photo-1508514177221-188b2747a11c') no-repeat center center/cover;
+            background: url('https://images.pexels.com/photos/9875415/pexels-photo-9875415.jpeg') no-repeat center center/cover;
         }
 
         .product-card h3 {
@@ -366,7 +341,7 @@
 
         /* Process Section */
         .process {
-            padding: clamp(4rem, 10vw, 8rem) 5%;
+            padding: clamp(8rem, 15vw, 10rem) 5%;
             background: #ffffff;
             text-align: center;
         }
@@ -394,19 +369,10 @@
             align-items: center;
             margin-bottom: clamp(2rem, 5vw, 3rem);
             position: relative;
-            opacity: 0;
-            transform: translateX(-50px);
         }
 
         .process-step:nth-child(even) {
             flex-direction: row-reverse;
-            transform: translateX(50px);
-        }
-
-        .process-step.visible {
-            opacity: 1;
-            transform: translateX(0);
-            transition: all 0.7s ease;
         }
 
         .process-step .content {
@@ -424,7 +390,7 @@
             left: 0;
             width: 100%;
             height: 120px;
-            background: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f') no-repeat center center/cover;
+            background: url('https://images.pexels.com/photos/9875415/pexels-photo-9875415.jpeg') no-repeat center center/cover;
             opacity: 0.15;
             z-index: -1;
         }
@@ -461,53 +427,55 @@
             text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
         }
 
-        /* Testimonials Section */
-        .testimonials {
-            padding: clamp(4rem, 10vw, 8rem) 5%;
+        /* Clients Section */
+        .clients {
+            padding: clamp(8rem, 15vw, 10rem) 5%;
             background: linear-gradient(to top, #0c0c1f, #004080);
         }
 
-        .testimonial {
-            background: rgba(12, 12, 31, 0.9);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: clamp(0.8rem, 2vw, 1rem);
-        }
-
-        .testimonial svg {
-            width: clamp(60px, 15vw, 80px);
-            height: clamp(60px, 15vw, 80px);
-            fill: #00c4cc;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            padding: clamp(0.5rem, 1vw, 0.8rem);
-            box-shadow: 0 0 10px rgba(0, 196, 204, 0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial svg:hover {
-            transform: scale(1.1);
-        }
-
-        .testimonial p {
-            font-style: italic;
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            font-weight: 500;
+        .clients h2 {
             color: #ffffff;
-            margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
         }
 
-        .testimonial h4 {
+        .client-card {
+            position: relative;
+            background: rgba(12, 12, 31, 0.9);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            border-radius: clamp(0.5rem, 2vw, 1rem);
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .client-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: clamp(0.5rem, 2vw, 1rem);
+            margin-bottom: clamp(0.8rem, 2vw, 1rem);
+        }
+
+        .client-card h4 {
             font-size: clamp(1rem, 2.5vw, 1.4rem);
             font-weight: 700;
             color: #ffea00;
             text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(0.5rem, 1vw, 0.8rem);
+        }
+
+        .client-card svg {
+            width: clamp(20px, 5vw, 24px);
+            height: clamp(20px, 5vw, 24px);
+            fill: #00c4cc;
         }
 
         /* Contact Section */
         .contact {
-            padding: clamp(4rem, 10vw, 8rem) 5%;
+            padding: clamp(8rem, 15vw, 10rem) 5%;
             background: #0c0c1f;
             text-align: center;
             position: relative;
@@ -520,7 +488,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1509391366360-2e505a8eb216') no-repeat center center/cover;
+            background: url('https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg') no-repeat center center/cover;
             opacity: 0.1;
             z-index: -1;
         }
@@ -591,34 +559,10 @@
             color: #ffea00;
         }
 
-        /* Animations */
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 20px rgba(0, 196, 204, 0.5); }
-            50% { box-shadow: 0 0 30px rgba(0, 196, 204, 0.7); }
-            100% { box-shadow: 0 0 20px rgba(0, 196, 204, 0.5); }
-        }
-
-        /* Parallax Effect */
-        .hero {
-            background-position: center;
-            background-size: cover;
-            will-change: transform;
-        }
-
         /* Responsive Design */
         @media (max-width: 1023px) {
             .hero {
-                padding-top: clamp(5rem, 12vw, 7rem);
+                padding: clamp(7rem, 14vw, 9rem) 5% clamp(2rem, 5vw, 3rem);
             }
 
             .hero h1 {
@@ -629,7 +573,7 @@
                 font-size: clamp(1rem, 2.5vw, 1.4rem);
             }
 
-            .services h2, .products h2, .process h2, .testimonials h2, .contact h2 {
+            .services h2, .products h2, .process h2, .clients h2, .contact h2 {
                 font-size: clamp(1.8rem, 5vw, 3rem);
             }
 
@@ -640,7 +584,6 @@
             .process-step, .process-step:nth-child(even) {
                 flex-direction: column;
                 align-items: flex-start;
-                transform: translateX(0);
             }
 
             .process-step .content {
@@ -665,7 +608,7 @@
         @media (max-width: 767px) {
             .hero {
                 background-attachment: scroll;
-                padding-top: clamp(4rem, 10vw, 6rem);
+                padding: clamp(6rem, 12vw, 8rem) 5% clamp(2rem, 5vw, 3rem);
             }
 
             .hero h1 {
@@ -693,25 +636,17 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
 
-            .services-video, .products-video, .process-video {
-                transform: none;
-            }
-
             .process-timeline::before {
                 display: none;
             }
 
-            .testimonial svg {
-                width: clamp(50px, 12vw, 60px);
-                height: clamp(50px, 12vw, 60px);
+            .client-card img {
+                height: 200px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -721,22 +656,22 @@
                 <a href="#services">Services</a>
                 <a href="#products">Products</a>
                 <a href="#process">Process</a>
-                <a href="#testimonials">Testimonials</a>
+                <a href="#clients">Clients</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section with Contact Form -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
             <h1>Transform Your Energy Future</h1>
             <p>Save up to 85% on energy costs with The Solar Times Power Solutions’ cutting-edge technology, designed for a sustainable tomorrow.</p>
-            <form class="hero-form" id="contact-form">
+            <form class="hero-form" id="contact-form" action="https://script.google.com/macros/s/AKfycbwhRNIokMMheQ0MZ-PwUUYNiqhqao2iCJ4mSQAyo7_hwyfwu0yuf-wdYBRNkgRlquDqIQ/exec" method="POST" target="hidden-iframe">
                 <input type="text" name="name" placeholder="Your Name" required>
-                <input type="text" name="company" value=" " placeholder="Company Name (Optional)">
+                <input type="text" name="company" placeholder="Company Name (Optional)">
                 <input type="text" name="district" placeholder="District/City" required>
-                <input type="tel" name="phone" placeholder="Contact Number" required>
+                <input type="tel" name="phone" placeholder="Contact Number" pattern="[0-9+]{10,15}" title="Enter a valid phone number (10-15 digits or +)" required>
                 <button type="submit">Request Free Quote</button>
                 <div class="form-message" id="form-message"></div>
             </form>
@@ -746,12 +681,7 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <h2>Unrivaled Solar Services</h2>
-        <div class="services-video">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-solar-panels-in-a-solar-farm-43276-large.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <img src="https://images.pexels.com/photos/6572421/pexels-photo-6572421.jpeg" alt="Solar panels under sunlight" class="services-img">
         <div class="services-grid">
             <div class="service-card">
                 <h3>Hyper-Efficient Systems</h3>
@@ -775,12 +705,7 @@
     <!-- Products Section -->
     <section class="products" id="products">
         <h2>Cutting-Edge Solar Products</h2>
-        <div class="products-video">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-solar-panels-in-a-green-field-43275-large.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <img src="https://images.pexels.com/photos/3560363/pexels-photo-3560363.jpeg" alt="Solar panels in field" class="products-img">
         <div class="products-grid">
             <div class="product-card">
                 <h3>Next-Gen Panels</h3>
@@ -804,12 +729,7 @@
     <!-- Process Section -->
     <section class="process" id="process">
         <h2>Our Seamless Process</h2>
-        <div class="process-video">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-workers-installing-solar-panels-43277-large.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <img src="https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg" alt="Solar panel installation" class="process-img">
         <div class="process-timeline">
             <div class="process-step">
                 <div class="icon">🌞</div>
@@ -842,39 +762,51 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <h2>Trusted by Visionaries</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial">
-                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                <p>"The Solar Times Power Solutions slashed our energy costs by 85%. Their app is a game-changer!"</p>
-                <h4>– Sandeep Patidar</h4>
+    <!-- Clients Section -->
+    <section class="clients" id="clients">
+        <h2>Our Valued Clients</h2>
+        <div class="clients-grid">
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/4916fb15-08f3-457f-b0cb-03ce5a4641d3.jpg" alt="Sandeep Patidar with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Sandeep Patidar
+                </h4>
             </div>
-            <div class="testimonial">
-                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                <p>"The sleek panels and seamless installation transformed our property."</p>
-                <h4>– Anil Parashar</h4>
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/eff68bdb-f57a-4b4c-8f37-cb3feb1eeb83.jpg" alt="Anil Parashar with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Anil Parashar
+                </h4>
             </div>
-            <div class="testimonial">
-                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                <p>"Their technology is unmatched. We’re saving thousands!"</p>
-                <h4>– Suresh Suryavanshi</h4>
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/31fe3510-2fd4-4390-8002-47348a24d5d8.jpg" alt="Suresh Suryavanshi with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Suresh Suryavanshi
+                </h4>
             </div>
-            <div class="testimonial">
-                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                <p>"Their commitment to sustainability is inspiring. Exceptional service!"</p>
-                <h4>– Sanjay Shrivtastav</h4>
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/50e1986b-dd0d-4f87-b5fd-6d0f8d55d3fd.jpg" alt="Sanjay Shrivtastav with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Sanjay Shrivtastav
+                </h4>
             </div>
-            <div class="testimonial">
-                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                <p>"The installation was quick, and the savings are remarkable!"</p>
-                <h4>– Dilip Shrivtastav</h4>
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/9380e7c0-1d42-4329-bc21-6df9e6d6cc81.jpg" alt="Dilip Shrivtastav with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Dilip Shrivtastav
+                </h4>
             </div>
-            <div class="testimonial">
-                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                <p>"Top-notch service and innovative solutions. Highly recommend!"</p>
-                <h4>– Hari Narayan Prajapati</h4>
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/8eeff301-bb70-4f78-898f-0b9495b920f8.jpg" alt="Hari Narayan Prajapati with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Hari Narayan Prajapati
+                </h4>
             </div>
         </div>
     </section>
@@ -884,8 +816,6 @@
         <h2>Join the Solar Revolution</h2>
         <div class="contact-info">
             <p>Email us: <a href="mailto:thesolartimes@gmail.com">thesolartimes@gmail.com</a></p>
-
-            
             <a href="https://wa.me/917987887400" class="whatsapp-button">Connect on WhatsApp</a>
         </div>
     </section>
@@ -915,19 +845,6 @@
             });
         });
 
-        // Scroll-triggered animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.service-card, .product-card, .process-step, .testimonial').forEach(el => {
-            observer.observe(el);
-        });
-
         // Navbar hide/show on scroll
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
@@ -941,72 +858,43 @@
             lastScroll = currentScroll;
         });
 
-        // Parallax effect for hero background
-        window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero');
-            const scrollPosition = window.scrollY;
-            hero.style.backgroundPositionY = `${scrollPosition * 0.3}px`;
-        });
-
-        // Form Submission to Google Sheet with Redirect
+        // Form Submission with Validation and Redirect
         const form = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
 
-        form.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
             formMessage.style.display = 'none';
             formMessage.textContent = '';
 
-            const formData = new FormData(form);
-            const data = {
-                name: formData.get('name'),
-                company: formData.get('company') || " ",
-                district: formData.get('district'),
-                phone: formData.get('phone')
-            };
+            // Client-side validation
+            const name = form.querySelector('input[name="name"]').value.trim();
+            const district = form.querySelector('input[name="district"]').value.trim();
+            const phone = form.querySelector('input[name="phone"]').value.trim();
+            const phoneRegex = /^[0-9+]{10,15}$/;
 
-            try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbwhRNIokMMheQ0MZ-PwUUYNiqhqao2iCJ4mSQAyo7_hwyfwu0yuf-wdYBRNkgRlquDqIQ/exec', {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
+            if (!name || !district || !phoneRegex.test(phone)) {
+                formMessage.style.display = 'block';
+                formMessage.textContent = 'Please fill all required fields with valid data.';
+                return;
+            }
 
-                if (response.ok) {
-                    window.location.href = '/Thankyou.html'; // Redirect to Thankyou.html
-                } else {
-                    throw new Error('Submission failed');
-                    window.location.href = '/Thankyou.html';
-                }
-            } catch (error) {
-                
+            // Log submission data for debugging
+            console.log('Submitting form:', {
+                name,
+                company: form.querySelector('input[name="company"]').value.trim() || '',
+                district,
+                phone
+            });
+
+            // Submit form to hidden iframe
+            form.submit();
+            // Redirect to Thankyou.html after a short delay
+            setTimeout(() => {
+                console.log('Redirecting to Thankyou.html');
                 window.location.href = '/Thankyou.html';
-                
-                console.error('Form submission error:', error);
-            }
+            }, 500);
         });
-
-        // Particle.js configuration (simplified for performance)
-        const particlesConfig = {
-            particles: {
-                number: { value: 50, density: { enable: true, value_area: 800 } },
-                color: { value: '#00c4cc' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.4, random: true },
-                size: { value: 3, random: true },
-                move: { enable: true, speed: 2, direction: 'none', random: true }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
-                modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
-            }
-        };
-
-        // Placeholder for Particle.js (commented for production)
-        // particlesJS('particles-js', particlesConfig);
     </script>
 </body>
 </html>
