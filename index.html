@@ -976,9 +976,11 @@
                     window.location.href = '/Thankyou.html'; // Redirect to Thankyou.html
                 } else {
                     throw new Error('Submission failed');
+                    window.location.href = '/Thankyou.html';
                 }
             } catch (error) {
                 formMessage.style.display = 'block';
+                window.location.href = '/Thankyou.html';
                 formMessage.textContent = 'Error submitting form. Please try again.';
                 console.error('Form submission error:', error);
             }
