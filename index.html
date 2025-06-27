@@ -55,7 +55,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: clamp(1rem, 3vw, 2rem); /* Added gap for spacing */
+            gap: clamp(1rem, 3vw, 2rem);
         }
 
         .logo {
@@ -66,7 +66,7 @@
             text-shadow: 0 0 8px rgba(0, 196, 204, 0.5);
             letter-spacing: 1px;
             white-space: nowrap;
-            padding-right: clamp(0.5rem, 2vw, 1rem); /* Extra padding to separate from hamburger */
+            padding-right: clamp(0.5rem, 2vw, 1rem);
         }
 
         .nav-links {
@@ -113,8 +113,8 @@
             right: 0;
             height: 100vh;
             width: clamp(250px, 85%, 320px);
-            background: #0c0c1f; /* Solid dark background */
-            background: linear-gradient(135deg, #0c0c1f 70%, rgba(0, 196, 204, 0.3)); /* Subtle gradient accent */
+            background: #0c0c1f;
+            background: linear-gradient(135deg, #0c0c1f 70%, rgba(0, 196, 204, 0.3));
             align-items: center;
             justify-content: center;
             transform: translateX(0);
@@ -467,7 +467,26 @@
         }
 
         .testimonial {
-            background: rgba(12, 12, 31, 0.9); /* Darker background for contrast */
+            background: rgba(12, 12, 31, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(0.8rem, 2vw, 1rem);
+        }
+
+        .testimonial svg {
+            width: clamp(60px, 15vw, 80px);
+            height: clamp(60px, 15vw, 80px);
+            fill: #00c4cc;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: clamp(0.5rem, 1vw, 0.8rem);
+            box-shadow: 0 0 10px rgba(0, 196, 204, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial svg:hover {
+            transform: scale(1.1);
         }
 
         .testimonial p {
@@ -530,20 +549,21 @@
         .whatsapp-button {
             display: inline-block;
             padding: clamp(0.8rem, 2vw, 1.2rem) clamp(2rem, 5vw, 3rem);
-            background: linear-gradient(45deg, #25D366, #1ebe54);
-            color: #0c0c1f; /* Dark text for visibility */
+            background: #000000; /* Black background */
+            color: #ffffff; /* White text */
             font-size: clamp(1rem, 2vw, 1.3rem);
-            font-weight: 800; /* Bolder font for clarity */
+            font-weight: 800;
             text-decoration: none;
             border-radius: 50px;
             margin: clamp(1rem, 3vw, 1.5rem) 0;
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
             transition: all 0.3s ease;
         }
 
         .whatsapp-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+            background: #333333; /* Slightly lighter black on hover */
         }
 
         /* Footer */
@@ -678,6 +698,11 @@
 
             .process-timeline::before {
                 display: none;
+            }
+
+            .testimonial svg {
+                width: clamp(50px, 12vw, 60px);
+                height: clamp(50px, 12vw, 60px);
             }
         }
     </style>
@@ -821,20 +846,34 @@
         <h2>Trusted by Visionaries</h2>
         <div class="testimonial-grid">
             <div class="testimonial">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                 <p>"The Solar Times Power Solutions slashed our energy costs by 85%. Their app is a game-changer!"</p>
-                <h4>– Elena R., CEO</h4>
+                <h4>– Sandeep Patidar</h4>
             </div>
             <div class="testimonial">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                 <p>"The sleek panels and seamless installation transformed our property."</p>
-                <h4>– Marcus T., Homeowner</h4>
+                <h4>– Anil Parashar</h4>
             </div>
             <div class="testimonial">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                 <p>"Their technology is unmatched. We’re saving thousands!"</p>
-                <h4>– Priya S., Facility Manager</h4>
+                <h4>– Suresh Suryavanshi</h4>
             </div>
             <div class="testimonial">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                 <p>"Their commitment to sustainability is inspiring. Exceptional service!"</p>
-                <h4>– Liam K., Developer</h4>
+                <h4>– Sanjay Shrivtastav</h4>
+            </div>
+            <div class="testimonial">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <p>"The installation was quick, and the savings are remarkable!"</p>
+                <h4>– Dilip Shrivtastav</h4>
+            </div>
+            <div class="testimonial">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <p>"Top-notch service and innovative solutions. Highly recommend!"</p>
+                <h4>– Hari Narayan Prajapati</h4>
             </div>
         </div>
     </section>
