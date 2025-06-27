@@ -549,8 +549,8 @@
         .whatsapp-button {
             display: inline-block;
             padding: clamp(0.8rem, 2vw, 1.2rem) clamp(2rem, 5vw, 3rem);
-            background: #000000; /* Black background */
-            color: #ffffff; /* White text */
+            background: #000000;
+            color: #ffffff;
             font-size: clamp(1rem, 2vw, 1.3rem);
             font-weight: 800;
             text-decoration: none;
@@ -563,7 +563,7 @@
         .whatsapp-button:hover {
             transform: scale(1.05);
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
-            background: #333333; /* Slightly lighter black on hover */
+            background: #333333;
         }
 
         /* Footer */
@@ -946,7 +946,7 @@
             hero.style.backgroundPositionY = `${scrollPosition * 0.3}px`;
         });
 
-        // Form Submission to Google Sheet
+        // Form Submission to Google Sheet with Redirect
         const form = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
 
@@ -973,12 +973,7 @@
                 });
 
                 if (response.ok) {
-                    formMessage.style.display = 'block';
-                    formMessage.textContent = 'Thank you, your request has been submitted!';
-                    form.reset();
-                    setTimeout(() => {
-                        formMessage.style.display = 'none';
-                    }, 5000);
+                    window.location.href = '/Thankyou.html'; // Redirect to Thankyou.html
                 } else {
                     throw new Error('Submission failed');
                 }
