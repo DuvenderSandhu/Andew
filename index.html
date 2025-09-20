@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Leasers - Luxury Real Estate | Premium Office Spaces, Showrooms, Co-working & Furnished Homes">
-    <title>The Leasers | Luxury Real Estate Solutions</title>
+    <meta name="description" content="The Leasers - Luxury Real Estate Solutions | Premium Offices, Showrooms, Co-working & Furnished Residences">
+    <meta name="keywords" content="luxury real estate, premium offices, high-end showrooms, executive co-working, furnished luxury homes">
+    <title>The Leasers | Premium Real Estate Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
     <style>
         :root {
             --gold: #D4AF37;
@@ -309,6 +311,52 @@
             animation: fadeInUp 1.2s ease 0.3s forwards;
         }
 
+        .hero-search {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease 0.6s forwards;
+        }
+
+        .hero-search input {
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 1rem;
+            flex: 1;
+            padding: 1rem 1.5rem;
+            outline: none;
+        }
+
+        .hero-search input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-search button {
+            background: var(--gradient-gold);
+            color: var(--navy);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .hero-search button:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-gold);
+        }
+
         .hero-cta {
             display: flex;
             gap: 1.5rem;
@@ -390,6 +438,7 @@
             color: var(--gold);
             line-height: 1;
             display: block;
+            margin-bottom: 0.25rem;
         }
 
         .stat-label {
@@ -1458,6 +1507,10 @@
                 <span>Redefined</span>
             </h1>
             <p class="hero-subtitle animate-up">Discover unparalleled commercial and residential spaces crafted for visionaries, crafted for excellence, crafted for legacy.</p>
+            <div class="hero-search animate-up">
+                <input type="text" placeholder="Search by location, type, or price...">
+                <button><i class="fas fa-search"></i> Search Properties</button>
+            </div>
             <div class="hero-cta">
                 <a href="https://wa.me/919876543210?text=Hello%20The%20Leasers!%20I'm%20seeking%20luxury%20real%20estate%20solutions." class="btn btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> Start WhatsApp
