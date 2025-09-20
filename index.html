@@ -4,789 +4,345 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Leasers - Premium Real Estate Solutions for Offices, Showrooms, Co-working Spaces, and Furnished Homes">
-    <title>The Leasers - Premium Real Estate</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1e3a8a;
-            text-decoration: none;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #1e3a8a;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            text-align: center;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn.whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .btn.call {
-            background: #1e3a8a;
-            color: white;
-        }
-
-        .btn.enquire {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Sticky Enquire Button */
-        .sticky-enquire {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.4);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .sticky-enquire:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.5);
-        }
-
-        /* Lead Capture Popup */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            animation: slideIn 0.3s ease;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #999;
-        }
-
-        .close:hover {
-            color: #333;
-        }
-
-        .popup h2 {
-            margin-bottom: 1.5rem;
-            color: #1e3a8a;
-            text-align: center;
-        }
-
-        .popup form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .popup input,
-        .popup textarea {
-            padding: 12px;
-            border: 2px solid #e5e7eb;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .popup input:focus,
-        .popup textarea:focus {
-            outline: none;
-            border-color: #1e3a8a;
-        }
-
-        .popup textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        /* Services Grid */
-        .services {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .services h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1e3a8a;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .service-item {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .service-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .service-item-content {
-            padding: 1.5rem;
-        }
-
-        .service-item h2 {
-            color: #1e3a8a;
-            margin-bottom: 0.5rem;
-        }
-
-        .service-item p {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Form Styles */
-        .form-section {
-            max-width: 600px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .form-section h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #1e3a8a;
-        }
-
-        form {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        form input,
-        form select,
-        form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e5e7eb;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        form input:focus,
-        form select:focus,
-        form textarea:focus {
-            outline: none;
-            border-color: #1e3a8a;
-        }
-
-        form button {
-            width: 100%;
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
-        }
-
-        /* About Section */
-        .about {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .about h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #1e3a8a;
-        }
-
-        .about h2 {
-            color: #1e3a8a;
-            margin: 2rem 0 1rem 0;
-            font-size: 1.5rem;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-details h3 {
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            gap: 1rem;
-        }
-
-        .contact-item a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: #1e3a8a;
-        }
-
-        .map-placeholder {
-            height: 300px;
-            background: #e5e7eb;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            grid-column: span 2;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 200px;
-            }
-
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .sticky-enquire {
-                bottom: 10px;
-                right: 10px;
-                padding: 12px 20px;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Footer */
-        footer {
-            background: #1f2937;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .service-item,
-        .hero-content {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-    </style>
+    <meta name="keywords" content="real estate, property leasing, offices, showrooms, co-working, furnished homes">
+    <meta name="author" content="The Leasers">
+    <title>The Leasers - Premium Real Estate Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
 </head>
 <body>
-    <!-- Landing Page -->
-    <header>
-        <nav>
-            <div class="logo">The Leasers</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#requirement">Requirement</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero" id="home">
-        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Premium Real Estate" class="hero-image">
-        <div class="hero-content">
-            <h1>Your Dream Space Awaits</h1>
-            <p>Discover premium real estate solutions tailored to your business and lifestyle needs</p>
-            <div class="cta-buttons">
-                <a href="https://wa.me/919876543210?text=Hello%20The%20Leasers!%20I'm%20interested%20in%20your%20services." class="btn whatsapp" target="_blank">WhatsApp Us</a>
-                <a href="tel:+919876543210" class="btn call">Call Now</a>
-                <a href="#requirement" class="btn enquire">Enquire Now</a>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-content">
+                <i class="fas fa-building"></i>
+                <p>Loading...</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <h1>Our Premium Services</h1>
-        <div class="service-grid">
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Office Spaces">
-                <div class="service-item-content">
-                    <h2>Corporate Offices</h2>
-                    <p>Premium office spaces designed for modern businesses. From startups to enterprises, find your perfect workspace.</p>
-                    <a href="#requirement" class="btn">Inquire Now</a>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Showrooms">
-                <div class="service-item-content">
-                    <h2>Premium Showrooms</h2>
-                    <p>High-visibility showroom spaces for retail excellence. Perfect locations for brand showcase and customer engagement.</p>
-                    <a href="#requirement" class="btn">Inquire Now</a>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Co-working">
-                <div class="service-item-content">
-                    <h2>Co-working Spaces</h2>
-                    <p>Flexible co-working environments with modern amenities. Hot desks, dedicated spaces, and meeting rooms available.</p>
-                    <a href="#requirement" class="btn">Inquire Now</a>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Furnished Homes">
-                <div class="service-item-content">
-                    <h2>Furnished Homes</h2>
-                    <p>Luxury furnished apartments and villas ready for immediate occupancy. Move-in ready with premium furnishings.</p>
-                    <a href="#requirement" class="btn">Inquire Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Requirement Form Section -->
-    <section class="form-section" id="requirement">
-        <h1>Submit Your Requirement</h1>
-        <form id="requirementForm" action="https://formspree.io/f/xqkbwngw" method="POST">
-            <label for="clientType">I'm looking for:</label>
-            <select id="clientType" name="clientType" required>
-                <option value="">Select an option</option>
-                <option value="buyer">Property to Buy</option>
-                <option value="tenant">Property to Rent/Lease</option>
-                <option value="owner">I want to List my Property</option>
-            </select>
-
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="budget">Budget Range</label>
-            <input type="text" id="budget" name="budget" placeholder="e.g., 50L - 1Cr or 50k - 1L/month">
-
-            <label for="requirement">Specific Requirements</label>
-            <textarea id="requirement" name="requirement" placeholder="Describe your needs in detail..." required></textarea>
-
-            <button type="submit">Send Requirement</button>
-        </form>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h1>About The Leasers</h1>
-        <p>Founded in 2020, The Leasers has rapidly established itself as a premier real estate consultancy specializing in commercial and residential leasing solutions. Our founder, Mr. Rajesh Kumar, brings over 25 years of industry experience and a passion for connecting people with their perfect spaces.</p>
-        
-        <h2>Our Mission</h2>
-        <p>To revolutionize the real estate experience by providing transparent, efficient, and personalized solutions that exceed client expectations. We believe every business and individual deserves a space that inspires growth and success.</p>
-        
-        <h2>Our Vision</h2>
-        <p>To become the most trusted real estate partner in the region, known for our integrity, expertise, and unwavering commitment to client satisfaction.</p>
-        
-        <h2>Why Choose Us?</h2>
-        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-            <li>✅ 25+ years of combined industry experience</li>
-            <li>✅ 1000+ successful property placements</li>
-            <li>✅ Personalized consultation and property matching</li>
-            <li>✅ End-to-end transaction support</li>
-            <li>✅ 24/7 client support</li>
-        </ul>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-info" id="contact">
-        <div>
-            <h1>Contact Us</h1>
-            <form id="contactForm" action="https://formspree.io/f/xqkbwngw" method="POST" style="margin-top: 2rem;">
-                <label for="contactName">Name</label>
-                <input type="text" id="contactName" name="name" required>
-
-                <label for="contactEmail">Email</label>
-                <input type="email" id="contactEmail" name="email" required>
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-
-        <div class="contact-details">
-            <h3>Get In Touch</h3>
-            <div class="contact-item">
-                <span style="color: #1e3a8a; font-size: 1.2rem;">📱</span>
-                <div>
-                    <strong>Phone:</strong><br>
-                    <a href="tel:+919876543210">+91 98765 43210</a>
-                </div>
-            </div>
-            <div class="contact-item">
-                <span style="color: #25D366; font-size: 1.2rem;">💬</span>
-                <div>
-                    <strong>WhatsApp:</strong><br>
-                    <a href="https://wa.me/919876543210?text=Hello%20The%20Leasers!" target="_blank">Chat Now</a>
-                </div>
-            </div>
-            <div class="contact-item">
-                <span style="color: #ea4335; font-size: 1.2rem;">✉️</span>
-                <div>
-                    <strong>Email:</strong><br>
-                    <a href="mailto:info@theleasers.com">info@theleasers.com</a>
-                </div>
-            </div>
-            <div class="contact-item">
-                <span style="color: #1e3a8a; font-size: 1.2rem;">📍</span>
-                <div>
-                    <strong>Office:</strong><br>
-                    Business Plaza, MG Road<br>
-                    Mumbai, Maharashtra 400001
-                </div>
-            </div>
-        </div>
-
-        <div class="map-placeholder">
-            🗺️ Google Maps Integration Placeholder<br>
-            (Interactive map will be embedded here)
-        </div>
-    </section>
-
-    <!-- Sticky Enquire Button -->
-    <a href="#requirement" class="sticky-enquire">Enquire Now</a>
-
-    <!-- Lead Capture Popup -->
-    <div id="leadPopup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2>Let's Find Your Perfect Space!</h2>
-            <p style="text-align: center; margin-bottom: 1.5rem; color: #666;">Share your requirements and we'll get back to you within 24 hours</p>
-            <form id="leadForm" action="https://formspree.io/f/xqkbwngw" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="tel" name="phone" placeholder="Phone Number" required>
-                <textarea name="requirement" placeholder="What kind of space are you looking for?" required></textarea>
-                <button type="submit" class="btn" style="background: #25D366; width: 100%; margin-top: 1rem;">Send My Requirement</button>
-            </form>
-            <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">
-                Or <a href="https://wa.me/919876543210?text=Hi!%20I%20saw%20your%20website%20and%20want%20to%20discuss%20my%20requirements." style="color: #25D366;">chat directly on WhatsApp</a>
-            </p>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 The Leasers. All rights reserved. | Premium Real Estate Solutions</p>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-icon">🏢</span>
+                        <span class="logo-text">The Leasers</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="requirement.html" class="nav-link">Requirements</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Premium Real Estate</span><br>
+                    Solutions That Inspire
+                </h1>
+                <p class="hero-subtitle">Discover exceptional office spaces, luxury showrooms, modern co-working environments, and beautifully furnished homes tailored to your vision.</p>
+                <div class="hero-cta">
+                    <a href="https://wa.me/919876543210?text=Hi%20The%20Leasers!%20I'm%20interested%20in%20your%20premium%20real%20estate%20solutions." class="btn btn-primary whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Now
+                    </a>
+                    <a href="tel:+919876543210" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> Call Us
+                    </a>
+                    <a href="requirement.html" class="btn btn-outline">
+                        <i class="fas fa-search"></i> Explore Properties
+                    </a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Properties</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#features" class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose The Leasers?</h2>
+                <p class="section-subtitle">We combine expertise, technology, and personalized service to deliver exceptional real estate experiences.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Expert Consultation</h3>
+                    <p>Our experienced consultants understand your unique needs and match you with properties that perfectly align with your vision and budget.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3>Prime Locations</h3>
+                    <p>Access exclusive properties in the most desirable business districts and residential neighborhoods with unmatched connectivity and amenities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Transparent Process</h3>
+                    <p>Complete transparency with no hidden fees. From property viewing to contract signing, we ensure a smooth and stress-free experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Fast Response</h3>
+                    <p>Get personalized responses within 24 hours. Our dedicated team ensures you never have to wait for answers or property updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Explore our comprehensive real estate solutions designed for businesses and individuals alike.</p>
+            </div>
+            <div class="services-preview-grid">
+                <a href="services.html" class="service-preview-card">
+                    <div class="service-preview-image" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="service-preview-content">
+                        <h3>Corporate Offices</h3>
+                        <p>Premium office spaces in prime locations</p>
+                        <div class="service-preview-footer">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="services.html" class="service-preview-card">
+                    <div class="service-preview-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="service-preview-content">
+                        <h3>Luxury Showrooms</h3>
+                        <p>High-visibility retail spaces for brands</p>
+                        <div class="service-preview-footer">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cta-section">
+                <a href="services.html" class="btn btn-primary full-width">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Don't just take our word for it - hear from our satisfied clients.</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <p>"The Leasers found us the perfect office space in just 2 weeks. Their attention to detail and market knowledge is unmatched. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson" class="author-avatar">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <span>CEO, TechStart Inc.</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Exceptional service from start to finish. They understood our showroom requirements perfectly and delivered exactly what we needed."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael Chen" class="author-avatar">
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <span>Marketing Director, Luxe Brands</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Find Your Perfect Space?</h2>
+                <p>Let us help you discover the ideal property that matches your vision and requirements.</p>
+                <div class="cta-buttons">
+                    <a href="requirement.html" class="btn btn-primary">Submit Requirement</a>
+                    <a href="https://wa.me/919876543210" class="btn btn-outline whatsapp-btn">Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🏢</span>
+                        <span class="logo-text">The Leasers</span>
+                    </div>
+                    <p>Premium real estate solutions for forward-thinking businesses and individuals. Connecting you with spaces that inspire growth and success.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="requirement.html">Submit Requirement</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@theleasers.com">info@theleasers.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Business Plaza, MG Road, Mumbai, Maharashtra 400001</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Leasers. All rights reserved. | Designed with ❤️ for premium real estate experiences.</p>
+            </div>
+        </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-widget" id="whatsappWidget">
+        <div class="widget-toggle" id="widgetToggle">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="widget-content" id="widgetContent">
+            <div class="widget-header">
+                <span>Chat with us!</span>
+                <button class="widget-close" id="widgetClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="widget-body">
+                <p>Hi! 👋 How can we help you find your perfect space today?</p>
+                <div class="widget-buttons">
+                    <a href="https://wa.me/919876543210?text=Hi%20The%20Leasers!%20I'm%20looking%20for..." class="btn btn-whatsapp">Start Chat</a>
+                    <a href="requirement.html" class="btn btn-outline">Submit Form</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        // Lead popup on scroll
-        let scrolled = false;
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > window.innerHeight * 0.3 && !scrolled) {
-                scrolled = true;
-                setTimeout(() => {
-                    document.getElementById('leadPopup').style.display = 'flex';
-                }, 1000);
-            }
-        });
+    <!-- Lead Capture Modal -->
+    <div id="leadModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3><i class="fas fa-search"></i> Find Your Perfect Space</h3>
+                <p>Share your requirements and we'll contact you within 24 hours</p>
+            </div>
+            <form id="leadForm" class="lead-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select name="requirement" required>
+                        <option value="">What are you looking for?</option>
+                        <option value="office">Office Space</option>
+                        <option value="showroom">Showroom</option>
+                        <option value="coworking">Co-working Space</option>
+                        <option value="home">Furnished Home</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Get Matched</button>
+            </form>
+        </div>
+    </div>
 
-        // Close popup
-        document.querySelector('.close').addEventListener('click', function() {
-            document.getElementById('leadPopup').style.display = 'none';
-        });
-
-        // Close popup when clicking outside
-        window.addEventListener('click', function(event) {
-            const popup = document.getElementById('leadPopup');
-            if (event.target === popup) {
-                popup.style.display = 'none';
-            }
-        });
-
-        // Form submissions
-        document.getElementById('requirementForm').addEventListener('submit', function(e) {
-            // Add loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            const submitBtn = this.querySelector('button[type="submit"]');
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-        });
-
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            const submitBtn = this.querySelector('button[type="submit"]');
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-        });
-
-        // WhatsApp click tracking
-        document.querySelectorAll('.whatsapp').forEach(link => {
-            link.addEventListener('click', function() {
-                // You can add analytics tracking here
-                console.log('WhatsApp clicked');
-            });
-        });
-
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
