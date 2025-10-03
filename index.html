@@ -2,106 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Leasers - Premium Real Estate Solutions for Offices, Showrooms, Co-working Spaces, and Furnished Homes">
-    <title>The Leasers - Premium Real Estate Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="The Solar Times Power Solutions: Transform your energy future with premium solar solutions. Save up to 85% on costs with cutting-edge technology. Book your free consultation now!">
+    <meta name="keywords" content="solar energy, solar panels, renewable energy, solar power, sustainable energy, solar installation, clean energy, solar technology">
+    <meta name="author" content="The Solar Times Power Solutions">
+    <title>The Solar Times Power Solutions - Transform Energy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Exo+2:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://ik.imagekit.io/mbrgx7fln/f1651dee-887e-4acb-b200-824024b73c56.jpg?updatedAt=1751082176346" type="image/jpeg">
+<!-- Event snippet for Leads conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17262704032/fWWTCOfVmeUaEKDrv6dA',
+      'value': 1.0,
+      'currency': 'INR'
+  });
+</script>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #1e40af;
-            --secondary: #3b82f6;
-            --accent: #f59e0b;
-            --dark: #1f2937;
-            --gray: #6b7280;
-            --light: #f8fafc;
-            --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            font-family: 'Exo 2', sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
+            color: #ffffff;
+            background: #0c0c1f;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Header */
-        .header {
+        /* Navbar */
+        .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(90deg, rgba(12, 12, 31, 0.95), rgba(0, 196, 204, 0.2));
+            backdrop-filter: blur(12px);
+            padding: clamp(0.6rem, 1.5vw, 0.8rem) 5%;
             z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar.hidden {
+            transform: translateY(-100%);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: clamp(1rem, 3vw, 2rem);
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 4vw, 2rem);
+            font-weight: 900;
+            color: #00c4cc;
+            text-shadow: 0 0 8px rgba(0, 196, 204, 0.5);
+            letter-spacing: 1px;
+            white-space: nowrap;
+            padding-right: clamp(0.5rem, 2vw, 1rem);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: clamp(1rem, 3vw, 1.5rem);
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: clamp(0.9rem, 2vw, 1rem);
             font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .nav-links a:hover {
+            color: #ffea00;
+            transform: translateY(-2px);
         }
 
-        .nav-link {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--primary);
-        }
-
-        .mobile-menu {
+        .hamburger {
             display: none;
-            flex-direction: column;
+            font-size: clamp(1.6rem, 4vw, 2rem);
+            color: #00c4cc;
             cursor: pointer;
+            z-index: 1001;
+            margin 0 0 0 70vw;
+            transition: transform 0.3s ease;
         }
 
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: var(--dark);
-            margin: 3px 0;
-            transition: 0.3s;
+        .hamburger:hover {
+            transform: scale(1.1);
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(59, 130, 246, 0.8) 100%), 
-                        url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+        .nav-links {
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .nav-links.active {
             display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: clamp(250px, 85%, 320px);
+            background: linear-gradient(135deg, #0c0c1f 70%, rgba(0, 196, 204, 0.3));
             align-items: center;
             justify-content: center;
+            transform: translateX(0);
+            z-index: 1000;
+            padding: clamp(2rem, 5vw, 3rem);
+            box-shadow: -10px 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hero Section with Contact Form */
+        .hero {
+            min-height: 100vh;
+            background: url('https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg') no-repeat center center/cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            color: white;
             position: relative;
+            overflow: hidden;
+            padding: clamp(6rem, 12vw, 8rem) 5% clamp(2rem, 5vw, 3rem);
         }
 
         .hero::before {
@@ -109,967 +143,775 @@
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(12, 12, 31, 0.7), rgba(0, 196, 204, 0.3));
+            z-index: 0;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 2rem;
+            z-index: 1;
+            max-width: 90%;
+            padding: 0 clamp(1rem, 5vw, 2rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(1.5rem, 4vw, 2rem);
+            flex-grow: 1;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            color: #ffea00;
+            text-shadow: 0 0 10px rgba(255, 234, 0, 0.6);
+            margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
+            letter-spacing: 1.5px;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+            font-weight: 400;
+            color: #e0e0e0;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+            margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .hero-form {
+            max-width: 100%;
+            width: clamp(300px, 90%, 600px);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: clamp(0.8rem, 2vw, 1rem);
+            background: rgba(255, 255, 255, 0.15);
+            padding: clamp(1.2rem, 3vw, 1.8rem);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 196, 204, 0.6);
+            transition: transform 0.3s ease;
         }
 
-        .btn {
-            padding: 15px 30px;
+        .hero-form:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-form input {
+            padding: clamp(0.8rem, 2vw, 1.2rem);
+            border: none;
+            border-radius: 10px;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .hero-form input::placeholder {
+            color: #cccccc;
+        }
+
+        .hero-form input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 196, 204, 0.6);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .hero-form button {
+            padding: clamp(0.8rem, 2vw, 1.2rem) clamp(2rem, 5vw, 3rem);
+            background: linear-gradient(45deg, #00c4cc, #ffea00);
+            color: #0c0c1f;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 700;
             border: none;
             border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
             cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-
-        /* Sticky CTA */
-        .sticky-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: var(--shadow);
-            z-index: 1000;
+            box-shadow: 0 0 20px rgba(0, 196, 204, 0.7);
             transition: all 0.3s ease;
+            grid-column: span 2;
         }
 
-        .sticky-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(30, 64, 175, 0.4);
+        .hero-form button:hover {
+            background: linear-gradient(45deg, #ffea00, #00c4cc);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 234, 0, 0.7);
+        }
+
+        .form-message {
+            display: none;
+            color: #ffea00;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-top: clamp(0.8rem, 2vw, 1rem);
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
         }
 
         /* Services Section */
         .services {
-            padding: 5rem 2rem;
-            background: var(--light);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
+            padding: clamp(8rem, 10vw, 5rem) 5%;
+            background: #ffffff;
             text-align: center;
-            margin-bottom: 3rem;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .services h2, .products h2, .process h2, .clients h2, .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            color: #0c0c1f;
+            margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+            letter-spacing: 1px;
         }
 
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 600px;
+        .services-img, .products-img, .process-img {
+            max-width: 100%;
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
+            border-radius: clamp(0.5rem, 2vw, 1rem);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .services-grid, .products-grid, .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 40vw, 350px), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
+        .service-card, .product-card {
             position: relative;
+            background: #f5f7fa;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            border-radius: clamp(0.5rem, 2vw, 1rem);
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
 
-        .service-image::after {
+        .service-card:hover, .product-card:hover, .client-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card::before, .product-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(30, 64, 175, 0.7);
+            width: 100%;
+            height: 150px;
+            background: url('https://images.pexels.com/photos/9875415/pexels-photo-9875415.jpeg') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: -1;
         }
 
-        .service-content {
-            padding: 1.5rem;
+        .service-card h3, .product-card h3 {
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            font-weight: 700;
+            color: #0c0c1f;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+            margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
+        }
+
+        .service-card p, .product-card p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 500;
+            color: #1a1a1a;
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Products Section */
+        .products {
+            padding: clamp(8rem, 10vw,5rem) 5%;
+            background: linear-gradient(to bottom, #0c0c1f, #004080);
+        }
+
+        .products h2 {
+            color: #ffffff;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+
+        .product-card::before {
+            background: url('https://images.pexels.com/photos/9875415/pexels-photo-9875415.jpeg') no-repeat center center/cover;
+        }
+
+        .product-card h3 {
+            color: #ffea00;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-card p {
+            color: #e0e0e0;
+            text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Process Section */
+        .process {
+            padding: clamp(8rem, 15vw, 10rem) 5%;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .process-timeline {
+            max-width: 1400px;
+            margin: 0 auto;
             position: relative;
         }
 
-        .service-content h3 {
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(#00c4cc, #ffea00);
+            transform: translateX(-50%);
+            box-shadow: 0 0 8px rgba(0, 196, 204, 0.5);
         }
 
-        .service-content p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+            position: relative;
         }
 
-        /* Features Section */
-        .features {
-            padding: 5rem 2rem;
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .process-step .content {
+            width: 50%;
+            padding: clamp(1.5rem, 4vw, 2rem);
+            background: #f5f7fa;
+            border-radius: clamp(0.5rem, 2vw, 1rem);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .feature-card {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
+        .process-step .content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: url('https://images.pexels.com/photos/9875415/pexels-photo-9875415.jpeg') no-repeat center center/cover;
+            opacity: 0.15;
+            z-index: -1;
         }
 
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
+        .process-step .icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(50px, 10vw, 60px);
+            height: clamp(50px, 10vw, 60px);
+            background: linear-gradient(45deg, #00c4cc, #ffea00);
+            color: #0c0c1f;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            color: white;
-            font-size: 1.5rem;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(0, 196, 204, 0.7);
         }
 
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        /* Stats */
-        .stats {
-            background: var(--primary);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
+        .process-step h3 {
+            font-size: clamp(1.4rem, 3.5vw, 1.8rem);
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            color: #0c0c1f;
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+            margin-bottom: clamp(0.8rem, 2vw, 1rem);
         }
 
-        .stat-label {
-            opacity: 0.9;
+        .process-step p {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-weight: 500;
+            color: #1a1a1a;
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
         }
 
-        /* Testimonials */
-        .testimonials {
-            padding: 5rem 2rem;
-            background: var(--light);
+        /* Clients Section */
+        .clients {
+            padding: clamp(8rem, 10vw, 5rem) 5%;
+            background: linear-gradient(to top, #0c0c1f, #004080);
         }
 
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .clients h2 {
+            color: #ffffff;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
         }
 
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
+        .client-card {
+            position: relative;
+            background: rgba(12, 12, 31, 0.9);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            border-radius: clamp(0.5rem, 2vw, 1rem);
             text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
 
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            color: var(--gray);
+        .client-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: clamp(0.5rem, 2vw, 1rem);
+            margin-bottom: clamp(0.8rem, 2vw, 1rem);
         }
 
-        .testimonial-author {
+        .client-card h4 {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 700;
+            color: #ffea00;
+            text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
+            gap: clamp(0.5rem, 1vw, 0.8rem);
         }
 
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .client-card svg {
+            width: clamp(20px, 5vw, 24px);
+            height: clamp(20px, 5vw, 24px);
+            fill: #00c4cc;
         }
 
         /* Contact Section */
         .contact {
-            padding: 5rem 2rem;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item i {
-            background: var(--primary);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-
-        .map-container {
-            height: 300px;
-            background: #e5e7eb;
-            border-radius: 15px;
-            margin-top: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 2rem 1rem;
+            padding: clamp(8rem, 7vw, 5rem) 5%;
+            background: #0c0c1f;
             text-align: center;
+            position: relative;
         }
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: #9ca3af;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-
-        /* Popup Modal */
-        .modal {
-            display: none;
-            position: fixed;
+        .contact::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
+            background: url('https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: -1;
         }
 
-        .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            animation: slideIn 0.3s ease;
+        .contact h2 {
+            color: #ffea00;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
         }
 
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .contact-info {
+            margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
         }
 
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--gray);
+        .contact-info a {
+            color: #00c4cc;
+            text-decoration: none;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 500;
+            margin: 0 clamp(0.5rem, 2vw, 1rem);
+            transition: color 0.3s ease;
         }
 
-        .close:hover {
-            color: var(--dark);
+        .contact-info a:hover {
+            color: #ffea00;
         }
 
-        .modal h2 {
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .whatsapp-button {
+            display: inline-block;
+            padding: clamp(0.8rem, 2vw, 1.2rem) clamp(2rem, 5vw, 3rem);
+            background: #000000;
+            color: #ffffff;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: clamp(1rem, 3vw, 1.5rem) 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+            background: #333333;
+        }
+
+        /* Footer */
+        .footer {
+            padding: clamp(2rem, 5vw, 3rem);
+            background: #0c0c1f;
             text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .modal form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        .footer p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-weight: 400;
+            color: #e0e0e0;
         }
 
-        .modal input,
-        .modal textarea {
-            padding: 12px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: inherit;
+        .footer a {
+            color: #00c4cc;
+            text-decoration: none;
+            margin: 0 clamp(0.3rem, 1vw, 0.5rem);
         }
 
-        .modal input:focus,
-        .modal textarea:focus {
-            outline: none;
-            border-color: var(--primary);
+        .footer a:hover {
+            color: #ffea00;
         }
 
-        .modal button {
-            background: var(--primary);
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: flex;
+        /* Responsive Design */
+        @media (max-width: 1023px) {
+            .hero {
+                padding: clamp(7rem, 14vw, 9rem) 5% clamp(2rem, 5vw, 3rem);
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: clamp(2rem, 6vw, 3.5rem);
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: clamp(1rem, 2.5vw, 1.4rem);
             }
 
-            .cta-buttons {
+            .services h2, .products h2, .process h2, .clients h2, .contact h2 {
+                font-size: clamp(1.8rem, 5vw, 3rem);
+            }
+
+            .process-timeline::before {
+                left: 20px;
+            }
+
+            .process-step, .process-step:nth-child(even) {
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
             }
 
-            .btn {
+            .process-step .content {
                 width: 100%;
-                max-width: 250px;
-                justify-content: center;
             }
 
-            .services-grid,
-            .features-grid,
-            .stats-grid,
-            .testimonial-grid {
+            .process-step .icon {
+                position: static;
+                margin: 0 auto clamp(0.8rem, 2vw, 1rem);
+                transform: none;
+            }
+
+            .hero-form {
                 grid-template-columns: 1fr;
             }
 
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
+            .hero-form button {
+                grid-column: span 1;
             }
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+        @media (max-width: 767px) {
+            .hero {
+                background-attachment: scroll;
+                padding: clamp(6rem, 12vw, 8rem) 5% clamp(2rem, 5vw, 3rem);
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
-        .service-card,
-        .feature-card,
-        .testimonial-card {
-            animation: fadeInUp 0.6s ease forwards;
+            .hero h1 {
+                font-size: clamp(1.8rem, 5vw, 2.5rem);
+            }
+
+            .hero p {
+                font-size: clamp(0.9rem, 2vw, 1.2rem);
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                transform: translateX(100%);
+            }
+
+            .nav-links a {
+                font-size: clamp(1.2rem, 3vw, 1.4rem);
+                margin: clamp(0.8rem, 2vw, 1rem) 0;
+                padding: clamp(0.5rem, 2vw, 0.8rem);
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .process-timeline::before {
+                display: none;
+            }
+
+            .client-card img {
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">🏢 The Leasers</a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">The Solar Times</div>
+            <div class="hamburger">☰</div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#products">Products</a>
+                <a href="#process">Process</a>
+                <a href="#clients">Clients</a>
+                <a href="#contact">Contact</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Hero Section with Contact Form -->
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <h1>Your Dream Space Awaits</h1>
-            <p>Discover premium real estate solutions for offices, showrooms, co-working spaces, and luxury homes</p>
-            <div class="cta-buttons">
-                <a href="https://wa.me/919876543210?text=Hi%20The%20Leasers!%20I'm%20interested%20in%20your%20premium%20properties." class="btn btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Now
-                </a>
-                <a href="tel:+919876543210" class="btn btn-primary">
-                    <i class="fas fa-phone"></i> Call Us
-                </a>
-                <a href="#contact" class="btn btn-outline">
-                    <i class="fas fa-envelope"></i> Get Quote
-                </a>
-            </div>
+            <h1>Transform Your Energy Future</h1>
+            <p>Save up to 85% on energy costs with The Solar Times Power Solutions’ cutting-edge technology, designed for a sustainable tomorrow.</p>
+            <form class="hero-form" id="contact-form" action="https://script.google.com/macros/s/AKfycbylXmsfTj9Bak6YllLCXK0Rvp1oTNpmoNCraf3NnP1ts9fGCL3hQ05fMfCjcMPVXHA7_A/exec" method="POST" target="hidden-iframe">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="text" name="company" placeholder="Company Name (Optional)">
+                <input type="text" name="district" placeholder="District/City" required>
+                <input type="tel" name="phone" placeholder="Contact Number" pattern="[0-9+]{10,15}" title="Enter a valid phone number (10-15 digits or +)" required>
+                <button type="submit">Request Free Quote</button>
+                <div class="form-message" id="form-message"></div>
+            </form>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Premium Services</h2>
-                <p class="section-subtitle">Tailored solutions for every business and lifestyle need</p>
+    <section class="services" id="services">
+        <h2>Unrivaled Solar Services</h2>
+        <img style="object-fit:contain;" src="https://ik.imagekit.io/mbrgx7fln/Blue%20and%20White%20Modern%20Solar%20Panel%20Installation%20Facebook%20Cover.jpg?updatedAt=1751094924484" alt="Solar panels under sunlight" class="services-img">
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Hyper-Efficient Systems</h3>
+                <p>AI-optimized panels deliver up to 85% savings, redefining energy efficiency.</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="service-content">
-                        <h3>Corporate Offices</h3>
-                        <p>Premium office spaces in prime locations with modern amenities and flexible lease terms</p>
-                        <a href="#contact" class="btn btn-primary">View Offices</a>
-                    </div>
+            <div class="service-card">
+                <h3>Zero-Carbon Impact</h3>
+                <p>Power your life with clean energy, eliminating your carbon footprint.</p>
+            </div>
+            <div class="service-card">
+                <h3>Elite Installation</h3>
+                <p>Seamless, customized installations by certified experts with zero hassle.</p>
+            </div>
+            <div class="service-card">
+                <h3>Smart Energy Control</h3>
+                <p>Manage your energy with our AI-driven app for real-time optimization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2>Crystal Clear Solar Maintenance Services</h2>
+        <img src="https://ik.imagekit.io/mbrgx7fln/Blue,%20Green%20and%20White%20Modern%20Cleaning%20Service%20Facebook%20Post%20(Website).jpg?updatedAt=1751097752365" alt="Solar panels in field" class="products-img">
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>Next-Gen Panels</h3>
+                <p>Ultra-efficient solar panels with AI optimization for maximum output.</p>
+            </div>
+            <div class="product-card">
+                <h3>Smart Inverters</h3>
+                <p>Advanced inverters for enhanced energy conversion and reliability.</p>
+            </div>
+            <div class="product-card">
+                <h3>Energy Storage</h3>
+                <p>High-capacity batteries to store excess energy for 24/7 power.</p>
+            </div>
+            <div class="product-card">
+                <h3>Solar Monitoring App</h3>
+                <p>Intuitive app for real-time energy tracking and optimization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <h2>Our Seamless Process</h2>
+        <img src="https://ik.imagekit.io/mbrgx7fln/Blue%20and%20White%20Illustrative%20Modern%20Solar%20Energy%20Product%20Journey%20Brainstorm.jpg?updatedAt=1751092545910" alt="Solar panel installation" class="process-img">
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="icon">🌞</div>
+                <div class="content">
+                    <h3>1. Expert Consultation</h3>
+                    <p>Customized solar strategy tailored to your energy needs and goals.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="service-content">
-                        <h3>Luxury Showrooms</h3>
-                        <p>High-visibility retail spaces perfect for brand showcase and customer engagement</p>
-                        <a href="#contact" class="btn btn-primary">View Showrooms</a>
-                    </div>
+            </div>
+            <div class="process-step">
+                <div class="icon">⚙️</div>
+                <div class="content">
+                    <h3>2. Precision Installation</h3>
+                    <p>Flawless deployment using cutting-edge technology and expertise.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="service-content">
-                        <h3>Co-working Spaces</h3>
-                        <p>Flexible workspaces with modern facilities, networking events, and 24/7 access</p>
-                        <a href="#contact" class="btn btn-primary">View Co-working</a>
-                    </div>
+            </div>
+            <div class="process-step">
+                <div class="icon">💰</div>
+                <div class="content">
+                    <h3>3. Instant Savings</h3>
+                    <p>Reduce energy costs by up to 85% from day one.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="service-content">
-                        <h3>Furnished Homes</h3>
-                        <p>Ready-to-move-in luxury apartments with designer interiors and premium amenities</p>
-                        <a href="#contact" class="btn btn-primary">View Homes</a>
-                    </div>
+            </div>
+            <div class="process-step">
+                <div class="icon">📱</div>
+                <div class="content">
+                    <h3>4. Smart Optimization</h3>
+                    <p>Monitor and optimize performance with our AI-powered app.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose The Leasers?</h2>
-                <p class="section-subtitle">25+ years of excellence in premium real estate solutions</p>
+    <!-- Clients Section -->
+    <section class="clients" id="clients">
+        <h2>Our Valued Clients</h2>
+        <div class="clients-grid">
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/4916fb15-08f3-457f-b0cb-03ce5a4641d3.jpg" alt="Sandeep Patidar with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Mr. Ram Narayan saklle ji
+                </h4>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Expert Consultation</h3>
-                    <p>Personalized service from industry experts who understand your unique requirements</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Prime Locations</h3>
-                    <p>Exclusive access to properties in the most desirable business and residential areas</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Transparent Process</h3>
-                    <p>No hidden fees, complete transparency, and stress-free transactions from start to finish</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Fast Response</h3>
-                    <p>24-hour response time with dedicated relationship managers for every client</p>
-                </div>
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/eff68bdb-f57a-4b4c-8f37-cb3feb1eeb83.jpg" alt="Anil Parashar with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Mr. Dilip Srivastava ji
+                </h4>
             </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="section-header">
-                <h2 style="color: white; margin-bottom: 1rem;">Our Track Record</h2>
-                <p style="color: rgba(255,255,255,0.9);">Trusted by businesses and individuals across the region</p>
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/31fe3510-2fd4-4390-8002-47348a24d5d8.jpg" alt="Suresh Suryavanshi with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Mr. Anil Parashar ji
+                </h4>
             </div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Happy Clients</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">1000+</div>
-                    <div class="stat-label">Properties Leased</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">25+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Expert Team</div>
-                </div>
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/50e1986b-dd0d-4f87-b5fd-6d0f8d55d3fd.jpg" alt="Sanjay Shrivtastav with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Mr. Suresh Suryavanshi ji
+                </h4>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-subtitle">Real stories from satisfied customers</p>
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/9380e7c0-1d42-4329-bc21-6df9e6d6cc81.jpg" alt="Dilip Shrivtastav with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Mr. Sanjay shrivtastav ji
+                </h4>
             </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">"The Leasers found us the perfect office space in just 2 weeks. Their market knowledge and attention to detail made the entire process seamless."</div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SJ</div>
-                        <div>
-                            <h4>Sarah Johnson</h4>
-                            <p>CEO, TechStart Inc.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">"Exceptional service for our luxury showroom. They understood our brand perfectly and secured the ideal location with excellent terms."</div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MC</div>
-                        <div>
-                            <h4>Michael Chen</h4>
-                            <p>Marketing Director, Luxe Brands</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">"The furnished apartment they found for us was absolutely stunning. Move-in ready with all premium amenities we could ask for."</div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AR</div>
-                        <div>
-                            <h4>Anita Rao</h4>
-                            <p>Senior Manager, Global Corp</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="client-card">
+                <img src="https://ik.imagekit.io/mbrgx7fln/8eeff301-bb70-4f78-898f-0b9495b920f8.jpg" alt="Hari Narayan Prajapati with solar panels">
+                <h4>
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 13c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    Mrs. Anju Saksena ji
+                </h4>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Ready to find your perfect space? Let's talk</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label>Your Name</label>
-                            <input type="text" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="tel" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Message</label>
-                            <textarea rows="4" placeholder="Tell us about your requirements..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <strong>Phone:</strong><br>
-                            <a href="tel:+919876543210">+91 98765 43210</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Email:</strong><br>
-                            <a href="mailto:info@theleasers.com">info@theleasers.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <strong>Hours:</strong><br>
-                            Mon - Sat: 9AM - 7PM
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Address:</strong><br>
-                            Business Plaza, MG Road<br>
-                            Mumbai, Maharashtra 400001
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <i class="fas fa-map-marked-alt"></i> Google Maps Integration
-                    </div>
-                </div>
-            </div>
+    <section class="contact" id="contact">
+        <h2>Join the Solar Revolution</h2>
+        <div class="contact-info">
+            <p>Email us: <a href="mailto:thesolartimes@gmail.com">thesolartimes@gmail.com</a></p>
+            <a href="https://wa.me/917987887400" class="whatsapp-button">Connect on WhatsApp</a>
         </div>
     </section>
 
-    <!-- Sticky CTA -->
-    <a href="#contact" class="sticky-cta">
-        <i class="fas fa-comments"></i> Chat Now
-    </a>
-
-    <!-- Lead Capture Modal -->
-    <div id="leadModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Find Your Perfect Space!</h2>
-            <p style="text-align: center; color: var(--gray); margin-bottom: 1.5rem;">Share your requirements - we'll respond within 24 hours</p>
-            <form id="leadForm">
-                <input type="text" name="name" placeholder="Your Name *" required>
-                <input type="tel" name="phone" placeholder="Phone Number *" required>
-                <select name="type" required>
-                    <option value="">Looking for... *</option>
-                    <option value="office">Office Space</option>
-                    <option value="showroom">Showroom</option>
-                    <option value="coworking">Co-working Space</option>
-                    <option value="home">Furnished Home</option>
-                </select>
-                <button type="submit">Get Matched Now</button>
-            </form>
-            <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">
-                Or <a href="https://wa.me/919876543210" style="color: #25D366;">chat on WhatsApp</a>
-            </p>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>🏢 The Leasers</h3>
-                    <p>Premium real estate solutions connecting businesses and individuals with spaces that inspire success and growth.</p>
-                    <div style="margin-top: 1rem;">
-                        <a href="https://wa.me/919876543210" style="color: #25D366; margin-right: 1rem;"><i class="fab fa-whatsapp"></i></a>
-                        <a href="tel:+919876543210" style="color: white; margin-right: 1rem;"><i class="fas fa-phone"></i></a>
-                        <a href="mailto:info@theleasers.com" style="color: white;"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#contact">Corporate Offices</a></li>
-                        <li><a href="#contact">Luxury Showrooms</a></li>
-                        <li><a href="#contact">Co-working Spaces</a></li>
-                        <li><a href="#contact">Furnished Homes</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #374151;">
-                <p>&copy; 2025 The Leasers. All rights reserved. | Premium Real Estate Solutions</p>
-            </div>
-        </div>
+        <p>© 2025 The Solar Times Power Solutions. All rights reserved. <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a> | <a href="#faq">FAQ</a></p>
     </footer>
 
+    <!-- Hidden Iframe for Form Submission -->
+    <iframe name="hidden-iframe" style="display: none;"></iframe>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17262704032"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17262704032');
+</script>
     <script>
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        mobileMenu.addEventListener('click', () => {
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-                // Close mobile menu
-                navMenu.style.display = 'none';
+        // Auto-close sidebar on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.textContent = '☰';
             });
         });
 
-        // Lead popup on scroll
-        let hasShownPopup = false;
+        // Navbar hide/show on scroll
+        let lastScroll = 0;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > window.innerHeight * 0.3 && !hasShownPopup) {
-                hasShownPopup = true;
-                setTimeout(() => {
-                    document.getElementById('leadModal').style.display = 'flex';
-                }, 500);
-            }
-        });
-
-        // Close modal
-        document.querySelector('.close').addEventListener('click', () => {
-            document.getElementById('leadModal').style.display = 'none';
-        });
-
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            const modal = document.getElementById('leadModal');
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        // Form submissions
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you! We\'ll get back to you within 24 hours.');
-            e.target.reset();
-        });
-
-        document.getElementById('leadForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you! We\'ll contact you soon with perfect matches.');
-            e.target.closest('.modal').style.display = 'none';
-            e.target.reset();
-        });
-
-        // WhatsApp tracking
-        document.querySelectorAll('.btn-whatsapp').forEach(btn => {
-            btn.addEventListener('click', () => {
-                console.log('WhatsApp clicked - ready for integration');
-            });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            const navbar = document.querySelector('.navbar');
+            const currentScroll = window.scrollY;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.classList.add('hidden');
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.classList.remove('hidden');
             }
+            lastScroll = currentScroll;
         });
 
-        // Animate on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+        // Form Submission with Validation and Redirect
+        const form = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formMessage.style.display = 'none';
+            formMessage.textContent = '';
+
+            // Client-side validation
+            const name = form.querySelector('input[name="name"]').value.trim();
+            const district = form.querySelector('input[name="district"]').value.trim();
+            const phone = form.querySelector('input[name="phone"]').value.trim();
+            const phoneRegex = /^[0-9+]{10,15}$/;
+
+            if (!name || !district || !phoneRegex.test(phone)) {
+                formMessage.style.display = 'block';
+                formMessage.textContent = 'Please fill all required fields with valid data.';
+                return;
+            }
+
+            // Log submission data for debugging
+            console.log('Submitting form:', {
+                name,
+                company: form.querySelector('input[name="company"]').value.trim() || '',
+                district,
+                phone
             });
-        });
 
-        document.querySelectorAll('.service-card, .feature-card, .testimonial-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
+            // Submit form to hidden iframe
+            form.submit();
+            // Redirect to Thankyou.html after a short delay
+            setTimeout(() => {
+                console.log('Redirecting to Thankyou.html');
+                window.location.href = '/Thankyou.html';
+            }, 500);
         });
     </script>
 </body>
